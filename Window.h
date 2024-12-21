@@ -18,12 +18,13 @@ namespace engine {
 	private:
 		uint m_width; // Window width.
 		uint m_height; // Window height.
-		std::string m_name; // Window caption.
+		std::string m_caption; // Window caption.
 		SDL_Window* m_window; // Window ptr.
 	public:
-		Window(uint width, uint height, std::string name); // Constructor.
+		Window(uint width, uint height, std::string caption); // Constructor.
 		~Window(); // Destructor.
 		void init(); // SDL initialization (SDL_INIT_VIDEO).
+		SDL_Window* getWindow();
 	};
 
 } // engine
