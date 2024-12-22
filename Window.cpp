@@ -1,9 +1,15 @@
 #include "Window.h"
 
-#define THROW_ENGINE_EXCEPTION(msg) throw engine::EngineException(msg, __FILE__, __LINE__, __func__) // Macros.
+#define THROW_ENGINE_EXCEPTION(msg) throw engine::EngineException(msg, __FILE__, __LINE__, __func__) //< Macros.
 
 namespace engine
 {
+    /**
+     * @brief Constructor.
+     * @param[in] width -Window width (pixels).
+     * @param[in] height -Window height (pixels).
+     * @param[in] caption -Window caption.
+     */
     Window::Window(uint width, uint height, std::string caption) : m_width(width), m_height(height), m_caption(caption)
     {
         init(); // SDL initialization.
@@ -18,6 +24,9 @@ namespace engine
         }
     }
 
+    /**
+     * @brief Window destructor.
+     */
     Window::~Window()
     {
         SDL_DestroyWindow(m_window);
@@ -37,6 +46,14 @@ namespace engine
     SDL_Window* Window::getWindow()
     {
         return m_window;
+    }
+    uint Window::getWidth()
+    {
+        return m_width;
+    }
+    uint Window::getHeight()
+    {
+        return m_height;
     }
 }
     

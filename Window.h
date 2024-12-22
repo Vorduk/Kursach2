@@ -8,6 +8,10 @@
 
 typedef unsigned int uint;
 
+/**
+ * @namespace engine
+ * @brief This namespace contains classes for game engine.
+ */
 namespace engine {
 
 	/**
@@ -16,20 +20,23 @@ namespace engine {
 	class Window
 	{
 	private:
-		uint m_width; // Window width.
-		uint m_height; // Window height.
-		std::string m_caption; // Window caption.
-		SDL_Window* m_window; // Window ptr.
+		uint m_width; ///< Window width (pixels).
+		uint m_height; ///< Window height (pixels).
+		std::string m_caption; ///< Window caption.
+		SDL_Window* m_window; ///< Window ptr.
 	public:
-		Window(uint width, uint height, std::string caption); // Constructor.
-		~Window(); // Destructor.
-		void init(); // SDL initialization (SDL_INIT_VIDEO).
+		Window(uint width, uint height, std::string caption); ///< Constructor.
+		~Window(); ///< Destructor.
+		void init(); ///< SDL initialization (SDL_INIT_VIDEO).
+
 		SDL_Window* getWindow();
+		uint getWidth(); 
+		uint getHeight(); 
 	};
 
 } // engine
 
-#endif WINDOW_H
+#endif // !WINDOW_H
 
 
 

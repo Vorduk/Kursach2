@@ -1,0 +1,68 @@
+\doxysection{engine\+::Renderer Class Reference}
+\hypertarget{classengine_1_1_renderer}{}\label{classengine_1_1_renderer}\index{engine::Renderer@{engine::Renderer}}
+
+
+\doxylink{classengine_1_1_renderer}{Renderer} class.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d}\label{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d} 
+{\bfseries Renderer} (\mbox{\hyperlink{classengine_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}window)
+\item 
+\Hypertarget{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91}\label{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91} 
+void {\bfseries clear} ()
+\item 
+\Hypertarget{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24}\label{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24} 
+void {\bfseries present} ()
+\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a1074c742982582a18053902e8803d834}{draw\+Rectangle}} (int x, int y, int width, int height, SDL\+\_\+\+Color color)
+\begin{DoxyCompactList}\small\item\em Draws rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e}{render\+Scene\+DDA}} (\mbox{\hyperlink{classengine_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classengine_1_1_renderer}{Renderer} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1_renderer_a1074c742982582a18053902e8803d834}\index{engine::Renderer@{engine::Renderer}!drawRectangle@{drawRectangle}}
+\index{drawRectangle@{drawRectangle}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawRectangle()}{drawRectangle()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a1074c742982582a18053902e8803d834} 
+void engine\+::\+Renderer\+::draw\+Rectangle (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{SDL\+\_\+\+Color}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Draws rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x cord. \\
+\hline
+{\em y} & y cord. \\
+\hline
+{\em width} & rectangle width. \\
+\hline
+{\em height} & rectangle height. \\
+\hline
+{\em color} & fill color. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e}\index{engine::Renderer@{engine::Renderer}!renderSceneDDA@{renderSceneDDA}}
+\index{renderSceneDDA@{renderSceneDDA}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{renderSceneDDA()}{renderSceneDDA()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e} 
+void engine\+::\+Renderer\+::render\+Scene\+DDA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})}
+
+\doxylink{class_scene}{Scene} rendering Obstacle rendering with DDA algorithm Enemy and Item rendering 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Renderer.\+h\item 
+Renderer.\+cpp\end{DoxyCompactItemize}

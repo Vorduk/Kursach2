@@ -1,0 +1,216 @@
+\doxysection{engine\+::Player Class Reference}
+\hypertarget{classengine_1_1_player}{}\label{classengine_1_1_player}\index{engine::Player@{engine::Player}}
+
+
+\doxylink{classengine_1_1_player}{Player} class.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classengine_1_1_player_a8ed820cb98c40785975722e311c6e235}{Player}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classengine_1_1_player_a065296a32840c20736376a19e5928002}{Player}} (int player\+\_\+health, double player\+\_\+y, double player\+\_\+x, double player\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classengine_1_1_player_ada5976e4eb648c2622aeaf0be2881954}{\texorpdfstring{$\sim$}{\string~}\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\Hypertarget{classengine_1_1_player_a19d177288163c1d46a31ca8716fe75b0}\label{classengine_1_1_player_a19d177288163c1d46a31ca8716fe75b0} 
+void {\bfseries set\+Player\+Health} (int player\+\_\+health)
+\item 
+\Hypertarget{classengine_1_1_player_a9d6eeba053ab0a90c1f9c554f2482207}\label{classengine_1_1_player_a9d6eeba053ab0a90c1f9c554f2482207} 
+int {\bfseries get\+Player\+Health} ()
+\item 
+\Hypertarget{classengine_1_1_player_ab3caa16303c43b4af4d59e54d27f0a64}\label{classengine_1_1_player_ab3caa16303c43b4af4d59e54d27f0a64} 
+void {\bfseries set\+Player\+Coords} (double player\+\_\+y, double player\+\_\+x)
+\item 
+\Hypertarget{classengine_1_1_player_acf7c31dde22043e5b6753ebbb0ef18c5}\label{classengine_1_1_player_acf7c31dde22043e5b6753ebbb0ef18c5} 
+void {\bfseries set\+PlayerY} (double player\+\_\+y)
+\item 
+\Hypertarget{classengine_1_1_player_abe08a35b25094c0786077d8efcb43e6a}\label{classengine_1_1_player_abe08a35b25094c0786077d8efcb43e6a} 
+double {\bfseries get\+PlayerY} ()
+\item 
+\Hypertarget{classengine_1_1_player_af11c1e9664991df2db9f41b5f4825b1b}\label{classengine_1_1_player_af11c1e9664991df2db9f41b5f4825b1b} 
+void {\bfseries set\+PlayerX} (double player\+\_\+x)
+\item 
+\Hypertarget{classengine_1_1_player_a285e9f07984906248176c638f9edb03e}\label{classengine_1_1_player_a285e9f07984906248176c638f9edb03e} 
+double {\bfseries get\+PlayerX} ()
+\item 
+\Hypertarget{classengine_1_1_player_adffded59e8b7158fccb67b2025bd7c5c}\label{classengine_1_1_player_adffded59e8b7158fccb67b2025bd7c5c} 
+void {\bfseries set\+Player\+PrevY} ()
+\item 
+\Hypertarget{classengine_1_1_player_a83a9e91f49d78f03d99d2dbbeb87184b}\label{classengine_1_1_player_a83a9e91f49d78f03d99d2dbbeb87184b} 
+void {\bfseries set\+Player\+PrevX} ()
+\item 
+\Hypertarget{classengine_1_1_player_ac6e559d14fc8fe5c0d2fdafce7a17c2a}\label{classengine_1_1_player_ac6e559d14fc8fe5c0d2fdafce7a17c2a} 
+void {\bfseries set\+Player\+Angle} (double player\+\_\+angle)
+\item 
+\Hypertarget{classengine_1_1_player_aa8d7a84af9ca8b40dc6f4af63b726869}\label{classengine_1_1_player_aa8d7a84af9ca8b40dc6f4af63b726869} 
+double {\bfseries get\+Player\+Angle} ()
+\item 
+void \mbox{\hyperlink{classengine_1_1_player_a25ff84f55b1b398a1fcd5f985e6a309c}{move\+Player}} (double step)
+\begin{DoxyCompactList}\small\item\em Moves player forward or backward. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_player_a7961b8f8703bde8347b445d6e0193273}{move\+Player\+Side}} (double step)
+\begin{DoxyCompactList}\small\item\em Moves player right or left. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_player_a8ff9c2ac1534e9ed49c0b5e0a005fed6}{move\+Player\+Diagonal}} (double step\+\_\+forward, double step\+\_\+side)
+\begin{DoxyCompactList}\small\item\em Moves player diagonally. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_player_a6892419fcaa2d49ce4deb73b07037ffb}{increment\+Player\+Angle}} (double value)
+\begin{DoxyCompactList}\small\item\em Adds value to rotation angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_player_a0567b24bda699e0b7a168bf447498211}{decrement\+Player\+Angle}} (double value)
+\begin{DoxyCompactList}\small\item\em Adds value to rotation angle. \end{DoxyCompactList}\item 
+\Hypertarget{classengine_1_1_player_a92f54742bc577e433cf325dd7ff8dea3}\label{classengine_1_1_player_a92f54742bc577e433cf325dd7ff8dea3} 
+void {\bfseries return\+Back} ()
+\begin{DoxyCompactList}\small\item\em Return player to previous position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_player_a96a8302748ca32d91b615f893af990a1}{apply\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em Applies damage to the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classengine_1_1_player}{Player} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1_player_a8ed820cb98c40785975722e311c6e235}\index{engine::Player@{engine::Player}!Player@{Player}}
+\index{Player@{Player}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a8ed820cb98c40785975722e311c6e235} 
+engine\+::\+Player\+::\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Default constructor. PLAYER\+\_\+\+HEALTH = 100 PLAYER\+\_\+Y = 0 PLAYER\+\_\+X = 0 PLAYER\+\_\+\+ANGLE = 0 PLAYER\+\_\+\+PREV\+\_\+Y = 0 PLAYER\+\_\+\+PREV\+\_\+X = 0. \Hypertarget{classengine_1_1_player_a065296a32840c20736376a19e5928002}\index{engine::Player@{engine::Player}!Player@{Player}}
+\index{Player@{Player}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a065296a32840c20736376a19e5928002} 
+engine\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+health}{, }\item[{double}]{player\+\_\+y}{, }\item[{double}]{player\+\_\+x}{, }\item[{double}]{player\+\_\+angle}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em player\+\_\+health} & -\/\doxylink{classengine_1_1_player}{Player} hp. \\
+\hline
+\mbox{\texttt{ in}}  & {\em player\+\_\+y} & -\/\doxylink{classengine_1_1_player}{Player} y. \\
+\hline
+\mbox{\texttt{ in}}  & {\em player\+\_\+x} & -\/\doxylink{classengine_1_1_player}{Player} x. \\
+\hline
+\mbox{\texttt{ in}}  & {\em player\+\_\+angle} & -\/\doxylink{classengine_1_1_player}{Player} rotation angle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_player_ada5976e4eb648c2622aeaf0be2881954}\index{engine::Player@{engine::Player}!````~Player@{\texorpdfstring{$\sim$}{\string~}Player}}
+\index{````~Player@{\texorpdfstring{$\sim$}{\string~}Player}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Player()}{\string~Player()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_ada5976e4eb648c2622aeaf0be2881954} 
+engine\+::\+Player\+::\texorpdfstring{$\sim$}{\string~}\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Destructor, nothing. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1_player_a96a8302748ca32d91b615f893af990a1}\index{engine::Player@{engine::Player}!applyDamage@{applyDamage}}
+\index{applyDamage@{applyDamage}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{applyDamage()}{applyDamage()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a96a8302748ca32d91b615f893af990a1} 
+void engine\+::\+Player\+::apply\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage}{}\end{DoxyParamCaption})}
+
+
+
+Applies damage to the player. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & -\/Subtracted value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_player_a0567b24bda699e0b7a168bf447498211}\index{engine::Player@{engine::Player}!decrementPlayerAngle@{decrementPlayerAngle}}
+\index{decrementPlayerAngle@{decrementPlayerAngle}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{decrementPlayerAngle()}{decrementPlayerAngle()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a0567b24bda699e0b7a168bf447498211} 
+void engine\+::\+Player\+::decrement\+Player\+Angle (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Adds value to rotation angle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & -\/Subtracted value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_player_a6892419fcaa2d49ce4deb73b07037ffb}\index{engine::Player@{engine::Player}!incrementPlayerAngle@{incrementPlayerAngle}}
+\index{incrementPlayerAngle@{incrementPlayerAngle}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{incrementPlayerAngle()}{incrementPlayerAngle()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a6892419fcaa2d49ce4deb73b07037ffb} 
+void engine\+::\+Player\+::increment\+Player\+Angle (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Adds value to rotation angle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & -\/Added value. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_player_a25ff84f55b1b398a1fcd5f985e6a309c}\index{engine::Player@{engine::Player}!movePlayer@{movePlayer}}
+\index{movePlayer@{movePlayer}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{movePlayer()}{movePlayer()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a25ff84f55b1b398a1fcd5f985e6a309c} 
+void engine\+::\+Player\+::move\+Player (\begin{DoxyParamCaption}\item[{double}]{step}{}\end{DoxyParamCaption})}
+
+
+
+Moves player forward or backward. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em step} & -\/Movement step. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_player_a8ff9c2ac1534e9ed49c0b5e0a005fed6}\index{engine::Player@{engine::Player}!movePlayerDiagonal@{movePlayerDiagonal}}
+\index{movePlayerDiagonal@{movePlayerDiagonal}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{movePlayerDiagonal()}{movePlayerDiagonal()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a8ff9c2ac1534e9ed49c0b5e0a005fed6} 
+void engine\+::\+Player\+::move\+Player\+Diagonal (\begin{DoxyParamCaption}\item[{double}]{step\+\_\+forward}{, }\item[{double}]{step\+\_\+side}{}\end{DoxyParamCaption})}
+
+
+
+Moves player diagonally. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em step\+\_\+foward} & -\/Foward movement step. \\
+\hline
+\mbox{\texttt{ in}}  & {\em step\+\_\+foward} & -\/Side movement step. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_player_a7961b8f8703bde8347b445d6e0193273}\index{engine::Player@{engine::Player}!movePlayerSide@{movePlayerSide}}
+\index{movePlayerSide@{movePlayerSide}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{movePlayerSide()}{movePlayerSide()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a7961b8f8703bde8347b445d6e0193273} 
+void engine\+::\+Player\+::move\+Player\+Side (\begin{DoxyParamCaption}\item[{double}]{step}{}\end{DoxyParamCaption})}
+
+
+
+Moves player right or left. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em step} & -\/Movement step. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Player.\+h\item 
+Player.\+cpp\end{DoxyCompactItemize}

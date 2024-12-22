@@ -12,18 +12,18 @@ namespace engine {
     class EngineException : public std::exception
     {
     private:
-        std::string m_message; // Current message.
-        const char* m_file; // Current file.
-        int m_line; // Current line.
-        const char* m_function; // Current function
+        std::string m_message; ///< Current message.
+        const char* m_file; ///< Current file.
+        int m_line; ///< Current line.
+        const char* m_function; ///< Current function
     public:
 
         /**
          * @brief Constructor.
-         * @param message Current message.
-         * @param file Current file.
-         * @param line Current line.
-         * @param function Current function.
+         * @param[in] message -Current message.
+         * @param[in] file -Current file.
+         * @param[in] line -Current line.
+         * @param[in] function -Current function.
          */
         EngineException(const std::string& message, const char* file, int line, const char* function)
             : m_message(message), m_file(file), m_line(line), m_function(function) {}

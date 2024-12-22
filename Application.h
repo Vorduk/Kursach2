@@ -1,30 +1,59 @@
-#pragma once
+#ifndef APPLICATION_H
+#define APPLICATION_H
 
 #include "Window.h"
 #include <vector>
 #include "Renderer.h"
+#include "Scene.h"
 
 typedef unsigned int uint;
 
+/**
+ * @namespace engine
+ * @brief This namespace contains classes for game engine.
+ */
 namespace engine {
-
+	/**
+	 * @brief Application class (Main loop).
+	 */
 	class Application
 	{
 	private:
-		std::vector<engine::Window*> m_windows;
-		std::string m_name;
-		bool m_running;
+		std::vector<Scene*> m_scenes; ///< app scenes (maps)
+		std::vector<Window*> m_windows; ///< app windows
+		std::string m_name; ///< App name
+		bool m_running; ///< Running flag
 	public:
 		Application();
 		~Application(); 
 
+		/**
+		 * @brief Run app (Main loop).
+		 */
 		void run(); 
-		void createWindow(uint width, uint height, const std::string& caption);
-		void handleEvents();
+
+		/**
+		 * @brief Creates a new window.
+		 */
+		void addScene();
+
+		/**
+		 * @brief Creates a new window.
+		 */
+		void addWindow(uint width, uint height, const std::string& caption);
+
+		/**
+		 * @brief Event handling.
+		 */
+		void handleEvents(Player &player);
+
+		/**
+		 * @brief Windows vector cleaning.
+		 */
 		void cleanUp();
 	};
 
 } // engine
 
-
+#endif // !APPLICATION_H
 

@@ -14,36 +14,72 @@ namespace engine
 
     void engine::Application::run()
     {
-    
-        Renderer* renderer = new Renderer(m_windows[0]->getWindow());    
+        Scene* cur_scene = m_scenes[0];
+
+        Renderer* renderer = new Renderer(m_windows[0]);    
+
+        double s = 0;
 
         while (m_running) {
-            handleEvents();
+            if (s < 255)
+            {
+                s+=0.01;
+            }
+            else s = 0;
+            
+            handleEvents(cur_scene->getPlayer());
 
-            SDL_Color color = { 255, 0, 0, 255 };
-            renderer->drawRectangle(100, 100, 200, 150, color);
+            renderer->clear();
+
+            //SDL_Color color = { 0, 0, 0, 255 };
+            //renderer->drawRectangle(100, 100, 200, 150, color);
+
+            renderer->renderSceneDDA(&(cur_scene->getCamera()));
 
             renderer->present();
+
+            cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
 
         }
 
     }
 
-    void Application::createWindow(uint width, uint height, const std::string& caption)
+    void Application::addScene()
+    {
+        Scene* new_scene = new Scene();
+        m_scenes.push_back(new_scene);
+    }
+
+    void Application::addWindow(uint width, uint height, const std::string& caption)
     {
         Window* new_window = new Window(width, height, caption);
         m_windows.push_back(new_window);
     }
 
-    void Application::handleEvents()
+    void Application::handleEvents(Player &player)
     {
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 m_running = false;
             }
-        
-            // Key events etc...
+        }
+
+        // Обработка нажатий клавиш
+        const Uint8* currentKeyStates = SDL_GetKeyboardState(NULL);
+
+        if (currentKeyStates[SDL_SCANCODE_W]) {
+            player.movePlayer(0.01);
+        }
+        if (currentKeyStates[SDL_SCANCODE_S]) {
+            player.movePlayer(-0.005);
+        }
+
+        if (currentKeyStates[SDL_SCANCODE_A]) {
+            player.incrementPlayerAngle(-0.008);
+        }
+        if (currentKeyStates[SDL_SCANCODE_D]) {
+            player.incrementPlayerAngle(0.008);
         }
     }
 
@@ -54,6 +90,12 @@ namespace engine
             
         }
         m_windows.clear();
+
+        for (Scene* scene : m_scenes) {
+            delete scene;
+
+        }
+        m_scenes.clear();
     }
 
 } // engine

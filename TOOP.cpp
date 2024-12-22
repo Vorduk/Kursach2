@@ -8,12 +8,11 @@
 
 int main(int argc, char* argv[]) {
     
-
     try {
-        engine::Application* app = new engine::Application();
-        app->createWindow(800, 600, "okno");
-        app->run();
-
+        engine::Application app = engine::Application();
+        app.addWindow(800, 600, "okno");
+        app.addScene();
+        app.run();
 
     }
     catch (const engine::EngineException& e) {
