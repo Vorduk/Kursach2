@@ -7,7 +7,7 @@ namespace engine
         m_camera_y = 0;
         m_camera_x = 0;
         m_camera_angle = 0;
-        m_fov_c = 50;
+        m_fov_c = 40;
         m_fov = (m_fov_c / 180 * M_PI);
         m_render_distance = 200;
     }

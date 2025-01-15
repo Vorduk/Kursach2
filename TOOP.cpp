@@ -5,13 +5,20 @@
 
 #include "Application.h"
 #include "EngineException.h"
+#include "Scene.h"
 
 int main(int argc, char* argv[]) {
     
     try {
         engine::Application app = engine::Application();
-        app.addWindow(800, 600, "okno");
-        app.addScene();
+        app.addWindow(1920, 1080, "okno");
+
+        engine::Scene* scene = new engine::Scene();
+        scene->addCamera(0, 0, 0, 40, 100);
+        scene->addPlayer(0, 0, 0, 100);
+
+
+        app.addScene(scene);
         app.run();
 
     }
@@ -21,5 +28,6 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
 
 

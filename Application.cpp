@@ -17,6 +17,7 @@ namespace engine
         Scene* cur_scene = m_scenes[0];
 
         Renderer* renderer = new Renderer(m_windows[0]);    
+        renderer->loadTexture("putin", "image.png");
 
         double s = 0;
 
@@ -35,19 +36,18 @@ namespace engine
             //renderer->drawRectangle(100, 100, 200, 150, color);
 
             renderer->renderSceneDDA(&(cur_scene->getCamera()));
+            renderer->renderTexture("putin", 0, 0, 256, 256, 0, 0, 1024, 1024);
 
             renderer->present();
 
             cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
-
         }
 
     }
 
-    void Application::addScene()
+    void Application::addScene(Scene* scene)
     {
-        Scene* new_scene = new Scene();
-        m_scenes.push_back(new_scene);
+        m_scenes.push_back(scene);
     }
 
     void Application::addWindow(uint width, uint height, const std::string& caption)

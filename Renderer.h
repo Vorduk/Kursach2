@@ -5,6 +5,7 @@
 #include "Window.h"
 #include "Camera.h"
 #include <vector>
+#include "TextureManager.h"
 
 typedef unsigned int uint;
 
@@ -18,6 +19,13 @@ namespace engine {
      * @brief Renderer class.
      */
     class Renderer {
+
+    private:
+        SDL_Renderer* m_renderer;
+        uint m_width; // Renderer width.
+        uint m_height; // Renderer height.
+        TextureManager* m_texture_manager;
+    
     public:
         Renderer(Window* window); // Constructor
         ~Renderer(); // Destructor
@@ -42,10 +50,9 @@ namespace engine {
          */
         void renderSceneDDA(Camera* camera);
 
-    private:
-        SDL_Renderer* m_renderer;
-        uint m_width; // Renderer width.
-        uint m_height; // Renderer height.
+        bool loadTexture(const std::string& id, const std::string& path);
+        void renderTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2);
+        void freeTexture(const std::string& id);
     };
 
 }

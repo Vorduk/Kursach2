@@ -4,13 +4,15 @@ namespace engine
 {
 	Renderer::Renderer(Window* window)
 	{
-		m_renderer = SDL_CreateRenderer(window->getWindow(), -1, SDL_RENDERER_ACCELERATED);
+		m_renderer = SDL_CreateRenderer(window->getWindow(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE);
         m_width = window->getWidth();
         m_height = window->getHeight();
+        m_texture_manager = new TextureManager(m_renderer);
 	}
 
 	Renderer::~Renderer()
 	{
+        delete m_texture_manager;
 		SDL_DestroyRenderer(m_renderer);
 	}
 
@@ -233,6 +235,19 @@ namespace engine
             //}
         }
 
+        
+    }
+
+    bool Renderer::loadTexture(const std::string& id, const std::string& path) {
+        return m_texture_manager->loadTexture(id, path);
+    }
+
+    void Renderer::renderTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2) {
+        m_texture_manager->renderTexture(texture_id, x, y, render_width, render_height, cut_x1, cut_y1, cut_x2, cut_y2);
+    }
+
+    void Renderer::freeTexture(const std::string& id) {
+        m_texture_manager->freeTexture(id);
     }
 
 }

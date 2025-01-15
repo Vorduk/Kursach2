@@ -17,7 +17,7 @@ namespace engine
         /**
          * @brief Window creation.
          */
-        m_window = SDL_CreateWindow(m_caption.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, m_width, m_height, SDL_WINDOW_SHOWN);
+        m_window = SDL_CreateWindow(m_caption.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, m_width, m_height, SDL_WINDOW_SHOWN | SDL_WINDOW_VULKAN);
         if (!m_window) {
             THROW_ENGINE_EXCEPTION("Failed to create an SDL window.");
             SDL_Quit();

@@ -35,7 +35,7 @@ namespace engine {
 		/**
 		 * @brief Creates a new window.
 		 */
-		void addScene();
+		void addScene(Scene* scene);
 
 		/**
 		 * @brief Creates a new window.
