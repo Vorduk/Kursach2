@@ -36,30 +36,14 @@ namespace engine
 
 	void Renderer::renderSceneDDA(Camera* camera)
 	{
-        std::vector<SDL_Color> gradient = {
-            {255, 0, 0, 255},   // Красный
-            {255, 128, 0, 255}, // Оранжевый
-            {255, 255, 0, 255}, // Желтый
-            {128, 255, 0, 255}, // Светло-зеленый
-            {0, 255, 0, 255},   // Зеленый
-            {0, 255, 128, 255}, // Светло-бирюзовый
-            {0, 255, 255, 255}, // Циан
-            {0, 128, 255, 255}, // Светло-синий
-            {0, 0, 255, 255},   // Синий
-            {128, 0, 255, 255}, // Фиолетовый
-            {255, 0, 255, 255}, // Магента
-            {255, 0, 128, 255}  // Розовый
-        };
-
-
         int gridSizeX = 10;
         int gridSizeY = 10;
 
         std::vector<std::vector<int>> map = {
             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1,},
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 1,},
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 1,},
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 1,},
+            {1, 0, 0, 0, 0, 0, 3, 3, 0, 1,},
+            {1, 0, 0, 0, 0, 0, 0, 3, 0, 1,},
             {1, 0, 0, 0, 1, 0, 0, 0, 0, 1,},
             {1, 0, 1, 1, 1, 0, 0, 0, 0, 1,},
             {1, 0, 1, 0, 0, 0, 0, 1, 0, 1,},
@@ -122,6 +106,9 @@ namespace engine
                 ray_length_y = (float(map_check_y + 1) - cam_y) * unit_step_size_y;
             }
 
+            double dot_x;
+            double dot_y;
+
             double cur_distance = 0.0;
             while (cur_distance < render_distance) {
 
@@ -137,8 +124,8 @@ namespace engine
                     ray_length_y += unit_step_size_y;
                 }
 
-                double dot_x = cam_x + dx * cur_distance;
-                double dot_y = cam_y + dy * cur_distance;
+                dot_x = cam_x + dx * cur_distance;
+                dot_y = cam_y + dy * cur_distance;
 
                 if (map_check_x >= 0 && map_check_x < gridSizeX && map_check_y >= 0 && map_check_y < gridSizeY) {
                     int check = map[map_check_y][map_check_x];
@@ -159,7 +146,8 @@ namespace engine
                     //    int floorr = scr_h - ceiling;
                     //    for (int i = floorr - floor_size; i <= floorr; i++) {
                     //        for (int j = column - floor_size; j <= column + floor_size; j++) {
-                    //            screen.ffDrawDot(i, j, '#'); //lava
+                    //            SDL_SetRenderDrawColor(m_renderer, 255, 0, 0, 255);
+                    //            SDL_RenderDrawPoint(m_renderer, i, j); //lava
                     //        }
                     //    }
                     //}
@@ -169,43 +157,39 @@ namespace engine
 
             prev_distance = cur_distance;
             if (hit == 1 || hit_door == 1) {
-                // Определяем цвет стены
-                SDL_Color wallColor;
-                if (is_corner == 1) {
-                    wallColor = { 255, 0, 0, 255 };
-                }
-                else {
-                    int grad_size = sizeof(gradient);
-                    if (int(cur_distance) >= grad_size) {
-                        wallColor = { 0, 255, 0, 255 };
-                    }
-                    else {
-                        int color_index = int((grad_size - cur_distance));
-                        wallColor = { 0, 255, 0, 255 };
-                    }
-                }
 
-                if (hit_door == 1) {
-                    cur_distance += 0.7;
-                    wallColor = { 0, 255, 0, 255 }; // Зеленый цвет для двери
-                }
+                //if (hit_door == 1) {
+                //    cur_distance += 0.7;
+                //    wallColor = { 0, 255, 0, 255 }; // Зеленый цвет для двери
+                //}
 
                 double n_c = cur_distance * cos(ray_angle - cam_angle); // fish eye fix
 
                 int ceiling = (double)(scr_h / 2) - (scr_h / n_c);
-                int floorr = scr_h - ceiling;
 
                 // Рисуем потолок
                 SDL_SetRenderDrawColor(m_renderer, 0, 0, 255, 255); // Синий цвет для потолка
                 SDL_RenderDrawLine(m_renderer, column, 0, column, ceiling);
 
+                double test_x = (double)dot_x - (int)dot_x;
+                double test_y = (double)dot_y - (int)dot_y;
+
                 // Рисуем стену
-                SDL_SetRenderDrawColor(m_renderer, wallColor.r, wallColor.g, wallColor.b, wallColor.a);
-                SDL_RenderDrawLine(m_renderer, column, ceiling, column, floorr);
+                if (test_x > 0.00001)
+                {
+                    int tex_col = round(((double)dot_x - (int)dot_x) * 1024);
+                    renderTexture("putin", column, ceiling, column, scr_h - (2 * ceiling), tex_col, 0, tex_col + 1, 1024);
+                }
+
+                if (test_y > 0.00001)
+                {
+                    int tex_col = round(((double)dot_y - (int)dot_y) * 1024);
+                    renderTexture("putin", column, ceiling, column, scr_h - (2 * ceiling), tex_col, 0, tex_col + 1, 1024);
+                }
 
                 // Рисуем пол
                 SDL_SetRenderDrawColor(m_renderer, 128, 128, 128, 255); // Серый цвет для пола
-                SDL_RenderDrawLine(m_renderer, column, floorr, column, scr_h);
+                SDL_RenderDrawLine(m_renderer, column, scr_h - ceiling, column, scr_h);
             }
             else
             {

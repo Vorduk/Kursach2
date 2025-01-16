@@ -36,7 +36,7 @@ namespace engine
             //renderer->drawRectangle(100, 100, 200, 150, color);
 
             renderer->renderSceneDDA(&(cur_scene->getCamera()));
-            renderer->renderTexture("putin", 0, 0, 256, 256, 0, 0, 1024, 1024);
+            //renderer->renderTexture("putin", 0, 0, 512, 512, 0, 0, 1024, 1024);
 
             renderer->present();
 

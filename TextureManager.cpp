@@ -31,7 +31,7 @@ namespace engine {
     {
         SDL_Texture* texture = m_textures[texture_id];
         if (texture) {
-            SDL_Rect renderQuad = { x, y, render_width, render_height };
+            SDL_Rect renderQuad = { x, y, render_width, render_height};
 
             SDL_Rect clip;
             clip.x = cut_x1;
