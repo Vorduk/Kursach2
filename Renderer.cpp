@@ -22,24 +22,22 @@ namespace engine
         }
     }
 
-    void Renderer::drawSkyBox(int ray_angle, int column) {
-        int tex_col = (ray_angle % 360) * 1024 / 360;
+    void Renderer::drawSkyBox(double ray_angle, int column) {
+        double ray_angle_deg = ray_angle;
         std::string texture_id = "sky";
 
-        if (0 <= ray_angle < 90) {
-            texture_id += "1";
+        if (ray_angle_deg < 0) {
+            ray_angle_deg += (2 * M_PI);
         }
-        else if (90 <= ray_angle < 180) {
-            texture_id += "2";
-        }
-        else if (180 <= ray_angle < 270) {
-            texture_id += "3";
-        }
-        else if (270 <= ray_angle < 360) {
-            texture_id += "4";
+        if (ray_angle_deg > (2 * M_PI)) {
+            ray_angle_deg -= (2 * M_PI);
         }
 
-        renderTexture(texture_id, column, 0, 1024, m_height, tex_col, 0, tex_col + 1, 1024, false, false);
+        double k = 4096 / (M_PI * 2);
+        double p_k = k * ray_angle_deg;
+        int tex_col = static_cast<int>(p_k);
+
+        renderTexture(texture_id, column, 0, 4096, 1024, tex_col, 0, tex_col + 1, 1024, false, false);
     }
 
     Renderer::Renderer(Window* window)
@@ -80,26 +78,26 @@ namespace engine
         int gridSizeY = 20;
 
         std::vector<std::vector<int>> map = {
-            {1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, },
+            {1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 1, 2, 3, 1, 3, 1, 1, },
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
             {1, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 1, },
             {1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, },
             {1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
-            {2, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, },
+            {2, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, },
             {2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, },
             {2, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, },
             {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 3, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, },
             {1, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 1, },
             {1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, },
             {1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, },
-            {1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 0, 0, 0, 0, 2, },
-            {1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 2, },
-            {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, },
+            {3, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 0, 0, 0, 0, 2, },
+            {3, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 2, },
+            {3, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, },
+            {3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            {3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, },
         };
 
         int rays_n = m_width;
@@ -113,7 +111,7 @@ namespace engine
 
         double prev_distance;
 
-        for (int column = 0; column < rays_n; column++) {
+        for (int column = 0; column < rays_n; column++) {    
             int is_corner = 0;
 
             int map_check_x = cam_x;
@@ -180,7 +178,7 @@ namespace engine
                 if (map_check_x >= 0 && map_check_x < gridSizeX && map_check_y >= 0 && map_check_y < gridSizeY) {
                     hit = map[map_check_y][map_check_x];
                     if (hit != 0) {
-                        if ((fabs(dot_x - round(dot_x)) < 0.05) && (fabs(dot_y - round(dot_y)) < 0.05)) {
+                        if ((fabs(dot_x - round(dot_x)) < 0.008) && (fabs(dot_y - round(dot_y)) < 0.008)) {
                             is_corner = 1;
                         }
                         break;
@@ -200,7 +198,7 @@ namespace engine
                 }
             }
 
-            drawSkyBox(cam_angle, column);
+            drawSkyBox(ray_angle, column);
 
             prev_distance = cur_distance;
             if (hit != 0) {
@@ -226,6 +224,11 @@ namespace engine
                 {
                     int tex_col = round(((double)dot_y - (int)dot_y) * 1024);
                     drawWallTextures(hit, 1, column, ceiling, height, tex_col);
+                }
+
+                if (is_corner) {
+                    SDL_SetRenderDrawColor(m_renderer, 128, 128, 128, 255);
+                    SDL_RenderDrawLine(m_renderer, column, ceiling, column, scr_h - ceiling);
                 }
 
                 // Drawing floor

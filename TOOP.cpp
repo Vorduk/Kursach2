@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 
         engine::Scene* scene = new engine::Scene();
         scene->addCamera(0, 0, 0, 40, 100);
-        scene->addPlayer(2, 2, 90, 100);
+        scene->addPlayer(2, 2, 0, 100);
 
         app.addScene(scene);
         app.run();

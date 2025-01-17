@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include <cmath>
+#include <corecrt_math_defines.h>
 
 typedef unsigned int uint;
 
@@ -22,23 +23,67 @@ namespace engine
         double m_player_prev_x; ///< Player previous x (for collision)
         double m_player_y; ///< Player y 
         double m_player_x; ///< Player x 
-        double m_player_angle; ///< Player rotation angle
+        double m_player_angle; ///< Player rotation angle (radians)
     public:
+        /**
+         * @brief Default constructor.
+         * PLAYER_HEALTH = 100
+         * PLAYER_Y = 0
+         * PLAYER_X = 0
+         * PLAYER_ANGLE = 0
+         * PLAYER_PREV_Y = 0
+         * PLAYER_PREV_X = 0
+         */
         Player(); ///< Default constructor
+
+        /**
+         * @brief Player constructor.
+         * @param[in] player_y -Player y. 
+         * @param[in] player_x -Player x.
+         * @param[in] player_angle -Player rotation angle (radians).
+         * @param[in] player_health -Player health.
+         */
         Player(double player_y, double player_x, double player_angle, uint player_health); ///< Constructor
+
         ~Player(); ///< Destructor
         
+        /**
+         * @brief Set player cords.
+         * @param[in] player_y -Player y.
+         * @param[in] player_x -Player x.
+         */
         void setPlayerCoords(double player_y, double player_x);
+
+        /**
+         * @brief Set player y cord.
+         * @param[in] player_y -Player y.
+         */
         void setPlayerY(double player_y);
-        double getPlayerY();
+        double getPlayerY(); ///< Get player y cord.
+
+        /**
+         * @brief Set player x cord.
+         * @param[in] player_x -Player x.
+         */
         void setPlayerX(double player_x);
-        double getPlayerX();
-        void setPlayerPrevY();
-        void setPlayerPrevX();
+        double getPlayerX(); ///< Get player x cord.
+
+        void setPlayerPrevY();///< Get player previous y cord.
+        void setPlayerPrevX(); ///< Get player previous x cord.
+
+        /**
+         * @brief Set player rotation angle.
+         * @param[in] player_angle -Player angle.
+         */
         void setPlayerAngle(double player_angle);
-        double getPlayerAngle();
+        double getPlayerAngle(); ///< Get player angle (radians).
+
+        /**
+         * @brief Set player health.
+         * @param[in] player_health -Player health.
+         */
         void setPlayerHealth(uint player_health);
-        uint getPlayerHealth();
+        uint getPlayerHealth(); ///< Get player health.
 
         /**
          * @brief Moves player forward or backward.
@@ -63,13 +108,7 @@ namespace engine
          * @brief Adds value to rotation angle.
          * @param[in] value -Added value.
          */
-        void incrementPlayerAngle(double value);
-
-        /**
-         * @brief Adds value to rotation angle.
-         * @param[in] value -Subtracted value.
-         */
-        void decrementPlayerAngle(double value);
+        void addPlayerAngle(double value);
 
         /**
          * @brief Return player to previous position.

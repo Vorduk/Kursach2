@@ -17,10 +17,13 @@ namespace engine
         Scene* cur_scene = m_scenes[0];
 
         Renderer* renderer = new Renderer(m_windows[0]);    
-        renderer->loadTexture("wall1", "image3.png");
-        renderer->loadTexture("wall2", "image.png");
+        renderer->loadTexture("wall1", "image1.png");
+        renderer->loadTexture("wall2", "image2.png");
+        renderer->loadTexture("wall3", "image3.png");
         renderer->setWallTexture(1, "wall1");
         renderer->setWallTexture(2, "wall2");
+        renderer->setWallTexture(3, "wall3");
+        renderer->loadTexture("sky", "sky.png");
         renderer->loadTexture("sky1", "sky1.png");
         renderer->loadTexture("sky2", "sky2.png");
         renderer->loadTexture("sky3", "sky3.png");
@@ -29,12 +32,16 @@ namespace engine
         while (m_running) {
             
             handleEvents(cur_scene->getPlayer());
+            cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
 
             renderer->clear();
             renderer->renderSceneDDA(&(cur_scene->getCamera()));
             renderer->present();
 
-            cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
+            printf("player: %.2lf\n", cur_scene->getPlayer().getPlayerAngle());
+            printf("camera: %.2lf\n", cur_scene->getCamera().getCameraAngle());
+
+            
         }
 
     }
@@ -70,10 +77,10 @@ namespace engine
         }
 
         if (currentKeyStates[SDL_SCANCODE_A]) {
-            player.incrementPlayerAngle(-0.015);
+            player.addPlayerAngle(-0.015);
         }
         if (currentKeyStates[SDL_SCANCODE_D]) {
-            player.incrementPlayerAngle(0.015);
+            player.addPlayerAngle(0.015);
         }
     }
 

@@ -2,15 +2,7 @@
 
 namespace engine
 {
-    /**
-     * @brief Default constructor.
-     * PLAYER_HEALTH = 100
-     * PLAYER_Y = 0
-     * PLAYER_X = 0
-     * PLAYER_ANGLE = 0
-     * PLAYER_PREV_Y = 0
-     * PLAYER_PREV_X = 0
-     */
+
     Player::Player()
         : m_player_health(100),
         m_player_y(0),
@@ -20,13 +12,6 @@ namespace engine
         m_player_prev_x(0)
     {}
 
-    /**
-     * @brief Constructor.
-     * @param[in] player_y -Player y.
-     * @param[in] player_x -Player x.
-     * @param[in] player_angle -Player rotation angle.
-     * @param[in] player_health -Player hp.
-     */
     Player::Player(double player_y, double player_x, double player_angle, uint player_health)
         : m_player_health(player_health),
         m_player_y(player_y),
@@ -36,9 +21,6 @@ namespace engine
         m_player_prev_x(player_x)
     {}
 
-    /**
-     * @brief Destructor, nothing.
-     */
     Player::~Player() {
 
     };
@@ -93,12 +75,10 @@ namespace engine
         m_player_y = m_player_y + step_forward * sin(m_player_angle) - step_side * cos(m_player_angle);
     }
     
-    void Player::incrementPlayerAngle(double value) {
+    void Player::addPlayerAngle(double value) {
         m_player_angle += value;
-    }
-
-    void Player::decrementPlayerAngle(double value) {
-        m_player_angle -= value;
+        if (m_player_angle > 2*M_PI) { m_player_angle = 0; }
+        if (m_player_angle < 0) { m_player_angle = 2 * M_PI; }
     }
 
     void Player::returnBack() {

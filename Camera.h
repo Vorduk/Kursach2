@@ -10,7 +10,7 @@ namespace engine
     private:
         double m_camera_y; ///< Camera world y cord.
         double m_camera_x; ///< Camera world x cord.
-        double m_camera_angle; ///< Camera world angle (degrees).
+        double m_camera_angle; ///< Camera world angle (radians).
         double m_fov_c; ///< Camera field of view (degrees).
         double m_fov; ///< Camera field of view (radians).
         int m_render_distance; ///< Camera render distance.
@@ -24,8 +24,8 @@ namespace engine
          * @brief Camera constructor.
          * @param[in] camera_y -Camera world y cord.
          * @param[in] camera_x -Camera world x cord.
-         * @param[in] camera_angle -Camera world angle (degrees).
-         * @param[in] fov_c -Camera field of view.
+         * @param[in] camera_angle -Camera world angle (radians).
+         * @param[in] fov_c -Camera field of view (degrees).
          * @param[in] render_distance -Camera render distance.
          */
         Camera(double camera_y, double camera_x, double camera_angle, double fov_c, int render_distance);

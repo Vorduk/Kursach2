@@ -39,7 +39,7 @@ namespace engine {
          */
         void drawWallTextures(int wall_id, int axis, int column, int ceiling, int height, int texture_column);
 
-        void drawSkyBox(int ray_angle, int column);
+        void drawSkyBox(double ray_angle, int column);
 
     public:
         Renderer(Window* window); ///< Constructor
