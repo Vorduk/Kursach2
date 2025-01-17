@@ -1,40 +1,49 @@
 \doxysection{Renderer.\+h}
-\hypertarget{_renderer_8h_source}{}\label{_renderer_8h_source}
+\hypertarget{_renderer_8h_source}{}\label{_renderer_8h_source}\mbox{\hyperlink{_renderer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RENDERER\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RENDERER\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Window.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Camera.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_8h}{Window.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uint;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}\ \{}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_renderer}{Renderer}}\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_renderer}{Renderer}}(\mbox{\hyperlink{classengine_1_1_window}{Window}}*\ window);\ \textcolor{comment}{//\ Constructor}}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_renderer}{\string~Renderer}}();\ \textcolor{comment}{//\ Destructor}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ clear();\ \textcolor{comment}{//\ Fill\ black}}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ present();\ \textcolor{comment}{//\ Show\ changes}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_a1074c742982582a18053902e8803d834}{drawRectangle}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ SDL\_Color\ color);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e}{renderSceneDDA}}(\mbox{\hyperlink{classengine_1_1_camera}{Camera}}*\ camera);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ SDL\_Renderer*\ m\_renderer;}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ uint\ m\_width;\ \textcolor{comment}{//\ Renderer\ width.}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ uint\ m\_height;\ \textcolor{comment}{//\ Renderer\ height.}}
-\DoxyCodeLine{00045\ \ \ \ \ \};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \}}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RENDERER\_H}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_texture_manager_8h}{TextureManager.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_renderer}{Renderer}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ SDL\_Renderer*\ \mbox{\hyperlink{classengine_1_1_renderer_a0515dacd98807e7bc4ace77b015f2188}{m\_renderer}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_renderer_ab6dfffb000bffc269d75830db65150b9}{m\_width}};\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_renderer_a95e9ac98e0b3b314b45a2baa3e662e37}{m\_height}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_texture_manager}{TextureManager}}*\ \mbox{\hyperlink{classengine_1_1_renderer_a3e9e0f4ac7e952d9a040f3d6eeb68d91}{m\_texture\_manager}};}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d}{Renderer}}(\mbox{\hyperlink{classengine_1_1_window}{Window}}*\ window);\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_renderer_a429d2acdd3f2e8f583df5298259d8089}{\string~Renderer}}();\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91}{clear}}();\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24}{present}}();\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_a1074c742982582a18053902e8803d834}{drawRectangle}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ SDL\_Color\ color);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e}{renderSceneDDA}}(\mbox{\hyperlink{classengine_1_1_camera}{Camera}}*\ camera);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_a3b9cdfaf0bc4e63caa964cba959277e3}{loadTexture}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_a08de18193a31511c8de8169d54e7c3ce}{renderTexture}}(\textcolor{keyword}{const}\ std::string\&\ texture\_id,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ render\_width,\ \textcolor{keywordtype}{int}\ render\_height,\ \textcolor{keywordtype}{int}\ cut\_x1,\ \textcolor{keywordtype}{int}\ cut\_y1,\ \textcolor{keywordtype}{int}\ cut\_x2,\ \textcolor{keywordtype}{int}\ cut\_y2);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_renderer_a01acdaa6bc3332fcbcbb63dbf6bdc9e2}{freeTexture}}(\textcolor{keyword}{const}\ std::string\&\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00078\ \ \ \ \ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RENDERER\_H}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
 
 \end{DoxyCode}

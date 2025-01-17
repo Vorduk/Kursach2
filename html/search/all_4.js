@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['incrementplayerangle_0',['incrementPlayerAngle',['../classengine_1_1_player.html#a6892419fcaa2d49ce4deb73b07037ffb',1,'engine::Player']]],
-  ['init_1',['init',['../classengine_1_1_window.html#aef37acfc14fc3919d650b400798f7e45',1,'engine::Window']]]
+  ['freetexture_0',['freeTexture',['../classengine_1_1_renderer.html#a01acdaa6bc3332fcbcbb63dbf6bdc9e2',1,'engine::Renderer::freeTexture()'],['../classengine_1_1_texture_manager.html#a20a66f946f2eae4685cb93f15b85c70f',1,'engine::TextureManager::freeTexture()']]]
 ];

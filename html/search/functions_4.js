@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['moveplayer_0',['movePlayer',['../classengine_1_1_player.html#a25ff84f55b1b398a1fcd5f985e6a309c',1,'engine::Player']]],
-  ['moveplayerdiagonal_1',['movePlayerDiagonal',['../classengine_1_1_player.html#a8ff9c2ac1534e9ed49c0b5e0a005fed6',1,'engine::Player']]],
-  ['moveplayerside_2',['movePlayerSide',['../classengine_1_1_player.html#a7961b8f8703bde8347b445d6e0193273',1,'engine::Player']]]
+  ['freetexture_0',['freeTexture',['../classengine_1_1_renderer.html#a01acdaa6bc3332fcbcbb63dbf6bdc9e2',1,'engine::Renderer::freeTexture()'],['../classengine_1_1_texture_manager.html#a20a66f946f2eae4685cb93f15b85c70f',1,'engine::TextureManager::freeTexture()']]]
 ];

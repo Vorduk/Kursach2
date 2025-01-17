@@ -90,59 +90,638 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classengine_1_1_camera-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">engine::Camera Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_camera_8h_source.html">Camera.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4707a508e72c162caa761070a5bbc722" id="r_a4707a508e72c162caa761070a5bbc722"><td class="memItemLeft" align="right" valign="top"><a id="a4707a508e72c162caa761070a5bbc722" name="a4707a508e72c162caa761070a5bbc722"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Camera</b> (int camera_y, int camera_x, double camera_angle, double fov_c, int render_distance)</td></tr>
-<tr class="separator:a4707a508e72c162caa761070a5bbc722"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa987eb6874148eea796c4ca6e8ca9528" id="r_aa987eb6874148eea796c4ca6e8ca9528"><td class="memItemLeft" align="right" valign="top"><a id="aa987eb6874148eea796c4ca6e8ca9528" name="aa987eb6874148eea796c4ca6e8ca9528"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCameraCoords</b> (int camera_y, int camera_x)</td></tr>
-<tr class="separator:aa987eb6874148eea796c4ca6e8ca9528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7750c671a33393379e9186032daddf1" id="r_ad7750c671a33393379e9186032daddf1"><td class="memItemLeft" align="right" valign="top"><a id="ad7750c671a33393379e9186032daddf1" name="ad7750c671a33393379e9186032daddf1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCameraY</b> (int camera_y)</td></tr>
-<tr class="separator:ad7750c671a33393379e9186032daddf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acba0cf93c9d8dbcf90762349634a2df4" id="r_acba0cf93c9d8dbcf90762349634a2df4"><td class="memItemLeft" align="right" valign="top"><a id="acba0cf93c9d8dbcf90762349634a2df4" name="acba0cf93c9d8dbcf90762349634a2df4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraY</b> ()</td></tr>
-<tr class="separator:acba0cf93c9d8dbcf90762349634a2df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acffa94f209c05fe75f8f0ac7ae9d8045" id="r_acffa94f209c05fe75f8f0ac7ae9d8045"><td class="memItemLeft" align="right" valign="top"><a id="acffa94f209c05fe75f8f0ac7ae9d8045" name="acffa94f209c05fe75f8f0ac7ae9d8045"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCameraX</b> (int camera_x)</td></tr>
-<tr class="separator:acffa94f209c05fe75f8f0ac7ae9d8045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d5b9b68f90685aac9e61905071b5f40" id="r_a9d5b9b68f90685aac9e61905071b5f40"><td class="memItemLeft" align="right" valign="top"><a id="a9d5b9b68f90685aac9e61905071b5f40" name="a9d5b9b68f90685aac9e61905071b5f40"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraX</b> ()</td></tr>
-<tr class="separator:a9d5b9b68f90685aac9e61905071b5f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3d690c0b077ad075eb8285c75de3e78" id="r_ab3d690c0b077ad075eb8285c75de3e78"><td class="memItemLeft" align="right" valign="top"><a id="ab3d690c0b077ad075eb8285c75de3e78" name="ab3d690c0b077ad075eb8285c75de3e78"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCameraAngle</b> (double camera_angle)</td></tr>
+<tr class="memitem:a8274a1d661fa2c2cac9bbc1a0d40aece" id="r_a8274a1d661fa2c2cac9bbc1a0d40aece"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8274a1d661fa2c2cac9bbc1a0d40aece">Camera</a> ()</td></tr>
+<tr class="memdesc:a8274a1d661fa2c2cac9bbc1a0d40aece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera constructor.  <br /></td></tr>
+<tr class="separator:a8274a1d661fa2c2cac9bbc1a0d40aece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb118e2687dade4f07b4fa20b2d210c2" id="r_acb118e2687dade4f07b4fa20b2d210c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb118e2687dade4f07b4fa20b2d210c2">Camera</a> (double camera_y, double camera_x, double camera_angle, double fov_c, int render_distance)</td></tr>
+<tr class="memdesc:acb118e2687dade4f07b4fa20b2d210c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera constructor.  <br /></td></tr>
+<tr class="separator:acb118e2687dade4f07b4fa20b2d210c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52953a99bb1736898d407c414a9e502" id="r_af52953a99bb1736898d407c414a9e502"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af52953a99bb1736898d407c414a9e502">~Camera</a> ()</td></tr>
+<tr class="memdesc:af52953a99bb1736898d407c414a9e502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera destructor.  <br /></td></tr>
+<tr class="separator:af52953a99bb1736898d407c414a9e502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8f2054acf47cac21de577c3a046631c" id="r_ad8f2054acf47cac21de577c3a046631c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8f2054acf47cac21de577c3a046631c">setCameraCoords</a> (double camera_y, double camera_x)</td></tr>
+<tr class="memdesc:ad8f2054acf47cac21de577c3a046631c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set camera world cords.  <br /></td></tr>
+<tr class="separator:ad8f2054acf47cac21de577c3a046631c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae733d0e8ec45492c7b7e3b87b12bed" id="r_a8ae733d0e8ec45492c7b7e3b87b12bed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ae733d0e8ec45492c7b7e3b87b12bed">setCameraY</a> (double camera_y)</td></tr>
+<tr class="memdesc:a8ae733d0e8ec45492c7b7e3b87b12bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set camera y cord.  <br /></td></tr>
+<tr class="separator:a8ae733d0e8ec45492c7b7e3b87b12bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a453283f9233ad152b4256b340292c936" id="r_a453283f9233ad152b4256b340292c936"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a453283f9233ad152b4256b340292c936">getCameraY</a> ()</td></tr>
+<tr class="memdesc:a453283f9233ad152b4256b340292c936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get camera y cord.  <br /></td></tr>
+<tr class="separator:a453283f9233ad152b4256b340292c936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae778f6158cda64b31b692011cbcab325" id="r_ae778f6158cda64b31b692011cbcab325"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae778f6158cda64b31b692011cbcab325">setCameraX</a> (double camera_x)</td></tr>
+<tr class="memdesc:ae778f6158cda64b31b692011cbcab325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set camera x cord.  <br /></td></tr>
+<tr class="separator:ae778f6158cda64b31b692011cbcab325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e33b7e9b50a11790b8489a06054595c" id="r_a9e33b7e9b50a11790b8489a06054595c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e33b7e9b50a11790b8489a06054595c">getCameraX</a> ()</td></tr>
+<tr class="memdesc:a9e33b7e9b50a11790b8489a06054595c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get camera x cord.  <br /></td></tr>
+<tr class="separator:a9e33b7e9b50a11790b8489a06054595c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d690c0b077ad075eb8285c75de3e78" id="r_ab3d690c0b077ad075eb8285c75de3e78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3d690c0b077ad075eb8285c75de3e78">setCameraAngle</a> (double camera_angle)</td></tr>
+<tr class="memdesc:ab3d690c0b077ad075eb8285c75de3e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set camera angle.  <br /></td></tr>
 <tr class="separator:ab3d690c0b077ad075eb8285c75de3e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a551de49f241ab9fe251c9f27f553ce92" id="r_a551de49f241ab9fe251c9f27f553ce92"><td class="memItemLeft" align="right" valign="top"><a id="a551de49f241ab9fe251c9f27f553ce92" name="a551de49f241ab9fe251c9f27f553ce92"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraAngle</b> ()</td></tr>
+<tr class="memitem:a551de49f241ab9fe251c9f27f553ce92" id="r_a551de49f241ab9fe251c9f27f553ce92"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a551de49f241ab9fe251c9f27f553ce92">getCameraAngle</a> ()</td></tr>
+<tr class="memdesc:a551de49f241ab9fe251c9f27f553ce92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get camera angle (degrees).  <br /></td></tr>
 <tr class="separator:a551de49f241ab9fe251c9f27f553ce92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecb3d7f83d86a3c97bbc0b92899eb4eb" id="r_aecb3d7f83d86a3c97bbc0b92899eb4eb"><td class="memItemLeft" align="right" valign="top"><a id="aecb3d7f83d86a3c97bbc0b92899eb4eb" name="aecb3d7f83d86a3c97bbc0b92899eb4eb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFovC</b> (double fov_c)</td></tr>
+<tr class="memitem:aecb3d7f83d86a3c97bbc0b92899eb4eb" id="r_aecb3d7f83d86a3c97bbc0b92899eb4eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecb3d7f83d86a3c97bbc0b92899eb4eb">setFovC</a> (double fov_c)</td></tr>
+<tr class="memdesc:aecb3d7f83d86a3c97bbc0b92899eb4eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set camera field of view (degrees).  <br /></td></tr>
 <tr class="separator:aecb3d7f83d86a3c97bbc0b92899eb4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a756e8ca93203ce56b7ce4d61ad6286e2" id="r_a756e8ca93203ce56b7ce4d61ad6286e2"><td class="memItemLeft" align="right" valign="top"><a id="a756e8ca93203ce56b7ce4d61ad6286e2" name="a756e8ca93203ce56b7ce4d61ad6286e2"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getFovC</b> ()</td></tr>
+<tr class="memitem:a756e8ca93203ce56b7ce4d61ad6286e2" id="r_a756e8ca93203ce56b7ce4d61ad6286e2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a756e8ca93203ce56b7ce4d61ad6286e2">getFovC</a> ()</td></tr>
+<tr class="memdesc:a756e8ca93203ce56b7ce4d61ad6286e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get camera field of view (degrees).  <br /></td></tr>
 <tr class="separator:a756e8ca93203ce56b7ce4d61ad6286e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4abb113a17289366fe121e1c4e42bcd" id="r_af4abb113a17289366fe121e1c4e42bcd"><td class="memItemLeft" align="right" valign="top"><a id="af4abb113a17289366fe121e1c4e42bcd" name="af4abb113a17289366fe121e1c4e42bcd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setFov</b> (double fov)</td></tr>
+<tr class="memitem:af4abb113a17289366fe121e1c4e42bcd" id="r_af4abb113a17289366fe121e1c4e42bcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4abb113a17289366fe121e1c4e42bcd">setFov</a> (double fov)</td></tr>
+<tr class="memdesc:af4abb113a17289366fe121e1c4e42bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set camera field of view (radians).  <br /></td></tr>
 <tr class="separator:af4abb113a17289366fe121e1c4e42bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9899dcc19296f5f3484e8e877e75fcce" id="r_a9899dcc19296f5f3484e8e877e75fcce"><td class="memItemLeft" align="right" valign="top"><a id="a9899dcc19296f5f3484e8e877e75fcce" name="a9899dcc19296f5f3484e8e877e75fcce"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getFov</b> ()</td></tr>
+<tr class="memitem:a9899dcc19296f5f3484e8e877e75fcce" id="r_a9899dcc19296f5f3484e8e877e75fcce"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9899dcc19296f5f3484e8e877e75fcce">getFov</a> ()</td></tr>
+<tr class="memdesc:a9899dcc19296f5f3484e8e877e75fcce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get camera field of view (radians).  <br /></td></tr>
 <tr class="separator:a9899dcc19296f5f3484e8e877e75fcce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae846a9c25119fd0b4b44e157203a80be" id="r_ae846a9c25119fd0b4b44e157203a80be"><td class="memItemLeft" align="right" valign="top"><a id="ae846a9c25119fd0b4b44e157203a80be" name="ae846a9c25119fd0b4b44e157203a80be"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setRenderDistance</b> (int render_distance)</td></tr>
+<tr class="memitem:ae846a9c25119fd0b4b44e157203a80be" id="r_ae846a9c25119fd0b4b44e157203a80be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae846a9c25119fd0b4b44e157203a80be">setRenderDistance</a> (int render_distance)</td></tr>
+<tr class="memdesc:ae846a9c25119fd0b4b44e157203a80be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set camera render distance.  <br /></td></tr>
 <tr class="separator:ae846a9c25119fd0b4b44e157203a80be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4601ee40b1cc09833c794bc463fb77cb" id="r_a4601ee40b1cc09833c794bc463fb77cb"><td class="memItemLeft" align="right" valign="top"><a id="a4601ee40b1cc09833c794bc463fb77cb" name="a4601ee40b1cc09833c794bc463fb77cb"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderDistance</b> ()</td></tr>
+<tr class="memitem:a4601ee40b1cc09833c794bc463fb77cb" id="r_a4601ee40b1cc09833c794bc463fb77cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4601ee40b1cc09833c794bc463fb77cb">getRenderDistance</a> ()</td></tr>
+<tr class="memdesc:a4601ee40b1cc09833c794bc463fb77cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get camera render distance.  <br /></td></tr>
 <tr class="separator:a4601ee40b1cc09833c794bc463fb77cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db3cbb1e40a11ac84f748ddcb6c21c6" id="r_a1db3cbb1e40a11ac84f748ddcb6c21c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1db3cbb1e40a11ac84f748ddcb6c21c6">synchronizeWithPlayer</a> (<a class="el" href="classengine_1_1_player.html">Player</a> &amp;player)</td></tr>
+<tr class="memdesc:a1db3cbb1e40a11ac84f748ddcb6c21c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronizes camera with player. The camera is not synchronized automatically to be able to control it separately.  <br /></td></tr>
+<tr class="separator:a1db3cbb1e40a11ac84f748ddcb6c21c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a68a75a6e5081ac9b3db7cbf5f993cc90" id="r_a68a75a6e5081ac9b3db7cbf5f993cc90"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68a75a6e5081ac9b3db7cbf5f993cc90">m_camera_y</a></td></tr>
+<tr class="memdesc:a68a75a6e5081ac9b3db7cbf5f993cc90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera world y cord.  <br /></td></tr>
+<tr class="separator:a68a75a6e5081ac9b3db7cbf5f993cc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a7f921daaf6b17603b6e60ab1b0c20" id="r_a30a7f921daaf6b17603b6e60ab1b0c20"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30a7f921daaf6b17603b6e60ab1b0c20">m_camera_x</a></td></tr>
+<tr class="memdesc:a30a7f921daaf6b17603b6e60ab1b0c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera world x cord.  <br /></td></tr>
+<tr class="separator:a30a7f921daaf6b17603b6e60ab1b0c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c475238d0c70ab393a9894fb69272b4" id="r_a8c475238d0c70ab393a9894fb69272b4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c475238d0c70ab393a9894fb69272b4">m_camera_angle</a></td></tr>
+<tr class="memdesc:a8c475238d0c70ab393a9894fb69272b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera world angle (radians).  <br /></td></tr>
+<tr class="separator:a8c475238d0c70ab393a9894fb69272b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a852c6aebcf8fbde1428b7b40691be589" id="r_a852c6aebcf8fbde1428b7b40691be589"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a852c6aebcf8fbde1428b7b40691be589">m_fov_c</a></td></tr>
+<tr class="memdesc:a852c6aebcf8fbde1428b7b40691be589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera world angle (degrees).  <br /></td></tr>
+<tr class="separator:a852c6aebcf8fbde1428b7b40691be589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae58c77a7a6b6bf9a7d31b6fcfb88e8b2" id="r_ae58c77a7a6b6bf9a7d31b6fcfb88e8b2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae58c77a7a6b6bf9a7d31b6fcfb88e8b2">m_fov</a></td></tr>
+<tr class="memdesc:ae58c77a7a6b6bf9a7d31b6fcfb88e8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera field of view.  <br /></td></tr>
+<tr class="separator:ae58c77a7a6b6bf9a7d31b6fcfb88e8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e8d6cad9478678a62ab3438ae77324" id="r_af4e8d6cad9478678a62ab3438ae77324"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4e8d6cad9478678a62ab3438ae77324">m_render_distance</a></td></tr>
+<tr class="memdesc:af4e8d6cad9478678a62ab3438ae77324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera render distance.  <br /></td></tr>
+<tr class="separator:af4e8d6cad9478678a62ab3438ae77324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8274a1d661fa2c2cac9bbc1a0d40aece" name="a8274a1d661fa2c2cac9bbc1a0d40aece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8274a1d661fa2c2cac9bbc1a0d40aece">&#9670;&#160;</a></span>Camera() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">engine::Camera::Camera </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Camera constructor. </p>
+
+</div>
+</div>
+<a id="acb118e2687dade4f07b4fa20b2d210c2" name="acb118e2687dade4f07b4fa20b2d210c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb118e2687dade4f07b4fa20b2d210c2">&#9670;&#160;</a></span>Camera() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">engine::Camera::Camera </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>camera_y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>camera_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>camera_angle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>fov_c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>render_distance</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Camera constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>-Camera world y cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>-Camera world x cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_angle</td><td>-Camera world angle (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fov_c</td><td>-Camera field of view. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">render_distance</td><td>-Camera render distance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af52953a99bb1736898d407c414a9e502" name="af52953a99bb1736898d407c414a9e502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52953a99bb1736898d407c414a9e502">&#9670;&#160;</a></span>~Camera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">engine::Camera::~Camera </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Camera destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a551de49f241ab9fe251c9f27f553ce92" name="a551de49f241ab9fe251c9f27f553ce92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a551de49f241ab9fe251c9f27f553ce92">&#9670;&#160;</a></span>getCameraAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::getCameraAngle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get camera angle (degrees). </p>
+
+</div>
+</div>
+<a id="a9e33b7e9b50a11790b8489a06054595c" name="a9e33b7e9b50a11790b8489a06054595c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e33b7e9b50a11790b8489a06054595c">&#9670;&#160;</a></span>getCameraX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::getCameraX </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get camera x cord. </p>
+
+</div>
+</div>
+<a id="a453283f9233ad152b4256b340292c936" name="a453283f9233ad152b4256b340292c936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453283f9233ad152b4256b340292c936">&#9670;&#160;</a></span>getCameraY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::getCameraY </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get camera y cord. </p>
+
+</div>
+</div>
+<a id="a9899dcc19296f5f3484e8e877e75fcce" name="a9899dcc19296f5f3484e8e877e75fcce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9899dcc19296f5f3484e8e877e75fcce">&#9670;&#160;</a></span>getFov()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::getFov </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get camera field of view (radians). </p>
+
+</div>
+</div>
+<a id="a756e8ca93203ce56b7ce4d61ad6286e2" name="a756e8ca93203ce56b7ce4d61ad6286e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a756e8ca93203ce56b7ce4d61ad6286e2">&#9670;&#160;</a></span>getFovC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::getFovC </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get camera field of view (degrees). </p>
+
+</div>
+</div>
+<a id="a4601ee40b1cc09833c794bc463fb77cb" name="a4601ee40b1cc09833c794bc463fb77cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4601ee40b1cc09833c794bc463fb77cb">&#9670;&#160;</a></span>getRenderDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int engine::Camera::getRenderDistance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get camera render distance. </p>
+
+</div>
+</div>
+<a id="ab3d690c0b077ad075eb8285c75de3e78" name="ab3d690c0b077ad075eb8285c75de3e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d690c0b077ad075eb8285c75de3e78">&#9670;&#160;</a></span>setCameraAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Camera::setCameraAngle </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>camera_angle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set camera angle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_angle</td><td>-Camera angle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad8f2054acf47cac21de577c3a046631c" name="ad8f2054acf47cac21de577c3a046631c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8f2054acf47cac21de577c3a046631c">&#9670;&#160;</a></span>setCameraCoords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Camera::setCameraCoords </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>camera_y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>camera_x</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set camera world cords. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>-Camera world y cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>-Camera world x cord. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae778f6158cda64b31b692011cbcab325" name="ae778f6158cda64b31b692011cbcab325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae778f6158cda64b31b692011cbcab325">&#9670;&#160;</a></span>setCameraX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Camera::setCameraX </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>camera_x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set camera x cord. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>-Camera world x cord. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8ae733d0e8ec45492c7b7e3b87b12bed" name="a8ae733d0e8ec45492c7b7e3b87b12bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ae733d0e8ec45492c7b7e3b87b12bed">&#9670;&#160;</a></span>setCameraY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Camera::setCameraY </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>camera_y</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set camera y cord. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>-Camera world y cord. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af4abb113a17289366fe121e1c4e42bcd" name="af4abb113a17289366fe121e1c4e42bcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4abb113a17289366fe121e1c4e42bcd">&#9670;&#160;</a></span>setFov()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Camera::setFov </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>fov</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set camera field of view (radians). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fov</td><td>-Camera field of view (radians). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aecb3d7f83d86a3c97bbc0b92899eb4eb" name="aecb3d7f83d86a3c97bbc0b92899eb4eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb3d7f83d86a3c97bbc0b92899eb4eb">&#9670;&#160;</a></span>setFovC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Camera::setFovC </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>fov_c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set camera field of view (degrees). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fov_c</td><td>-Camera field of view (degrees). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae846a9c25119fd0b4b44e157203a80be" name="ae846a9c25119fd0b4b44e157203a80be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae846a9c25119fd0b4b44e157203a80be">&#9670;&#160;</a></span>setRenderDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Camera::setRenderDistance </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>render_distance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set camera render distance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">render_distance</td><td>-Camera render distance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1db3cbb1e40a11ac84f748ddcb6c21c6" name="a1db3cbb1e40a11ac84f748ddcb6c21c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db3cbb1e40a11ac84f748ddcb6c21c6">&#9670;&#160;</a></span>synchronizeWithPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Camera::synchronizeWithPlayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classengine_1_1_player.html">Player</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Synchronizes camera with player. The camera is not synchronized automatically to be able to control it separately. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8c475238d0c70ab393a9894fb69272b4" name="a8c475238d0c70ab393a9894fb69272b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c475238d0c70ab393a9894fb69272b4">&#9670;&#160;</a></span>m_camera_angle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::m_camera_angle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Camera world angle (radians). </p>
+
+</div>
+</div>
+<a id="a30a7f921daaf6b17603b6e60ab1b0c20" name="a30a7f921daaf6b17603b6e60ab1b0c20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a7f921daaf6b17603b6e60ab1b0c20">&#9670;&#160;</a></span>m_camera_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::m_camera_x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Camera world x cord. </p>
+
+</div>
+</div>
+<a id="a68a75a6e5081ac9b3db7cbf5f993cc90" name="a68a75a6e5081ac9b3db7cbf5f993cc90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68a75a6e5081ac9b3db7cbf5f993cc90">&#9670;&#160;</a></span>m_camera_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::m_camera_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Camera world y cord. </p>
+
+</div>
+</div>
+<a id="ae58c77a7a6b6bf9a7d31b6fcfb88e8b2" name="ae58c77a7a6b6bf9a7d31b6fcfb88e8b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae58c77a7a6b6bf9a7d31b6fcfb88e8b2">&#9670;&#160;</a></span>m_fov</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::m_fov</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Camera field of view. </p>
+
+</div>
+</div>
+<a id="a852c6aebcf8fbde1428b7b40691be589" name="a852c6aebcf8fbde1428b7b40691be589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a852c6aebcf8fbde1428b7b40691be589">&#9670;&#160;</a></span>m_fov_c</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Camera::m_fov_c</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Camera world angle (degrees). </p>
+
+</div>
+</div>
+<a id="af4e8d6cad9478678a62ab3438ae77324" name="af4e8d6cad9478678a62ab3438ae77324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4e8d6cad9478678a62ab3438ae77324">&#9670;&#160;</a></span>m_render_distance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int engine::Camera::m_render_distance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Camera render distance. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_camera_8h_source.html">Camera.h</a></li>
-<li><b>Camera.cpp</b></li>
+<li><a class="el" href="_camera_8cpp.html">Camera.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

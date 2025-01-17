@@ -2,7 +2,27 @@
 
 namespace engine
 {
-	Renderer::Renderer(Window* window)
+    void Renderer::drawWallTextures(int wall_id, int axis, int column, int ceiling, int height, int texture_column)
+    {
+        // Get the texture ID for the given wall_id
+        auto it = wall_texture_map.find(wall_id);
+        if (it != wall_texture_map.end()) {
+            std::string texture_id = it->second;
+
+            // Call renderTexture based on the axis
+            if (axis == 0) { 
+                renderTexture(texture_id, column, ceiling, column, height, texture_column, 0, texture_column + 1, 1024, false, false);
+            }
+            else { 
+                renderTexture(texture_id, column, ceiling, column, height, texture_column, 0, texture_column + 1, 1024, false, false);
+            }
+        }
+        else {
+            // todo
+        }
+    }
+
+    Renderer::Renderer(Window* window)
 	{
 		m_renderer = SDL_CreateRenderer(window->getWindow(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE);
         m_width = window->getWidth();
@@ -36,20 +56,30 @@ namespace engine
 
 	void Renderer::renderSceneDDA(Camera* camera)
 	{
-        int gridSizeX = 10;
-        int gridSizeY = 10;
+        int gridSizeX = 20;
+        int gridSizeY = 20;
 
         std::vector<std::vector<int>> map = {
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1,},
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 1,},
-            {1, 0, 0, 0, 0, 0, 3, 3, 0, 1,},
-            {1, 0, 0, 0, 0, 0, 0, 3, 0, 1,},
-            {1, 0, 0, 0, 1, 0, 0, 0, 0, 1,},
-            {1, 0, 1, 1, 1, 0, 0, 0, 0, 1,},
-            {1, 0, 1, 0, 0, 0, 0, 1, 0, 1,},
-            {1, 0, 0, 0, 0, 0, 1, 1, 0, 1,},
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 1,},
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1,},
+            {1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, },
+            {1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
+            {2, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, },
+            {2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, },
+            {2, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, },
+            {1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, },
+            {1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 0, 0, 0, 0, 2, },
+            {1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 2, },
+            {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, },
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
+            {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, },
         };
 
         int rays_n = m_width;
@@ -128,16 +158,11 @@ namespace engine
                 dot_y = cam_y + dy * cur_distance;
 
                 if (map_check_x >= 0 && map_check_x < gridSizeX && map_check_y >= 0 && map_check_y < gridSizeY) {
-                    int check = map[map_check_y][map_check_x];
-                    if (check == 1) {
-                        hit = 1;
+                    hit = map[map_check_y][map_check_x];
+                    if (hit != 0) {
                         if ((fabs(dot_x - round(dot_x)) < 0.05) && (fabs(dot_y - round(dot_y)) < 0.05)) {
                             is_corner = 1;
                         }
-                        break;
-                    }
-                    else if (check == 2) {
-                        hit_door = 1;
                         break;
                     }
                     //else if (check == 3) {  //lava
@@ -156,82 +181,67 @@ namespace engine
             }
 
             prev_distance = cur_distance;
-            if (hit == 1 || hit_door == 1) {
+            if (hit != 0) {
 
-                //if (hit_door == 1) {
-                //    cur_distance += 0.7;
-                //    wallColor = { 0, 255, 0, 255 }; // Зеленый цвет для двери
-                //}
+                double n_c = cur_distance * cos(ray_angle - cam_angle); ///< Distance with fish eye fix
 
-                double n_c = cur_distance * cos(ray_angle - cam_angle); // fish eye fix
+                int ceiling = (double)(scr_h / 2) - (scr_h / n_c); ///< Ceiling height on the screen
 
-                int ceiling = (double)(scr_h / 2) - (scr_h / n_c);
-
-                // Рисуем потолок
+                // Drawing ceiling
                 SDL_SetRenderDrawColor(m_renderer, 0, 0, 255, 255); // Синий цвет для потолка
                 SDL_RenderDrawLine(m_renderer, column, 0, column, ceiling);
 
+                // What side of wall?
                 double test_x = (double)dot_x - (int)dot_x;
                 double test_y = (double)dot_y - (int)dot_y;
 
-                // Рисуем стену
+                int height = scr_h - (2 * ceiling);
+
+                // Drawing wall
                 if (test_x > 0.00001)
                 {
                     int tex_col = round(((double)dot_x - (int)dot_x) * 1024);
-                    renderTexture("putin", column, ceiling, column, scr_h - (2 * ceiling), tex_col, 0, tex_col + 1, 1024);
+                    drawWallTextures(hit, 0, column, ceiling, height, tex_col);
                 }
 
                 if (test_y > 0.00001)
                 {
                     int tex_col = round(((double)dot_y - (int)dot_y) * 1024);
-                    renderTexture("putin", column, ceiling, column, scr_h - (2 * ceiling), tex_col, 0, tex_col + 1, 1024);
+                    drawWallTextures(hit, 1, column, ceiling, height, tex_col);
                 }
 
-                // Рисуем пол
+                // Drawing floor
                 SDL_SetRenderDrawColor(m_renderer, 128, 128, 128, 255); // Серый цвет для пола
                 SDL_RenderDrawLine(m_renderer, column, scr_h - ceiling, column, scr_h);
             }
             else
             {
-                SDL_SetRenderDrawColor(m_renderer, 128, 128, 128, 255); // Серый цвет для пола
+                // Drawing floor outside the map
+                SDL_SetRenderDrawColor(m_renderer, 128, 128, 128, 255);
                 SDL_RenderDrawLine(m_renderer, column, (scr_h / 2), column, scr_h);
 
+                // Drawing ceiling outside the map
                 SDL_SetRenderDrawColor(m_renderer, 0, 0, 255, 255);
                 SDL_RenderDrawLine(m_renderer, column, 0, column, (scr_h / 2));
             }
-
-
-
-            //for (const auto& enemy : map.getEnemies()) {
-            //    std::string enemy_type = typeid(*enemy).name(); // Nmae
-            //    if (enemy_type == typeid(Goblin).name()) {
-            //        enemy_type = "Goblin";
-            //    }
-            //    else if (enemy_type == typeid(Orc).name()) {
-            //        enemy_type = "Orc";
-            //    }
-
-            //    double ey = enemy->getY();
-            //    double ex = enemy->getX();
-
-
-            //    // todo: enemy render
-            //}
-        }
-
-        
+        }   
     }
 
-    bool Renderer::loadTexture(const std::string& id, const std::string& path) {
-        return m_texture_manager->loadTexture(id, path);
+    void Renderer::loadTexture(const std::string& id, const std::string& path) {
+        m_texture_manager->loadTexture(id, path);
     }
 
-    void Renderer::renderTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2) {
-        m_texture_manager->renderTexture(texture_id, x, y, render_width, render_height, cut_x1, cut_y1, cut_x2, cut_y2);
+    void Renderer::renderTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2, bool x_flip, bool y_flip) {
+        m_texture_manager->renderTexture(texture_id, x, y, render_width, render_height, cut_x1, cut_y1, cut_x2, cut_y2, x_flip, y_flip);
     }
 
     void Renderer::freeTexture(const std::string& id) {
         m_texture_manager->freeTexture(id);
     }
+
+    void Renderer::setTextureToObjectId(int wall_id, const std::string& texture_id) {
+        wall_texture_map[wall_id] = texture_id;
+    }
+    
 
 }

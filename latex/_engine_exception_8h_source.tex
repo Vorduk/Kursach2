@@ -1,5 +1,5 @@
 \doxysection{Engine\+Exception.\+h}
-\hypertarget{_engine_exception_8h_source}{}\label{_engine_exception_8h_source}
+\hypertarget{_engine_exception_8h_source}{}\label{_engine_exception_8h_source}\mbox{\hyperlink{_engine_exception_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENGINE\_EXCEPTION\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENGINE\_EXCEPTION\_H}}
@@ -12,26 +12,26 @@
 \DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_engine_exception}{EngineException}}\ :\ \textcolor{keyword}{public}\ std::exception}
 \DoxyCodeLine{00013\ \ \ \ \ \{}
 \DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::string\ m\_message;\ \textcolor{comment}{//\ Current\ message.}}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ m\_file;\ \textcolor{comment}{//\ Current\ file.}}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_line;\ \textcolor{comment}{//\ Current\ line.}}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ m\_function;\ \textcolor{comment}{//\ Current\ function}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classengine_1_1_engine_exception_ab028e1112d30e4dc962f1633500afdc1}{m\_message}};\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classengine_1_1_engine_exception_a4c2577231c7e86e98d2ae7b16350f6f1}{m\_file}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classengine_1_1_engine_exception_a476a9107b71fb30f01a1d5a20e03450c}{m\_line}};\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classengine_1_1_engine_exception_adce37e1a506460a7d2402fa361f8967f}{m\_function}};\ }
 \DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00020\ }
 \DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_engine_exception_abdb47d1cb1e95c76fd8693d898fce791}{EngineException}}(\textcolor{keyword}{const}\ std::string\&\ message,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ file,\ \textcolor{keywordtype}{int}\ line,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ function)}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ :\ m\_message(message),\ m\_file(file),\ m\_line(line),\ m\_function(function)\ \{\}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classengine_1_1_engine_exception_ab028e1112d30e4dc962f1633500afdc1}{m\_message}}(message),\ \mbox{\hyperlink{classengine_1_1_engine_exception_a4c2577231c7e86e98d2ae7b16350f6f1}{m\_file}}(file),\ \mbox{\hyperlink{classengine_1_1_engine_exception_a476a9107b71fb30f01a1d5a20e03450c}{m\_line}}(line),\ \mbox{\hyperlink{classengine_1_1_engine_exception_adce37e1a506460a7d2402fa361f8967f}{m\_function}}(function)\ \{\}}
 \DoxyCodeLine{00030\ }
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classengine_1_1_engine_exception_ad63fbf0a42d234e4404d2121a9d58ed2}{what}}()\ const\ noexcept\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_message.c\_str();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classengine_1_1_engine_exception_ab028e1112d30e4dc962f1633500afdc1}{m\_message}}.c\_str();}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00037\ }
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_engine_exception_a209ab22ba10aa10fa19f3d3751b1bd4c}{printInfo}}()\textcolor{keyword}{\ const\ }\{}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[ERROR]:\ "{}}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ m\_message}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classengine_1_1_engine_exception_ab028e1112d30e4dc962f1633500afdc1}{m\_message}}}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ at\ "{}}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ m\_file}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ line\ "{}}\ <<\ m\_line}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ m\_function\ <<\ \textcolor{stringliteral}{"{}()"{}}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classengine_1_1_engine_exception_a4c2577231c7e86e98d2ae7b16350f6f1}{m\_file}}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ line\ "{}}\ <<\ \mbox{\hyperlink{classengine_1_1_engine_exception_a476a9107b71fb30f01a1d5a20e03450c}{m\_line}}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ \mbox{\hyperlink{classengine_1_1_engine_exception_adce37e1a506460a7d2402fa361f8967f}{m\_function}}\ <<\ \textcolor{stringliteral}{"{}()"{}}}
 \DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00050\ \ \ \ \ \};}

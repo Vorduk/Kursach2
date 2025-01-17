@@ -17,7 +17,10 @@ namespace engine
         Scene* cur_scene = m_scenes[0];
 
         Renderer* renderer = new Renderer(m_windows[0]);    
-        renderer->loadTexture("putin", "image.png");
+        renderer->loadTexture("wall1", "image3.png");
+        renderer->loadTexture("wall2", "image.png");
+        renderer->setTextureToObjectId(1, "wall1");
+        renderer->setTextureToObjectId(2, "wall2");
 
         double s = 0;
 
@@ -36,7 +39,7 @@ namespace engine
             //renderer->drawRectangle(100, 100, 200, 150, color);
 
             renderer->renderSceneDDA(&(cur_scene->getCamera()));
-            //renderer->renderTexture("putin", 0, 0, 512, 512, 0, 0, 1024, 1024);
+            //renderer->renderTexture("wall1", 0, 0, 512, 512, 0, 0, 1024, 1024, true, true);
 
             renderer->present();
 
@@ -69,17 +72,17 @@ namespace engine
         const Uint8* currentKeyStates = SDL_GetKeyboardState(NULL);
 
         if (currentKeyStates[SDL_SCANCODE_W]) {
-            player.movePlayer(0.01);
+            player.movePlayer(0.022);
         }
         if (currentKeyStates[SDL_SCANCODE_S]) {
-            player.movePlayer(-0.005);
+            player.movePlayer(-0.008);
         }
 
         if (currentKeyStates[SDL_SCANCODE_A]) {
-            player.incrementPlayerAngle(-0.008);
+            player.incrementPlayerAngle(-0.015);
         }
         if (currentKeyStates[SDL_SCANCODE_D]) {
-            player.incrementPlayerAngle(0.008);
+            player.incrementPlayerAngle(0.015);
         }
     }
 

@@ -1,23 +1,159 @@
 \doxysection{engine\+::Application Class Reference}
 \hypertarget{classengine_1_1_application}{}\label{classengine_1_1_application}\index{engine::Application@{engine::Application}}
+
+
+Application class (Main loop).  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classengine_1_1_application_a6d9c94380f1451664ff6d09c314671c7}\label{classengine_1_1_application_a6d9c94380f1451664ff6d09c314671c7} 
-void {\bfseries run} ()
+\mbox{\hyperlink{classengine_1_1_application_a9740cd2e55318cbc5684a6c4c2f3304f}{Application}} ()
 \item 
-\Hypertarget{classengine_1_1_application_adab66cb76e4c54e2654bbd1451d8e1a9}\label{classengine_1_1_application_adab66cb76e4c54e2654bbd1451d8e1a9} 
-void {\bfseries create\+Window} (uint width, uint height, const std\+::string \&caption)
+\mbox{\hyperlink{classengine_1_1_application_af9a64dfb0f14ba69c711dd8448834d37}{\texorpdfstring{$\sim$}{\string~}\+Application}} ()
 \item 
-\Hypertarget{classengine_1_1_application_ad6281bad100ec4f8b2e19e03b50e5963}\label{classengine_1_1_application_ad6281bad100ec4f8b2e19e03b50e5963} 
-void {\bfseries handle\+Events} (\mbox{\hyperlink{classengine_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+void \mbox{\hyperlink{classengine_1_1_application_a6d9c94380f1451664ff6d09c314671c7}{run}} ()
+\begin{DoxyCompactList}\small\item\em Run app (Main loop). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_application_abc9393dab61fd681f3d9b2818fdee792}{add\+Scene}} (\mbox{\hyperlink{classengine_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}scene)
+\begin{DoxyCompactList}\small\item\em Creates a new window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_application_ab40f0638c5058c5ad45d5f5e21fa1632}{add\+Window}} (\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} width, \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} height, const std\+::string \&caption)
+\begin{DoxyCompactList}\small\item\em Creates a new window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_application_a10ca5872ebe63fcfaa12670b63ce069f}{handle\+Events}} (\mbox{\hyperlink{classengine_1_1_player}{Player}} \&player)
+\begin{DoxyCompactList}\small\item\em Event handling. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_application_af288ba7afafb960a6718abd0d99344f7}{clean\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Windows vector cleaning. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classengine_1_1_application_af288ba7afafb960a6718abd0d99344f7}\label{classengine_1_1_application_af288ba7afafb960a6718abd0d99344f7} 
-void {\bfseries clean\+Up} ()
-\end{DoxyCompactItemize}
+std\+::vector$<$ \mbox{\hyperlink{classengine_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classengine_1_1_application_a6fae02a98468b483f16f1f53a22a6ba2}{m\+\_\+scenes}}
+\begin{DoxyCompactList}\small\item\em app scenes (maps) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classengine_1_1_window}{Window}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classengine_1_1_application_a300b629c3dbf6527a5d3504b73a0ff26}{m\+\_\+windows}}
+\begin{DoxyCompactList}\small\item\em app windows \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classengine_1_1_application_af0e19e9f756f306f6e14b9d5608a9c9a}{m\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em App name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classengine_1_1_application_a10b8f448be1c643ea8a59a081cd48fdd}{m\+\_\+running}}
+\begin{DoxyCompactList}\small\item\em Running flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Application class (Main loop). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1_application_a9740cd2e55318cbc5684a6c4c2f3304f}\index{engine::Application@{engine::Application}!Application@{Application}}
+\index{Application@{Application}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_a9740cd2e55318cbc5684a6c4c2f3304f} 
+engine\+::\+Application\+::\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1_application_af9a64dfb0f14ba69c711dd8448834d37}\index{engine::Application@{engine::Application}!````~Application@{\texorpdfstring{$\sim$}{\string~}Application}}
+\index{````~Application@{\texorpdfstring{$\sim$}{\string~}Application}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Application()}{\string~Application()}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_af9a64dfb0f14ba69c711dd8448834d37} 
+engine\+::\+Application\+::\texorpdfstring{$\sim$}{\string~}\+Application (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1_application_abc9393dab61fd681f3d9b2818fdee792}\index{engine::Application@{engine::Application}!addScene@{addScene}}
+\index{addScene@{addScene}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{addScene()}{addScene()}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_abc9393dab61fd681f3d9b2818fdee792} 
+void engine\+::\+Application\+::add\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new window. 
+
+\Hypertarget{classengine_1_1_application_ab40f0638c5058c5ad45d5f5e21fa1632}\index{engine::Application@{engine::Application}!addWindow@{addWindow}}
+\index{addWindow@{addWindow}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{addWindow()}{addWindow()}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_ab40f0638c5058c5ad45d5f5e21fa1632} 
+void engine\+::\+Application\+::add\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{width}{, }\item[{\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{height}{, }\item[{const std\+::string \&}]{caption}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new window. 
+
+\Hypertarget{classengine_1_1_application_af288ba7afafb960a6718abd0d99344f7}\index{engine::Application@{engine::Application}!cleanUp@{cleanUp}}
+\index{cleanUp@{cleanUp}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{cleanUp()}{cleanUp()}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_af288ba7afafb960a6718abd0d99344f7} 
+void engine\+::\+Application\+::clean\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Windows vector cleaning. 
+
+\Hypertarget{classengine_1_1_application_a10ca5872ebe63fcfaa12670b63ce069f}\index{engine::Application@{engine::Application}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_a10ca5872ebe63fcfaa12670b63ce069f} 
+void engine\+::\+Application\+::handle\+Events (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_player}{Player}} \&}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Event handling. 
+
+\Hypertarget{classengine_1_1_application_a6d9c94380f1451664ff6d09c314671c7}\index{engine::Application@{engine::Application}!run@{run}}
+\index{run@{run}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_a6d9c94380f1451664ff6d09c314671c7} 
+void engine\+::\+Application\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Run app (Main loop). 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classengine_1_1_application_af0e19e9f756f306f6e14b9d5608a9c9a}\index{engine::Application@{engine::Application}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_af0e19e9f756f306f6e14b9d5608a9c9a} 
+std\+::string engine\+::\+Application\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+App name. 
+
+\Hypertarget{classengine_1_1_application_a10b8f448be1c643ea8a59a081cd48fdd}\index{engine::Application@{engine::Application}!m\_running@{m\_running}}
+\index{m\_running@{m\_running}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{m\_running}{m\_running}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_a10b8f448be1c643ea8a59a081cd48fdd} 
+bool engine\+::\+Application\+::m\+\_\+running\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Running flag. 
+
+\Hypertarget{classengine_1_1_application_a6fae02a98468b483f16f1f53a22a6ba2}\index{engine::Application@{engine::Application}!m\_scenes@{m\_scenes}}
+\index{m\_scenes@{m\_scenes}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{m\_scenes}{m\_scenes}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_a6fae02a98468b483f16f1f53a22a6ba2} 
+std\+::vector$<$\mbox{\hyperlink{classengine_1_1_scene}{Scene}}\texorpdfstring{$\ast$}{*}$>$ engine\+::\+Application\+::m\+\_\+scenes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+app scenes (maps) 
+
+\Hypertarget{classengine_1_1_application_a300b629c3dbf6527a5d3504b73a0ff26}\index{engine::Application@{engine::Application}!m\_windows@{m\_windows}}
+\index{m\_windows@{m\_windows}!engine::Application@{engine::Application}}
+\doxysubsubsection{\texorpdfstring{m\_windows}{m\_windows}}
+{\footnotesize\ttfamily \label{classengine_1_1_application_a300b629c3dbf6527a5d3504b73a0ff26} 
+std\+::vector$<$\mbox{\hyperlink{classengine_1_1_window}{Window}}\texorpdfstring{$\ast$}{*}$>$ engine\+::\+Application\+::m\+\_\+windows\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+app windows 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Application.\+h\item 
-Application.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_application_8h}{Application.\+h}}\item 
+\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}

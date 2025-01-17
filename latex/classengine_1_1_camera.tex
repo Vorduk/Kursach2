@@ -1,53 +1,353 @@
 \doxysection{engine\+::Camera Class Reference}
 \hypertarget{classengine_1_1_camera}{}\label{classengine_1_1_camera}\index{engine::Camera@{engine::Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classengine_1_1_camera_a4707a508e72c162caa761070a5bbc722}\label{classengine_1_1_camera_a4707a508e72c162caa761070a5bbc722} 
-{\bfseries Camera} (int camera\+\_\+y, int camera\+\_\+x, double camera\+\_\+angle, double fov\+\_\+c, int render\+\_\+distance)
+\mbox{\hyperlink{classengine_1_1_camera_a8274a1d661fa2c2cac9bbc1a0d40aece}{Camera}} ()
+\begin{DoxyCompactList}\small\item\em Camera constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classengine_1_1_camera_acb118e2687dade4f07b4fa20b2d210c2}{Camera}} (double camera\+\_\+y, double camera\+\_\+x, double camera\+\_\+angle, double fov\+\_\+c, int render\+\_\+distance)
+\begin{DoxyCompactList}\small\item\em Camera constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classengine_1_1_camera_af52953a99bb1736898d407c414a9e502}{\texorpdfstring{$\sim$}{\string~}\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em Camera destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_camera_ad8f2054acf47cac21de577c3a046631c}{set\+Camera\+Coords}} (double camera\+\_\+y, double camera\+\_\+x)
+\begin{DoxyCompactList}\small\item\em Set camera world cords. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_camera_a8ae733d0e8ec45492c7b7e3b87b12bed}{set\+CameraY}} (double camera\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Set camera y cord. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_a453283f9233ad152b4256b340292c936}{get\+CameraY}} ()
+\begin{DoxyCompactList}\small\item\em Get camera y cord. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_camera_ae778f6158cda64b31b692011cbcab325}{set\+CameraX}} (double camera\+\_\+x)
+\begin{DoxyCompactList}\small\item\em Set camera x cord. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_a9e33b7e9b50a11790b8489a06054595c}{get\+CameraX}} ()
+\begin{DoxyCompactList}\small\item\em Get camera x cord. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_camera_ab3d690c0b077ad075eb8285c75de3e78}{set\+Camera\+Angle}} (double camera\+\_\+angle)
+\begin{DoxyCompactList}\small\item\em Set camera angle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_a551de49f241ab9fe251c9f27f553ce92}{get\+Camera\+Angle}} ()
+\begin{DoxyCompactList}\small\item\em Get camera angle (degrees). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_camera_aecb3d7f83d86a3c97bbc0b92899eb4eb}{set\+FovC}} (double fov\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Set camera field of view (degrees). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_a756e8ca93203ce56b7ce4d61ad6286e2}{get\+FovC}} ()
+\begin{DoxyCompactList}\small\item\em Get camera field of view (degrees). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_camera_af4abb113a17289366fe121e1c4e42bcd}{set\+Fov}} (double fov)
+\begin{DoxyCompactList}\small\item\em Set camera field of view (radians). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_a9899dcc19296f5f3484e8e877e75fcce}{get\+Fov}} ()
+\begin{DoxyCompactList}\small\item\em Get camera field of view (radians). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_camera_ae846a9c25119fd0b4b44e157203a80be}{set\+Render\+Distance}} (int render\+\_\+distance)
+\begin{DoxyCompactList}\small\item\em Set camera render distance. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classengine_1_1_camera_a4601ee40b1cc09833c794bc463fb77cb}{get\+Render\+Distance}} ()
+\begin{DoxyCompactList}\small\item\em Get camera render distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_camera_a1db3cbb1e40a11ac84f748ddcb6c21c6}{synchronize\+With\+Player}} (\mbox{\hyperlink{classengine_1_1_player}{Player}} \&player)
+\begin{DoxyCompactList}\small\item\em Synchronizes camera with player. The camera is not synchronized automatically to be able to control it separately. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classengine_1_1_camera_aa987eb6874148eea796c4ca6e8ca9528}\label{classengine_1_1_camera_aa987eb6874148eea796c4ca6e8ca9528} 
-void {\bfseries set\+Camera\+Coords} (int camera\+\_\+y, int camera\+\_\+x)
-\item 
-\Hypertarget{classengine_1_1_camera_ad7750c671a33393379e9186032daddf1}\label{classengine_1_1_camera_ad7750c671a33393379e9186032daddf1} 
-void {\bfseries set\+CameraY} (int camera\+\_\+y)
-\item 
-\Hypertarget{classengine_1_1_camera_acba0cf93c9d8dbcf90762349634a2df4}\label{classengine_1_1_camera_acba0cf93c9d8dbcf90762349634a2df4} 
-int {\bfseries get\+CameraY} ()
-\item 
-\Hypertarget{classengine_1_1_camera_acffa94f209c05fe75f8f0ac7ae9d8045}\label{classengine_1_1_camera_acffa94f209c05fe75f8f0ac7ae9d8045} 
-void {\bfseries set\+CameraX} (int camera\+\_\+x)
-\item 
-\Hypertarget{classengine_1_1_camera_a9d5b9b68f90685aac9e61905071b5f40}\label{classengine_1_1_camera_a9d5b9b68f90685aac9e61905071b5f40} 
-int {\bfseries get\+CameraX} ()
-\item 
-\Hypertarget{classengine_1_1_camera_ab3d690c0b077ad075eb8285c75de3e78}\label{classengine_1_1_camera_ab3d690c0b077ad075eb8285c75de3e78} 
-void {\bfseries set\+Camera\+Angle} (double camera\+\_\+angle)
-\item 
-\Hypertarget{classengine_1_1_camera_a551de49f241ab9fe251c9f27f553ce92}\label{classengine_1_1_camera_a551de49f241ab9fe251c9f27f553ce92} 
-double {\bfseries get\+Camera\+Angle} ()
-\item 
-\Hypertarget{classengine_1_1_camera_aecb3d7f83d86a3c97bbc0b92899eb4eb}\label{classengine_1_1_camera_aecb3d7f83d86a3c97bbc0b92899eb4eb} 
-void {\bfseries set\+FovC} (double fov\+\_\+c)
-\item 
-\Hypertarget{classengine_1_1_camera_a756e8ca93203ce56b7ce4d61ad6286e2}\label{classengine_1_1_camera_a756e8ca93203ce56b7ce4d61ad6286e2} 
-double {\bfseries get\+FovC} ()
-\item 
-\Hypertarget{classengine_1_1_camera_af4abb113a17289366fe121e1c4e42bcd}\label{classengine_1_1_camera_af4abb113a17289366fe121e1c4e42bcd} 
-void {\bfseries set\+Fov} (double fov)
-\item 
-\Hypertarget{classengine_1_1_camera_a9899dcc19296f5f3484e8e877e75fcce}\label{classengine_1_1_camera_a9899dcc19296f5f3484e8e877e75fcce} 
-double {\bfseries get\+Fov} ()
-\item 
-\Hypertarget{classengine_1_1_camera_ae846a9c25119fd0b4b44e157203a80be}\label{classengine_1_1_camera_ae846a9c25119fd0b4b44e157203a80be} 
-void {\bfseries set\+Render\+Distance} (int render\+\_\+distance)
-\item 
-\Hypertarget{classengine_1_1_camera_a4601ee40b1cc09833c794bc463fb77cb}\label{classengine_1_1_camera_a4601ee40b1cc09833c794bc463fb77cb} 
-int {\bfseries get\+Render\+Distance} ()
-\end{DoxyCompactItemize}
+double \mbox{\hyperlink{classengine_1_1_camera_a68a75a6e5081ac9b3db7cbf5f993cc90}{m\+\_\+camera\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em Camera world y cord. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_a30a7f921daaf6b17603b6e60ab1b0c20}{m\+\_\+camera\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em Camera world x cord. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_a8c475238d0c70ab393a9894fb69272b4}{m\+\_\+camera\+\_\+angle}}
+\begin{DoxyCompactList}\small\item\em Camera world angle (radians). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_a852c6aebcf8fbde1428b7b40691be589}{m\+\_\+fov\+\_\+c}}
+\begin{DoxyCompactList}\small\item\em Camera world angle (degrees). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classengine_1_1_camera_ae58c77a7a6b6bf9a7d31b6fcfb88e8b2}{m\+\_\+fov}}
+\begin{DoxyCompactList}\small\item\em Camera field of view. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classengine_1_1_camera_af4e8d6cad9478678a62ab3438ae77324}{m\+\_\+render\+\_\+distance}}
+\begin{DoxyCompactList}\small\item\em Camera render distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1_camera_a8274a1d661fa2c2cac9bbc1a0d40aece}\index{engine::Camera@{engine::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a8274a1d661fa2c2cac9bbc1a0d40aece} 
+engine\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Camera constructor. 
+
+\Hypertarget{classengine_1_1_camera_acb118e2687dade4f07b4fa20b2d210c2}\index{engine::Camera@{engine::Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_acb118e2687dade4f07b4fa20b2d210c2} 
+engine\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{double}]{camera\+\_\+y}{, }\item[{double}]{camera\+\_\+x}{, }\item[{double}]{camera\+\_\+angle}{, }\item[{double}]{fov\+\_\+c}{, }\item[{int}]{render\+\_\+distance}{}\end{DoxyParamCaption})}
+
+
+
+Camera constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/Camera world y cord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/Camera world x cord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em camera\+\_\+angle} & -\/Camera world angle (degrees). \\
+\hline
+\mbox{\texttt{ in}}  & {\em fov\+\_\+c} & -\/Camera field of view. \\
+\hline
+\mbox{\texttt{ in}}  & {\em render\+\_\+distance} & -\/Camera render distance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_camera_af52953a99bb1736898d407c414a9e502}\index{engine::Camera@{engine::Camera}!````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}}
+\index{````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Camera()}{\string~Camera()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_af52953a99bb1736898d407c414a9e502} 
+engine\+::\+Camera\+::\texorpdfstring{$\sim$}{\string~}\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Camera destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1_camera_a551de49f241ab9fe251c9f27f553ce92}\index{engine::Camera@{engine::Camera}!getCameraAngle@{getCameraAngle}}
+\index{getCameraAngle@{getCameraAngle}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{getCameraAngle()}{getCameraAngle()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a551de49f241ab9fe251c9f27f553ce92} 
+double engine\+::\+Camera\+::get\+Camera\+Angle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get camera angle (degrees). 
+
+\Hypertarget{classengine_1_1_camera_a9e33b7e9b50a11790b8489a06054595c}\index{engine::Camera@{engine::Camera}!getCameraX@{getCameraX}}
+\index{getCameraX@{getCameraX}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{getCameraX()}{getCameraX()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a9e33b7e9b50a11790b8489a06054595c} 
+double engine\+::\+Camera\+::get\+CameraX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get camera x cord. 
+
+\Hypertarget{classengine_1_1_camera_a453283f9233ad152b4256b340292c936}\index{engine::Camera@{engine::Camera}!getCameraY@{getCameraY}}
+\index{getCameraY@{getCameraY}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{getCameraY()}{getCameraY()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a453283f9233ad152b4256b340292c936} 
+double engine\+::\+Camera\+::get\+CameraY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get camera y cord. 
+
+\Hypertarget{classengine_1_1_camera_a9899dcc19296f5f3484e8e877e75fcce}\index{engine::Camera@{engine::Camera}!getFov@{getFov}}
+\index{getFov@{getFov}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{getFov()}{getFov()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a9899dcc19296f5f3484e8e877e75fcce} 
+double engine\+::\+Camera\+::get\+Fov (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get camera field of view (radians). 
+
+\Hypertarget{classengine_1_1_camera_a756e8ca93203ce56b7ce4d61ad6286e2}\index{engine::Camera@{engine::Camera}!getFovC@{getFovC}}
+\index{getFovC@{getFovC}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{getFovC()}{getFovC()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a756e8ca93203ce56b7ce4d61ad6286e2} 
+double engine\+::\+Camera\+::get\+FovC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get camera field of view (degrees). 
+
+\Hypertarget{classengine_1_1_camera_a4601ee40b1cc09833c794bc463fb77cb}\index{engine::Camera@{engine::Camera}!getRenderDistance@{getRenderDistance}}
+\index{getRenderDistance@{getRenderDistance}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{getRenderDistance()}{getRenderDistance()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a4601ee40b1cc09833c794bc463fb77cb} 
+int engine\+::\+Camera\+::get\+Render\+Distance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get camera render distance. 
+
+\Hypertarget{classengine_1_1_camera_ab3d690c0b077ad075eb8285c75de3e78}\index{engine::Camera@{engine::Camera}!setCameraAngle@{setCameraAngle}}
+\index{setCameraAngle@{setCameraAngle}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{setCameraAngle()}{setCameraAngle()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_ab3d690c0b077ad075eb8285c75de3e78} 
+void engine\+::\+Camera\+::set\+Camera\+Angle (\begin{DoxyParamCaption}\item[{double}]{camera\+\_\+angle}{}\end{DoxyParamCaption})}
+
+
+
+Set camera angle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera\+\_\+angle} & -\/Camera angle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_camera_ad8f2054acf47cac21de577c3a046631c}\index{engine::Camera@{engine::Camera}!setCameraCoords@{setCameraCoords}}
+\index{setCameraCoords@{setCameraCoords}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{setCameraCoords()}{setCameraCoords()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_ad8f2054acf47cac21de577c3a046631c} 
+void engine\+::\+Camera\+::set\+Camera\+Coords (\begin{DoxyParamCaption}\item[{double}]{camera\+\_\+y}{, }\item[{double}]{camera\+\_\+x}{}\end{DoxyParamCaption})}
+
+
+
+Set camera world cords. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/Camera world y cord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/Camera world x cord. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_camera_ae778f6158cda64b31b692011cbcab325}\index{engine::Camera@{engine::Camera}!setCameraX@{setCameraX}}
+\index{setCameraX@{setCameraX}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{setCameraX()}{setCameraX()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_ae778f6158cda64b31b692011cbcab325} 
+void engine\+::\+Camera\+::set\+CameraX (\begin{DoxyParamCaption}\item[{double}]{camera\+\_\+x}{}\end{DoxyParamCaption})}
+
+
+
+Set camera x cord. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/Camera world x cord. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_camera_a8ae733d0e8ec45492c7b7e3b87b12bed}\index{engine::Camera@{engine::Camera}!setCameraY@{setCameraY}}
+\index{setCameraY@{setCameraY}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{setCameraY()}{setCameraY()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a8ae733d0e8ec45492c7b7e3b87b12bed} 
+void engine\+::\+Camera\+::set\+CameraY (\begin{DoxyParamCaption}\item[{double}]{camera\+\_\+y}{}\end{DoxyParamCaption})}
+
+
+
+Set camera y cord. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/Camera world y cord. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_camera_af4abb113a17289366fe121e1c4e42bcd}\index{engine::Camera@{engine::Camera}!setFov@{setFov}}
+\index{setFov@{setFov}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{setFov()}{setFov()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_af4abb113a17289366fe121e1c4e42bcd} 
+void engine\+::\+Camera\+::set\+Fov (\begin{DoxyParamCaption}\item[{double}]{fov}{}\end{DoxyParamCaption})}
+
+
+
+Set camera field of view (radians). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fov} & -\/Camera field of view (radians). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_camera_aecb3d7f83d86a3c97bbc0b92899eb4eb}\index{engine::Camera@{engine::Camera}!setFovC@{setFovC}}
+\index{setFovC@{setFovC}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{setFovC()}{setFovC()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_aecb3d7f83d86a3c97bbc0b92899eb4eb} 
+void engine\+::\+Camera\+::set\+FovC (\begin{DoxyParamCaption}\item[{double}]{fov\+\_\+c}{}\end{DoxyParamCaption})}
+
+
+
+Set camera field of view (degrees). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em fov\+\_\+c} & -\/Camera field of view (degrees). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_camera_ae846a9c25119fd0b4b44e157203a80be}\index{engine::Camera@{engine::Camera}!setRenderDistance@{setRenderDistance}}
+\index{setRenderDistance@{setRenderDistance}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{setRenderDistance()}{setRenderDistance()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_ae846a9c25119fd0b4b44e157203a80be} 
+void engine\+::\+Camera\+::set\+Render\+Distance (\begin{DoxyParamCaption}\item[{int}]{render\+\_\+distance}{}\end{DoxyParamCaption})}
+
+
+
+Set camera render distance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em render\+\_\+distance} & -\/Camera render distance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_camera_a1db3cbb1e40a11ac84f748ddcb6c21c6}\index{engine::Camera@{engine::Camera}!synchronizeWithPlayer@{synchronizeWithPlayer}}
+\index{synchronizeWithPlayer@{synchronizeWithPlayer}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{synchronizeWithPlayer()}{synchronizeWithPlayer()}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a1db3cbb1e40a11ac84f748ddcb6c21c6} 
+void engine\+::\+Camera\+::synchronize\+With\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_player}{Player}} \&}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Synchronizes camera with player. The camera is not synchronized automatically to be able to control it separately. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classengine_1_1_camera_a8c475238d0c70ab393a9894fb69272b4}\index{engine::Camera@{engine::Camera}!m\_camera\_angle@{m\_camera\_angle}}
+\index{m\_camera\_angle@{m\_camera\_angle}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_camera\_angle}{m\_camera\_angle}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a8c475238d0c70ab393a9894fb69272b4} 
+double engine\+::\+Camera\+::m\+\_\+camera\+\_\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Camera world angle (radians). 
+
+\Hypertarget{classengine_1_1_camera_a30a7f921daaf6b17603b6e60ab1b0c20}\index{engine::Camera@{engine::Camera}!m\_camera\_x@{m\_camera\_x}}
+\index{m\_camera\_x@{m\_camera\_x}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_camera\_x}{m\_camera\_x}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a30a7f921daaf6b17603b6e60ab1b0c20} 
+double engine\+::\+Camera\+::m\+\_\+camera\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Camera world x cord. 
+
+\Hypertarget{classengine_1_1_camera_a68a75a6e5081ac9b3db7cbf5f993cc90}\index{engine::Camera@{engine::Camera}!m\_camera\_y@{m\_camera\_y}}
+\index{m\_camera\_y@{m\_camera\_y}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_camera\_y}{m\_camera\_y}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a68a75a6e5081ac9b3db7cbf5f993cc90} 
+double engine\+::\+Camera\+::m\+\_\+camera\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Camera world y cord. 
+
+\Hypertarget{classengine_1_1_camera_ae58c77a7a6b6bf9a7d31b6fcfb88e8b2}\index{engine::Camera@{engine::Camera}!m\_fov@{m\_fov}}
+\index{m\_fov@{m\_fov}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_fov}{m\_fov}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_ae58c77a7a6b6bf9a7d31b6fcfb88e8b2} 
+double engine\+::\+Camera\+::m\+\_\+fov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Camera field of view. 
+
+\Hypertarget{classengine_1_1_camera_a852c6aebcf8fbde1428b7b40691be589}\index{engine::Camera@{engine::Camera}!m\_fov\_c@{m\_fov\_c}}
+\index{m\_fov\_c@{m\_fov\_c}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_fov\_c}{m\_fov\_c}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_a852c6aebcf8fbde1428b7b40691be589} 
+double engine\+::\+Camera\+::m\+\_\+fov\+\_\+c\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Camera world angle (degrees). 
+
+\Hypertarget{classengine_1_1_camera_af4e8d6cad9478678a62ab3438ae77324}\index{engine::Camera@{engine::Camera}!m\_render\_distance@{m\_render\_distance}}
+\index{m\_render\_distance@{m\_render\_distance}!engine::Camera@{engine::Camera}}
+\doxysubsubsection{\texorpdfstring{m\_render\_distance}{m\_render\_distance}}
+{\footnotesize\ttfamily \label{classengine_1_1_camera_af4e8d6cad9478678a62ab3438ae77324} 
+int engine\+::\+Camera\+::m\+\_\+render\+\_\+distance\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Camera render distance. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Camera.\+h\item 
-Camera.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_camera_8h}{Camera.\+h}}\item 
+\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

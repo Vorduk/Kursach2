@@ -90,29 +90,296 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classengine_1_1_application-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">engine::Application Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Application class (Main loop).  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_application_8h_source.html">Application.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6d9c94380f1451664ff6d09c314671c7" id="r_a6d9c94380f1451664ff6d09c314671c7"><td class="memItemLeft" align="right" valign="top"><a id="a6d9c94380f1451664ff6d09c314671c7" name="a6d9c94380f1451664ff6d09c314671c7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
+<tr class="memitem:a9740cd2e55318cbc5684a6c4c2f3304f" id="r_a9740cd2e55318cbc5684a6c4c2f3304f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9740cd2e55318cbc5684a6c4c2f3304f">Application</a> ()</td></tr>
+<tr class="separator:a9740cd2e55318cbc5684a6c4c2f3304f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9a64dfb0f14ba69c711dd8448834d37" id="r_af9a64dfb0f14ba69c711dd8448834d37"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9a64dfb0f14ba69c711dd8448834d37">~Application</a> ()</td></tr>
+<tr class="separator:af9a64dfb0f14ba69c711dd8448834d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d9c94380f1451664ff6d09c314671c7" id="r_a6d9c94380f1451664ff6d09c314671c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d9c94380f1451664ff6d09c314671c7">run</a> ()</td></tr>
+<tr class="memdesc:a6d9c94380f1451664ff6d09c314671c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run app (Main loop).  <br /></td></tr>
 <tr class="separator:a6d9c94380f1451664ff6d09c314671c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adab66cb76e4c54e2654bbd1451d8e1a9" id="r_adab66cb76e4c54e2654bbd1451d8e1a9"><td class="memItemLeft" align="right" valign="top"><a id="adab66cb76e4c54e2654bbd1451d8e1a9" name="adab66cb76e4c54e2654bbd1451d8e1a9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>createWindow</b> (uint width, uint height, const std::string &amp;caption)</td></tr>
-<tr class="separator:adab66cb76e4c54e2654bbd1451d8e1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6281bad100ec4f8b2e19e03b50e5963" id="r_ad6281bad100ec4f8b2e19e03b50e5963"><td class="memItemLeft" align="right" valign="top"><a id="ad6281bad100ec4f8b2e19e03b50e5963" name="ad6281bad100ec4f8b2e19e03b50e5963"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handleEvents</b> (<a class="el" href="classengine_1_1_camera.html">Camera</a> *camera)</td></tr>
-<tr class="separator:ad6281bad100ec4f8b2e19e03b50e5963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af288ba7afafb960a6718abd0d99344f7" id="r_af288ba7afafb960a6718abd0d99344f7"><td class="memItemLeft" align="right" valign="top"><a id="af288ba7afafb960a6718abd0d99344f7" name="af288ba7afafb960a6718abd0d99344f7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>cleanUp</b> ()</td></tr>
+<tr class="memitem:abc9393dab61fd681f3d9b2818fdee792" id="r_abc9393dab61fd681f3d9b2818fdee792"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc9393dab61fd681f3d9b2818fdee792">addScene</a> (<a class="el" href="classengine_1_1_scene.html">Scene</a> *scene)</td></tr>
+<tr class="memdesc:abc9393dab61fd681f3d9b2818fdee792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new window.  <br /></td></tr>
+<tr class="separator:abc9393dab61fd681f3d9b2818fdee792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab40f0638c5058c5ad45d5f5e21fa1632" id="r_ab40f0638c5058c5ad45d5f5e21fa1632"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab40f0638c5058c5ad45d5f5e21fa1632">addWindow</a> (<a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> width, <a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> height, const std::string &amp;caption)</td></tr>
+<tr class="memdesc:ab40f0638c5058c5ad45d5f5e21fa1632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new window.  <br /></td></tr>
+<tr class="separator:ab40f0638c5058c5ad45d5f5e21fa1632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ca5872ebe63fcfaa12670b63ce069f" id="r_a10ca5872ebe63fcfaa12670b63ce069f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10ca5872ebe63fcfaa12670b63ce069f">handleEvents</a> (<a class="el" href="classengine_1_1_player.html">Player</a> &amp;player)</td></tr>
+<tr class="memdesc:a10ca5872ebe63fcfaa12670b63ce069f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handling.  <br /></td></tr>
+<tr class="separator:a10ca5872ebe63fcfaa12670b63ce069f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af288ba7afafb960a6718abd0d99344f7" id="r_af288ba7afafb960a6718abd0d99344f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af288ba7afafb960a6718abd0d99344f7">cleanUp</a> ()</td></tr>
+<tr class="memdesc:af288ba7afafb960a6718abd0d99344f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Windows vector cleaning.  <br /></td></tr>
 <tr class="separator:af288ba7afafb960a6718abd0d99344f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6fae02a98468b483f16f1f53a22a6ba2" id="r_a6fae02a98468b483f16f1f53a22a6ba2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classengine_1_1_scene.html">Scene</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fae02a98468b483f16f1f53a22a6ba2">m_scenes</a></td></tr>
+<tr class="memdesc:a6fae02a98468b483f16f1f53a22a6ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">app scenes (maps)  <br /></td></tr>
+<tr class="separator:a6fae02a98468b483f16f1f53a22a6ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300b629c3dbf6527a5d3504b73a0ff26" id="r_a300b629c3dbf6527a5d3504b73a0ff26"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classengine_1_1_window.html">Window</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a300b629c3dbf6527a5d3504b73a0ff26">m_windows</a></td></tr>
+<tr class="memdesc:a300b629c3dbf6527a5d3504b73a0ff26"><td class="mdescLeft">&#160;</td><td class="mdescRight">app windows  <br /></td></tr>
+<tr class="separator:a300b629c3dbf6527a5d3504b73a0ff26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e19e9f756f306f6e14b9d5608a9c9a" id="r_af0e19e9f756f306f6e14b9d5608a9c9a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0e19e9f756f306f6e14b9d5608a9c9a">m_name</a></td></tr>
+<tr class="memdesc:af0e19e9f756f306f6e14b9d5608a9c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">App name.  <br /></td></tr>
+<tr class="separator:af0e19e9f756f306f6e14b9d5608a9c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b8f448be1c643ea8a59a081cd48fdd" id="r_a10b8f448be1c643ea8a59a081cd48fdd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10b8f448be1c643ea8a59a081cd48fdd">m_running</a></td></tr>
+<tr class="memdesc:a10b8f448be1c643ea8a59a081cd48fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Running flag.  <br /></td></tr>
+<tr class="separator:a10b8f448be1c643ea8a59a081cd48fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Application class (Main loop). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9740cd2e55318cbc5684a6c4c2f3304f" name="a9740cd2e55318cbc5684a6c4c2f3304f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9740cd2e55318cbc5684a6c4c2f3304f">&#9670;&#160;</a></span>Application()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">engine::Application::Application </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9a64dfb0f14ba69c711dd8448834d37" name="af9a64dfb0f14ba69c711dd8448834d37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9a64dfb0f14ba69c711dd8448834d37">&#9670;&#160;</a></span>~Application()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">engine::Application::~Application </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="abc9393dab61fd681f3d9b2818fdee792" name="abc9393dab61fd681f3d9b2818fdee792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9393dab61fd681f3d9b2818fdee792">&#9670;&#160;</a></span>addScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Application::addScene </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classengine_1_1_scene.html">Scene</a> *</td>          <td class="paramname"><span class="paramname"><em>scene</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new window. </p>
+
+</div>
+</div>
+<a id="ab40f0638c5058c5ad45d5f5e21fa1632" name="ab40f0638c5058c5ad45d5f5e21fa1632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab40f0638c5058c5ad45d5f5e21fa1632">&#9670;&#160;</a></span>addWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Application::addWindow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>caption</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new window. </p>
+
+</div>
+</div>
+<a id="af288ba7afafb960a6718abd0d99344f7" name="af288ba7afafb960a6718abd0d99344f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af288ba7afafb960a6718abd0d99344f7">&#9670;&#160;</a></span>cleanUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Application::cleanUp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Windows vector cleaning. </p>
+
+</div>
+</div>
+<a id="a10ca5872ebe63fcfaa12670b63ce069f" name="a10ca5872ebe63fcfaa12670b63ce069f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ca5872ebe63fcfaa12670b63ce069f">&#9670;&#160;</a></span>handleEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Application::handleEvents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classengine_1_1_player.html">Player</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Event handling. </p>
+
+</div>
+</div>
+<a id="a6d9c94380f1451664ff6d09c314671c7" name="a6d9c94380f1451664ff6d09c314671c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9c94380f1451664ff6d09c314671c7">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Application::run </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run app (Main loop). </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af0e19e9f756f306f6e14b9d5608a9c9a" name="af0e19e9f756f306f6e14b9d5608a9c9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e19e9f756f306f6e14b9d5608a9c9a">&#9670;&#160;</a></span>m_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string engine::Application::m_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>App name. </p>
+
+</div>
+</div>
+<a id="a10b8f448be1c643ea8a59a081cd48fdd" name="a10b8f448be1c643ea8a59a081cd48fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b8f448be1c643ea8a59a081cd48fdd">&#9670;&#160;</a></span>m_running</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool engine::Application::m_running</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Running flag. </p>
+
+</div>
+</div>
+<a id="a6fae02a98468b483f16f1f53a22a6ba2" name="a6fae02a98468b483f16f1f53a22a6ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fae02a98468b483f16f1f53a22a6ba2">&#9670;&#160;</a></span>m_scenes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classengine_1_1_scene.html">Scene</a>*&gt; engine::Application::m_scenes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>app scenes (maps) </p>
+
+</div>
+</div>
+<a id="a300b629c3dbf6527a5d3504b73a0ff26" name="a300b629c3dbf6527a5d3504b73a0ff26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300b629c3dbf6527a5d3504b73a0ff26">&#9670;&#160;</a></span>m_windows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classengine_1_1_window.html">Window</a>*&gt; engine::Application::m_windows</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>app windows </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_application_8h_source.html">Application.h</a></li>
-<li><b>Application.cpp</b></li>
+<li><a class="el" href="_application_8cpp.html">Application.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

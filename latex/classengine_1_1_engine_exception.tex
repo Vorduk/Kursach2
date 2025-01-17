@@ -20,12 +20,21 @@ Inheritance diagram for engine\+::Engine\+Exception\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classengine_1_1_engine_exception_abdb47d1cb1e95c76fd8693d898fce791}{Engine\+Exception}} (const std\+::string \&message, const char \texorpdfstring{$\ast$}{*}file, int line, const char \texorpdfstring{$\ast$}{*}function)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\Hypertarget{classengine_1_1_engine_exception_ad63fbf0a42d234e4404d2121a9d58ed2}\label{classengine_1_1_engine_exception_ad63fbf0a42d234e4404d2121a9d58ed2} 
-const char \texorpdfstring{$\ast$}{*} {\bfseries what} () const noexcept override
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classengine_1_1_engine_exception_ad63fbf0a42d234e4404d2121a9d58ed2}{what}} () const noexcept override
 \begin{DoxyCompactList}\small\item\em What() override. \end{DoxyCompactList}\item 
-\Hypertarget{classengine_1_1_engine_exception_a209ab22ba10aa10fa19f3d3751b1bd4c}\label{classengine_1_1_engine_exception_a209ab22ba10aa10fa19f3d3751b1bd4c} 
-void {\bfseries print\+Info} () const
+void \mbox{\hyperlink{classengine_1_1_engine_exception_a209ab22ba10aa10fa19f3d3751b1bd4c}{print\+Info}} () const
 \begin{DoxyCompactList}\small\item\em Full information output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classengine_1_1_engine_exception_ab028e1112d30e4dc962f1633500afdc1}{m\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em Current message. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classengine_1_1_engine_exception_a4c2577231c7e86e98d2ae7b16350f6f1}{m\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em Current file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classengine_1_1_engine_exception_a476a9107b71fb30f01a1d5a20e03450c}{m\+\_\+line}}
+\begin{DoxyCompactList}\small\item\em Current line. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classengine_1_1_engine_exception_adce37e1a506460a7d2402fa361f8967f}{m\+\_\+function}}
+\begin{DoxyCompactList}\small\item\em Current function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -43,18 +52,84 @@ engine\+::\+Engine\+Exception\+::\+Engine\+Exception (\begin{DoxyParamCaption}\i
 Constructor. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em message} & Current message. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em message} & -\/Current message. \\
 \hline
-{\em file} & Current file. \\
+\mbox{\texttt{ in}}  & {\em file} & -\/Current file. \\
 \hline
-{\em line} & Current line. \\
+\mbox{\texttt{ in}}  & {\em line} & -\/Current line. \\
 \hline
-{\em function} & Current function. \\
+\mbox{\texttt{ in}}  & {\em function} & -\/Current function. \\
 \hline
 \end{DoxyParams}
 
 
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1_engine_exception_a209ab22ba10aa10fa19f3d3751b1bd4c}\index{engine::EngineException@{engine::EngineException}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!engine::EngineException@{engine::EngineException}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily \label{classengine_1_1_engine_exception_a209ab22ba10aa10fa19f3d3751b1bd4c} 
+void engine\+::\+Engine\+Exception\+::print\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Full information output. 
+
+\Hypertarget{classengine_1_1_engine_exception_ad63fbf0a42d234e4404d2121a9d58ed2}\index{engine::EngineException@{engine::EngineException}!what@{what}}
+\index{what@{what}!engine::EngineException@{engine::EngineException}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily \label{classengine_1_1_engine_exception_ad63fbf0a42d234e4404d2121a9d58ed2} 
+const char \texorpdfstring{$\ast$}{*} engine\+::\+Engine\+Exception\+::what (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}
+
+
+
+What() override. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classengine_1_1_engine_exception_a4c2577231c7e86e98d2ae7b16350f6f1}\index{engine::EngineException@{engine::EngineException}!m\_file@{m\_file}}
+\index{m\_file@{m\_file}!engine::EngineException@{engine::EngineException}}
+\doxysubsubsection{\texorpdfstring{m\_file}{m\_file}}
+{\footnotesize\ttfamily \label{classengine_1_1_engine_exception_a4c2577231c7e86e98d2ae7b16350f6f1} 
+const char\texorpdfstring{$\ast$}{*} engine\+::\+Engine\+Exception\+::m\+\_\+file\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current file. 
+
+\Hypertarget{classengine_1_1_engine_exception_adce37e1a506460a7d2402fa361f8967f}\index{engine::EngineException@{engine::EngineException}!m\_function@{m\_function}}
+\index{m\_function@{m\_function}!engine::EngineException@{engine::EngineException}}
+\doxysubsubsection{\texorpdfstring{m\_function}{m\_function}}
+{\footnotesize\ttfamily \label{classengine_1_1_engine_exception_adce37e1a506460a7d2402fa361f8967f} 
+const char\texorpdfstring{$\ast$}{*} engine\+::\+Engine\+Exception\+::m\+\_\+function\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current function. 
+
+\Hypertarget{classengine_1_1_engine_exception_a476a9107b71fb30f01a1d5a20e03450c}\index{engine::EngineException@{engine::EngineException}!m\_line@{m\_line}}
+\index{m\_line@{m\_line}!engine::EngineException@{engine::EngineException}}
+\doxysubsubsection{\texorpdfstring{m\_line}{m\_line}}
+{\footnotesize\ttfamily \label{classengine_1_1_engine_exception_a476a9107b71fb30f01a1d5a20e03450c} 
+int engine\+::\+Engine\+Exception\+::m\+\_\+line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current line. 
+
+\Hypertarget{classengine_1_1_engine_exception_ab028e1112d30e4dc962f1633500afdc1}\index{engine::EngineException@{engine::EngineException}!m\_message@{m\_message}}
+\index{m\_message@{m\_message}!engine::EngineException@{engine::EngineException}}
+\doxysubsubsection{\texorpdfstring{m\_message}{m\_message}}
+{\footnotesize\ttfamily \label{classengine_1_1_engine_exception_ab028e1112d30e4dc962f1633500afdc1} 
+std\+::string engine\+::\+Engine\+Exception\+::m\+\_\+message\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current message. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Engine\+Exception.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{_engine_exception_8h}{Engine\+Exception.\+h}}\end{DoxyCompactItemize}

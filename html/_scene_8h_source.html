@@ -87,14 +87,59 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Scene.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="foldopen" id="foldopen00002" data-start="{" data-end="};">
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno"><a class="line" href="class_scene.html">    2</a></span><span class="keyword">class </span><a class="code hl_class" href="class_scene.html">Scene</a></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>{</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>};</div>
+<a href="_scene_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SCENE_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SCENE_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_player_8h.html">Player.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_camera_8h.html">Camera.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceengine.html">engine</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classengine_1_1_scene.html">   18</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classengine_1_1_scene.html">Scene</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classengine_1_1_scene.html#af65c35811ff9b93d672e74ddd7fbbcf8">   21</a></span>        <a class="code hl_class" href="classengine_1_1_player.html">Player</a> <a class="code hl_variable" href="classengine_1_1_scene.html#af65c35811ff9b93d672e74ddd7fbbcf8">m_player</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classengine_1_1_scene.html#a4276918aeeb7c39e06e6236b7623524c">   22</a></span>        <a class="code hl_class" href="classengine_1_1_camera.html">Camera</a> <a class="code hl_variable" href="classengine_1_1_scene.html#a4276918aeeb7c39e06e6236b7623524c">m_camera</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_function" href="classengine_1_1_scene.html#af9a03c6a66bc5b1591519e42abd22269">Scene</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_function" href="classengine_1_1_scene.html#a09443d03331e9a1275c0a695e3f5e7d5">~Scene</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_class" href="classengine_1_1_player.html">Player</a>&amp; <a class="code hl_function" href="classengine_1_1_scene.html#ad60b323887a10d0b76ba663bca3b3edb">getPlayer</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_class" href="classengine_1_1_player.html">Player</a> <a class="code hl_function" href="classengine_1_1_scene.html#ad60b323887a10d0b76ba663bca3b3edb">getPlayer</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classengine_1_1_scene.html#ada7564a446baf21fa2f0fbe95afe428f">addPlayer</a>(<a class="code hl_typedef" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> y, <a class="code hl_typedef" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> x, <span class="keywordtype">int</span> angle, <a class="code hl_typedef" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> health);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_class" href="classengine_1_1_camera.html">Camera</a>&amp; <a class="code hl_function" href="classengine_1_1_scene.html#a66f0d6b2df4796e865ce04019820e200">getCamera</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_class" href="classengine_1_1_camera.html">Camera</a> <a class="code hl_function" href="classengine_1_1_scene.html#a66f0d6b2df4796e865ce04019820e200">getCamera</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classengine_1_1_scene.html#a63397837eb4a10f703a41e8db7e5cb67">addCamera</a>(<span class="keywordtype">int</span> camera_y, <span class="keywordtype">int</span> camera_x, <span class="keywordtype">double</span> camera_angle, <span class="keywordtype">double</span> fov_c, <span class="keywordtype">int</span> render_distance);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    };</div>
 </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition</b> Scene.h:3</div></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif </span><span class="comment">// !SCENE_H</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="ttc" id="a_application_8h_html_a91ad9478d81a7aaf2593e8d9c3d06a14"><div class="ttname"><a href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a></div><div class="ttdeci">unsigned int uint</div><div class="ttdef"><b>Definition</b> Application.h:9</div></div>
+<div class="ttc" id="a_camera_8h_html"><div class="ttname"><a href="_camera_8h.html">Camera.h</a></div></div>
+<div class="ttc" id="a_player_8h_html"><div class="ttname"><a href="_player_8h.html">Player.h</a></div></div>
+<div class="ttc" id="aclassengine_1_1_camera_html"><div class="ttname"><a href="classengine_1_1_camera.html">engine::Camera</a></div><div class="ttdef"><b>Definition</b> Camera.h:9</div></div>
+<div class="ttc" id="aclassengine_1_1_player_html"><div class="ttname"><a href="classengine_1_1_player.html">engine::Player</a></div><div class="ttdoc">Player class.</div><div class="ttdef"><b>Definition</b> Player.h:18</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html"><div class="ttname"><a href="classengine_1_1_scene.html">engine::Scene</a></div><div class="ttdoc">Scene class.</div><div class="ttdef"><b>Definition</b> Scene.h:19</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html_a09443d03331e9a1275c0a695e3f5e7d5"><div class="ttname"><a href="classengine_1_1_scene.html#a09443d03331e9a1275c0a695e3f5e7d5">engine::Scene::~Scene</a></div><div class="ttdeci">~Scene()</div><div class="ttdef"><b>Definition</b> Scene.cpp:9</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html_a4276918aeeb7c39e06e6236b7623524c"><div class="ttname"><a href="classengine_1_1_scene.html#a4276918aeeb7c39e06e6236b7623524c">engine::Scene::m_camera</a></div><div class="ttdeci">Camera m_camera</div><div class="ttdef"><b>Definition</b> Scene.h:22</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html_a63397837eb4a10f703a41e8db7e5cb67"><div class="ttname"><a href="classengine_1_1_scene.html#a63397837eb4a10f703a41e8db7e5cb67">engine::Scene::addCamera</a></div><div class="ttdeci">void addCamera(int camera_y, int camera_x, double camera_angle, double fov_c, int render_distance)</div><div class="ttdef"><b>Definition</b> Scene.cpp:38</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html_a66f0d6b2df4796e865ce04019820e200"><div class="ttname"><a href="classengine_1_1_scene.html#a66f0d6b2df4796e865ce04019820e200">engine::Scene::getCamera</a></div><div class="ttdeci">Camera &amp; getCamera()</div><div class="ttdef"><b>Definition</b> Scene.cpp:28</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html_ad60b323887a10d0b76ba663bca3b3edb"><div class="ttname"><a href="classengine_1_1_scene.html#ad60b323887a10d0b76ba663bca3b3edb">engine::Scene::getPlayer</a></div><div class="ttdeci">Player &amp; getPlayer()</div><div class="ttdef"><b>Definition</b> Scene.cpp:13</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html_ada7564a446baf21fa2f0fbe95afe428f"><div class="ttname"><a href="classengine_1_1_scene.html#ada7564a446baf21fa2f0fbe95afe428f">engine::Scene::addPlayer</a></div><div class="ttdeci">void addPlayer(uint y, uint x, int angle, uint health)</div><div class="ttdef"><b>Definition</b> Scene.cpp:23</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html_af65c35811ff9b93d672e74ddd7fbbcf8"><div class="ttname"><a href="classengine_1_1_scene.html#af65c35811ff9b93d672e74ddd7fbbcf8">engine::Scene::m_player</a></div><div class="ttdeci">Player m_player</div><div class="ttdef"><b>Definition</b> Scene.h:21</div></div>
+<div class="ttc" id="aclassengine_1_1_scene_html_af9a03c6a66bc5b1591519e42abd22269"><div class="ttname"><a href="classengine_1_1_scene.html#af9a03c6a66bc5b1591519e42abd22269">engine::Scene::Scene</a></div><div class="ttdeci">Scene()</div><div class="ttdef"><b>Definition</b> Scene.cpp:5</div></div>
+<div class="ttc" id="anamespaceengine_html"><div class="ttname"><a href="namespaceengine.html">engine</a></div><div class="ttdoc">This namespace contains classes for game engine.</div><div class="ttdef"><b>Definition</b> Application.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

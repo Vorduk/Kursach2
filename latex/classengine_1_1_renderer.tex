@@ -2,7 +2,7 @@
 \hypertarget{classengine_1_1_renderer}{}\label{classengine_1_1_renderer}\index{engine::Renderer@{engine::Renderer}}
 
 
-\doxylink{classengine_1_1_renderer}{Renderer} class.  
+Renderer class.  
 
 
 
@@ -12,25 +12,74 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d}\label{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d} 
-{\bfseries Renderer} (\mbox{\hyperlink{classengine_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}window)
-\item 
-\Hypertarget{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91}\label{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91} 
-void {\bfseries clear} ()
-\item 
-\Hypertarget{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24}\label{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24} 
-void {\bfseries present} ()
-\item 
+\mbox{\hyperlink{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d}{Renderer}} (\mbox{\hyperlink{classengine_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classengine_1_1_renderer_a429d2acdd3f2e8f583df5298259d8089}{\texorpdfstring{$\sim$}{\string~}\+Renderer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Fill black. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24}{present}} ()
+\begin{DoxyCompactList}\small\item\em Show changes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_renderer_a1074c742982582a18053902e8803d834}{draw\+Rectangle}} (int x, int y, int width, int height, SDL\+\_\+\+Color color)
 \begin{DoxyCompactList}\small\item\em Draws rectangle. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e}{render\+Scene\+DDA}} (\mbox{\hyperlink{classengine_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a3b9cdfaf0bc4e63caa964cba959277e3}{load\+Texture}} (const std\+::string \&id, const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Loads texture by path and assigns id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a08de18193a31511c8de8169d54e7c3ce}{render\+Texture}} (const std\+::string \&texture\+\_\+id, int x, int y, int render\+\_\+width, int render\+\_\+height, int cut\+\_\+x1, int cut\+\_\+y1, int cut\+\_\+x2, int cut\+\_\+y2)
+\begin{DoxyCompactList}\small\item\em Draws texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a01acdaa6bc3332fcbcbb63dbf6bdc9e2}{free\+Texture}} (const std\+::string \&id)
+\begin{DoxyCompactList}\small\item\em Free one texture by id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classengine_1_1_renderer_a0515dacd98807e7bc4ace77b015f2188}{m\+\_\+renderer}}
+\item 
+\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{classengine_1_1_renderer_ab6dfffb000bffc269d75830db65150b9}{m\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Renderer width. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{classengine_1_1_renderer_a95e9ac98e0b3b314b45a2baa3e662e37}{m\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em Renderer height. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classengine_1_1_texture_manager}{Texture\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classengine_1_1_renderer_a3e9e0f4ac7e952d9a040f3d6eeb68d91}{m\+\_\+texture\+\_\+manager}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\doxylink{classengine_1_1_renderer}{Renderer} class. 
+Renderer class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d}\index{engine::Renderer@{engine::Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d} 
+engine\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\Hypertarget{classengine_1_1_renderer_a429d2acdd3f2e8f583df5298259d8089}\index{engine::Renderer@{engine::Renderer}!````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}}
+\index{````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Renderer()}{\string~Renderer()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a429d2acdd3f2e8f583df5298259d8089} 
+engine\+::\+Renderer\+::\texorpdfstring{$\sim$}{\string~}\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91}\index{engine::Renderer@{engine::Renderer}!clear@{clear}}
+\index{clear@{clear}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91} 
+void engine\+::\+Renderer\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Fill black. 
+
 \Hypertarget{classengine_1_1_renderer_a1074c742982582a18053902e8803d834}\index{engine::Renderer@{engine::Renderer}!drawRectangle@{drawRectangle}}
 \index{drawRectangle@{drawRectangle}!engine::Renderer@{engine::Renderer}}
 \doxysubsubsection{\texorpdfstring{drawRectangle()}{drawRectangle()}}
@@ -54,15 +103,121 @@ Draws rectangle.
 {\em color} & fill color. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a01acdaa6bc3332fcbcbb63dbf6bdc9e2}\index{engine::Renderer@{engine::Renderer}!freeTexture@{freeTexture}}
+\index{freeTexture@{freeTexture}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{freeTexture()}{freeTexture()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a01acdaa6bc3332fcbcbb63dbf6bdc9e2} 
+void engine\+::\+Renderer\+::free\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Free one texture by id. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & id of texture. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a3b9cdfaf0bc4e63caa964cba959277e3}\index{engine::Renderer@{engine::Renderer}!loadTexture@{loadTexture}}
+\index{loadTexture@{loadTexture}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{loadTexture()}{loadTexture()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a3b9cdfaf0bc4e63caa964cba959277e3} 
+void engine\+::\+Renderer\+::load\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{, }\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Loads texture by path and assigns id. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & id of texture. \\
+\hline
+\mbox{\texttt{ in}}  & {\em path} & load path. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24}\index{engine::Renderer@{engine::Renderer}!present@{present}}
+\index{present@{present}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{present()}{present()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24} 
+void engine\+::\+Renderer\+::present (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Show changes. 
+
 \Hypertarget{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e}\index{engine::Renderer@{engine::Renderer}!renderSceneDDA@{renderSceneDDA}}
 \index{renderSceneDDA@{renderSceneDDA}!engine::Renderer@{engine::Renderer}}
 \doxysubsubsection{\texorpdfstring{renderSceneDDA()}{renderSceneDDA()}}
 {\footnotesize\ttfamily \label{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e} 
 void engine\+::\+Renderer\+::render\+Scene\+DDA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})}
 
-\doxylink{class_scene}{Scene} rendering Obstacle rendering with DDA algorithm Enemy and Item rendering 
+Scene rendering Obstacle rendering with DDA algorithm Enemy and Item rendering \Hypertarget{classengine_1_1_renderer_a08de18193a31511c8de8169d54e7c3ce}\index{engine::Renderer@{engine::Renderer}!renderTexture@{renderTexture}}
+\index{renderTexture@{renderTexture}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{renderTexture()}{renderTexture()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a08de18193a31511c8de8169d54e7c3ce} 
+void engine\+::\+Renderer\+::render\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+\_\+id}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{render\+\_\+width}{, }\item[{int}]{render\+\_\+height}{, }\item[{int}]{cut\+\_\+x1}{, }\item[{int}]{cut\+\_\+y1}{, }\item[{int}]{cut\+\_\+x2}{, }\item[{int}]{cut\+\_\+y2}{}\end{DoxyParamCaption})}
+
+
+
+Draws texture. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & x cord. of texture (left top angle). \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & y cord. of texture (left top angle). \\
+\hline
+\mbox{\texttt{ in}}  & {\em render\+\_\+width} & width of texture on the screen. \\
+\hline
+\mbox{\texttt{ in}}  & {\em render\+\_\+height} & height of texture on the screen. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cut\+\_\+x1} & x coordinate of the upper left corner of the clipping area \\
+\hline
+\mbox{\texttt{ in}}  & {\em cut\+\_\+y1} & y coordinate of the upper left corner of the clipping area \\
+\hline
+\mbox{\texttt{ in}}  & {\em cut\+\_\+x2} & x coordinate of the lower right corner of the clipping area \\
+\hline
+\mbox{\texttt{ in}}  & {\em cut\+\_\+y2} & y coordinate of the lower right corner of the clipping area \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classengine_1_1_renderer_a95e9ac98e0b3b314b45a2baa3e662e37}\index{engine::Renderer@{engine::Renderer}!m\_height@{m\_height}}
+\index{m\_height@{m\_height}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a95e9ac98e0b3b314b45a2baa3e662e37} 
+\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} engine\+::\+Renderer\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Renderer height. 
+
+\Hypertarget{classengine_1_1_renderer_a0515dacd98807e7bc4ace77b015f2188}\index{engine::Renderer@{engine::Renderer}!m\_renderer@{m\_renderer}}
+\index{m\_renderer@{m\_renderer}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{m\_renderer}{m\_renderer}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a0515dacd98807e7bc4ace77b015f2188} 
+SDL\+\_\+\+Renderer\texorpdfstring{$\ast$}{*} engine\+::\+Renderer\+::m\+\_\+renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classengine_1_1_renderer_a3e9e0f4ac7e952d9a040f3d6eeb68d91}\index{engine::Renderer@{engine::Renderer}!m\_texture\_manager@{m\_texture\_manager}}
+\index{m\_texture\_manager@{m\_texture\_manager}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{m\_texture\_manager}{m\_texture\_manager}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a3e9e0f4ac7e952d9a040f3d6eeb68d91} 
+\mbox{\hyperlink{classengine_1_1_texture_manager}{Texture\+Manager}}\texorpdfstring{$\ast$}{*} engine\+::\+Renderer\+::m\+\_\+texture\+\_\+manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classengine_1_1_renderer_ab6dfffb000bffc269d75830db65150b9}\index{engine::Renderer@{engine::Renderer}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_ab6dfffb000bffc269d75830db65150b9} 
+\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} engine\+::\+Renderer\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Renderer width. 
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Renderer.\+h\item 
-Renderer.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_renderer_8h}{Renderer.\+h}}\item 
+\mbox{\hyperlink{_renderer_8cpp}{Renderer.\+cpp}}\end{DoxyCompactItemize}

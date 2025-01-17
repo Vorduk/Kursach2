@@ -72,4 +72,4 @@ namespace engine
         m_camera_angle = player.getPlayerAngle();
     }
 
-}
+} // engine

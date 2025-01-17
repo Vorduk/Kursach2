@@ -4,19 +4,11 @@
 
 namespace engine
 {
-    /**
-     * @brief Constructor.
-     * @param[in] width -Window width (pixels).
-     * @param[in] height -Window height (pixels).
-     * @param[in] caption -Window caption.
-     */
     Window::Window(uint width, uint height, std::string caption) : m_width(width), m_height(height), m_caption(caption)
     {
         init(); // SDL initialization.
 
-        /**
-         * @brief Window creation.
-         */
+        // Window creation.
         m_window = SDL_CreateWindow(m_caption.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, m_width, m_height, SDL_WINDOW_SHOWN | SDL_WINDOW_VULKAN);
         if (!m_window) {
             THROW_ENGINE_EXCEPTION("Failed to create an SDL window.");
@@ -24,18 +16,12 @@ namespace engine
         }
     }
 
-    /**
-     * @brief Window destructor.
-     */
     Window::~Window()
     {
         SDL_DestroyWindow(m_window);
         SDL_Quit();
     }
 
-    /**
-     * @brief SDL initialization (SDL_INIT_VIDEO).
-     */
     void Window::init()
     {
         if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -47,13 +33,16 @@ namespace engine
     {
         return m_window;
     }
+
     uint Window::getWidth()
     {
         return m_width;
     }
+
     uint Window::getHeight()
     {
         return m_height;
     }
-}
+
+} // engine
     

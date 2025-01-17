@@ -1,10 +1,41 @@
 \doxysection{Scene.\+h}
-\hypertarget{_scene_8h_source}{}\label{_scene_8h_source}
+\hypertarget{_scene_8h_source}{}\label{_scene_8h_source}\mbox{\hyperlink{_scene_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene}{Scene}}}
-\DoxyCodeLine{00003\ \{}
-\DoxyCodeLine{00004\ \};}
-\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCENE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCENE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_scene}{Scene}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\ \mbox{\hyperlink{classengine_1_1_scene_af65c35811ff9b93d672e74ddd7fbbcf8}{m\_player}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\ \mbox{\hyperlink{classengine_1_1_scene_a4276918aeeb7c39e06e6236b7623524c}{m\_camera}};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_scene_af9a03c6a66bc5b1591519e42abd22269}{Scene}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_scene_a09443d03331e9a1275c0a695e3f5e7d5}{\string~Scene}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\&\ \mbox{\hyperlink{classengine_1_1_scene_ad60b323887a10d0b76ba663bca3b3edb}{getPlayer}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\ \mbox{\hyperlink{classengine_1_1_scene_ad60b323887a10d0b76ba663bca3b3edb}{getPlayer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_ada7564a446baf21fa2f0fbe95afe428f}{addPlayer}}(\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ y,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ x,\ \textcolor{keywordtype}{int}\ angle,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ health);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\&\ \mbox{\hyperlink{classengine_1_1_scene_a66f0d6b2df4796e865ce04019820e200}{getCamera}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\ \mbox{\hyperlink{classengine_1_1_scene_a66f0d6b2df4796e865ce04019820e200}{getCamera}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a63397837eb4a10f703a41e8db7e5cb67}{addCamera}}(\textcolor{keywordtype}{int}\ camera\_y,\ \textcolor{keywordtype}{int}\ camera\_x,\ \textcolor{keywordtype}{double}\ camera\_angle,\ \textcolor{keywordtype}{double}\ fov\_c,\ \textcolor{keywordtype}{int}\ render\_distance);}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !SCENE\_H}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
 
 \end{DoxyCode}

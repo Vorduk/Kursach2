@@ -1,43 +1,55 @@
 \doxysection{Camera.\+h}
-\hypertarget{_camera_8h_source}{}\label{_camera_8h_source}
+\hypertarget{_camera_8h_source}{}\label{_camera_8h_source}\mbox{\hyperlink{_camera_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CAMERA\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CAMERA\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <corecrt\_math\_defines.h>}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}}
-\DoxyCodeLine{00007\ \{}
-\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_camera}{Camera}}\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_camera\_y;}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_camera\_x;}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_camera\_angle;}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_fov\_c;}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ m\_fov;}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_render\_distance;}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}();}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}(\textcolor{keywordtype}{int}\ camera\_y,\ \textcolor{keywordtype}{int}\ camera\_x,\ \textcolor{keywordtype}{double}\ camera\_angle,\ \textcolor{keywordtype}{double}\ fov\_c,\ \textcolor{keywordtype}{int}\ render\_distance);}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{\string~Camera}}();}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCameraCoords(\textcolor{keywordtype}{int}\ camera\_y,\ \textcolor{keywordtype}{int}\ camera\_x);}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCameraY(\textcolor{keywordtype}{int}\ camera\_y);}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getCameraY();}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCameraX(\textcolor{keywordtype}{int}\ camera\_x);}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getCameraX();}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCameraAngle(\textcolor{keywordtype}{double}\ camera\_angle);}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getCameraAngle();}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setFovC(\textcolor{keywordtype}{double}\ fov\_c);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getFovC();}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setFov(\textcolor{keywordtype}{double}\ fov);}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getFov();}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setRenderDistance(\textcolor{keywordtype}{int}\ render\_distance);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getRenderDistance();}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ synchronizeWithPlayer(Player\&\ player);}}
-\DoxyCodeLine{00034\ \ \ \ \ \};}
-\DoxyCodeLine{00035\ \}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ CAMERA\_H}}
-\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_camera}{Camera}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a68a75a6e5081ac9b3db7cbf5f993cc90}{m\_camera\_y}};\ }
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a30a7f921daaf6b17603b6e60ab1b0c20}{m\_camera\_x}};\ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a8c475238d0c70ab393a9894fb69272b4}{m\_camera\_angle}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a852c6aebcf8fbde1428b7b40691be589}{m\_fov\_c}};\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_ae58c77a7a6b6bf9a7d31b6fcfb88e8b2}{m\_fov}};\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classengine_1_1_camera_af4e8d6cad9478678a62ab3438ae77324}{m\_render\_distance}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera_a8274a1d661fa2c2cac9bbc1a0d40aece}{Camera}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera_a8274a1d661fa2c2cac9bbc1a0d40aece}{Camera}}(\textcolor{keywordtype}{double}\ camera\_y,\ \textcolor{keywordtype}{double}\ camera\_x,\ \textcolor{keywordtype}{double}\ camera\_angle,\ \textcolor{keywordtype}{double}\ fov\_c,\ \textcolor{keywordtype}{int}\ render\_distance);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera_af52953a99bb1736898d407c414a9e502}{\string~Camera}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_camera_ad8f2054acf47cac21de577c3a046631c}{setCameraCoords}}(\textcolor{keywordtype}{double}\ camera\_y,\ \textcolor{keywordtype}{double}\ camera\_x);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_camera_a8ae733d0e8ec45492c7b7e3b87b12bed}{setCameraY}}(\textcolor{keywordtype}{double}\ camera\_y);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a453283f9233ad152b4256b340292c936}{getCameraY}}();\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_camera_ae778f6158cda64b31b692011cbcab325}{setCameraX}}(\textcolor{keywordtype}{double}\ camera\_x);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a9e33b7e9b50a11790b8489a06054595c}{getCameraX}}();\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_camera_ab3d690c0b077ad075eb8285c75de3e78}{setCameraAngle}}(\textcolor{keywordtype}{double}\ camera\_angle);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a551de49f241ab9fe251c9f27f553ce92}{getCameraAngle}}();\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_camera_aecb3d7f83d86a3c97bbc0b92899eb4eb}{setFovC}}(\textcolor{keywordtype}{double}\ fov\_c);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a756e8ca93203ce56b7ce4d61ad6286e2}{getFovC}}();\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_camera_af4abb113a17289366fe121e1c4e42bcd}{setFov}}(\textcolor{keywordtype}{double}\ fov);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_camera_a9899dcc19296f5f3484e8e877e75fcce}{getFov}}();\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_camera_ae846a9c25119fd0b4b44e157203a80be}{setRenderDistance}}(\textcolor{keywordtype}{int}\ render\_distance);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classengine_1_1_camera_a4601ee40b1cc09833c794bc463fb77cb}{getRenderDistance}}();\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_camera_a1db3cbb1e40a11ac84f748ddcb6c21c6}{synchronizeWithPlayer}}(\mbox{\hyperlink{classengine_1_1_player}{Player}}\&\ player);}
+\DoxyCodeLine{00092\ \ \ \ \ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \}\ \textcolor{comment}{//\ engine}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CAMERA\_H}}
+\DoxyCodeLine{00097\ }
 
 \end{DoxyCode}

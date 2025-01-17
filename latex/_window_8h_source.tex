@@ -1,5 +1,5 @@
 \doxysection{Window.\+h}
-\hypertarget{_window_8h_source}{}\label{_window_8h_source}
+\hypertarget{_window_8h_source}{}\label{_window_8h_source}\mbox{\hyperlink{_window_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WINDOW\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WINDOW\_H}}
@@ -7,36 +7,41 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}EngineException.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine_exception_8h}{EngineException.h}}"{}}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ uint;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}};}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}\ \{}
 \DoxyCodeLine{00016\ }
 \DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_window}{Window}}}
 \DoxyCodeLine{00021\ \ \ \ \ \{}
 \DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ uint\ m\_width;\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ uint\ m\_height;\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::string\ m\_caption;\ }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ SDL\_Window*\ m\_window;\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_window_a155f2c0b0fdd3a3aeaf5356b1b542525}{Window}}(uint\ width,\ uint\ height,\ std::string\ caption);\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_window_ae568b8a51d517d21c5fb74e5e67430aa}{\string~Window}}();\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_window_aef37acfc14fc3919d650b400798f7e45}{init}}();\ }
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ SDL\_Window*\ getWindow();}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ uint\ getWidth();\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ uint\ getHeight();\ }
-\DoxyCodeLine{00035\ \ \ \ \ \};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \}\ \textcolor{comment}{//\ engine}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ WINDOW\_H}}
-\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_window_a215a95478019a44642b69b50367cf905}{m\_width}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_window_aba3224b2cc6aa5608004686199b7b59b}{m\_height}};\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classengine_1_1_window_afd0119db11211082e70afb780ca08373}{m\_caption}};\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ SDL\_Window*\ \mbox{\hyperlink{classengine_1_1_window_af65009a5ba11a619464b2e9a666e8a40}{m\_window}};\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_window_aef37acfc14fc3919d650b400798f7e45}{init}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_window_a155f2c0b0fdd3a3aeaf5356b1b542525}{Window}}(\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ width,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ height,\ std::string\ caption);}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_window_ae568b8a51d517d21c5fb74e5e67430aa}{\string~Window}}();\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ SDL\_Window*\ \mbox{\hyperlink{classengine_1_1_window_adec8d769a8887e1515fd4b483acad7bd}{getWindow}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_window_ab81947228b680d1cf399fb70a2f1be12}{getWidth}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_window_a7b30dd3adeb86fec1657a74a375643cc}{getHeight}}();\ }
+\DoxyCodeLine{00061\ \ \ \ \ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \}\ \textcolor{comment}{//\ engine}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WINDOW\_H}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
 
 \end{DoxyCode}
