@@ -19,28 +19,19 @@ namespace engine
         Renderer* renderer = new Renderer(m_windows[0]);    
         renderer->loadTexture("wall1", "image3.png");
         renderer->loadTexture("wall2", "image.png");
-        renderer->setTextureToObjectId(1, "wall1");
-        renderer->setTextureToObjectId(2, "wall2");
-
-        double s = 0;
+        renderer->setWallTexture(1, "wall1");
+        renderer->setWallTexture(2, "wall2");
+        renderer->loadTexture("sky1", "sky1.png");
+        renderer->loadTexture("sky2", "sky2.png");
+        renderer->loadTexture("sky3", "sky3.png");
+        renderer->loadTexture("sky4", "sky4.png");
 
         while (m_running) {
-            if (s < 255)
-            {
-                s+=0.01;
-            }
-            else s = 0;
             
             handleEvents(cur_scene->getPlayer());
 
             renderer->clear();
-
-            //SDL_Color color = { 0, 0, 0, 255 };
-            //renderer->drawRectangle(100, 100, 200, 150, color);
-
             renderer->renderSceneDDA(&(cur_scene->getCamera()));
-            //renderer->renderTexture("wall1", 0, 0, 512, 512, 0, 0, 1024, 1024, true, true);
-
             renderer->present();
 
             cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());

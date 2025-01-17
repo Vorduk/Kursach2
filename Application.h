@@ -29,8 +29,9 @@ namespace engine {
 
 		/**
 		 * @brief Run app (Main loop).
+		 * @param[in] scene_number -Scene number
 		 */
-		void run(); 
+		void run();
 
 		/**
 		 * @brief Creates a new window.

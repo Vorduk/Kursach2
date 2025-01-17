@@ -22,6 +22,26 @@ namespace engine
         }
     }
 
+    void Renderer::drawSkyBox(int ray_angle, int column) {
+        int tex_col = (ray_angle % 360) * 1024 / 360;
+        std::string texture_id = "sky";
+
+        if (0 <= ray_angle < 90) {
+            texture_id += "1";
+        }
+        else if (90 <= ray_angle < 180) {
+            texture_id += "2";
+        }
+        else if (180 <= ray_angle < 270) {
+            texture_id += "3";
+        }
+        else if (270 <= ray_angle < 360) {
+            texture_id += "4";
+        }
+
+        renderTexture(texture_id, column, 0, 1024, m_height, tex_col, 0, tex_col + 1, 1024, false, false);
+    }
+
     Renderer::Renderer(Window* window)
 	{
 		m_renderer = SDL_CreateRenderer(window->getWindow(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE);
@@ -180,16 +200,14 @@ namespace engine
                 }
             }
 
+            drawSkyBox(cam_angle, column);
+
             prev_distance = cur_distance;
             if (hit != 0) {
 
                 double n_c = cur_distance * cos(ray_angle - cam_angle); ///< Distance with fish eye fix
 
                 int ceiling = (double)(scr_h / 2) - (scr_h / n_c); ///< Ceiling height on the screen
-
-                // Drawing ceiling
-                SDL_SetRenderDrawColor(m_renderer, 0, 0, 255, 255); // Синий цвет для потолка
-                SDL_RenderDrawLine(m_renderer, column, 0, column, ceiling);
 
                 // What side of wall?
                 double test_x = (double)dot_x - (int)dot_x;
@@ -239,7 +257,7 @@ namespace engine
         m_texture_manager->freeTexture(id);
     }
 
-    void Renderer::setTextureToObjectId(int wall_id, const std::string& texture_id) {
+    void Renderer::setWallTexture(int wall_id, const std::string& texture_id) {
         wall_texture_map[wall_id] = texture_id;
     }
     

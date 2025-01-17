@@ -22,7 +22,7 @@ namespace engine
         double m_player_prev_x; ///< Player previous x (for collision)
         double m_player_y; ///< Player y 
         double m_player_x; ///< Player x 
-        double m_player_angle; //< Player rotation angle
+        double m_player_angle; ///< Player rotation angle
     public:
         Player(); ///< Default constructor
         Player(double player_y, double player_x, double player_angle, uint player_health); ///< Constructor

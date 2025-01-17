@@ -28,7 +28,18 @@ namespace engine {
         TextureManager* m_texture_manager; ///< Texture manager for this renderer
         std::unordered_map<int, std::string> wall_texture_map;
 
+        /**
+         * @brief Draws wall textures.
+         * @param[in] wall_id -Id of wall on map.
+         * @param[in] axis -Axis of wall.
+         * @param[in] column -Column on the screen.
+         * @param[in] ceiling -Ceiling height.
+         * @param[in] height -Height of wall.
+         * @param[in] texture_column -Column of pixels on texture to draw
+         */
         void drawWallTextures(int wall_id, int axis, int column, int ceiling, int height, int texture_column);
+
+        void drawSkyBox(int ray_angle, int column);
 
     public:
         Renderer(Window* window); ///< Constructor
@@ -39,11 +50,11 @@ namespace engine {
 
         /**
          * @brief Draws rectangle.
-         * @param x x cord.
-         * @param y y cord.
-         * @param width rectangle width.
-         * @param height rectangle height.
-         * @param color fill color.
+         * @param[in] x x cord.
+         * @param[in] y y cord.
+         * @param[in] width rectangle width.
+         * @param[in] height rectangle height.
+         * @param[in] color fill color.
          */
         void drawRectangle(int x, int y, int width, int height, SDL_Color color);
 
@@ -82,10 +93,10 @@ namespace engine {
 
         /**
          * @brief Sets the mapping of wall IDs to texture IDs.
-         * @param wall_id The numerical ID of the wall.
-         * @param texture_id The string ID of the texture.
+         * @param[in] wall_id The numerical ID of the wall.
+         * @param[in] texture_id The string ID of the texture.
          */
-        void setTextureToObjectId(int wall_id, const std::string& texture_id);
+        void setWallTexture(int wall_id, const std::string& texture_id);
     };
 
 }

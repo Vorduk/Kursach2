@@ -18,11 +18,11 @@ namespace engine
 	class Scene
 	{
 	private:
-		Player m_player;
-		Camera m_camera;
+		Player m_player; ///< Scene palyer
+		Camera m_camera; ///< Scene camera
 	public:
-		Scene();
-		~Scene();
+		Scene(); ///< Contructor
+		~Scene(); ///< Destructor
 
 		Player& getPlayer();
 		Player getPlayer() const;
@@ -32,9 +32,10 @@ namespace engine
 		Camera getCamera() const;
 		void addCamera(int camera_y, int camera_x, double camera_angle, double fov_c, int render_distance);
 	};
-}
 
-#endif // !SCENE_H
+} // engine
+
+#endif // SCENE_H
 
 
 

@@ -10,9 +10,9 @@ namespace engine
     private:
         double m_camera_y; ///< Camera world y cord.
         double m_camera_x; ///< Camera world x cord.
-        double m_camera_angle; ///< Camera world angle (radians).
-        double m_fov_c; ///< Camera world angle (degrees).
-        double m_fov; ///< Camera field of view.
+        double m_camera_angle; ///< Camera world angle (degrees).
+        double m_fov_c; ///< Camera field of view (degrees).
+        double m_fov; ///< Camera field of view (radians).
         int m_render_distance; ///< Camera render distance.
     public:
         /**
