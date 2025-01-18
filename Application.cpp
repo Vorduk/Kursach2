@@ -16,14 +16,15 @@ namespace engine
     {
         Scene* cur_scene = m_scenes[0];
 
-        Renderer* renderer = new Renderer(m_windows[0]);    
-        renderer->loadTexture("wall1", "image1.png");
+        Renderer* renderer = new Renderer(m_windows[0]);   
+        renderer->loadTexturesFromScene(*cur_scene);
+        /*renderer->loadTexture("wall1", "image1.png");
         renderer->loadTexture("wall2", "image2.png");
         renderer->loadTexture("wall3", "image3.png");
         renderer->setWallTexture(1, "wall1");
         renderer->setWallTexture(2, "wall2");
         renderer->setWallTexture(3, "wall3");
-        renderer->loadTexture("sky", "textures/sky3.jpg");
+        renderer->loadTexture("sky", "textures/sky3.jpg");*/
 
 
         while (m_running) {

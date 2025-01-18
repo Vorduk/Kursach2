@@ -157,6 +157,23 @@ namespace engine
                     m_obstacles.push_back(row);
                 }
             }
+            else if (line == "/// Textures") {
+                while (true) {
+                    int key;
+                    std::string name, texture;
+
+                    if (!(file >> key)) break;
+                    file.ignore();
+
+                    std::getline(file, name);
+                    if (name.empty()) break;
+
+                    std::getline(file, texture);
+                    if (texture.empty()) break;
+
+                    textures_predefine[std::make_pair(key, name)] = texture;
+                }    
+            }
         }
 
         file.close();
@@ -169,5 +186,9 @@ namespace engine
         if (check) {
             m_player.returnBack();
         }
+    }
+    std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> Scene::getTexturesPredefine()
+    {
+        return textures_predefine;
     }
 }

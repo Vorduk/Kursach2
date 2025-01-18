@@ -1,13 +1,17 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#include <unordered_map>
 #include <SDL.h>
 #include "Window.h"
 #include "Camera.h"
 #include "Scene.h"
+#include <array>
 #include <vector>
-#include "TextureManager.h"
+#include "EngineException.h"
+#include <unordered_map>
+#include <iostream>
+#include <map>
+#include <SDL_image.h>
 
 typedef unsigned int uint;
 
@@ -26,8 +30,9 @@ namespace engine {
         SDL_Renderer* m_renderer; ///< SDL renderer.
         uint m_width; ///< Renderer width.
         uint m_height; ///< Renderer height.
-        TextureManager* m_texture_manager; ///< Texture manager for this renderer
         std::unordered_map<int, std::string> wall_texture_map;
+        std::map<std::string, SDL_Texture*> m_textures;
+        std::unordered_map<std::string, std::pair<int, int>> m_texture_sizes;
 
         /**
          * @brief Draws wall textures.
@@ -38,7 +43,7 @@ namespace engine {
          * @param[in] height -Height of wall.
          * @param[in] texture_column -Column of pixels on texture to draw
          */
-        void drawWallTextures(int wall_id, int axis, int column, int ceiling, int height, int texture_column);
+        void drawWallTextures(int wall_id, int axis, int column, int ceiling, int height, int texture_column, std::array<float, 3>& fog_factors);
 
         void drawSkyBox(double ray_angle, int column);
 
@@ -67,6 +72,13 @@ namespace engine {
         void renderSceneDDA(Scene scene);
 
         /**
+         * @brief Sets the mapping of wall IDs to texture IDs.
+         * @param[in] wall_id The numerical ID of the wall.
+         * @param[in] texture_id The string ID of the texture.
+         */
+        void setWallTexture(int wall_id, const std::string& texture_id);
+
+        /**
          * @brief Loads texture by path and assigns id.
          * @param[in] id id of texture.
          * @param[in] path load path.
@@ -83,8 +95,12 @@ namespace engine {
          * @param[in] cut_y1 y coordinate of the upper left corner of the clipping area
          * @param[in] cut_x2 x coordinate of the lower right corner of the clipping area
          * @param[in] cut_y2 y coordinate of the lower right corner of the clipping area
+         * @param x_flip Boolean indicating whether to flip the texture horizontally.
+         * @param y_flip Boolean indicating whether to flip the texture vertically.
+         *
+         * @throws EngineException if the texture with the specified ID is not found.
          */
-        void renderTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y, bool x_flip, bool y_flip);
+        void renderTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2, bool x_flip, bool y_flip, std::array<float, 3>& fog_factors);
 
         /**
          * @brief Free one texture by id.
@@ -93,14 +109,15 @@ namespace engine {
         void freeTexture(const std::string& id);
 
         /**
-         * @brief Sets the mapping of wall IDs to texture IDs.
-         * @param[in] wall_id The numerical ID of the wall.
-         * @param[in] texture_id The string ID of the texture.
+         * @brief Clears all textures.
          */
-        void setWallTexture(int wall_id, const std::string& texture_id);
+        void clearTextures();
+
+        void loadTexturesFromScene(Scene scene);
+
     };
 
-}
+} // engine
 
 #endif // RENDERER_H
 

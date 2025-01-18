@@ -9,6 +9,21 @@
 #include <sstream>
 #include <iostream>
 #include "EngineException.h"
+#include <iostream>
+#include <unordered_map>
+
+#include <functional>
+#include <string>
+#include <utility>
+
+struct pair_hash {
+	template <class T1, class T2>
+	std::size_t operator () (const std::pair<T1, T2>& pair) const {
+		auto hash1 = std::hash<T1>{}(pair.first);
+		auto hash2 = std::hash<T2>{}(pair.second);
+		return hash1 ^ (hash2 << 1); 
+	}
+};
 
 typedef unsigned int uint;
 
@@ -27,6 +42,7 @@ namespace engine
 		Player m_player; ///< Scene palyer
 		Camera m_camera; ///< Scene camera
 		std::vector<std::vector<int>> m_obstacles; ///< 2D array of obstacles
+		std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> textures_predefine;
 		uint m_obstacle_size_x;
 		uint m_obstacle_size_y;
 	public:
@@ -52,6 +68,8 @@ namespace engine
 		void readMap(std::string path);
 
 		void processPlayerCollision();
+
+		std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> getTexturesPredefine();
 	};
 
 } // engine
