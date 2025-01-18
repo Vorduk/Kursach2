@@ -72,42 +72,21 @@ namespace engine
 		SDL_RenderFillRect(m_renderer, &rect);
 	}
 
-	void Renderer::renderSceneDDA(Camera* camera)
+	void Renderer::renderSceneDDA(Scene scene)
 	{
-        int gridSizeX = 20;
-        int gridSizeY = 20;
+        int gridSizeX = scene.getObstacleSizeX();
+        int gridSizeY = scene.getObstacleSizeY();
 
-        std::vector<std::vector<int>> map = {
-            {1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 3, 3, 3, 1, 2, 3, 1, 3, 1, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, },
-            {1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, },
-            {2, 0, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, },
-            {2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, },
-            {2, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 3, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, },
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, },
-            {1, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 1, },
-            {1, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, },
-            {1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, },
-            {3, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 0, 0, 0, 0, 2, },
-            {3, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 2, },
-            {3, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, },
-            {3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, },
-            {3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, },
-        };
+        Camera cur_camera = scene.getCamera();
 
         int rays_n = m_width;
         int scr_h = m_height;
 
-        double cam_angle = camera->getCameraAngle();
-        double cam_fov = camera->getFov();
-        double cam_x = camera->getCameraX();
-        double cam_y = camera->getCameraY();
-        double render_distance = camera->getRenderDistance();       
+        double cam_angle = cur_camera.getCameraAngle();
+        double cam_fov = cur_camera.getFov();
+        double cam_x = cur_camera.getCameraX();
+        double cam_y = cur_camera.getCameraY();
+        double render_distance = cur_camera.getRenderDistance();
 
         double prev_distance;
 
@@ -176,7 +155,7 @@ namespace engine
                 dot_y = cam_y + dy * cur_distance;
 
                 if (map_check_x >= 0 && map_check_x < gridSizeX && map_check_y >= 0 && map_check_y < gridSizeY) {
-                    hit = map[map_check_y][map_check_x];
+                    hit = scene.getObstacle(map_check_x, map_check_y);
                     if (hit != 0) {
                         if ((fabs(dot_x - round(dot_x)) < 0.008) && (fabs(dot_y - round(dot_y)) < 0.008)) {
                             is_corner = 1;

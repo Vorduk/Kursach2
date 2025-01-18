@@ -23,19 +23,22 @@ namespace engine
         renderer->setWallTexture(1, "wall1");
         renderer->setWallTexture(2, "wall2");
         renderer->setWallTexture(3, "wall3");
-        renderer->loadTexture("sky", "sky.png");
-        renderer->loadTexture("sky1", "sky1.png");
-        renderer->loadTexture("sky2", "sky2.png");
-        renderer->loadTexture("sky3", "sky3.png");
-        renderer->loadTexture("sky4", "sky4.png");
+        renderer->loadTexture("sky", "textures/sky3.jpg");
+
 
         while (m_running) {
-            
+
+            cur_scene->getPlayer().setPlayerPrevX();
+            cur_scene->getPlayer().setPlayerPrevY();
+
             handleEvents(cur_scene->getPlayer());
+
+            cur_scene->processPlayerCollision();
+
             cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
 
             renderer->clear();
-            renderer->renderSceneDDA(&(cur_scene->getCamera()));
+            renderer->renderSceneDDA(*cur_scene);
             renderer->present();
 
             printf("player: %.2lf\n", cur_scene->getPlayer().getPlayerAngle());
@@ -70,17 +73,17 @@ namespace engine
         const Uint8* currentKeyStates = SDL_GetKeyboardState(NULL);
 
         if (currentKeyStates[SDL_SCANCODE_W]) {
-            player.movePlayer(0.022);
+            player.movePlayer(0.07);
         }
         if (currentKeyStates[SDL_SCANCODE_S]) {
-            player.movePlayer(-0.008);
+            player.movePlayer(-0.016);
         }
 
         if (currentKeyStates[SDL_SCANCODE_A]) {
-            player.addPlayerAngle(-0.015);
+            player.addPlayerAngle(-0.03);
         }
         if (currentKeyStates[SDL_SCANCODE_D]) {
-            player.addPlayerAngle(0.015);
+            player.addPlayerAngle(0.03);
         }
     }
 

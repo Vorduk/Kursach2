@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "Window.h"
 #include "Camera.h"
+#include "Scene.h"
 #include <vector>
 #include "TextureManager.h"
 
@@ -63,7 +64,7 @@ namespace engine {
          * Obstacle rendering with DDA algorithm
          * Enemy and Item rendering
          */
-        void renderSceneDDA(Camera* camera);
+        void renderSceneDDA(Scene scene);
 
         /**
          * @brief Loads texture by path and assigns id.

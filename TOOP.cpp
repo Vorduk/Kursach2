@@ -17,7 +17,10 @@ int main(int argc, char* argv[]) {
         scene->addCamera(0, 0, 0, 40, 100);
         scene->addPlayer(2, 2, 0, 100);
 
-        app.addScene(scene);
+        engine::Scene* scene2 = new engine::Scene();
+        scene2->readMap("map.map");
+
+        app.addScene(scene2);
         app.run();
 
     }

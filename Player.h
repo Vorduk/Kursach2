@@ -68,8 +68,8 @@ namespace engine
         void setPlayerX(double player_x);
         double getPlayerX(); ///< Get player x cord.
 
-        void setPlayerPrevY();///< Get player previous y cord.
-        void setPlayerPrevX(); ///< Get player previous x cord.
+        void setPlayerPrevY();///< Set player y cord to previous y cord.
+        void setPlayerPrevX(); ///< Set player x cord to previous x cord.
 
         /**
          * @brief Set player rotation angle.
