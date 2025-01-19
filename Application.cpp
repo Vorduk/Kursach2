@@ -26,6 +26,7 @@ namespace engine
         renderer->setWallTexture(3, "wall3");
         renderer->loadTexture("sky", "textures/sky3.jpg");*/
 
+        cur_scene->addEnemy(6, 3, 100);
 
         while (m_running) {
 
@@ -39,13 +40,12 @@ namespace engine
             cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
 
             renderer->clear();
-            renderer->renderSceneDDA(*cur_scene);
+            renderer->renderSceneDDA(cur_scene);
             renderer->present();
 
-            printf("player: %.2lf\n", cur_scene->getPlayer().getPlayerAngle());
-            printf("camera: %.2lf\n", cur_scene->getCamera().getCameraAngle());
+            //printf("player: %.2lf\n", cur_scene->getPlayer().getPlayerAngle());
+            //printf("camera: %.2lf\n", cur_scene->getCamera().getCameraAngle());
 
-            
         }
 
     }

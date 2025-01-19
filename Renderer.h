@@ -12,6 +12,7 @@
 #include <iostream>
 #include <map>
 #include <SDL_image.h>
+#include <algorithm>
 
 typedef unsigned int uint;
 
@@ -30,7 +31,7 @@ namespace engine {
         SDL_Renderer* m_renderer; ///< SDL renderer.
         uint m_width; ///< Renderer width.
         uint m_height; ///< Renderer height.
-        std::unordered_map<int, std::string> wall_texture_map;
+        std::unordered_map<int, std::string> m_column_texture_map;
         std::map<std::string, SDL_Texture*> m_textures;
         std::unordered_map<std::string, std::pair<int, int>> m_texture_sizes;
 
@@ -69,7 +70,7 @@ namespace engine {
          * Obstacle rendering with DDA algorithm
          * Enemy and Item rendering
          */
-        void renderSceneDDA(Scene scene);
+        void renderSceneDDA(Scene* scene);
 
         /**
          * @brief Sets the mapping of wall IDs to texture IDs.

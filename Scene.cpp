@@ -10,6 +10,10 @@ namespace engine
 
 	engine::Scene::~Scene()
 	{
+        for (Enemy* enemy : m_enemies) {
+            delete enemy;
+        }
+        m_enemies.clear();
 	}
 
 	Player& engine::Scene::getPlayer()
@@ -54,7 +58,10 @@ namespace engine
 
 	int Scene::getObstacle(int x, int y)
 	{
-		return m_obstacles[y][x];
+        if (x < 0 || x >= m_obstacle_size_x || y < 0 || y >= m_obstacle_size_y) {
+            return 0;
+        }
+		else return m_obstacles[y][x];
 	}
 
 	std::vector<std::vector<int>> Scene::getObstacles() const {
@@ -191,4 +198,43 @@ namespace engine
     {
         return textures_predefine;
     }
+
+    void Scene::addEnemy(double x, double y, int health)
+    {
+        Enemy* enemy = new Zombie(x, y, health);
+        m_enemies.push_back(enemy);
+    }
+
+    void Scene::updateEnemies() {
+        for (size_t i = 0; i < m_enemies.size(); ) {
+            m_enemies[i]->update();
+
+            if (m_enemies[i]->getHealth() <= 0) {
+                delete m_enemies[i];
+                m_enemies.erase(m_enemies.begin() + i);
+            }
+            else {
+                ++i;
+            }
+        }
+    }
+
+    void Scene::sortEnemiesByDistance() {
+        std::sort(m_enemies.begin(), m_enemies.end(), [this](const Enemy* a, const Enemy* b) {
+            return calculateDistance(a) > calculateDistance(b);
+        });
+    }
+
+    double Scene::calculateDistance(const Enemy* enemy) {
+        double dx = enemy->getX() - m_player.getPlayerX();
+        double dy = enemy->getY() - m_player.getPlayerY();
+        return std::sqrt(dx * dx + dy * dy);
+    }
+
+    std::vector<Enemy*> Scene::getEnemies()
+    {
+        return m_enemies;
+    }
+
+
 }

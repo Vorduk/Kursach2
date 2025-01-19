@@ -11,10 +11,12 @@
 #include "EngineException.h"
 #include <iostream>
 #include <unordered_map>
-
+#include "Enemy.h"
 #include <functional>
 #include <string>
 #include <utility>
+#include <algorithm>
+#include <cmath> 
 
 struct pair_hash {
 	template <class T1, class T2>
@@ -45,6 +47,9 @@ namespace engine
 		std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> textures_predefine;
 		uint m_obstacle_size_x;
 		uint m_obstacle_size_y;
+		std::vector<Enemy*> m_enemies;
+
+		
 	public:
 		Scene(); ///< Contructor
 		~Scene(); ///< Destructor
@@ -70,6 +75,13 @@ namespace engine
 		void processPlayerCollision();
 
 		std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> getTexturesPredefine();
+
+		void addEnemy(double x, double y, int health);
+		void updateEnemies();
+
+		double calculateDistance(const Enemy* enemy);
+		void sortEnemiesByDistance();
+		std::vector<Enemy*> getEnemies();
 	};
 
 } // engine
