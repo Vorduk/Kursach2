@@ -36,6 +36,16 @@ double engine::Enemy::getVelocity()
     return m_velocity;
 }
 
+void engine::Enemy::setTextureId(std::string texture_id)
+{
+    m_enemy_texture_id = texture_id;
+}
+
+std::string engine::Enemy::getTextureId()
+{
+    return m_enemy_texture_id;
+}
+
 
 engine::Zombie::Zombie(double x, double y, int health, double velocity)
     : Enemy(x, y, health, velocity) {}

@@ -19,8 +19,7 @@ namespace engine
         Renderer* renderer = new Renderer(m_windows[0]);   
         renderer->loadTexturesFromScene(*cur_scene);
 
-        cur_scene->addEnemy(5, 1.5, 100, 0.05);
-        cur_scene->addEnemy(10, 1.5, 100, 0.05);
+        //cur_scene->addEnemy(new Zombie(5, 5, 100, 0.05));
 
         const double enemyUpdateInterval = 1.0 / 20.0;
         double lastEnemyUpdateTime = 0.0;

@@ -26,6 +26,8 @@ namespace engine {
         void setPosition(double x, double y);
         void takeDamage(int damage);
         double getVelocity();
+        void setTextureId(std::string texture_id);
+        std::string getTextureId();
     };
 
     class Zombie : public Enemy {

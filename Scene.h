@@ -70,16 +70,16 @@ namespace engine
 		int getObstacleSizeY();
 		int getObstacleSizeX();
 
-		void readMap(std::string path);
+		void loadMap(std::string path);
 
 		void processPlayerCollision();
 
-		std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> getTexturesPredefine();
+		std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> getTexturesPredefine() const;
 
-		void addEnemy(double x, double y, int health, double velocity);
+		void addEnemy(Enemy* enemy);
 		void updateEnemies();
 
-		double calculateDistance(const Enemy* enemy);
+		double calculateDistanceToPlayer(const Enemy* enemy);
 		void sortEnemiesByDistance();
 		std::vector<Enemy*> getEnemies();
 

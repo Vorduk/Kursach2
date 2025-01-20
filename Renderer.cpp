@@ -11,7 +11,7 @@ namespace engine
         if (it != m_column_texture_map.end()) {
             std::string texture_id = it->second;
 
-            int h = m_texture_sizes[texture_id].first;
+            int h = m_texture_sizes[texture_id].second;
 
             // Call renderTexture based on the axis
             if (axis == 0) { 
@@ -163,13 +163,13 @@ namespace engine
         m_textures.clear();
     }
 
-    void Renderer::loadTexturesFromScene(Scene scene)
+    void Renderer::loadTexturesFromScene(const Scene& scene)
     {
         clearTextures();
 
         for (const auto& entry : scene.getTexturesPredefine()) {
             const auto& key = entry.first; // std::pair<int, std::string>
-            const std::string& path = entry.second; 
+            const std::string& path = entry.second;
 
             std::string id = key.second;
 
@@ -351,11 +351,15 @@ namespace engine
 
         for (Enemy* enemy : scene->getEnemies()) {
 
+            std::string enemy_texture_id = enemy->getTextureId();
+            int enemy_texture_width = m_texture_sizes[enemy_texture_id].first;
+            int enemy_texture_height = m_texture_sizes[enemy_texture_id].first;
+
             float sprite_dir = atan2(enemy->getY() - cam_y, enemy->getX() - cam_x);
             while (sprite_dir - cam_angle > M_PI) sprite_dir -= 2 * M_PI;
             while (sprite_dir - cam_angle < -M_PI) sprite_dir += 2 * M_PI;
 
-            float sprite_dist = scene->calculateDistance(enemy);
+            float sprite_dist = scene->calculateDistanceToPlayer(enemy);
 
             double fog_factor = 3.0 / sprite_dist;
             if (fog_factor > 1.0) {
@@ -366,15 +370,16 @@ namespace engine
             }
             std::array<float, 3> fog_factors = { 1.0, fog_factor, fog_factor };
 
-            size_t sprite_screen_size = std::min(2000, static_cast<int>(m_height / sprite_dist));
+            size_t sprite_screen_size_h = 2 * std::min(2000, static_cast<int>(m_height / sprite_dist));
+            size_t sprite_screen_size_w = sprite_screen_size_h * (enemy_texture_width / enemy_texture_height);
 
             float sprite_angle = sprite_dir - cam_angle;
 
             SDL_Color color11 = { 255, 255, 255, 255 };
 
             int center = ((m_width / cam_fov) * sprite_angle) + (m_width / 2);
-            int start1 = center - sprite_screen_size / 2;
-            int finish1 = center + sprite_screen_size / 2;
+            int start1 = center - sprite_screen_size_w / 2;
+            int finish1 = center + sprite_screen_size_w / 2;
 
             int start = start1 < 0 ? 0 : start1;
             int finish = finish1;
@@ -384,10 +389,10 @@ namespace engine
                 finish = finish >= m_width ? m_width-1 : finish;
 
                 for (int i = start; i <= finish; i++) {
-                    int tex_col = ((i - start1) * 256) / (finish1 - start1);
+                    int tex_col = ((i - start1) * enemy_texture_width) / (finish1 - start1);
 
                     if (sprite_dist < distances[i]) {
-                        renderTexture("ololo", i, (m_height / 2), 1, sprite_screen_size, tex_col, 0, tex_col+1, 256, false, false, fog_factors);
+                        renderTexture(enemy_texture_id, i, (m_height / 2)- sprite_screen_size_h /2, 1, sprite_screen_size_h, tex_col, 0, tex_col+1, sprite_screen_size_h, false, false, fog_factors);
                     }
                     
                 }

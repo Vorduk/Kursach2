@@ -78,7 +78,7 @@ namespace engine
         return m_obstacle_size_x;
     }
 
-	void Scene::readMap(std::string path)
+	void Scene::loadMap(std::string path)
 	{
         std::ifstream file(path);
         if (!file.is_open()) {
@@ -93,19 +93,19 @@ namespace engine
                 double x, y, angle;
                 uint health;
 
-                std::getline(file, line); // // X
+                std::getline(file, line); ///< // X
                 file >> x;
-                file.ignore(); // Игнорируем оставшийся символ новой строки
+                file.ignore(); 
 
-                std::getline(file, line); // // Y
+                std::getline(file, line); ///< // Y
                 file >> y;
                 file.ignore();
 
-                std::getline(file, line); // // Angle
+                std::getline(file, line); ///< // Angle
                 file >> angle;
                 file.ignore();
 
-                std::getline(file, line); // // Health
+                std::getline(file, line); ///< // Health
                 file >> health;
                 file.ignore();
 
@@ -115,42 +115,80 @@ namespace engine
                 double x, y, angle, fov_c;
                 int render_distance;
 
-                std::getline(file, line); // // X
+                std::getline(file, line); ///< // X
                 file >> x;
                 file.ignore();
 
-                std::getline(file, line); // // Y
+                std::getline(file, line); ///< // Y
                 file >> y;
                 file.ignore();
 
-                std::getline(file, line); // // Angle
+                std::getline(file, line); ///< // Angle
                 file >> angle;
                 file.ignore();
 
-                std::getline(file, line); // // Fov_c
+                std::getline(file, line); ///< // Fov_c
                 file >> fov_c;
                 file.ignore();
 
-                std::getline(file, line); // // Render distance
+                std::getline(file, line); ///< // Render distance
                 file >> render_distance;
                 file.ignore();
 
                 m_camera = Camera(y, x, angle, fov_c, render_distance);
             }
+            else if (line == "/// Enemies") {
+                while (true) {
+                    
+                    std::getline(file, line); ///< // Type
+                    if (line.empty()) break;
+
+                    std::string enemy_type;
+                    std::getline(file, enemy_type);
+                    if (enemy_type.empty()) break; ///< If line is empty
+
+                    double x, y;
+                    std::string texture_id;
+
+                    std::getline(file, line); ///< // X
+                    file >> x;
+                    file.ignore();
+
+                    std::getline(file, line); ///< // Y
+                    file >> y;
+                    file.ignore();
+
+                    std::getline(file, line); ///< // Texture id
+                    std::getline(file, texture_id);
+
+                    Enemy* enemy = nullptr;
+                    if (enemy_type == "Zombie") {
+                        enemy = new Zombie(x, y, 100, 0.05); 
+                    }
+                    else if (enemy_type == "Alien") {
+                        enemy = new Alien(x, y, 100, 0.05); 
+                    }
+
+                    if (enemy) { ///< Texture set
+                        enemy->setTextureId(texture_id);
+                        addEnemy(enemy); 
+                    }
+                }
+            }
             else if (line == "/// Obstacle") {
-                std::getline(file, line); // // X
+                std::getline(file, line); ///< // X
                 int x, y;
                 file >> x;
                 file.ignore();
 
-                std::getline(file, line); // // Y
+                std::getline(file, line); ///< // Y
                 file >> y;
                 file.ignore();
 
                 m_obstacle_size_x = x;
                 m_obstacle_size_y = y;
 
-                std::getline(file, line); // // Obstacle
+                std::getline(file, line); ///< // Obstacle
                 std::string obstacleLine;
                 while (std::getline(file, obstacleLine) && !obstacleLine.empty()) {
                     std::stringstream ss(obstacleLine);
@@ -169,13 +207,13 @@ namespace engine
                     int key;
                     std::string name, texture;
 
-                    if (!(file >> key)) break;
+                    if (!(file >> key)) break; ///< integer id
                     file.ignore();
 
-                    std::getline(file, name);
+                    std::getline(file, name); ///< string id
                     if (name.empty()) break;
 
-                    std::getline(file, texture);
+                    std::getline(file, texture); ///< image file name or path
                     if (texture.empty()) break;
 
                     textures_predefine[std::make_pair(key, name)] = texture;
@@ -194,14 +232,14 @@ namespace engine
             m_player.returnBack();
         }
     }
-    std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> Scene::getTexturesPredefine()
+
+    std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> Scene::getTexturesPredefine() const
     {
         return textures_predefine;
     }
 
-    void Scene::addEnemy(double x, double y, int health, double velocity)
+    void Scene::addEnemy(Enemy* enemy)
     {
-        Enemy* enemy = new Zombie(x, y, health, velocity);
         m_enemies.push_back(enemy);
     }
 
@@ -254,11 +292,11 @@ namespace engine
 
     void Scene::sortEnemiesByDistance() {
         std::sort(m_enemies.begin(), m_enemies.end(), [this](const Enemy* a, const Enemy* b) {
-            return calculateDistance(a) > calculateDistance(b);
+            return calculateDistanceToPlayer(a) > calculateDistanceToPlayer(b);
         });
     }
 
-    double Scene::calculateDistance(const Enemy* enemy) {
+    double Scene::calculateDistanceToPlayer(const Enemy* enemy) {
         double dx = enemy->getX() - m_player.getPlayerX();
         double dy = enemy->getY() - m_player.getPlayerY();
         return std::sqrt(dx * dx + dy * dy);

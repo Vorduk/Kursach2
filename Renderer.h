@@ -114,7 +114,7 @@ namespace engine {
          */
         void clearTextures();
 
-        void loadTexturesFromScene(Scene scene);
+        void loadTexturesFromScene(const Scene& scene);
 
     };
 

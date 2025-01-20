@@ -13,12 +13,8 @@ int main(int argc, char* argv[]) {
         engine::Application app = engine::Application();
         app.addWindow(800, 600, "okno");
 
-        engine::Scene* scene = new engine::Scene();
-        scene->addCamera(0, 0, 0, 40, 100);
-        scene->addPlayer(2, 2, 0, 100);
-
         engine::Scene* scene2 = new engine::Scene();
-        scene2->readMap("map.map");
+        scene2->loadMap("map.map");
 
         app.addScene(scene2);
         app.run();
