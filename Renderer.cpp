@@ -330,7 +330,7 @@ namespace engine
                 }
 
                 if (is_corner) {
-                    SDL_SetRenderDrawColor(m_renderer, 128 * fog_factor, 128 * fog_factor, 128 * fog_factor, 255);
+                    SDL_SetRenderDrawColor(m_renderer, 100 * fog_factor, 100 * fog_factor, 100 * fog_factor, 255);
                     SDL_RenderDrawLine(m_renderer, column, ceiling, column, scr_h - ceiling);
                 }
 

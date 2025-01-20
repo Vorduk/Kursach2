@@ -2,8 +2,8 @@
 #include <iostream>
 
 
-engine::Enemy::Enemy(double x, double y, int health)
-    : m_enemy_x(x), m_enemy_y(y), m_health(health) {}
+engine::Enemy::Enemy(double x, double y, int health, double velocity)
+    : m_enemy_x(x), m_enemy_y(y), m_health(health), m_velocity(velocity) {}
 
 engine::Enemy::~Enemy() {}
 
@@ -31,9 +31,14 @@ void engine::Enemy::takeDamage(int damage) {
     }
 }
 
+double engine::Enemy::getVelocity()
+{
+    return m_velocity;
+}
 
-engine::Zombie::Zombie(double x, double y, int health)
-    : Enemy(x, y, health) {}
+
+engine::Zombie::Zombie(double x, double y, int health, double velocity)
+    : Enemy(x, y, health, velocity) {}
 
 void engine::Zombie::update() {
     std::cout << "Zombie at (" << m_enemy_x << ", " << m_enemy_y << ") is updating." << std::endl;
@@ -44,8 +49,8 @@ void engine::Zombie::attack() {
 }
 
 
-engine::Alien::Alien(double x, double y, int health)
-    : Enemy(x, y, health) {}
+engine::Alien::Alien(double x, double y, int health, double velocity)
+    : Enemy(x, y, health, velocity) {}
 
 void engine::Alien::update() {
     std::cout << "Alien at (" << m_enemy_x << ", " << m_enemy_y << ") is updating." << std::endl;

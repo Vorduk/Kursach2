@@ -18,24 +18,30 @@ namespace engine
 
         Renderer* renderer = new Renderer(m_windows[0]);   
         renderer->loadTexturesFromScene(*cur_scene);
-        /*renderer->loadTexture("wall1", "image1.png");
-        renderer->loadTexture("wall2", "image2.png");
-        renderer->loadTexture("wall3", "image3.png");
-        renderer->setWallTexture(1, "wall1");
-        renderer->setWallTexture(2, "wall2");
-        renderer->setWallTexture(3, "wall3");
-        renderer->loadTexture("sky", "textures/sky3.jpg");*/
 
-        cur_scene->addEnemy(6, 3, 100);
+        cur_scene->addEnemy(5, 1.5, 100, 0.05);
+        cur_scene->addEnemy(10, 1.5, 100, 0.05);
+
+        const double enemyUpdateInterval = 1.0 / 20.0;
+        double lastEnemyUpdateTime = 0.0;
+
+        auto lastTime = std::chrono::high_resolution_clock::now();
 
         while (m_running) {
+            auto currentTime = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double> elapsed = currentTime - lastTime;
+            lastTime = currentTime;
 
             cur_scene->getPlayer().setPlayerPrevX();
             cur_scene->getPlayer().setPlayerPrevY();
-
             handleEvents(cur_scene->getPlayer());
-
             cur_scene->processPlayerCollision();
+
+            lastEnemyUpdateTime += elapsed.count();
+            if (lastEnemyUpdateTime >= enemyUpdateInterval) {
+                cur_scene->updateEnemies();
+                lastEnemyUpdateTime = 0.0;
+            }
 
             cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
 

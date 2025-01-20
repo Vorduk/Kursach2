@@ -17,6 +17,8 @@
 #include <utility>
 #include <algorithm>
 #include <cmath> 
+#include <queue>
+#include <unordered_set>
 
 struct pair_hash {
 	template <class T1, class T2>
@@ -48,8 +50,6 @@ namespace engine
 		uint m_obstacle_size_x;
 		uint m_obstacle_size_y;
 		std::vector<Enemy*> m_enemies;
-
-		
 	public:
 		Scene(); ///< Contructor
 		~Scene(); ///< Destructor
@@ -76,12 +76,13 @@ namespace engine
 
 		std::unordered_map<std::pair<int, std::string>, std::string, pair_hash> getTexturesPredefine();
 
-		void addEnemy(double x, double y, int health);
+		void addEnemy(double x, double y, int health, double velocity);
 		void updateEnemies();
 
 		double calculateDistance(const Enemy* enemy);
 		void sortEnemiesByDistance();
 		std::vector<Enemy*> getEnemies();
+
 	};
 
 } // engine

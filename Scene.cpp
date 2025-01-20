@@ -199,16 +199,48 @@ namespace engine
         return textures_predefine;
     }
 
-    void Scene::addEnemy(double x, double y, int health)
+    void Scene::addEnemy(double x, double y, int health, double velocity)
     {
-        Enemy* enemy = new Zombie(x, y, health);
+        Enemy* enemy = new Zombie(x, y, health, velocity);
         m_enemies.push_back(enemy);
     }
 
     void Scene::updateEnemies() {
-        for (size_t i = 0; i < m_enemies.size(); ) {
-            m_enemies[i]->update();
+        sortEnemiesByDistance();
 
+        for (size_t i = 0; i < m_enemies.size(); ) {
+            double enemyX = m_enemies[i]->getX();
+            double enemyY = m_enemies[i]->getY();
+            double playerX = m_player.getPlayerX();
+            double playerY = m_player.getPlayerY();
+
+            double dx = playerX - enemyX;
+            double dy = playerY - enemyY;
+            double distance = std::sqrt(dx * dx + dy * dy);
+
+            if (distance > 0.0) {
+                // Normalize
+                dx = dx/distance;
+                dy = dy/distance;
+
+                // get speed
+                double velocity = m_enemies[i]->getVelocity();
+
+                // Get new cords
+                double newEnemyX = enemyX + dx * velocity;
+                double newEnemyY = enemyY + dy * velocity;
+
+                int gridX = static_cast<int>(newEnemyX);
+                int gridY = static_cast<int>(newEnemyY);
+                if (getObstacle(gridX, gridY) == 0) {
+                    m_enemies[i]->setPosition(newEnemyX, newEnemyY);
+                }
+                else {
+                    
+                }
+            }
+
+            // Проверка здоровья врага
             if (m_enemies[i]->getHealth() <= 0) {
                 delete m_enemies[i];
                 m_enemies.erase(m_enemies.begin() + i);
@@ -217,6 +249,7 @@ namespace engine
                 ++i;
             }
         }
+
     }
 
     void Scene::sortEnemiesByDistance() {
@@ -235,6 +268,4 @@ namespace engine
     {
         return m_enemies;
     }
-
-
 }
