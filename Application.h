@@ -47,7 +47,7 @@ namespace engine {
 		/**
 		 * @brief Event handling.
 		 */
-		void handleEvents(Player &player);
+		void handleEvents(Player &player, Window* window, bool& mouseCaptured);
 
 		/**
 		 * @brief Windows vector cleaning.

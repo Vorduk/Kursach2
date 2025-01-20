@@ -27,6 +27,9 @@ namespace engine
 
         auto lastTime = std::chrono::high_resolution_clock::now();
 
+        bool mouseCaptured = true;
+        SDL_SetRelativeMouseMode(SDL_TRUE);
+
         while (m_running) {
             auto currentTime = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> elapsed = currentTime - lastTime;
@@ -34,7 +37,7 @@ namespace engine
 
             cur_scene->getPlayer().setPlayerPrevX();
             cur_scene->getPlayer().setPlayerPrevY();
-            handleEvents(cur_scene->getPlayer());
+            handleEvents(cur_scene->getPlayer(), m_windows[0], mouseCaptured);
             cur_scene->processPlayerCollision();
 
             lastEnemyUpdateTime += elapsed.count();
@@ -67,30 +70,43 @@ namespace engine
         m_windows.push_back(new_window);
     }
 
-    void Application::handleEvents(Player &player)
+    void Application::handleEvents(Player &player, Window *window, bool& mouseCaptured)
     {
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 m_running = false;
             }
+
+            // Lock cursor
+            if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE) {
+                mouseCaptured = !mouseCaptured; 
+                SDL_SetRelativeMouseMode(mouseCaptured ? SDL_TRUE : SDL_FALSE);
+                if (mouseCaptured) {
+                    SDL_WarpMouseInWindow(window->getWindow(), window->getWidth() / 2, window->getHeight() / 2);
+                }
+            }
         }
 
-        // Обработка нажатий клавиш
+        // Move player
         const Uint8* currentKeyStates = SDL_GetKeyboardState(NULL);
-
         if (currentKeyStates[SDL_SCANCODE_W]) {
             player.movePlayer(0.07);
         }
         if (currentKeyStates[SDL_SCANCODE_S]) {
             player.movePlayer(-0.016);
         }
-
         if (currentKeyStates[SDL_SCANCODE_A]) {
-            player.addPlayerAngle(-0.03);
+            player.movePlayerSide(0.05);
         }
         if (currentKeyStates[SDL_SCANCODE_D]) {
-            player.addPlayerAngle(0.03);
+            player.movePlayerSide(-0.05);
+        }
+
+        int mouse_x, mouse_y;
+        SDL_GetRelativeMouseState(&mouse_x, &mouse_y);
+        if (mouseCaptured) {
+            player.addPlayerAngle(mouse_x * 0.0015);
         }
     }
 
