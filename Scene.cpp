@@ -148,7 +148,9 @@ namespace engine
                     if (enemy_type.empty()) break; ///< If line is empty
 
                     double x, y;
+                    int health;
                     std::string texture_id;
+                    std::string dead_texture_id;
 
                     std::getline(file, line); ///< // X
                     file >> x;
@@ -158,19 +160,25 @@ namespace engine
                     file >> y;
                     file.ignore();
 
-                    std::getline(file, line); ///< // Texture id
+                    std::getline(file, line); ///< // Health
+                    file >> health;
+                    file.ignore();
+
+                    std::getline(file, line); ///< // Textures id
                     std::getline(file, texture_id);
+                    std::getline(file, dead_texture_id);
 
                     Enemy* enemy = nullptr;
                     if (enemy_type == "Zombie") {
-                        enemy = new Zombie(x, y, 100, 0.05); 
+                        enemy = new Zombie(x, y, health, 0.1, 1.0, 1);
                     }
                     else if (enemy_type == "Alien") {
-                        enemy = new Alien(x, y, 100, 0.05); 
+                        enemy = new Alien(x, y, health, 0.1, 1.0, 2);
                     }
 
                     if (enemy) { ///< Texture set
                         enemy->setTextureId(texture_id);
+                        enemy->setDeadTextureId(dead_texture_id);
                         addEnemy(enemy); 
                     }
                 }
@@ -247,8 +255,9 @@ namespace engine
         sortEnemiesByDistance();
 
         for (size_t i = 0; i < m_enemies.size(); ) {
-            double enemyX = m_enemies[i]->getX();
-            double enemyY = m_enemies[i]->getY();
+            Enemy* enemy = m_enemies[i];
+            double enemyX = enemy->getX();
+            double enemyY = enemy->getY();
             double playerX = m_player.getPlayerX();
             double playerY = m_player.getPlayerY();
 
@@ -258,11 +267,11 @@ namespace engine
 
             if (distance > 0.0) {
                 // Normalize
-                dx = dx/distance;
-                dy = dy/distance;
+                dx = dx / distance;
+                dy = dy / distance;
 
                 // get speed
-                double velocity = m_enemies[i]->getVelocity();
+                double velocity = enemy->getVelocity();
 
                 // Get new cords
                 double newEnemyX = enemyX + dx * velocity;
@@ -270,24 +279,36 @@ namespace engine
 
                 int gridX = static_cast<int>(newEnemyX);
                 int gridY = static_cast<int>(newEnemyY);
+
                 if (getObstacle(gridX, gridY) == 0) {
-                    m_enemies[i]->setPosition(newEnemyX, newEnemyY);
+                    enemy->setPosition(newEnemyX, newEnemyY);
                 }
                 else {
                     
                 }
             }
 
-            // Проверка здоровья врага
-            if (m_enemies[i]->getHealth() <= 0) {
-                delete m_enemies[i];
-                m_enemies.erase(m_enemies.begin() + i);
+            if (enemy->getHealth() <= 0 && !enemy->isDead()) {
+                enemy->setTextureId(enemy->getDeadTextureId());
+                enemy->setVelocity(0);
+                enemy->die();
             }
-            else {
-                ++i;
-            }
-        }
 
+            if (enemy->isDead()) {
+                enemy->addCounter();
+
+                if (enemy->getDeathCounter()>20) {
+                    delete enemy;
+                    m_enemies.erase(m_enemies.begin() + i);
+                    continue;
+                }
+            }
+            else if (distance < 0.666) {
+                enemy->attack(m_player.getHealthPointer());
+            }
+
+            ++i;
+        }
     }
 
     void Scene::sortEnemiesByDistance() {
@@ -306,4 +327,116 @@ namespace engine
     {
         return m_enemies;
     }
+
+    void Scene::fire()
+    {
+        for (size_t i = 0; i < m_enemies.size(); ++i) {
+            int enemy_distance = calculateDistanceToPlayer(m_enemies[i]);
+
+            double player_x = m_player.getPlayerX();
+            double player_y = m_player.getPlayerY();
+            double player_angle = m_player.getPlayerAngle();
+
+            float sprite_dir = atan2(m_enemies[i]->getY() - player_y, m_enemies[i]->getX() - player_x);
+            while (sprite_dir - player_angle > M_PI) sprite_dir -= 2 * M_PI;
+            while (sprite_dir - player_angle < -M_PI) sprite_dir += 2 * M_PI;
+
+            float sprite_angle = sprite_dir - player_angle;
+
+            double cast = raycastObstacleFromPlayer(25);
+            bool cast_check = cast == -1.0 ? true : (enemy_distance - cast < 0.1);
+
+            std::cout << cast << "\n";
+
+            int area = 25;
+
+            if (abs(sprite_angle) < (M_PI/6/enemy_distance) && enemy_distance < area && cast_check)
+            {
+                m_enemies[i]->takeDamage(15);
+
+                std::cout << "damage" << "\n";
+            }
+        }
+    }
+
+    double Scene::raycastObstacleFromPlayer(int cast_distatnce) {
+
+        double player_x = m_player.getPlayerX();
+        double player_y = m_player.getPlayerY();
+
+        int map_check_x = player_x;
+        int map_check_y = player_y;
+
+        int hit = 0;
+        int hit_door = 0;
+
+        double ray_angle = m_player.getPlayerAngle();
+
+        float dx = cos(ray_angle);
+        float dy = sin(ray_angle);
+
+        double unit_step_size_x = sqrt(1 + (dy / dx) * (dy / dx));
+        double unit_step_size_y = sqrt(1 + (dx / dy) * (dx / dy));
+
+        double ray_length_x;
+        double ray_length_y;
+
+        double step_x;
+        double step_y;
+
+        if (dx < 0)
+        {
+            step_x = -1;
+            ray_length_x = (player_x - float(map_check_x)) * unit_step_size_x;
+        }
+        else {
+            step_x = 1;
+            ray_length_x = (float(map_check_x + 1) - player_x) * unit_step_size_x;
+        }
+
+        if (dy < 0)
+        {
+            step_y = -1;
+            ray_length_y = (player_y - float(map_check_y)) * unit_step_size_y;
+        }
+        else {
+            step_y = 1;
+            ray_length_y = (float(map_check_y + 1) - player_y) * unit_step_size_y;
+        }
+
+        double dot_x;
+        double dot_y;
+
+        double cur_distance = 0.0;
+        while (cur_distance < cast_distatnce) {
+
+            // walk
+            if (ray_length_x < ray_length_y) {
+                map_check_x += step_x;
+                cur_distance = ray_length_x;
+                ray_length_x += unit_step_size_x;
+            }
+            else {
+                map_check_y += step_y;
+                cur_distance = ray_length_y;
+                ray_length_y += unit_step_size_y;
+            }
+
+            dot_x = player_x + dx * cur_distance;
+            dot_y = player_y + dy * cur_distance;
+
+            if (map_check_x >= 0 && map_check_x < m_obstacle_size_x && map_check_y >= 0 && map_check_y < m_obstacle_size_y) {
+                hit = getObstacle(map_check_x, map_check_y);
+                if (hit != 0) {
+                    break;
+                }
+            }
+        }
+
+        if (hit != 0) {
+            return cur_distance;
+        }
+        else return -1.0;
+    }
+
 }

@@ -2,6 +2,7 @@
 #define RENDERER_H
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include "Window.h"
 #include "Camera.h"
 #include "Scene.h"
@@ -34,6 +35,7 @@ namespace engine {
         std::unordered_map<int, std::string> m_column_texture_map;
         std::map<std::string, SDL_Texture*> m_textures;
         std::unordered_map<std::string, std::pair<int, int>> m_texture_sizes;
+        std::unordered_map<std::string, TTF_Font*> m_fonts; ///< Map to store loaded fonts.
 
         /**
          * @brief Draws wall textures.
@@ -114,8 +116,34 @@ namespace engine {
          */
         void clearTextures();
 
+        /**
+         * @brief Loads a font from a file and associates it with a given ID.
+         * @param[in] id The ID to associate with the font.
+         * @param[in] path The file path of the font.
+         * @param[in] font_size The size of the font.
+         * @throws EngineException if the font cannot be loaded.
+         */
+        void loadFont(const std::string& id, const std::string& path, int font_size);
+
+        /**
+         * @brief Renders a text string at the specified coordinates using the specified font ID.
+         * @param[in] font_id The ID of the font to use.
+         * @param[in] text The text string to render.
+         * @param[in] x The x coordinate to render the text.
+         * @param[in] y The y coordinate to render the text.
+         * @param[in] color The color of the text.
+         * @throws EngineException if the font ID is not found or rendering fails.
+         */
+        void renderText(const std::string& font_id, const std::string& text, int x, int y, SDL_Color color);
+
+        /**
+         * @brief Frees all loaded fonts.
+         */
+        void clearFonts();
+
         void loadTexturesFromScene(const Scene& scene);
 
+        void drawFloor();
     };
 
 } // engine

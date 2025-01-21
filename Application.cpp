@@ -19,7 +19,8 @@ namespace engine
         Renderer* renderer = new Renderer(m_windows[0]);   
         renderer->loadTexturesFromScene(*cur_scene);
 
-        //cur_scene->addEnemy(new Zombie(5, 5, 100, 0.05));
+        renderer->loadFont("arial", "fonts/ofont.ru_Arial.ttf", 25);
+        SDL_Color font_color = { 255, 255, 255, 255 };
 
         const double enemyUpdateInterval = 1.0 / 20.0;
         double lastEnemyUpdateTime = 0.0;
@@ -29,6 +30,8 @@ namespace engine
         bool mouseCaptured = true;
         SDL_SetRelativeMouseMode(SDL_TRUE);
 
+        int fps = 0;
+
         while (m_running) {
             auto currentTime = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> elapsed = currentTime - lastTime;
@@ -36,24 +39,27 @@ namespace engine
 
             cur_scene->getPlayer().setPlayerPrevX();
             cur_scene->getPlayer().setPlayerPrevY();
-            handleEvents(cur_scene->getPlayer(), m_windows[0], mouseCaptured);
+            handleEvents(*cur_scene, m_windows[0], mouseCaptured);
             cur_scene->processPlayerCollision();
 
             lastEnemyUpdateTime += elapsed.count();
             if (lastEnemyUpdateTime >= enemyUpdateInterval) {
                 cur_scene->updateEnemies();
                 lastEnemyUpdateTime = 0.0;
+                fps = static_cast<int>(1.0 / elapsed.count());
             }
 
             cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
 
             renderer->clear();
             renderer->renderSceneDDA(cur_scene);
-            renderer->present();
+            renderer->renderText("arial", std::to_string(fps), 5, 5, font_color);
+            renderer->renderText("arial", std::to_string(cur_scene->getPlayer().getPlayerHealth()), 5, 30, font_color);
+            renderer->present(); 
 
-            //printf("player: %.2lf\n", cur_scene->getPlayer().getPlayerAngle());
-            //printf("camera: %.2lf\n", cur_scene->getCamera().getCameraAngle());
-
+            if (cur_scene->getPlayer().getPlayerHealth() < 0) {
+                m_running = false;
+            }
         }
 
     }
@@ -69,7 +75,7 @@ namespace engine
         m_windows.push_back(new_window);
     }
 
-    void Application::handleEvents(Player &player, Window *window, bool& mouseCaptured)
+    void Application::handleEvents(Scene &scene, Window *window, bool& mouseCaptured)
     {
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
@@ -85,27 +91,38 @@ namespace engine
                     SDL_WarpMouseInWindow(window->getWindow(), window->getWidth() / 2, window->getHeight() / 2);
                 }
             }
+
+            if (event.type == SDL_MOUSEBUTTONDOWN) {
+                if (event.button.button == SDL_BUTTON_LEFT && mouseCaptured == false) {
+                    mouseCaptured = true;
+                    SDL_SetRelativeMouseMode(SDL_TRUE);
+                }
+
+                if (event.button.button == SDL_BUTTON_LEFT && mouseCaptured == true) {
+                    scene.fire();
+                }
+            }
         }
 
         // Move player
         const Uint8* currentKeyStates = SDL_GetKeyboardState(NULL);
         if (currentKeyStates[SDL_SCANCODE_W]) {
-            player.movePlayer(0.07);
+            scene.getPlayer().movePlayer(0.07);
         }
         if (currentKeyStates[SDL_SCANCODE_S]) {
-            player.movePlayer(-0.016);
+            scene.getPlayer().movePlayer(-0.016);
         }
         if (currentKeyStates[SDL_SCANCODE_A]) {
-            player.movePlayerSide(0.05);
+            scene.getPlayer().movePlayerSide(0.04);
         }
         if (currentKeyStates[SDL_SCANCODE_D]) {
-            player.movePlayerSide(-0.05);
+            scene.getPlayer().movePlayerSide(-0.04);
         }
 
         int mouse_x, mouse_y;
         SDL_GetRelativeMouseState(&mouse_x, &mouse_y);
         if (mouseCaptured) {
-            player.addPlayerAngle(mouse_x * 0.0015);
+            scene.getPlayer().addPlayerAngle(mouse_x * 0.0015);
         }
     }
 

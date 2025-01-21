@@ -83,6 +83,9 @@ namespace engine
 		void sortEnemiesByDistance();
 		std::vector<Enemy*> getEnemies();
 
+		void fire();
+
+		double raycastObstacleFromPlayer(int cast_distatnce);
 	};
 
 } // engine

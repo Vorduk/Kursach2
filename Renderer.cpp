@@ -14,15 +14,16 @@ namespace engine
             int h = m_texture_sizes[texture_id].second;
 
             // Call renderTexture based on the axis
-            if (axis == 0) { 
-                renderTexture(texture_id, column, ceiling, column, height, texture_column, 0, texture_column + 1, h, false, false, fog_factors);
+            if (axis == 0) {
+                renderTexture(texture_id, column, ceiling, 1, height, texture_column, 0, texture_column + 1, h, false, false, fog_factors);
             }
-            else { 
-                renderTexture(texture_id, column, ceiling, column, height, texture_column, 0, texture_column + 1, h, false, false, fog_factors);
+            else {
+                renderTexture(texture_id, column, ceiling, 1, height, texture_column, 0, texture_column + 1, h, false, false, fog_factors);
             }
         }
         else {
-            // todo
+            std::string error_message = "Wall texture id = " + std::to_string(wall_id) + " not found";
+            THROW_ENGINE_EXCEPTION(error_message);
         }
     }
 
@@ -46,37 +47,45 @@ namespace engine
 
         std::array<float, 3> fog_factors = { 1.0, 1.0, 1.0 };
 
-        renderTexture(texture_id, column, 0, w, h, tex_col, 0, tex_col + 1, h, false, false, fog_factors);
+        renderTexture(texture_id, column, 0, w, m_height/2, tex_col, 0, tex_col + 1, h/2-50, false, false, fog_factors);
     }
 
     Renderer::Renderer(Window* window)
-      : m_renderer(SDL_CreateRenderer(window->getWindow(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE)),
+        : m_renderer(SDL_CreateRenderer(window->getWindow(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE)),
         m_width(window->getWidth()),
-        m_height(window->getHeight()) {}
+        m_height(window->getHeight()) 
+    {
+        if (TTF_Init() == -1) {
+            std::string sdl2_ttf_error = TTF_GetError();
+            THROW_ENGINE_EXCEPTION("Could not initialize SDL2_ttf: " + sdl2_ttf_error);
+        }
+    }
 
     Renderer::~Renderer()
-	{
+    {
         clearTextures();
-		SDL_DestroyRenderer(m_renderer);
-	}
+        clearFonts();
+        TTF_Quit();
+        SDL_DestroyRenderer(m_renderer); 
+    }
 
-	void Renderer::clear()
-	{
-		SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
-		SDL_RenderClear(m_renderer);
-	}
+    void Renderer::clear()
+    {
+        SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
+        SDL_RenderClear(m_renderer);
+    }
 
-	void Renderer::present()
-	{
-		SDL_RenderPresent(m_renderer);
-	}
+    void Renderer::present()
+    {
+        SDL_RenderPresent(m_renderer);
+    }
 
-	void Renderer::drawRectangle(int x, int y, int width, int height, SDL_Color color)
-	{
-		SDL_Rect rect = { x, y, width, height };
-		SDL_SetRenderDrawColor(m_renderer, color.r, color.g, color.b, color.a);
-		SDL_RenderFillRect(m_renderer, &rect);
-	}
+    void Renderer::drawRectangle(int x, int y, int width, int height, SDL_Color color)
+    {
+        SDL_Rect rect = { x, y, width, height };
+        SDL_SetRenderDrawColor(m_renderer, color.r, color.g, color.b, color.a);
+        SDL_RenderFillRect(m_renderer, &rect);
+    }
 
     void Renderer::setWallTexture(int wall_id, const std::string& texture_id) {
         m_column_texture_map[wall_id] = texture_id;
@@ -148,7 +157,7 @@ namespace engine
             THROW_ENGINE_EXCEPTION("Texture with id " + texture_id + " not found.");
         }
     }
-    
+
     void Renderer::freeTexture(const std::string& id) {
         if (m_textures.count(id)) {
             SDL_DestroyTexture(m_textures[id]);
@@ -163,6 +172,49 @@ namespace engine
         m_textures.clear();
     }
 
+    void Renderer::loadFont(const std::string& id, const std::string& path, int font_size)
+    {
+        TTF_Font* font = TTF_OpenFont(path.c_str(), font_size);
+        if (!font) {
+            THROW_ENGINE_EXCEPTION("Failed to load font: " + std::string(TTF_GetError()));
+        }
+        m_fonts[id] = font;
+    }
+
+    void Renderer::renderText(const std::string& font_id, const std::string& text, int x, int y, SDL_Color color)
+    {
+        auto it = m_fonts.find(font_id);
+        if (it == m_fonts.end()) {
+            THROW_ENGINE_EXCEPTION("Font ID not found: " + font_id);
+        }
+
+        SDL_Surface* textSurface = TTF_RenderText_Solid(it->second, text.c_str(), color);
+        if (!textSurface) {
+            THROW_ENGINE_EXCEPTION("Failed to create text surface: " + std::string(TTF_GetError()));
+        }
+
+        SDL_Texture* textTexture = SDL_CreateTextureFromSurface(m_renderer, textSurface);
+        SDL_FreeSurface(textSurface);
+        if (!textTexture) {
+            THROW_ENGINE_EXCEPTION("Failed to create text texture: " + std::string(SDL_GetError()));
+        }
+
+        int textWidth = 0, textHeight = 0;
+        SDL_QueryTexture(textTexture, nullptr, nullptr, &textWidth, &textHeight);
+        SDL_Rect renderQuad = { x, y, textWidth, textHeight };
+
+        SDL_RenderCopy(m_renderer, textTexture, nullptr, &renderQuad);
+        SDL_DestroyTexture(textTexture);
+    }
+
+    void Renderer::clearFonts()
+    {
+        for (auto& pair : m_fonts) {
+            TTF_CloseFont(pair.second);
+        }
+        m_fonts.clear();
+    }
+
     void Renderer::loadTexturesFromScene(const Scene& scene)
     {
         clearTextures();
@@ -175,6 +227,20 @@ namespace engine
 
             loadTexture(id, "textures/" + path);
             setWallTexture(key.first, key.second);
+        }
+    }
+
+    void Renderer::drawFloor()
+    {
+        for (int y = m_height / 2; y < m_height; y++) {
+            double distance_to_center = y - (m_height / 2);
+            double normalized_distance = distance_to_center / (m_height / 2);
+
+            if (normalized_distance < 0) normalized_distance = 0;
+            if (normalized_distance > 1) normalized_distance = 1;
+
+            SDL_SetRenderDrawColor(m_renderer, 128, 128 * normalized_distance, 128 * normalized_distance, 255);
+            SDL_RenderDrawLine(m_renderer, 0, y, m_width, y);
         }
     }
 
@@ -196,6 +262,8 @@ namespace engine
         double prev_distance;
 
         std::vector<double> distances;
+
+        drawFloor();
 
         for (int column = 0; column < rays_n; column++) {    
             int is_corner = 0;
@@ -333,22 +401,10 @@ namespace engine
                     SDL_SetRenderDrawColor(m_renderer, 100 * fog_factor, 100 * fog_factor, 100 * fog_factor, 255);
                     SDL_RenderDrawLine(m_renderer, column, ceiling, column, scr_h - ceiling);
                 }
-
-                // Drawing floor
-                SDL_SetRenderDrawColor(m_renderer, 128, 128, 128, 255); // Серый цвет для пола
-                SDL_RenderDrawLine(m_renderer, column, scr_h - ceiling, column, scr_h);
             }
-            else
-            {
-                // Drawing floor outside the map
-                SDL_SetRenderDrawColor(m_renderer, 128, 128, 128, 255);
-                SDL_RenderDrawLine(m_renderer, column, (scr_h / 2), column, scr_h);
-            }
-
         } 
 
         int fov_c = (cam_fov * 180) / M_PI;
-
         for (Enemy* enemy : scene->getEnemies()) {
 
             std::string enemy_texture_id = enemy->getTextureId();
@@ -375,8 +431,6 @@ namespace engine
 
             float sprite_angle = sprite_dir - cam_angle;
 
-            SDL_Color color11 = { 255, 255, 255, 255 };
-
             int center = ((m_width / cam_fov) * sprite_angle) + (m_width / 2);
             int start1 = center - sprite_screen_size_w / 2;
             int finish1 = center + sprite_screen_size_w / 2;
@@ -392,12 +446,18 @@ namespace engine
                     int tex_col = ((i - start1) * enemy_texture_width) / (finish1 - start1);
 
                     if (sprite_dist < distances[i]) {
-                        renderTexture(enemy_texture_id, i, (m_height / 2)- sprite_screen_size_h /2, 1, sprite_screen_size_h, tex_col, 0, tex_col+1, sprite_screen_size_h, false, false, fog_factors);
+                        renderTexture(enemy_texture_id, i, (m_height / 2)- sprite_screen_size_h /2, 1, sprite_screen_size_h, tex_col, 0, tex_col+1, enemy_texture_height, false, false, fog_factors);
                     }
                     
                 }
+                if (center>=0 && center < m_width && sprite_dist < distances[center]) 
+                {
+                    // Draw hp bar
+                    SDL_Color hp_bar_color = { 0, 255, 0, 255 };
+                    drawRectangle(center - ((enemy->getHealth() / sprite_dist) / 2), (m_height / 2) - (sprite_screen_size_h/2) - 15, enemy->getHealth()/sprite_dist, (500 / sprite_dist) / 10, hp_bar_color);
+                }
             }
-
+   
         }
 
     }

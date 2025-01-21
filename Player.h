@@ -120,6 +120,8 @@ namespace engine
          * @param[in] value -Subtracted value.
          */
         void applyDamage(int damage);
+
+        uint* getHealthPointer();
     };
 
 }

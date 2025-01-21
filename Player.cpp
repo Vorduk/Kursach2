@@ -90,4 +90,9 @@ namespace engine
         m_player_health -= damage;
     }
 
+    uint* Player::getHealthPointer()
+    {
+        return &m_player_health;
+    }
+
 }
