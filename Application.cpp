@@ -2,9 +2,9 @@
 
 #define THROW_ENGINE_EXCEPTION(msg) throw engine::EngineException(msg, __FILE__, __LINE__, __func__) // Macros.
 
-//void button1Action() {
-//    std::cout << "Button 1 clicked!" << std::endl;
-//}
+void button1Action() {
+    std::cout << "Button 1 clicked!" << std::endl;
+}
 
 namespace engine 
 {
@@ -18,7 +18,7 @@ namespace engine
 
     void engine::Application::run()
     {
-        //addUI();
+        addUI();
 
         Scene* cur_scene = m_scenes[0];
 
@@ -38,7 +38,7 @@ namespace engine
         bool mouseCaptured = true;
         SDL_SetRelativeMouseMode(SDL_TRUE);
 
-        //m_ui.m_buttons.emplace_back(100, 100, 200, 50, "Button 1", button1Action);
+        m_ui.m_buttons.emplace_back(100, 100, 200, 50, "Button 1", button1Action);
 
         int fps = 0;
 
@@ -71,7 +71,7 @@ namespace engine
             renderer->drawText("arial", std::to_string(fps), 5, 5, font_color);
             renderer->drawText("arial", std::to_string(cur_scene->getPlayer().getPlayerHealth()), 5, 30, font_color);
             renderer->drawText("arial", std::to_string(cur_scene->getEnemyCount()), 5, 55, font_color);
-            //renderer->drawUI(m_ui);
+            renderer->drawUI(m_ui);
             renderer->present(); 
 
             if (cur_scene->getPlayer().getPlayerHealth() <= 0) {
@@ -100,7 +100,11 @@ namespace engine
     void Application::handleEvents(Scene &scene, Window *window, bool& mouseCaptured)
     {
         SDL_Event event;
+        int mouse_x, mouse_y;
+        int abs_mouse_x, abs_mouse_y;
+        SDL_GetRelativeMouseState(&mouse_x, &mouse_y);
         while (SDL_PollEvent(&event)) {
+
             if (event.type == SDL_QUIT) {
                 m_running = false;
             }
@@ -116,6 +120,11 @@ namespace engine
 
             if (event.type == SDL_MOUSEBUTTONDOWN) {
                 if (event.button.button == SDL_BUTTON_LEFT && mouseCaptured == false) {
+                    SDL_GetMouseState(&abs_mouse_x, &abs_mouse_y);;
+                    for (auto& button : m_ui.m_buttons) {
+                        button.handleClick(abs_mouse_x, abs_mouse_y);
+                    }
+
                     mouseCaptured = true;
                     SDL_SetRelativeMouseMode(SDL_TRUE);
                 }
@@ -140,9 +149,8 @@ namespace engine
         if (currentKeyStates[SDL_SCANCODE_D]) {
             scene.getPlayer().movePlayerSide(-0.04);
         }
+        
 
-        int mouse_x, mouse_y;
-        SDL_GetRelativeMouseState(&mouse_x, &mouse_y);
         if (mouseCaptured) {
             scene.getPlayer().addPlayerAngle(mouse_x * 0.0015);
         }

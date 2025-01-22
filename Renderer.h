@@ -14,7 +14,7 @@
 #include <map>
 #include <SDL_image.h>
 #include <algorithm>
-//#include "UI.h"
+#include "UI.h"
 
 typedef unsigned int uint;
 
@@ -153,7 +153,7 @@ namespace engine {
 
         void drawSprite(Scene* scene, Sprite sprite, std::vector<double> distances_mask);
 
-        //void drawUI(UI ui);
+        void drawUI(UI ui);
     };
 
 } // engine

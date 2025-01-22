@@ -217,8 +217,8 @@ namespace engine {
         return (m_behavior == DEAD);
     }
 
-    engine::Zombie::Zombie(double x, double y, int health, double velocity, double attack_range, int attack_damage, EnemyBehavior enemy_behavior)
-        : Enemy(x, y, health, velocity, attack_range, attack_damage, enemy_behavior) {}
+    engine::Zombie::Zombie(double x, double y, int health, EnemyBehavior enemy_behavior)
+        : Enemy(x, y, health, 0.1, 1, 1, enemy_behavior) {}
 
     void engine::Zombie::attack(uint* target_health) {
         std::cout << "Zombie attacks!" << std::endl;
@@ -230,8 +230,8 @@ namespace engine {
         }
     }
 
-    engine::Alien::Alien(double x, double y, int health, double velocity, double attack_range, int attack_damage, EnemyBehavior enemy_behavior)
-        : Enemy(x, y, health, velocity, attack_range, attack_damage, enemy_behavior) {}
+    engine::Alien::Alien(double x, double y, int health, EnemyBehavior enemy_behavior)
+        : Enemy(x, y, health, 0.13, 1.2, 3, enemy_behavior) {}
 
     void engine::Alien::attack(uint* target_health) {
         std::cout << "Alien attacks!" << std::endl;

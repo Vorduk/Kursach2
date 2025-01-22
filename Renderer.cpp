@@ -337,7 +337,7 @@ namespace engine
         }
     }
 
-    /*void Renderer::drawUI(UI ui)
+    void Renderer::drawUI(UI ui)
     {
         for (Button button : ui.m_buttons) {
             if (button.m_is_active) {
@@ -373,7 +373,7 @@ namespace engine
         {
             drawText(text.m_font, text.m_text, text.m_x, text.m_y, text.m_color);
         }
-    }*/
+    }
 
 	void Renderer::renderSceneDDA(Scene* scene)
 	{

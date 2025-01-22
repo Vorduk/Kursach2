@@ -6,7 +6,7 @@
 // Angle
 0.0
 // Health
-100
+900
 
 /// Camera
 // X
@@ -210,7 +210,7 @@ Alien
 // Y
 12
 // Health
-200
+1500
 // Textures id & frames count
 alien
 8

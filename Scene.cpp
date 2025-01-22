@@ -181,10 +181,10 @@ namespace engine
 
                     Enemy* enemy = nullptr;
                     if (enemy_type == "Zombie") {
-                        enemy = new Zombie(x, y, health, 0.1, 1.0, 1, IDLE);
+                        enemy = new Zombie(x, y, health, IDLE);
                     }
                     else if (enemy_type == "Alien") {
-                        enemy = new Alien(x, y, health, 0.1, 1.0, 5, IDLE);
+                        enemy = new Alien(x, y, health, IDLE);
                     }
 
                     if (enemy) { ///< Texture set

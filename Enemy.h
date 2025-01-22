@@ -64,13 +64,13 @@ namespace engine {
 
     class Zombie : public Enemy {
     public:
-        Zombie(double x, double y, int health, double velocity, double attack_range, int attack_damage, EnemyBehavior enemy_behavior);
+        Zombie(double x, double y, int health, EnemyBehavior enemy_behavior);
         void attack(uint* target_health) override;
     };
 
     class Alien : public Enemy {
     public:
-        Alien(double x, double y, int health, double velocity, double attack_range, int attack_damage, EnemyBehavior enemy_behavior);
+        Alien(double x, double y, int health, EnemyBehavior enemy_behavior);
         void attack(uint* target_health) override;
     };
 
