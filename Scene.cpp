@@ -150,7 +150,9 @@ namespace engine
                     double x, y;
                     int health;
                     std::string texture_id;
+                    int frames;
                     std::string dead_texture_id;
+                    int frames_dead;
 
                     std::getline(file, line); ///< // X
                     file >> x;
@@ -166,19 +168,23 @@ namespace engine
 
                     std::getline(file, line); ///< // Textures id
                     std::getline(file, texture_id);
+                    file >> frames;
+                    file.ignore();
                     std::getline(file, dead_texture_id);
+                    file >> frames_dead;
+                    file.ignore();
 
                     Enemy* enemy = nullptr;
                     if (enemy_type == "Zombie") {
-                        enemy = new Zombie(x, y, health, 0.1, 1.0, 1);
+                        enemy = new Zombie(x, y, health, 0.1, 1.0, 1, IDLE);
                     }
                     else if (enemy_type == "Alien") {
-                        enemy = new Alien(x, y, health, 0.1, 1.0, 2);
+                        enemy = new Alien(x, y, health, 0.1, 1.0, 2, IDLE);
                     }
 
                     if (enemy) { ///< Texture set
-                        enemy->setTextureId(texture_id);
-                        enemy->setDeadTextureId(dead_texture_id);
+                        enemy->SetEnemySprite(Sprite(x, y, frames, 0, texture_id, 4));
+                        enemy->SetDeadEnemySprite(Sprite(x, y, frames_dead, 0, dead_texture_id, 4));
                         addEnemy(enemy); 
                     }
                 }
@@ -265,7 +271,7 @@ namespace engine
             double dy = playerY - enemyY;
             double distance = std::sqrt(dx * dx + dy * dy);
 
-            if (distance > 0.0) {
+            if (distance > 0.2 && distance < 20) {
                 // Normalize
                 dx = dx / distance;
                 dy = dy / distance;
@@ -282,6 +288,8 @@ namespace engine
 
                 if (getObstacle(gridX, gridY) == 0) {
                     enemy->setPosition(newEnemyX, newEnemyY);
+                    enemy->getEnemySprite().m_x = newEnemyX;
+                    enemy->getEnemySprite().m_y = newEnemyY;
                 }
                 else {
                     
@@ -289,9 +297,10 @@ namespace engine
             }
 
             if (enemy->getHealth() <= 0 && !enemy->isDead()) {
-                enemy->setTextureId(enemy->getDeadTextureId());
+                enemy->getEnemySprite() = enemy->getDeadEnemySprite();
                 enemy->setVelocity(0);
                 enemy->die();
+                int aaaa = 1;
             }
 
             if (enemy->isDead()) {
@@ -320,6 +329,13 @@ namespace engine
     double Scene::calculateDistanceToPlayer(const Enemy* enemy) {
         double dx = enemy->getX() - m_player.getPlayerX();
         double dy = enemy->getY() - m_player.getPlayerY();
+        return std::sqrt(dx * dx + dy * dy);
+    }
+
+    double Scene::calculateDistanceToSprite(const Sprite* sprite)
+    {
+        double dx = sprite->m_x - m_player.getPlayerX();
+        double dy = sprite->m_y - m_player.getPlayerY();
         return std::sqrt(dx * dx + dy * dy);
     }
 
@@ -437,6 +453,19 @@ namespace engine
             return cur_distance;
         }
         else return -1.0;
+    }
+
+    void Scene::updateEnemiesAnimation()
+    {
+        for (size_t i = 0; i < m_enemies.size(); ++i) {
+            Enemy* enemy = m_enemies[i];
+            if (enemy->getEnemySprite().m_current_frame < enemy->getEnemySprite().m_frames - 1) {
+                enemy->getEnemySprite().m_current_frame += 1;
+            }
+            else {
+                enemy->getEnemySprite().m_current_frame = 0;
+            }
+        }
     }
 
 }

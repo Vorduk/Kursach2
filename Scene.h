@@ -80,12 +80,15 @@ namespace engine
 		void updateEnemies();
 
 		double calculateDistanceToPlayer(const Enemy* enemy);
+		double calculateDistanceToSprite(const Sprite* sprite);
 		void sortEnemiesByDistance();
 		std::vector<Enemy*> getEnemies();
 
 		void fire();
 
 		double raycastObstacleFromPlayer(int cast_distatnce);
+
+		void updateEnemiesAnimation();
 	};
 
 } // engine

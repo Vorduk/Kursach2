@@ -144,6 +144,8 @@ namespace engine {
         void loadTexturesFromScene(const Scene& scene);
 
         void drawFloor();
+
+        void renderSprite(Scene* scene, Sprite sprite, std::string stick, std::vector<double> distances_mask);
     };
 
 } // engine

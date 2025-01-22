@@ -7,15 +7,15 @@
 struct Sprite {
     double m_x;                     ///< Cord x
     double m_y;                     ///< Cord y
-    int m_height;                   ///< Height
-    int m_width;                    ///< Width
-    std::vector<std::string> m_texture_ids; ///< Textures id array
+    std::string m_texture_id; ///< Textures id array
+    int m_frames;
+    int m_current_frame;
     int m_speed;                    ///< speed
 
-    Sprite() : m_x(0.0), m_y(0.0), m_height(0), m_width(0), m_speed(0) {}
+    Sprite() : m_x(0.0), m_y(0.0), m_frames(1), m_current_frame(0), m_speed(0) {}
 
-    Sprite(double x, double y, int height, int width, const std::vector<std::string>& texture_ids, int speed)
-        : m_x(x), m_y(y), m_height(height), m_width(width), m_texture_ids(texture_ids), m_speed(speed) {}
+    Sprite(double x, double y, int frames, int start_frame, std::string texture_id, int speed)
+        : m_x(x), m_y(y), m_texture_id(texture_id), m_frames (frames), m_current_frame(start_frame), m_speed(speed) {}
 };
 
 #endif // SPRITE_H

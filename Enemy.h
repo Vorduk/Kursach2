@@ -7,7 +7,15 @@
 
 typedef unsigned int uint;
 
+
+
 namespace engine {
+
+    enum EnemyBehavior {
+        IDLE,    
+        ACTIVE,  
+        DEAD    
+    };
 
     class Enemy {
     protected:
@@ -15,17 +23,15 @@ namespace engine {
         double m_enemy_y;
         double m_velocity;
         int m_health;
-        std::string m_enemy_texture_id;
-        std::string m_enemy_dead_texture_id;
         int m_death_counter;
-        bool m_is_dead = false;
         double m_attack_range;
         int m_attack_damage;
-
-        Sprite m_sprite;
+        Sprite m_enemy_sprite;
+        Sprite m_dead_enemy_sprite;
+        EnemyBehavior m_behavior;
 
     public:
-        Enemy(double x, double y, int health, double velocity, double attack_range, int attack_damage);
+        Enemy(double x, double y, int health, double velocity, double attack_range, int attack_damage, EnemyBehavior enemy_behavior);
         virtual ~Enemy();
 
         virtual void attack(uint* target_health) = 0;
@@ -36,31 +42,28 @@ namespace engine {
         void setPosition(double x, double y);
         void takeDamage(int damage);
         double getVelocity();
-        void setTextureId(std::string texture_id);
-        std::string getTextureId();
-        void setDeadTextureId(std::string enemy_dead_texture_id);
-        std::string getDeadTextureId();
         void setVelocity(int velocity);
         void die();
         bool isDead() const;
         int getDeathCounter() const;
         void addCounter();
-
-        Sprite m_enemy_sprite;
-        Sprite getSprite();
-        void SetSprite();
-        Sprite m_dead_enemy_sprite;
+        
+        Sprite& getEnemySprite();
+        void SetEnemySprite(Sprite enemy_sprite);
+        
+        Sprite& getDeadEnemySprite();
+        void SetDeadEnemySprite(Sprite dead_enemy_sprite);
     };
 
     class Zombie : public Enemy {
     public:
-        Zombie(double x, double y, int health, double velocity, double attack_range, int attack_damage);
+        Zombie(double x, double y, int health, double velocity, double attack_range, int attack_damage, EnemyBehavior enemy_behavior);
         void attack(uint* target_health) override;
     };
 
     class Alien : public Enemy {
     public:
-        Alien(double x, double y, int health, double velocity, double attack_range, int attack_damage);
+        Alien(double x, double y, int health, double velocity, double attack_range, int attack_damage, EnemyBehavior enemy_behavior);
         void attack(uint* target_health) override;
     };
 

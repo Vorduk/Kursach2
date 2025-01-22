@@ -23,7 +23,9 @@ namespace engine
         SDL_Color font_color = { 255, 255, 255, 255 };
 
         const double enemyUpdateInterval = 1.0 / 20.0;
+        const double animationUpdateInterval = 1.0 / 4.0;
         double lastEnemyUpdateTime = 0.0;
+        double lastAnimationUpdateTime = 0.0;
 
         auto lastTime = std::chrono::high_resolution_clock::now();
 
@@ -43,10 +45,15 @@ namespace engine
             cur_scene->processPlayerCollision();
 
             lastEnemyUpdateTime += elapsed.count();
+            lastAnimationUpdateTime += elapsed.count();
             if (lastEnemyUpdateTime >= enemyUpdateInterval) {
                 cur_scene->updateEnemies();
                 lastEnemyUpdateTime = 0.0;
                 fps = static_cast<int>(1.0 / elapsed.count());
+            }
+            if (lastAnimationUpdateTime >= animationUpdateInterval) {
+                cur_scene->updateEnemiesAnimation();
+                lastAnimationUpdateTime = 0.0;
             }
 
             cur_scene->getCamera().synchronizeWithPlayer(cur_scene->getPlayer());
@@ -57,7 +64,7 @@ namespace engine
             renderer->renderText("arial", std::to_string(cur_scene->getPlayer().getPlayerHealth()), 5, 30, font_color);
             renderer->present(); 
 
-            if (cur_scene->getPlayer().getPlayerHealth() < 0) {
+            if (cur_scene->getPlayer().getPlayerHealth() <= 0) {
                 m_running = false;
             }
         }
