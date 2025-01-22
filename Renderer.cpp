@@ -465,60 +465,6 @@ namespace engine
         for (Enemy* enemy : scene->getEnemies()) {
 
             renderSprite(scene, enemy->getEnemySprite(), "bottom", distances);
-
-
-
-
-            //float sprite_dir = atan2(enemy->getY() - cam_y, enemy->getX() - cam_x);
-            //while (sprite_dir - cam_angle > M_PI) sprite_dir -= 2 * M_PI;
-            //while (sprite_dir - cam_angle < -M_PI) sprite_dir += 2 * M_PI;
-            //float sprite_dist = scene->calculateDistanceToPlayer(enemy);
-
-            //double fog_factor = 3.0 / sprite_dist;
-            //if (fog_factor > 1.0) {
-            //    fog_factor = 1.0; // Limit the value to 1.0
-            //}
-            //else if (fog_factor < 0.0) {
-            //    fog_factor = 0.0; // Limit the value to 0.0
-            //}
-            //std::array<float, 3> fog_factors = { 1.0, fog_factor, fog_factor };
-
-            //std::string enemy_texture_id = enemy->m_enemy_sprite.m_texture_id;
-            //int enemy_texture_width = m_texture_sizes[enemy_texture_id].first;
-            //int enemy_texture_height = m_texture_sizes[enemy_texture_id].first;
-
-            //size_t sprite_screen_size_h = 2 * std::min(2000, static_cast<int>(m_height / sprite_dist));
-            //size_t sprite_screen_size_w = sprite_screen_size_h * (enemy_texture_width / enemy_texture_height);
-
-            //float sprite_angle = sprite_dir - cam_angle;
-
-            //int center = ((m_width / cam_fov) * sprite_angle) + (m_width / 2);
-            //int start1 = center - sprite_screen_size_w / 2;
-            //int finish1 = center + sprite_screen_size_w / 2;
-
-            //int start = start1 < 0 ? 0 : start1;
-            //int finish = finish1;
-
-            //if (finish > 0) {
-
-            //    finish = finish >= m_width ? m_width-1 : finish;
-
-            //    for (int i = start; i <= finish; i++) {
-            //        int tex_col = ((i - start1) * enemy_texture_width) / (finish1 - start1);
-
-            //        if (sprite_dist < distances[i]) {
-            //            renderTexture(enemy_texture_id, i, (m_height / 2)- sprite_screen_size_h /2, 1, sprite_screen_size_h, tex_col, 0, tex_col+1, enemy_texture_height, false, false, fog_factors);
-            //        }
-            //        
-            //    }
-            //    if (center>=0 && center < m_width && sprite_dist < distances[center]) 
-            //    {
-            //        // Draw hp bar
-            //        SDL_Color hp_bar_color = { 0, 255, 0, 255 };
-            //        drawRectangle(center - ((enemy->getHealth() / sprite_dist) / 2), (m_height / 2) - (sprite_screen_size_h/2) - 15, enemy->getHealth()/sprite_dist, (500 / sprite_dist) / 10, hp_bar_color);
-            //    }
-            //}
-   
         }
 
     }
