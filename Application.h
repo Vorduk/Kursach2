@@ -6,6 +6,7 @@
 #include "Renderer.h"
 #include "Scene.h"
 #include <chrono>
+#include "UI.h"
 
 typedef unsigned int uint;
 
@@ -24,6 +25,7 @@ namespace engine {
 		std::vector<Window*> m_windows; ///< app windows
 		std::string m_name; ///< App name
 		bool m_running; ///< Running flag
+		UI m_ui; 
 	public:
 		Application();
 		~Application(); 
@@ -43,6 +45,11 @@ namespace engine {
 		 * @brief Creates a new window.
 		 */
 		void addWindow(uint width, uint height, const std::string& caption);
+
+		/**
+		 * @brief Creates ui.
+		 */
+		void addUI();
 
 		/**
 		 * @brief Event handling.

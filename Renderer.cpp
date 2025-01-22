@@ -80,11 +80,17 @@ namespace engine
         SDL_RenderPresent(m_renderer);
     }
 
-    void Renderer::drawRectangle(int x, int y, int width, int height, SDL_Color color)
+    void Renderer::drawRectangle(int x, int y, int width, int height, SDL_Color fill_color, SDL_Color border_color, int border_width)
     {
         SDL_Rect rect = { x, y, width, height };
-        SDL_SetRenderDrawColor(m_renderer, color.r, color.g, color.b, color.a);
+        SDL_SetRenderDrawColor(m_renderer, fill_color.r, fill_color.g, fill_color.b, fill_color.a);
         SDL_RenderFillRect(m_renderer, &rect);
+
+        SDL_SetRenderDrawColor(m_renderer, border_color.r, border_color.g, border_color.b, border_color.a);
+        for (int i = 0; i < border_width; ++i) {
+            SDL_Rect borderRect = { x - i, y - i, width + 2 * i, height + 2 * i };
+            SDL_RenderDrawRect(m_renderer, &borderRect);
+        }
     }
 
     void Renderer::setWallTexture(int wall_id, const std::string& texture_id) {
@@ -181,7 +187,7 @@ namespace engine
         m_fonts[id] = font;
     }
 
-    void Renderer::renderText(const std::string& font_id, const std::string& text, int x, int y, SDL_Color color)
+    void Renderer::drawText(const std::string& font_id, const std::string& text, int x, int y, SDL_Color color)
     {
         auto it = m_fonts.find(font_id);
         if (it == m_fonts.end()) {
@@ -205,6 +211,36 @@ namespace engine
 
         SDL_RenderCopy(m_renderer, textTexture, nullptr, &renderQuad);
         SDL_DestroyTexture(textTexture);
+    }
+
+    int Renderer::getTextWidth(const std::string& font_id, const std::string& text)
+    {
+        auto it = m_fonts.find(font_id);
+        if (it == m_fonts.end()) {
+            THROW_ENGINE_EXCEPTION("Font ID not found: " + font_id);
+        }
+
+        int textWidth = 0;
+        if (TTF_SizeText(it->second, text.c_str(), &textWidth, nullptr) != 0) {
+            THROW_ENGINE_EXCEPTION("Failed to get text size: " + std::string(TTF_GetError()));
+        }
+
+        return textWidth;
+    }
+
+    int Renderer::getTextHeight(const std::string& font_id, const std::string& text)
+    {
+        auto it = m_fonts.find(font_id);
+        if (it == m_fonts.end()) {
+            THROW_ENGINE_EXCEPTION("Font ID not found: " + font_id);
+        }
+
+        int textHeight = 0;
+        if (TTF_SizeText(it->second, text.c_str(), nullptr, &textHeight) != 0) {
+            THROW_ENGINE_EXCEPTION("Failed to get text size: " + std::string(TTF_GetError()));
+        }
+
+        return textHeight;
     }
 
     void Renderer::clearFonts()
@@ -244,7 +280,7 @@ namespace engine
         }
     }
 
-    void Renderer::renderSprite(Scene* scene, Sprite sprite, std::vector<double> distances_mask) 
+    void Renderer::drawSprite(Scene* scene, Sprite sprite, std::vector<double> distances_mask) 
     {
         double cam_x = scene->getCamera().getCameraX();
         double cam_y = scene->getCamera().getCameraY();
@@ -300,6 +336,44 @@ namespace engine
             }
         }
     }
+
+    /*void Renderer::drawUI(UI ui)
+    {
+        for (Button button : ui.m_buttons) {
+            if (button.m_is_active) {
+                int x = button.m_x;
+                int y = button.m_y;
+                int width = button.m_width;
+                int height = button.m_height;
+
+                drawRectangle(x, y, width, height, button.m_body_color, button.m_border_color, button.m_border_width);
+                int text_width = getTextWidth(button.m_text_block.m_font, button.m_text_block.m_text);
+                int text_height = getTextHeight(button.m_text_block.m_font, button.m_text_block.m_text);
+
+                int text_x;
+                int text_y;
+
+                if (button.m_align == "center") {
+                    text_x = width / 2 + x - text_width / 2; 
+                    text_y = height / 2 + y - text_height / 2;
+                }
+                if (button.m_align == "left") {
+                    text_x = x;
+                    text_y = height / 2 + y - text_height / 2;
+                }
+                if (button.m_align == "right") {
+                    text_x = x+width - text_width;
+                    text_y = height / 2 + y - text_height / 2;
+                }
+                
+                drawText(button.m_text_block.m_font, button.m_text_block.m_text, text_x, text_y, button.m_text_block.m_color);
+            }
+        }
+        for (Text text : ui.m_texts) 
+        {
+            drawText(text.m_font, text.m_text, text.m_x, text.m_y, text.m_color);
+        }
+    }*/
 
 	void Renderer::renderSceneDDA(Scene* scene)
 	{
@@ -464,11 +538,11 @@ namespace engine
         int fov_c = (cam_fov * 180) / M_PI;
         for (Enemy* enemy : scene->getEnemies()) {
 
-            renderSprite(scene, enemy->getEnemySprite(), distances);
+            drawSprite(scene, enemy->getEnemySprite(), distances);
         }
 
         for (Sprite sprite : scene->getDecorations()) {
-            renderSprite(scene, sprite, distances);
+            drawSprite(scene, sprite, distances);
         }
 
     }

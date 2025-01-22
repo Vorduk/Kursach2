@@ -14,6 +14,7 @@
 #include <map>
 #include <SDL_image.h>
 #include <algorithm>
+//#include "UI.h"
 
 typedef unsigned int uint;
 
@@ -63,9 +64,11 @@ namespace engine {
          * @param[in] y y cord.
          * @param[in] width rectangle width.
          * @param[in] height rectangle height.
-         * @param[in] color fill color.
+         * @param[in] fill_color fill color.
+         * @param[in] border_color border color.
+         * @param[in] border_width border width.
          */
-        void drawRectangle(int x, int y, int width, int height, SDL_Color color);
+        void drawRectangle(int x, int y, int width, int height, SDL_Color fill_color, SDL_Color border_color, int border_width);
 
         /**
          * Scene rendering
@@ -134,7 +137,7 @@ namespace engine {
          * @param[in] color The color of the text.
          * @throws EngineException if the font ID is not found or rendering fails.
          */
-        void renderText(const std::string& font_id, const std::string& text, int x, int y, SDL_Color color);
+        void drawText(const std::string& font_id, const std::string& text, int x, int y, SDL_Color color);
 
         /**
          * @brief Frees all loaded fonts.
@@ -145,7 +148,12 @@ namespace engine {
 
         void drawFloor();
 
-        void renderSprite(Scene* scene, Sprite sprite, std::vector<double> distances_mask);
+        int getTextWidth(const std::string& font_id, const std::string& text);
+        int getTextHeight(const std::string& font_id, const std::string& text);
+
+        void drawSprite(Scene* scene, Sprite sprite, std::vector<double> distances_mask);
+
+        //void drawUI(UI ui);
     };
 
 } // engine

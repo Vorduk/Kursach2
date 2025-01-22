@@ -2,6 +2,10 @@
 
 #define THROW_ENGINE_EXCEPTION(msg) throw engine::EngineException(msg, __FILE__, __LINE__, __func__) // Macros.
 
+//void button1Action() {
+//    std::cout << "Button 1 clicked!" << std::endl;
+//}
+
 namespace engine 
 {
 
@@ -14,6 +18,8 @@ namespace engine
 
     void engine::Application::run()
     {
+        //addUI();
+
         Scene* cur_scene = m_scenes[0];
 
         Renderer* renderer = new Renderer(m_windows[0]);   
@@ -31,6 +37,8 @@ namespace engine
 
         bool mouseCaptured = true;
         SDL_SetRelativeMouseMode(SDL_TRUE);
+
+        //m_ui.m_buttons.emplace_back(100, 100, 200, 50, "Button 1", button1Action);
 
         int fps = 0;
 
@@ -60,9 +68,10 @@ namespace engine
 
             renderer->clear();
             renderer->renderSceneDDA(cur_scene);
-            renderer->renderText("arial", std::to_string(fps), 5, 5, font_color);
-            renderer->renderText("arial", std::to_string(cur_scene->getPlayer().getPlayerHealth()), 5, 30, font_color);
-            renderer->renderText("arial", std::to_string(cur_scene->getEnemyCount()), 5, 55, font_color);
+            renderer->drawText("arial", std::to_string(fps), 5, 5, font_color);
+            renderer->drawText("arial", std::to_string(cur_scene->getPlayer().getPlayerHealth()), 5, 30, font_color);
+            renderer->drawText("arial", std::to_string(cur_scene->getEnemyCount()), 5, 55, font_color);
+            //renderer->drawUI(m_ui);
             renderer->present(); 
 
             if (cur_scene->getPlayer().getPlayerHealth() <= 0) {
@@ -81,6 +90,11 @@ namespace engine
     {
         Window* new_window = new Window(width, height, caption);
         m_windows.push_back(new_window);
+    }
+
+    void Application::addUI()
+    {
+        m_ui = UI();
     }
 
     void Application::handleEvents(Scene &scene, Window *window, bool& mouseCaptured)
