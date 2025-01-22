@@ -52,7 +52,7 @@ namespace engine
                 fps = static_cast<int>(1.0 / elapsed.count());
             }
             if (lastAnimationUpdateTime >= animationUpdateInterval) {
-                cur_scene->updateEnemiesAnimation();
+                cur_scene->updateAnimations();
                 lastAnimationUpdateTime = 0.0;
             }
 
@@ -62,6 +62,7 @@ namespace engine
             renderer->renderSceneDDA(cur_scene);
             renderer->renderText("arial", std::to_string(fps), 5, 5, font_color);
             renderer->renderText("arial", std::to_string(cur_scene->getPlayer().getPlayerHealth()), 5, 30, font_color);
+            renderer->renderText("arial", std::to_string(cur_scene->getEnemyCount()), 5, 55, font_color);
             renderer->present(); 
 
             if (cur_scene->getPlayer().getPlayerHealth() <= 0) {

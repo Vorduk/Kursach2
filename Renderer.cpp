@@ -244,7 +244,7 @@ namespace engine
         }
     }
 
-    void Renderer::renderSprite(Scene* scene, Sprite sprite, std::string stick, std::vector<double> distances_mask) 
+    void Renderer::renderSprite(Scene* scene, Sprite sprite, std::vector<double> distances_mask) 
     {
         double cam_x = scene->getCamera().getCameraX();
         double cam_y = scene->getCamera().getCameraY();
@@ -464,7 +464,11 @@ namespace engine
         int fov_c = (cam_fov * 180) / M_PI;
         for (Enemy* enemy : scene->getEnemies()) {
 
-            renderSprite(scene, enemy->getEnemySprite(), "bottom", distances);
+            renderSprite(scene, enemy->getEnemySprite(), distances);
+        }
+
+        for (Sprite sprite : scene->getDecorations()) {
+            renderSprite(scene, sprite, distances);
         }
 
     }

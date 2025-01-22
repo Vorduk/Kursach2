@@ -19,6 +19,7 @@
 #include <cmath> 
 #include <queue>
 #include <unordered_set>
+#include "Sprite.h"
 
 struct pair_hash {
 	template <class T1, class T2>
@@ -50,6 +51,9 @@ namespace engine
 		uint m_obstacle_size_x;
 		uint m_obstacle_size_y;
 		std::vector<Enemy*> m_enemies;
+		std::vector<Sprite> m_decorations; ///< decorative sprites
+		void updateEnemiesAnimation();
+		void updateDecorationsAnimations();
 	public:
 		Scene(); ///< Contructor
 		~Scene(); ///< Destructor
@@ -70,6 +74,8 @@ namespace engine
 		int getObstacleSizeY();
 		int getObstacleSizeX();
 
+		std::vector<Sprite> getDecorations();
+
 		void loadMap(std::string path);
 
 		void processPlayerCollision();
@@ -78,6 +84,8 @@ namespace engine
 
 		void addEnemy(Enemy* enemy);
 		void updateEnemies();
+
+		int getEnemyCount();
 
 		double calculateDistanceToPlayer(const Enemy* enemy);
 		double calculateDistanceToSprite(const Sprite* sprite);
@@ -88,7 +96,7 @@ namespace engine
 
 		double raycastObstacleFromPlayer(int cast_distatnce);
 
-		void updateEnemiesAnimation();
+		void updateAnimations();
 	};
 
 } // engine

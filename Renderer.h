@@ -145,7 +145,7 @@ namespace engine {
 
         void drawFloor();
 
-        void renderSprite(Scene* scene, Sprite sprite, std::string stick, std::vector<double> distances_mask);
+        void renderSprite(Scene* scene, Sprite sprite, std::vector<double> distances_mask);
     };
 
 } // engine

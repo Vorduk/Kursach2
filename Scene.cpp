@@ -78,6 +78,11 @@ namespace engine
         return m_obstacle_size_x;
     }
 
+    std::vector<Sprite> Scene::getDecorations()
+    {
+        return m_decorations;
+    }
+
 	void Scene::loadMap(std::string path)
 	{
         std::ifstream file(path);
@@ -179,14 +184,40 @@ namespace engine
                         enemy = new Zombie(x, y, health, 0.1, 1.0, 1, IDLE);
                     }
                     else if (enemy_type == "Alien") {
-                        enemy = new Alien(x, y, health, 0.1, 1.0, 2, IDLE);
+                        enemy = new Alien(x, y, health, 0.1, 1.0, 5, IDLE);
                     }
 
                     if (enemy) { ///< Texture set
-                        enemy->SetEnemySprite(Sprite(x, y, frames, 0, texture_id, 4));
-                        enemy->SetDeadEnemySprite(Sprite(x, y, frames_dead, 0, dead_texture_id, 4));
+                        enemy->SetEnemySprite(Sprite(x, y, frames, 0, texture_id));
+                        enemy->SetDeadEnemySprite(Sprite(x, y, frames_dead, 0, dead_texture_id));
                         addEnemy(enemy); 
                     }
+                }
+            }
+            else if (line == "/// Decorations") {
+                while (true) {
+                    std::getline(file, line); ///< // Sprite
+                    if (line.empty()) break;
+
+                    double x, y;
+                    std::string texture_id;
+                    int frames;
+
+                    std::getline(file, line); ///< // X
+                    file >> x;
+                    file.ignore();
+
+                    std::getline(file, line); ///< // Y
+                    file >> y;
+                    file.ignore();
+
+                    std::getline(file, line); ///< // Textures id
+                    std::getline(file, texture_id);
+                    file >> frames;
+                    file.ignore();
+
+                    Sprite new_sprite = Sprite(x, y, frames, 0, texture_id);
+                    m_decorations.push_back(new_sprite);
                 }
             }
             else if (line == "/// Obstacle") {
@@ -411,6 +442,17 @@ namespace engine
         else return -1.0;
     }
 
+    int Scene::getEnemyCount()
+    {
+        return m_enemies.size();
+    }
+
+    void Scene::updateAnimations()
+    {
+        updateDecorationsAnimations();
+        updateEnemiesAnimation();
+    }
+
     void Scene::updateEnemiesAnimation()
     {
         for (size_t i = 0; i < m_enemies.size(); ++i) {
@@ -424,5 +466,20 @@ namespace engine
 
         }
     }
+
+    void Scene::updateDecorationsAnimations()
+    {
+        for (size_t i = 0; i < m_decorations.size(); ++i) {
+            Sprite decoration = m_decorations[i];
+            if (decoration.m_current_frame < decoration.m_frames - 1) {
+                decoration.m_current_frame += 1;
+            }
+            else {
+                decoration.m_current_frame = 0;
+            }
+
+        }
+    }
+
 
 }
