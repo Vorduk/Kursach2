@@ -4,6 +4,7 @@
 #include <string>
 #include <chrono>
 #include "Sprite.h"
+#include <corecrt_math_defines.h>
 
 typedef unsigned int uint;
 
@@ -29,6 +30,8 @@ namespace engine {
         Sprite m_enemy_sprite;
         Sprite m_dead_enemy_sprite;
         EnemyBehavior m_behavior;
+        double m_target_x;
+        double m_target_y;
 
     public:
         Enemy(double x, double y, int health, double velocity, double attack_range, int attack_damage, EnemyBehavior enemy_behavior);
@@ -53,6 +56,10 @@ namespace engine {
         
         Sprite& getDeadEnemySprite();
         void SetDeadEnemySprite(Sprite dead_enemy_sprite);
+
+        void update(uint* target_health, double target_x, double target_y, std::vector<std::vector<int>> obstacles);
+
+        double raycastObstacles(double target_x, double target_y, std::vector<std::vector<int>> obstacles);
     };
 
     class Zombie : public Enemy {

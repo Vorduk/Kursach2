@@ -262,61 +262,17 @@ namespace engine
 
         for (size_t i = 0; i < m_enemies.size(); ) {
             Enemy* enemy = m_enemies[i];
-            double enemyX = enemy->getX();
-            double enemyY = enemy->getY();
-            double playerX = m_player.getPlayerX();
-            double playerY = m_player.getPlayerY();
+            
+            enemy->update(m_player.getHealthPointer(), m_player.getPlayerX(), m_player.getPlayerY(), m_obstacles);
 
-            double dx = playerX - enemyX;
-            double dy = playerY - enemyY;
-            double distance = std::sqrt(dx * dx + dy * dy);
-
-            if (distance > 0.2 && distance < 20) {
-                // Normalize
-                dx = dx / distance;
-                dy = dy / distance;
-
-                // get speed
-                double velocity = enemy->getVelocity();
-
-                // Get new cords
-                double newEnemyX = enemyX + dx * velocity;
-                double newEnemyY = enemyY + dy * velocity;
-
-                int gridX = static_cast<int>(newEnemyX);
-                int gridY = static_cast<int>(newEnemyY);
-
-                if (getObstacle(gridX, gridY) == 0) {
-                    enemy->setPosition(newEnemyX, newEnemyY);
-                    enemy->getEnemySprite().m_x = newEnemyX;
-                    enemy->getEnemySprite().m_y = newEnemyY;
-                }
-                else {
-                    
-                }
+            if (enemy->getDeathCounter() > 20) {
+                delete enemy;
+                m_enemies.erase(m_enemies.begin() + i);
+                continue;
             }
-
-            if (enemy->getHealth() <= 0 && !enemy->isDead()) {
-                enemy->getEnemySprite() = enemy->getDeadEnemySprite();
-                enemy->setVelocity(0);
-                enemy->die();
-                int aaaa = 1;
-            }
-
-            if (enemy->isDead()) {
-                enemy->addCounter();
-
-                if (enemy->getDeathCounter()>20) {
-                    delete enemy;
-                    m_enemies.erase(m_enemies.begin() + i);
-                    continue;
-                }
-            }
-            else if (distance < 0.666) {
-                enemy->attack(m_player.getHealthPointer());
-            }
-
-            ++i;
+            else {
+                ++i;
+            }  
         }
     }
 
@@ -465,6 +421,7 @@ namespace engine
             else {
                 enemy->getEnemySprite().m_current_frame = 0;
             }
+
         }
     }
 
