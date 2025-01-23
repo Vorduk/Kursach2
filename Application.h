@@ -15,12 +15,6 @@ typedef unsigned int uint;
  * @brief This namespace contains classes for game engine.
  */
 namespace engine {
-	enum WindowState {
-		MENU,
-		PLAY,
-		PAUSE,
-		EXIT
-	};
 
 	/**
 	 * @brief Application class (Main loop).
@@ -74,7 +68,7 @@ namespace engine {
 		 */
 		void cleanUp();
 
-		friend void buttonPlayAction();
+		friend void buttonPlayAction(WindowState &m_current_window_state);
 	};
 
 } // engine

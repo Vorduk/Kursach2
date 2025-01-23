@@ -8,6 +8,13 @@
 
 namespace engine {
 
+	enum WindowState {
+		MENU,
+		PLAY,
+		PAUSE,
+		EXIT
+	};
+
 	class Button {
 	public:
 		Text m_text_block;
@@ -21,14 +28,12 @@ namespace engine {
 		SDL_Color m_border_color;
 		int m_border_width;
 
-		void defaultClick();
-
-		std::function<void()> onClick;
+		std::function<void(WindowState&)> onClick;
 
 		Button();
-		Button(int x, int y, int width, int height, std::string text, std::function<void()> click_handler);
+		Button(int x, int y, int width, int height, std::string text, std::function<void(WindowState&)> click_handler);
 
-		void handleClick(int mouseX, int mouseY);
+		void handleClick(int mouseX, int mouseY, WindowState& state);
 	};
 }
 

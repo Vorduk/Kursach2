@@ -4,7 +4,7 @@
 
 namespace engine 
 {
-    void buttonPlayAction()
+    void buttonPlayAction(WindowState& m_current_window_state)
     {
         std::cout << "Button 1 clicked!" << std::endl;
     }
@@ -140,7 +140,7 @@ namespace engine
                 if (event.button.button == SDL_BUTTON_LEFT) {
                     SDL_GetMouseState(&abs_mouse_x, &abs_mouse_y);
                     for (auto& button : m_ui.m_buttons) {
-                        button.handleClick(abs_mouse_x, abs_mouse_y);
+                        button.handleClick(abs_mouse_x, abs_mouse_y, m_current_window_state);
                     }
                 }
             }
@@ -172,7 +172,7 @@ namespace engine
                 if (event.button.button == SDL_BUTTON_LEFT && mouseCaptured == false) {
                     SDL_GetMouseState(&abs_mouse_x, &abs_mouse_y);
                     for (auto& button : m_ui.m_buttons) {
-                        button.handleClick(abs_mouse_x, abs_mouse_y);
+                        button.handleClick(abs_mouse_x, abs_mouse_y, m_current_window_state);
                     }
 
                     mouseCaptured = true;
