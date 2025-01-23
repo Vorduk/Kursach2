@@ -15,10 +15,10 @@ namespace engine
 
             // Call renderTexture based on the axis
             if (axis == 0) {
-                renderTexture(texture_id, column, ceiling, 1, height, texture_column, 0, texture_column + 1, h, false, false, fog_factors);
+                drawTexture(texture_id, column, ceiling, 1, height, texture_column, 0, texture_column + 1, h, false, false, fog_factors);
             }
             else {
-                renderTexture(texture_id, column, ceiling, 1, height, texture_column, 0, texture_column + 1, h, false, false, fog_factors);
+                drawTexture(texture_id, column, ceiling, 1, height, texture_column, 0, texture_column + 1, h, false, false, fog_factors);
             }
         }
         else {
@@ -47,7 +47,7 @@ namespace engine
 
         std::array<float, 3> fog_factors = { 1.0, 1.0, 1.0 };
 
-        renderTexture(texture_id, column, 0, w, m_height/2, tex_col, 0, tex_col + 1, h/2-50, false, false, fog_factors);
+        drawTexture(texture_id, column, 0, w, m_height/2, tex_col, 0, tex_col + 1, h/2-50, false, false, fog_factors);
     }
 
     Renderer::Renderer(Window* window)
@@ -121,7 +121,7 @@ namespace engine
         m_texture_sizes[id] = std::make_pair(width, height);
     }
 
-    void Renderer::renderTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2, bool x_flip, bool y_flip, std::array<float, 3>& fog_factors)
+    void Renderer::drawTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2, bool x_flip, bool y_flip, std::array<float, 3>& fog_factors)
     {
         SDL_Texture* texture = m_textures[texture_id];
         if (texture) {
@@ -330,7 +330,7 @@ namespace engine
                 int tex_col = shift+((i - start1) * enemy_texture_width) / (finish1 - start1);
 
                 if (sprite_dist < distances_mask[i]) {
-                    renderTexture(enemy_texture_id, i, (m_height / 2) - sprite_screen_size_h / 2, 1, sprite_screen_size_h, tex_col, 0, tex_col + 1, enemy_texture_height, false, false, fog_factors);
+                    drawTexture(enemy_texture_id, i, (m_height / 2) - sprite_screen_size_h / 2, 1, sprite_screen_size_h, tex_col, 0, tex_col + 1, enemy_texture_height, false, false, fog_factors);
                 }
 
             }
@@ -373,6 +373,19 @@ namespace engine
         {
             drawText(text.m_font, text.m_text, text.m_x, text.m_y, text.m_color);
         }
+    }
+
+    void Renderer::drawGun(bool is_firing)
+    {
+        std::array<float, 3> fog_factors = { 1.0, 1.0, 1.0 };
+        if (!is_firing) {
+            drawTexture("gun", (m_width/2)-128, m_height-250, 256, 256, 0, 0, 64, 64, false, false, fog_factors);
+        }
+        else {
+            drawTexture("gun_fire", m_width / 2 - 64, m_height - 246, 128, 128, 0, 0, 64, 64, false, false, fog_factors);
+            drawTexture("gun", (m_width / 2) - 128, m_height - 256, 256, 256, 0, 0, 64, 64, false, false, fog_factors);
+        }
+        
     }
 
 	void Renderer::renderSceneDDA(Scene* scene)

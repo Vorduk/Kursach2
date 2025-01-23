@@ -106,7 +106,7 @@ namespace engine {
          *
          * @throws EngineException if the texture with the specified ID is not found.
          */
-        void renderTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2, bool x_flip, bool y_flip, std::array<float, 3>& fog_factors);
+        void drawTexture(const std::string& texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2, bool x_flip, bool y_flip, std::array<float, 3>& fog_factors);
 
         /**
          * @brief Free one texture by id.
@@ -154,6 +154,8 @@ namespace engine {
         void drawSprite(Scene* scene, Sprite sprite, std::vector<double> distances_mask);
 
         void drawUI(UI ui);
+
+        void drawGun(bool is_firing);
     };
 
 } // engine

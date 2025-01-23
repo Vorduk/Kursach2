@@ -15,6 +15,13 @@ typedef unsigned int uint;
  * @brief This namespace contains classes for game engine.
  */
 namespace engine {
+	enum WindowState {
+		MENU,
+		PLAY,
+		PAUSE,
+		EXIT
+	};
+
 	/**
 	 * @brief Application class (Main loop).
 	 */
@@ -22,11 +29,12 @@ namespace engine {
 	{
 	private:
 		std::vector<Scene*> m_scenes; ///< app scenes (maps)
-		std::vector<Window*> m_windows; ///< app windows
+		Window* m_window; ///< app windows
 		std::string m_name; ///< App name
 		bool m_running; ///< Running flag
 		UI m_ui; 
 	public:
+		WindowState m_current_window_state;
 		Application();
 		~Application(); 
 
@@ -44,7 +52,7 @@ namespace engine {
 		/**
 		 * @brief Creates a new window.
 		 */
-		void addWindow(uint width, uint height, const std::string& caption);
+		void setWindow(uint width, uint height, const std::string& caption);
 
 		/**
 		 * @brief Creates ui.
@@ -52,14 +60,21 @@ namespace engine {
 		void addUI();
 
 		/**
+		 * @brief Handles ui events, changes window state.
+		 */
+		void handleUIEvents();
+
+		/**
 		 * @brief Event handling.
 		 */
-		void handleEvents(Scene &scene, Window* window, bool& mouseCaptured);
+		void handleEvents(Scene &scene, Renderer* renderer, Window* window, bool& mouseCaptured);
 
 		/**
 		 * @brief Windows vector cleaning.
 		 */
 		void cleanUp();
+
+		friend void buttonPlayAction();
 	};
 
 } // engine

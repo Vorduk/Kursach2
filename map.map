@@ -6,7 +6,7 @@
 // Angle
 0.0
 // Health
-900
+300
 
 /// Camera
 // X
@@ -220,12 +220,20 @@ alien_dead
 /// Decorations
 // Sprite
 // X
-30.0
+81.5
 // Y
-30.0
+80.0
 // Texture id & frames count
-test
-1
+alien
+8
+// Sprite
+// X
+80.5
+// Y
+80.0
+// Texture id & frames count
+zombie
+4
 
 /// Obstacle
 // X
@@ -365,3 +373,9 @@ alien.png
 12
 test
 test.png
+13
+gun
+gun_overlay.png
+13
+gun_fire
+gun_fire.png

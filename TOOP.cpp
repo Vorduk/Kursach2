@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
     
     try {
         engine::Application app = engine::Application();
-        app.addWindow(800, 600, "okno");
+        app.setWindow(800, 600, "okno");
 
         engine::Scene* scene2 = new engine::Scene();
         scene2->loadMap("map.map");

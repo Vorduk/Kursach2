@@ -22,7 +22,7 @@ namespace engine {
 	{}
 
 	Button::Button(int x, int y, int width, int height, std::string text, std::function<void()> click_handler) :
-		m_text_block(Text(x, y, "text")),
+		m_text_block(Text(x, y, text)),
 		m_x(x),
 		m_y(y),
 		m_width(width),

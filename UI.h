@@ -1,5 +1,7 @@
-#ifndef UI_H
-#define UI_H
+#pragma once
+
+//#ifndef UI_H
+//#define UI_H
 
 #include "Text.h"
 #include "Button.h"
@@ -22,4 +24,4 @@ namespace engine {
 
 } // engine
 
-#endif // UI_H
+//#endif // UI_H
