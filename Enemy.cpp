@@ -230,6 +230,11 @@ namespace engine {
         }
     }
 
+    std::string Zombie::getEnemyType() const
+    {
+        return "Zombie";
+    }
+
     engine::Alien::Alien(double x, double y, int health, EnemyBehavior enemy_behavior)
         : Enemy(x, y, health, 0.13, 1.2, 3, enemy_behavior) {}
 
@@ -241,6 +246,11 @@ namespace engine {
                 *target_health = 0;
             }
         } 
+    }
+
+    std::string Alien::getEnemyType() const
+    {
+        return "Alien";
     }
 
 

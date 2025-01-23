@@ -60,18 +60,24 @@ namespace engine {
         void update(uint* target_health, double target_x, double target_y, std::vector<std::vector<int>> obstacles);
 
         double raycastObstacles(double target_x, double target_y, std::vector<std::vector<int>> obstacles);
+
+        virtual std::string getEnemyType() const = 0;
     };
 
     class Zombie : public Enemy {
     public:
         Zombie(double x, double y, int health, EnemyBehavior enemy_behavior);
         void attack(uint* target_health) override;
+
+        std::string getEnemyType() const override;
     };
 
     class Alien : public Enemy {
     public:
         Alien(double x, double y, int health, EnemyBehavior enemy_behavior);
         void attack(uint* target_health) override;
+
+        std::string getEnemyType() const override;
     };
 
 } // namespace engine

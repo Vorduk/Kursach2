@@ -77,6 +77,7 @@ namespace engine
 		std::vector<Sprite> getDecorations();
 
 		void loadMap(std::string path);
+		void saveMap(std::string path);
 
 		void processPlayerCollision();
 

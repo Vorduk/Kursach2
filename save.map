@@ -1,20 +1,20 @@
 /// Player
 // X
-7.0
+11.0413
 // Y
-2.0
+13.4293
 // Angle
-0.0
+2.898
 // Health
 300
 
 /// Camera
 // X
-2.0
+11.0413
 // Y
-2.0
+13.4293
 // Angle
-0.0
+2.898
 // Fov_c
 40
 // Render distance
@@ -22,157 +22,27 @@
 
 /// Enemies
 // Type
-Zombie
+Alien
 // X
-7.0
+32
 // Y
-7.5
+12
 // Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
+1500
+// Textures id
+alien
+8
+alien_dead
+8
 // Type
 Zombie
 // X
-2.0
-// Y
-24
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-2.0
+2
 // Y
 29
 // Health
 200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-7.0
-// Y
-23
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-15
-// Y
-27
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-2
-// Y
-14
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-6
-// Y
-20
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-16
-// Y
-2
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-14
-// Y
-12
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-16
-// Y
-16
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-23
-// Y
-6
-// Health
-200
-// Textures id & frames count
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-23
-// Y
-7
-// Health
-200
-// Textures id & frames count
+// Textures id
 zombie
 4
 zombie_dead
@@ -185,7 +55,7 @@ Zombie
 7
 // Health
 200
-// Textures id & frames count
+// Textures id
 zombie
 4
 zombie_dead
@@ -198,31 +68,148 @@ Zombie
 17
 // Health
 200
-// Textures id & frames count
+// Textures id
 zombie
 4
 zombie_dead
 1
 // Type
-Alien
+Zombie
 // X
-32
+15
+// Y
+27
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+23
+// Y
+6
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+2
+// Y
+24
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+23
+// Y
+7
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+7
+// Y
+23
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+2
+// Y
+14
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+6
+// Y
+20
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+7
+// Y
+7.5
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+16
+// Y
+16
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+14
 // Y
 12
 // Health
-1500
-// Textures id & frames count
-alien
-8
-alien_dead
-8
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
 
 /// Decorations
 // Sprite
 // X
 81.5
 // Y
-80.0
+80
 // Texture id & frames count
 alien
 8
@@ -230,7 +217,7 @@ alien
 // X
 80.5
 // Y
-80.0
+80
 // Texture id & frames count
 zombie
 4
@@ -240,8 +227,8 @@ zombie
 100
 // Y
 100
-// Оbstacle
-1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 
+// Obstacle
+1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 4, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 4, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 4, 4, 0, 0, 4, 4, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
@@ -340,7 +327,7 @@ zombie
 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
-1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 
+1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 
 /// Textures
 1
@@ -349,9 +336,18 @@ concrete.png
 2
 wall2
 concrete_mossy.png
+7
+alien
+alien.png
+13
+gun
+gun_overlay.png
 3
 wall3
 dark_bricks.png
+6
+zombie_dead
+zombie_dead.png
 4
 wall4
 bricks_1.png
@@ -361,21 +357,12 @@ sky3.jpg
 5
 zombie
 zombie.png
-6
-zombie_dead
-zombie_dead.png
-7
-alien
-alien.png
 8
 alien_dead
 alien.png
 12
 test
 test.png
-13
-gun
-gun_overlay.png
 13
 gun_fire
 gun_fire.png

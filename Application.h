@@ -26,7 +26,7 @@ namespace engine {
 		Window* m_window; ///< app windows
 		std::string m_name; ///< App name
 		bool m_running; ///< Running flag
-		UI m_ui; 
+		UI m_ui; ///< User interface;
 	public:
 		WindowState m_current_window_state;
 		Application();
@@ -54,6 +54,16 @@ namespace engine {
 		void addUI();
 
 		/**
+		 * @brief Disables ui.
+		 */
+		void disableUI();
+
+		/**
+		 * @brief Disables ui.
+		 */
+		void reviveUI();
+
+		/**
 		 * @brief Handles ui events, changes window state.
 		 */
 		void handleUIEvents();
@@ -67,8 +77,6 @@ namespace engine {
 		 * @brief Windows vector cleaning.
 		 */
 		void cleanUp();
-
-		friend void buttonPlayAction(WindowState &m_current_window_state);
 	};
 
 } // engine

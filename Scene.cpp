@@ -313,6 +313,79 @@ namespace engine
         });
     }
 
+    void Scene::saveMap(std::string path)
+    {
+        std::ofstream file(path);
+        if (!file.is_open()) {
+            std::string str = "Failed to open file " + path;
+            THROW_ENGINE_EXCEPTION(str);
+            return;
+        }
+
+        file << "/// Player\n";
+        file << "// X\n" << m_player.getPlayerX() << "\n";
+        file << "// Y\n" << m_player.getPlayerY() << "\n"; 
+        file << "// Angle\n" << m_player.getPlayerAngle() << "\n"; 
+        file << "// Health\n" << m_player.getPlayerHealth() << "\n"; 
+        file << "\n";
+
+        file << "/// Camera\n";
+        file << "// X\n" << m_camera.getCameraX() << "\n";
+        file << "// Y\n" << m_camera.getCameraY() << "\n"; 
+        file << "// Angle\n" << m_camera.getCameraAngle() << "\n";
+        file << "// Fov_c\n" << m_camera.getFovC() << "\n";
+        file << "// Render distance\n" << m_camera.getRenderDistance() << "\n";
+        file << "\n";
+
+        file << "/// Enemies\n";
+        for (const auto& enemy : m_enemies) { 
+            file << "// Type\n" << enemy->getEnemyType() << "\n";
+            file << "// X\n" << enemy->getX() << "\n"; 
+            file << "// Y\n" << enemy->getY() << "\n"; 
+            file << "// Health\n" << enemy->getHealth() << "\n"; 
+            file << "// Textures id\n" << enemy->getEnemySprite().m_texture_id << "\n"; 
+            file << enemy->getEnemySprite().m_frames << "\n"; 
+            file << enemy->getDeadEnemySprite().m_texture_id << "\n"; 
+            file << enemy->getDeadEnemySprite().m_frames << "\n";
+        }
+        file << "\n";
+
+        file << "/// Decorations\n";
+        for (const auto& decoration : m_decorations) { 
+            file << "// Sprite\n";
+            file << "// X\n" << decoration.m_x << "\n"; 
+            file << "// Y\n" << decoration.m_y << "\n";
+            file << "// Texture id & frames count\n";
+            file << decoration.m_texture_id << "\n";
+            file << decoration.m_frames << "\n";
+        }
+        file << "\n";
+
+        file << "/// Obstacle\n";
+        file << "// X\n" << m_obstacle_size_x << "\n";
+        file << "// Y\n" << m_obstacle_size_y << "\n";
+        file << "// Obstacle\n";
+        for (const auto& row : m_obstacles) {
+            for (size_t i = 0; i < row.size(); ++i) {
+                file << row[i];
+                if (i < row.size() - 1) {
+                    file << ", ";
+                }
+            }
+            file << "\n";
+        }
+        file << "\n";
+
+        file << "/// Textures\n";
+        for (const auto& texture : textures_predefine) { 
+            file << texture.first.first << "\n"; 
+            file << texture.first.second << "\n"; 
+            file << texture.second << "\n";
+        }
+
+        file.close(); 
+    }
+
     double Scene::calculateDistanceToPlayer(const Enemy* enemy) {
         double dx = enemy->getX() - m_player.getPlayerX();
         double dy = enemy->getY() - m_player.getPlayerY();

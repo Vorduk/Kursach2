@@ -32,11 +32,16 @@ namespace engine {
 
 	void Button::handleClick(int mouseX, int mouseY, WindowState& state)
 	{
-		if (m_is_active && mouseX >= m_x && mouseX <= m_x + m_width && mouseY >= m_y && mouseY <= m_y + m_height) {
+		if (mouseOver(mouseX, mouseY)) {
 			if (onClick) {
 				onClick(state);
 			}
 		}
+	}
+
+	bool Button::mouseOver(int mouseX, int mouseY)
+	{
+		return (m_is_active && mouseX >= m_x && mouseX <= m_x + m_width && mouseY >= m_y && mouseY <= m_y + m_height);
 	}
 
 } // engine
