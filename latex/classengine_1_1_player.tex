@@ -13,47 +13,47 @@ Player class.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classengine_1_1_player_a8ed820cb98c40785975722e311c6e235}{Player}} ()
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. PLAYER\+\_\+\+HEALTH = 100 PLAYER\+\_\+Y = 0 PLAYER\+\_\+X = 0 PLAYER\+\_\+\+ANGLE = 0 PLAYER\+\_\+\+PREV\+\_\+Y = 0 PLAYER\+\_\+\+PREV\+\_\+X = 0. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classengine_1_1_player_aa2246d50466975a832bf9886bc20d1c5}{Player}} (double player\+\_\+y, double player\+\_\+x, double player\+\_\+angle, \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} player\+\_\+health)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Player constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classengine_1_1_player_ada5976e4eb648c2622aeaf0be2881954}{\texorpdfstring{$\sim$}{\string~}\+Player}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_ab3caa16303c43b4af4d59e54d27f0a64}{set\+Player\+Coords}} (double player\+\_\+y, double player\+\_\+x)
-\item 
+\begin{DoxyCompactList}\small\item\em Set player cords. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_acf7c31dde22043e5b6753ebbb0ef18c5}{set\+PlayerY}} (double player\+\_\+y)
-\item 
+\begin{DoxyCompactList}\small\item\em Set player y cord. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classengine_1_1_player_abe08a35b25094c0786077d8efcb43e6a}{get\+PlayerY}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get player y cord. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_af11c1e9664991df2db9f41b5f4825b1b}{set\+PlayerX}} (double player\+\_\+x)
-\item 
+\begin{DoxyCompactList}\small\item\em Set player x cord. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classengine_1_1_player_a285e9f07984906248176c638f9edb03e}{get\+PlayerX}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get player x cord. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_adffded59e8b7158fccb67b2025bd7c5c}{set\+Player\+PrevY}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Set player y cord to previous y cord. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_a83a9e91f49d78f03d99d2dbbeb87184b}{set\+Player\+PrevX}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Set player x cord to previous x cord. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_ac6e559d14fc8fe5c0d2fdafce7a17c2a}{set\+Player\+Angle}} (double player\+\_\+angle)
-\item 
+\begin{DoxyCompactList}\small\item\em Set player rotation angle. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classengine_1_1_player_aa8d7a84af9ca8b40dc6f4af63b726869}{get\+Player\+Angle}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get player angle (radians). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_a197a16027eaebf03ad709b51321cf647}{set\+Player\+Health}} (\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} player\+\_\+health)
-\item 
+\begin{DoxyCompactList}\small\item\em Set player health. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{classengine_1_1_player_a904bfa7dc9f5461c8f12fd3b2ddf098c}{get\+Player\+Health}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get player health. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_a25ff84f55b1b398a1fcd5f985e6a309c}{move\+Player}} (double step)
 \begin{DoxyCompactList}\small\item\em Moves player forward or backward. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_a7961b8f8703bde8347b445d6e0193273}{move\+Player\+Side}} (double step)
 \begin{DoxyCompactList}\small\item\em Moves player right or left. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_a8ff9c2ac1534e9ed49c0b5e0a005fed6}{move\+Player\+Diagonal}} (double step\+\_\+forward, double step\+\_\+side)
 \begin{DoxyCompactList}\small\item\em Moves player diagonally. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classengine_1_1_player_a6892419fcaa2d49ce4deb73b07037ffb}{increment\+Player\+Angle}} (double value)
-\begin{DoxyCompactList}\small\item\em Adds value to rotation angle. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classengine_1_1_player_a0567b24bda699e0b7a168bf447498211}{decrement\+Player\+Angle}} (double value)
+void \mbox{\hyperlink{classengine_1_1_player_a97692d15fd1d9d1e1e17d799bf01512f}{add\+Player\+Angle}} (double value)
 \begin{DoxyCompactList}\small\item\em Adds value to rotation angle. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_a92f54742bc577e433cf325dd7ff8dea3}{return\+Back}} ()
 \begin{DoxyCompactList}\small\item\em Return player to previous position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_player_a96a8302748ca32d91b615f893af990a1}{apply\+Damage}} (int damage)
-\begin{DoxyCompactList}\small\item\em Applies damage to the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Applies damage to the player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classengine_1_1_player_a1efe96514e0866d535cb9dc556ebfdf5}{get\+Health\+Pointer}} ()
+\begin{DoxyCompactList}\small\item\em Method to get Player\textquotesingle{}s health pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,7 +68,7 @@ double \mbox{\hyperlink{classengine_1_1_player_a42e7f71f96f4541e08819c63a1be97c6
 double \mbox{\hyperlink{classengine_1_1_player_a0368c51f16a456944b244f9f5f629679}{m\+\_\+player\+\_\+x}}
 \begin{DoxyCompactList}\small\item\em Player x. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classengine_1_1_player_a8cacfc2d172b9e1b9cb00635e050ef45}{m\+\_\+player\+\_\+angle}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Player rotation angle (radians) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -83,9 +83,9 @@ engine\+::\+Player\+::\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaptio
 
 
 
-Default constructor. 
+Default constructor. PLAYER\+\_\+\+HEALTH = 100 PLAYER\+\_\+Y = 0 PLAYER\+\_\+X = 0 PLAYER\+\_\+\+ANGLE = 0 PLAYER\+\_\+\+PREV\+\_\+Y = 0 PLAYER\+\_\+\+PREV\+\_\+X = 0. 
 
-Default constructor. PLAYER\+\_\+\+HEALTH = 100 PLAYER\+\_\+Y = 0 PLAYER\+\_\+X = 0 PLAYER\+\_\+\+ANGLE = 0 PLAYER\+\_\+\+PREV\+\_\+Y = 0 PLAYER\+\_\+\+PREV\+\_\+X = 0. \Hypertarget{classengine_1_1_player_aa2246d50466975a832bf9886bc20d1c5}\index{engine::Player@{engine::Player}!Player@{Player}}
+Default constructor \Hypertarget{classengine_1_1_player_aa2246d50466975a832bf9886bc20d1c5}\index{engine::Player@{engine::Player}!Player@{Player}}
 \index{Player@{Player}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{classengine_1_1_player_aa2246d50466975a832bf9886bc20d1c5} 
@@ -93,7 +93,7 @@ engine\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{double}]{player\+
 
 
 
-Constructor. 
+Player constructor. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -101,9 +101,9 @@ Constructor.
 \hline
 \mbox{\texttt{ in}}  & {\em player\+\_\+x} & -\/Player x. \\
 \hline
-\mbox{\texttt{ in}}  & {\em player\+\_\+angle} & -\/Player rotation angle. \\
+\mbox{\texttt{ in}}  & {\em player\+\_\+angle} & -\/Player rotation angle (radians). \\
 \hline
-\mbox{\texttt{ in}}  & {\em player\+\_\+health} & -\/Player hp. \\
+\mbox{\texttt{ in}}  & {\em player\+\_\+health} & -\/Player health. Constructor \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_player_ada5976e4eb648c2622aeaf0be2881954}\index{engine::Player@{engine::Player}!````~Player@{\texorpdfstring{$\sim$}{\string~}Player}}
@@ -116,9 +116,24 @@ engine\+::\+Player\+::\texorpdfstring{$\sim$}{\string~}\+Player (\begin{DoxyPara
 
 Destructor. 
 
-Destructor, nothing. 
+
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1_player_a97692d15fd1d9d1e1e17d799bf01512f}\index{engine::Player@{engine::Player}!addPlayerAngle@{addPlayerAngle}}
+\index{addPlayerAngle@{addPlayerAngle}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{addPlayerAngle()}{addPlayerAngle()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a97692d15fd1d9d1e1e17d799bf01512f} 
+void engine\+::\+Player\+::add\+Player\+Angle (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Adds value to rotation angle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em value} & -\/Added value. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classengine_1_1_player_a96a8302748ca32d91b615f893af990a1}\index{engine::Player@{engine::Player}!applyDamage@{applyDamage}}
 \index{applyDamage@{applyDamage}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{applyDamage()}{applyDamage()}}
@@ -134,26 +149,28 @@ Applies damage to the player.
 \mbox{\texttt{ in}}  & {\em value} & -\/Subtracted value. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classengine_1_1_player_a0567b24bda699e0b7a168bf447498211}\index{engine::Player@{engine::Player}!decrementPlayerAngle@{decrementPlayerAngle}}
-\index{decrementPlayerAngle@{decrementPlayerAngle}!engine::Player@{engine::Player}}
-\doxysubsubsection{\texorpdfstring{decrementPlayerAngle()}{decrementPlayerAngle()}}
-{\footnotesize\ttfamily \label{classengine_1_1_player_a0567b24bda699e0b7a168bf447498211} 
-void engine\+::\+Player\+::decrement\+Player\+Angle (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
+\Hypertarget{classengine_1_1_player_a1efe96514e0866d535cb9dc556ebfdf5}\index{engine::Player@{engine::Player}!getHealthPointer@{getHealthPointer}}
+\index{getHealthPointer@{getHealthPointer}!engine::Player@{engine::Player}}
+\doxysubsubsection{\texorpdfstring{getHealthPointer()}{getHealthPointer()}}
+{\footnotesize\ttfamily \label{classengine_1_1_player_a1efe96514e0866d535cb9dc556ebfdf5} 
+\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \texorpdfstring{$\ast$}{*} engine\+::\+Player\+::get\+Health\+Pointer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Adds value to rotation angle. 
+Method to get Player\textquotesingle{}s health pointer. 
 
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em value} & -\/Subtracted value. \\
-\hline
-\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UINT Health pointer. 
+\end{DoxyReturn}
 \Hypertarget{classengine_1_1_player_aa8d7a84af9ca8b40dc6f4af63b726869}\index{engine::Player@{engine::Player}!getPlayerAngle@{getPlayerAngle}}
 \index{getPlayerAngle@{getPlayerAngle}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{getPlayerAngle()}{getPlayerAngle()}}
 {\footnotesize\ttfamily \label{classengine_1_1_player_aa8d7a84af9ca8b40dc6f4af63b726869} 
 double engine\+::\+Player\+::get\+Player\+Angle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get player angle (radians). 
 
 \Hypertarget{classengine_1_1_player_a904bfa7dc9f5461c8f12fd3b2ddf098c}\index{engine::Player@{engine::Player}!getPlayerHealth@{getPlayerHealth}}
 \index{getPlayerHealth@{getPlayerHealth}!engine::Player@{engine::Player}}
@@ -161,11 +178,19 @@ double engine\+::\+Player\+::get\+Player\+Angle (\begin{DoxyParamCaption}{}{}\en
 {\footnotesize\ttfamily \label{classengine_1_1_player_a904bfa7dc9f5461c8f12fd3b2ddf098c} 
 \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} engine\+::\+Player\+::get\+Player\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Get player health. 
+
 \Hypertarget{classengine_1_1_player_a285e9f07984906248176c638f9edb03e}\index{engine::Player@{engine::Player}!getPlayerX@{getPlayerX}}
 \index{getPlayerX@{getPlayerX}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{getPlayerX()}{getPlayerX()}}
 {\footnotesize\ttfamily \label{classengine_1_1_player_a285e9f07984906248176c638f9edb03e} 
 double engine\+::\+Player\+::get\+PlayerX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get player x cord. 
 
 \Hypertarget{classengine_1_1_player_abe08a35b25094c0786077d8efcb43e6a}\index{engine::Player@{engine::Player}!getPlayerY@{getPlayerY}}
 \index{getPlayerY@{getPlayerY}!engine::Player@{engine::Player}}
@@ -173,21 +198,10 @@ double engine\+::\+Player\+::get\+PlayerX (\begin{DoxyParamCaption}{}{}\end{Doxy
 {\footnotesize\ttfamily \label{classengine_1_1_player_abe08a35b25094c0786077d8efcb43e6a} 
 double engine\+::\+Player\+::get\+PlayerY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{classengine_1_1_player_a6892419fcaa2d49ce4deb73b07037ffb}\index{engine::Player@{engine::Player}!incrementPlayerAngle@{incrementPlayerAngle}}
-\index{incrementPlayerAngle@{incrementPlayerAngle}!engine::Player@{engine::Player}}
-\doxysubsubsection{\texorpdfstring{incrementPlayerAngle()}{incrementPlayerAngle()}}
-{\footnotesize\ttfamily \label{classengine_1_1_player_a6892419fcaa2d49ce4deb73b07037ffb} 
-void engine\+::\+Player\+::increment\+Player\+Angle (\begin{DoxyParamCaption}\item[{double}]{value}{}\end{DoxyParamCaption})}
 
 
+Get player y cord. 
 
-Adds value to rotation angle. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em value} & -\/Added value. \\
-\hline
-\end{DoxyParams}
 \Hypertarget{classengine_1_1_player_a25ff84f55b1b398a1fcd5f985e6a309c}\index{engine::Player@{engine::Player}!movePlayer@{movePlayer}}
 \index{movePlayer@{movePlayer}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{movePlayer()}{movePlayer()}}
@@ -251,23 +265,56 @@ Return player to previous position.
 {\footnotesize\ttfamily \label{classengine_1_1_player_ac6e559d14fc8fe5c0d2fdafce7a17c2a} 
 void engine\+::\+Player\+::set\+Player\+Angle (\begin{DoxyParamCaption}\item[{double}]{player\+\_\+angle}{}\end{DoxyParamCaption})}
 
+
+
+Set player rotation angle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em player\+\_\+angle} & -\/Player angle. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classengine_1_1_player_ab3caa16303c43b4af4d59e54d27f0a64}\index{engine::Player@{engine::Player}!setPlayerCoords@{setPlayerCoords}}
 \index{setPlayerCoords@{setPlayerCoords}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{setPlayerCoords()}{setPlayerCoords()}}
 {\footnotesize\ttfamily \label{classengine_1_1_player_ab3caa16303c43b4af4d59e54d27f0a64} 
 void engine\+::\+Player\+::set\+Player\+Coords (\begin{DoxyParamCaption}\item[{double}]{player\+\_\+y}{, }\item[{double}]{player\+\_\+x}{}\end{DoxyParamCaption})}
 
+
+
+Set player cords. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em player\+\_\+y} & -\/Player y. \\
+\hline
+\mbox{\texttt{ in}}  & {\em player\+\_\+x} & -\/Player x. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classengine_1_1_player_a197a16027eaebf03ad709b51321cf647}\index{engine::Player@{engine::Player}!setPlayerHealth@{setPlayerHealth}}
 \index{setPlayerHealth@{setPlayerHealth}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{setPlayerHealth()}{setPlayerHealth()}}
 {\footnotesize\ttfamily \label{classengine_1_1_player_a197a16027eaebf03ad709b51321cf647} 
 void engine\+::\+Player\+::set\+Player\+Health (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}}]{player\+\_\+health}{}\end{DoxyParamCaption})}
 
+
+
+Set player health. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em player\+\_\+health} & -\/Player health. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classengine_1_1_player_a83a9e91f49d78f03d99d2dbbeb87184b}\index{engine::Player@{engine::Player}!setPlayerPrevX@{setPlayerPrevX}}
 \index{setPlayerPrevX@{setPlayerPrevX}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{setPlayerPrevX()}{setPlayerPrevX()}}
 {\footnotesize\ttfamily \label{classengine_1_1_player_a83a9e91f49d78f03d99d2dbbeb87184b} 
 void engine\+::\+Player\+::set\+Player\+PrevX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Set player x cord to previous x cord. 
 
 \Hypertarget{classengine_1_1_player_adffded59e8b7158fccb67b2025bd7c5c}\index{engine::Player@{engine::Player}!setPlayerPrevY@{setPlayerPrevY}}
 \index{setPlayerPrevY@{setPlayerPrevY}!engine::Player@{engine::Player}}
@@ -275,12 +322,25 @@ void engine\+::\+Player\+::set\+Player\+PrevX (\begin{DoxyParamCaption}{}{}\end{
 {\footnotesize\ttfamily \label{classengine_1_1_player_adffded59e8b7158fccb67b2025bd7c5c} 
 void engine\+::\+Player\+::set\+Player\+PrevY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Set player y cord to previous y cord. 
+
 \Hypertarget{classengine_1_1_player_af11c1e9664991df2db9f41b5f4825b1b}\index{engine::Player@{engine::Player}!setPlayerX@{setPlayerX}}
 \index{setPlayerX@{setPlayerX}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{setPlayerX()}{setPlayerX()}}
 {\footnotesize\ttfamily \label{classengine_1_1_player_af11c1e9664991df2db9f41b5f4825b1b} 
 void engine\+::\+Player\+::set\+PlayerX (\begin{DoxyParamCaption}\item[{double}]{player\+\_\+x}{}\end{DoxyParamCaption})}
 
+
+
+Set player x cord. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em player\+\_\+x} & -\/Player x. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classengine_1_1_player_acf7c31dde22043e5b6753ebbb0ef18c5}\index{engine::Player@{engine::Player}!setPlayerY@{setPlayerY}}
 \index{setPlayerY@{setPlayerY}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{setPlayerY()}{setPlayerY()}}
@@ -289,12 +349,25 @@ void engine\+::\+Player\+::set\+PlayerY (\begin{DoxyParamCaption}\item[{double}]
 
 
 
+Set player y cord. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em player\+\_\+y} & -\/Player y. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Data Documentation}
 \Hypertarget{classengine_1_1_player_a8cacfc2d172b9e1b9cb00635e050ef45}\index{engine::Player@{engine::Player}!m\_player\_angle@{m\_player\_angle}}
 \index{m\_player\_angle@{m\_player\_angle}!engine::Player@{engine::Player}}
 \doxysubsubsection{\texorpdfstring{m\_player\_angle}{m\_player\_angle}}
 {\footnotesize\ttfamily \label{classengine_1_1_player_a8cacfc2d172b9e1b9cb00635e050ef45} 
 double engine\+::\+Player\+::m\+\_\+player\+\_\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Player rotation angle (radians) 
 
 \Hypertarget{classengine_1_1_player_aaf0eef3a5816067e1933ad4a36822163}\index{engine::Player@{engine::Player}!m\_player\_health@{m\_player\_health}}
 \index{m\_player\_health@{m\_player\_health}!engine::Player@{engine::Player}}

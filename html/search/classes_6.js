@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['texturemanager_0',['TextureManager',['../classengine_1_1_texture_manager.html',1,'engine']]]
+  ['scene_0',['Scene',['../classengine_1_1_scene.html',1,'engine']]],
+  ['sprite_1',['Sprite',['../struct_sprite.html',1,'']]]
 ];

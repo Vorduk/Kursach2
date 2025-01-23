@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['player_0',['Player',['../classengine_1_1_player.html',1,'engine']]]
+  ['enemy_0',['Enemy',['../classengine_1_1_enemy.html',1,'engine']]],
+  ['engineexception_1',['EngineException',['../classengine_1_1_engine_exception.html',1,'engine']]]
 ];

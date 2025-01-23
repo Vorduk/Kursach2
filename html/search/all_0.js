@@ -1,11 +1,20 @@
 var searchData=
 [
-  ['addcamera_0',['addCamera',['../classengine_1_1_scene.html#a63397837eb4a10f703a41e8db7e5cb67',1,'engine::Scene']]],
-  ['addplayer_1',['addPlayer',['../classengine_1_1_scene.html#ada7564a446baf21fa2f0fbe95afe428f',1,'engine::Scene']]],
-  ['addscene_2',['addScene',['../classengine_1_1_application.html#abc9393dab61fd681f3d9b2818fdee792',1,'engine::Application']]],
-  ['addwindow_3',['addWindow',['../classengine_1_1_application.html#ab40f0638c5058c5ad45d5f5e21fa1632',1,'engine::Application']]],
-  ['application_4',['Application',['../classengine_1_1_application.html',1,'engine::Application'],['../classengine_1_1_application.html#a9740cd2e55318cbc5684a6c4c2f3304f',1,'engine::Application::Application()']]],
-  ['application_2ecpp_5',['Application.cpp',['../_application_8cpp.html',1,'']]],
-  ['application_2eh_6',['Application.h',['../_application_8h.html',1,'']]],
-  ['applydamage_7',['applyDamage',['../classengine_1_1_player.html#a96a8302748ca32d91b615f893af990a1',1,'engine::Player']]]
+  ['active_0',['ACTIVE',['../namespaceengine.html#abde969c32a6cefe6825454e7917f8b83a1feef2c7c81b183c736ec73f2555e15c',1,'engine']]],
+  ['addbutton_1',['addButton',['../classengine_1_1_u_i.html#a405a9b8084f1e794d7de5572a37e542f',1,'engine::UI']]],
+  ['addcamera_2',['addCamera',['../classengine_1_1_scene.html#a63397837eb4a10f703a41e8db7e5cb67',1,'engine::Scene']]],
+  ['addcounter_3',['addCounter',['../classengine_1_1_enemy.html#a1c96ceb02f833a493fbda005881fc588',1,'engine::Enemy']]],
+  ['addenemy_4',['addEnemy',['../classengine_1_1_scene.html#a94e016ce11fdd22a32c0295ec0f04ba3',1,'engine::Scene']]],
+  ['addobstacle_5',['addObstacle',['../classengine_1_1_scene.html#ae8c6cac62d00af55a5eed20a0412de4c',1,'engine::Scene']]],
+  ['addplayer_6',['addPlayer',['../classengine_1_1_scene.html#ada7564a446baf21fa2f0fbe95afe428f',1,'engine::Scene']]],
+  ['addplayerangle_7',['addPlayerAngle',['../classengine_1_1_player.html#a97692d15fd1d9d1e1e17d799bf01512f',1,'engine::Player']]],
+  ['addscene_8',['addScene',['../classengine_1_1_application.html#abc9393dab61fd681f3d9b2818fdee792',1,'engine::Application']]],
+  ['addtextblock_9',['addTextBlock',['../classengine_1_1_u_i.html#a313740692608a15459049624feda121f',1,'engine::UI']]],
+  ['addui_10',['addUI',['../classengine_1_1_application.html#a620c9aa8eb5aef08665bd31bc51f94fc',1,'engine::Application']]],
+  ['alien_11',['Alien',['../classengine_1_1_alien.html',1,'engine::Alien'],['../classengine_1_1_alien.html#a6bdb847b7a2c8f594ddf9fb82570506c',1,'engine::Alien::Alien()']]],
+  ['application_12',['Application',['../classengine_1_1_application.html',1,'engine::Application'],['../classengine_1_1_application.html#a9740cd2e55318cbc5684a6c4c2f3304f',1,'engine::Application::Application()']]],
+  ['application_2ecpp_13',['Application.cpp',['../_application_8cpp.html',1,'']]],
+  ['application_2eh_14',['Application.h',['../_application_8h.html',1,'']]],
+  ['applydamage_15',['applyDamage',['../classengine_1_1_player.html#a96a8302748ca32d91b615f893af990a1',1,'engine::Player']]],
+  ['attack_16',['attack',['../classengine_1_1_enemy.html#a1f8dddd9def19ad45f8c2fb8b3766e90',1,'engine::Enemy::attack()'],['../classengine_1_1_zombie.html#ab17f80c72dbc1c993793dddb886488e5',1,'engine::Zombie::attack()'],['../classengine_1_1_alien.html#a750a8941b3c0ca8d34350ba28c1a9fc8',1,'engine::Alien::attack()']]]
 ];

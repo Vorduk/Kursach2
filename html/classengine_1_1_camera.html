@@ -164,10 +164,10 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a8c475238d0c70ab393a9894fb69272b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera world angle (radians).  <br /></td></tr>
 <tr class="separator:a8c475238d0c70ab393a9894fb69272b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a852c6aebcf8fbde1428b7b40691be589" id="r_a852c6aebcf8fbde1428b7b40691be589"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a852c6aebcf8fbde1428b7b40691be589">m_fov_c</a></td></tr>
-<tr class="memdesc:a852c6aebcf8fbde1428b7b40691be589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera world angle (degrees).  <br /></td></tr>
+<tr class="memdesc:a852c6aebcf8fbde1428b7b40691be589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera field of view (degrees).  <br /></td></tr>
 <tr class="separator:a852c6aebcf8fbde1428b7b40691be589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae58c77a7a6b6bf9a7d31b6fcfb88e8b2" id="r_ae58c77a7a6b6bf9a7d31b6fcfb88e8b2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae58c77a7a6b6bf9a7d31b6fcfb88e8b2">m_fov</a></td></tr>
-<tr class="memdesc:ae58c77a7a6b6bf9a7d31b6fcfb88e8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera field of view.  <br /></td></tr>
+<tr class="memdesc:ae58c77a7a6b6bf9a7d31b6fcfb88e8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera field of view (radians).  <br /></td></tr>
 <tr class="separator:ae58c77a7a6b6bf9a7d31b6fcfb88e8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4e8d6cad9478678a62ab3438ae77324" id="r_af4e8d6cad9478678a62ab3438ae77324"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4e8d6cad9478678a62ab3438ae77324">m_render_distance</a></td></tr>
 <tr class="memdesc:af4e8d6cad9478678a62ab3438ae77324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera render distance.  <br /></td></tr>
@@ -230,11 +230,11 @@ Private Attributes</h2></td></tr>
 <p>Camera constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>-Camera world y cord. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>-Camera world x cord. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">camera_angle</td><td>-Camera world angle (degrees). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fov_c</td><td>-Camera field of view. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">render_distance</td><td>-Camera render distance. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>- Camera world y cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>- Camera world x cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_angle</td><td>- Camera world angle (radians). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fov_c</td><td>- Camera field of view (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">render_distance</td><td>- Camera render distance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -393,7 +393,7 @@ Private Attributes</h2></td></tr>
 <p>Set camera angle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">camera_angle</td><td>-Camera angle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_angle</td><td>- Camera angle. </td></tr>
   </table>
   </dd>
 </dl>
@@ -422,8 +422,8 @@ Private Attributes</h2></td></tr>
 <p>Set camera world cords. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>-Camera world y cord. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>-Camera world x cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>- Camera world y cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>- Camera world x cord. </td></tr>
   </table>
   </dd>
 </dl>
@@ -448,7 +448,7 @@ Private Attributes</h2></td></tr>
 <p>Set camera x cord. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>-Camera world x cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>- Camera world x cord. </td></tr>
   </table>
   </dd>
 </dl>
@@ -473,7 +473,7 @@ Private Attributes</h2></td></tr>
 <p>Set camera y cord. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>-Camera world y cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>- Camera world y cord. </td></tr>
   </table>
   </dd>
 </dl>
@@ -498,7 +498,7 @@ Private Attributes</h2></td></tr>
 <p>Set camera field of view (radians). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">fov</td><td>-Camera field of view (radians). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fov</td><td>- Camera field of view (radians). </td></tr>
   </table>
   </dd>
 </dl>
@@ -523,7 +523,7 @@ Private Attributes</h2></td></tr>
 <p>Set camera field of view (degrees). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">fov_c</td><td>-Camera field of view (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fov_c</td><td>- Camera field of view (degrees). </td></tr>
   </table>
   </dd>
 </dl>
@@ -548,7 +548,7 @@ Private Attributes</h2></td></tr>
 <p>Set camera render distance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">render_distance</td><td>-Camera render distance. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">render_distance</td><td>- Camera render distance. </td></tr>
   </table>
   </dd>
 </dl>
@@ -667,7 +667,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Camera field of view. </p>
+<p>Camera field of view (radians). </p>
 
 </div>
 </div>
@@ -691,7 +691,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Camera world angle (degrees). </p>
+<p>Camera field of view (degrees). </p>
 
 </div>
 </div>

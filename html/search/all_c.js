@@ -1,21 +1,12 @@
 var searchData=
 [
-  ['scene_0',['Scene',['../classengine_1_1_scene.html',1,'engine::Scene'],['../classengine_1_1_scene.html#af9a03c6a66bc5b1591519e42abd22269',1,'engine::Scene::Scene()']]],
-  ['scene_2ecpp_1',['Scene.cpp',['../_scene_8cpp.html',1,'']]],
-  ['scene_2eh_2',['Scene.h',['../_scene_8h.html',1,'']]],
-  ['setcameraangle_3',['setCameraAngle',['../classengine_1_1_camera.html#ab3d690c0b077ad075eb8285c75de3e78',1,'engine::Camera']]],
-  ['setcameracoords_4',['setCameraCoords',['../classengine_1_1_camera.html#ad8f2054acf47cac21de577c3a046631c',1,'engine::Camera']]],
-  ['setcamerax_5',['setCameraX',['../classengine_1_1_camera.html#ae778f6158cda64b31b692011cbcab325',1,'engine::Camera']]],
-  ['setcameray_6',['setCameraY',['../classengine_1_1_camera.html#a8ae733d0e8ec45492c7b7e3b87b12bed',1,'engine::Camera']]],
-  ['setfov_7',['setFov',['../classengine_1_1_camera.html#af4abb113a17289366fe121e1c4e42bcd',1,'engine::Camera']]],
-  ['setfovc_8',['setFovC',['../classengine_1_1_camera.html#aecb3d7f83d86a3c97bbc0b92899eb4eb',1,'engine::Camera']]],
-  ['setplayerangle_9',['setPlayerAngle',['../classengine_1_1_player.html#ac6e559d14fc8fe5c0d2fdafce7a17c2a',1,'engine::Player']]],
-  ['setplayercoords_10',['setPlayerCoords',['../classengine_1_1_player.html#ab3caa16303c43b4af4d59e54d27f0a64',1,'engine::Player']]],
-  ['setplayerhealth_11',['setPlayerHealth',['../classengine_1_1_player.html#a197a16027eaebf03ad709b51321cf647',1,'engine::Player']]],
-  ['setplayerprevx_12',['setPlayerPrevX',['../classengine_1_1_player.html#a83a9e91f49d78f03d99d2dbbeb87184b',1,'engine::Player']]],
-  ['setplayerprevy_13',['setPlayerPrevY',['../classengine_1_1_player.html#adffded59e8b7158fccb67b2025bd7c5c',1,'engine::Player']]],
-  ['setplayerx_14',['setPlayerX',['../classengine_1_1_player.html#af11c1e9664991df2db9f41b5f4825b1b',1,'engine::Player']]],
-  ['setplayery_15',['setPlayerY',['../classengine_1_1_player.html#acf7c31dde22043e5b6753ebbb0ef18c5',1,'engine::Player']]],
-  ['setrenderdistance_16',['setRenderDistance',['../classengine_1_1_camera.html#ae846a9c25119fd0b4b44e157203a80be',1,'engine::Camera']]],
-  ['synchronizewithplayer_17',['synchronizeWithPlayer',['../classengine_1_1_camera.html#a1db3cbb1e40a11ac84f748ddcb6c21c6',1,'engine::Camera']]]
+  ['pair_5fhash_0',['pair_hash',['../structpair__hash.html',1,'']]],
+  ['pause_1',['PAUSE',['../namespaceengine.html#adaed727a1a80687252941158d5574838ab03b49a1c5e45b6012e0bcfaab7aafff',1,'engine']]],
+  ['play_2',['PLAY',['../namespaceengine.html#adaed727a1a80687252941158d5574838aaa02e01348ee0394e7e0dc242b17e5cd',1,'engine']]],
+  ['player_3',['Player',['../classengine_1_1_player.html',1,'engine::Player'],['../classengine_1_1_player.html#a8ed820cb98c40785975722e311c6e235',1,'engine::Player::Player()'],['../classengine_1_1_player.html#aa2246d50466975a832bf9886bc20d1c5',1,'engine::Player::Player(double player_y, double player_x, double player_angle, uint player_health)']]],
+  ['player_2ecpp_4',['Player.cpp',['../_player_8cpp.html',1,'']]],
+  ['player_2eh_5',['Player.h',['../_player_8h.html',1,'']]],
+  ['present_6',['present',['../classengine_1_1_renderer.html#aeac54f13407f3f7134fc8f19f27fbb24',1,'engine::Renderer']]],
+  ['printinfo_7',['printInfo',['../classengine_1_1_engine_exception.html#a209ab22ba10aa10fa19f3d3751b1bd4c',1,'engine::EngineException']]],
+  ['processplayercollision_8',['processPlayerCollision',['../classengine_1_1_scene.html#ab263ad4d14160237a5393e2b0c3fed05',1,'engine::Scene']]]
 ];

@@ -47,12 +47,12 @@ namespace engine
 	}
 
 	void Scene::addObstacle(int x, int y) {
-		m_obstacles.push_back({ x, y }); // Добавляем новое препятствие с координатами (x, y)
+		m_obstacles.push_back({ x, y });
 	}
 
 	void Scene::removeObstacle(int index) {
 		if (index >= 0 && index < m_obstacles.size()) {
-			m_obstacles.erase(m_obstacles.begin() + index); // Удаляем препятствие по индексу
+			m_obstacles.erase(m_obstacles.begin() + index);
 		}
 	}
 
@@ -65,7 +65,7 @@ namespace engine
 	}
 
 	std::vector<std::vector<int>> Scene::getObstacles() const {
-		return m_obstacles; // Возвращаем все препятствия
+		return m_obstacles;
 	}
 
     int Scene::getObstacleSizeY()
@@ -422,15 +422,11 @@ namespace engine
             double cast = raycastObstacleFromPlayer(25);
             bool cast_check = cast == -1.0 ? true : (enemy_distance - cast < 0.1);
 
-            std::cout << cast << "\n";
-
             int area = 25;
 
             if (abs(sprite_angle) < (M_PI/6/enemy_distance) && enemy_distance < area && cast_check)
             {
                 m_enemies[i]->takeDamage(15);
-
-                std::cout << "damage" << "\n";
             }
         }
     }

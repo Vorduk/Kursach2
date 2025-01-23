@@ -51,9 +51,9 @@ double \mbox{\hyperlink{classengine_1_1_camera_a30a7f921daaf6b17603b6e60ab1b0c20
 double \mbox{\hyperlink{classengine_1_1_camera_a8c475238d0c70ab393a9894fb69272b4}{m\+\_\+camera\+\_\+angle}}
 \begin{DoxyCompactList}\small\item\em Camera world angle (radians). \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classengine_1_1_camera_a852c6aebcf8fbde1428b7b40691be589}{m\+\_\+fov\+\_\+c}}
-\begin{DoxyCompactList}\small\item\em Camera world angle (degrees). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Camera field of view (degrees). \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classengine_1_1_camera_ae58c77a7a6b6bf9a7d31b6fcfb88e8b2}{m\+\_\+fov}}
-\begin{DoxyCompactList}\small\item\em Camera field of view. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Camera field of view (radians). \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classengine_1_1_camera_af4e8d6cad9478678a62ab3438ae77324}{m\+\_\+render\+\_\+distance}}
 \begin{DoxyCompactList}\small\item\em Camera render distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -81,15 +81,15 @@ Camera constructor.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/Camera world y cord. \\
+\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/ Camera world y cord. \\
 \hline
-\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/Camera world x cord. \\
+\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/ Camera world x cord. \\
 \hline
-\mbox{\texttt{ in}}  & {\em camera\+\_\+angle} & -\/Camera world angle (degrees). \\
+\mbox{\texttt{ in}}  & {\em camera\+\_\+angle} & -\/ Camera world angle (radians). \\
 \hline
-\mbox{\texttt{ in}}  & {\em fov\+\_\+c} & -\/Camera field of view. \\
+\mbox{\texttt{ in}}  & {\em fov\+\_\+c} & -\/ Camera field of view (degrees). \\
 \hline
-\mbox{\texttt{ in}}  & {\em render\+\_\+distance} & -\/Camera render distance. \\
+\mbox{\texttt{ in}}  & {\em render\+\_\+distance} & -\/ Camera render distance. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_camera_af52953a99bb1736898d407c414a9e502}\index{engine::Camera@{engine::Camera}!````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}}
@@ -177,7 +177,7 @@ Set camera angle.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em camera\+\_\+angle} & -\/Camera angle. \\
+\mbox{\texttt{ in}}  & {\em camera\+\_\+angle} & -\/ Camera angle. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_camera_ad8f2054acf47cac21de577c3a046631c}\index{engine::Camera@{engine::Camera}!setCameraCoords@{setCameraCoords}}
@@ -192,9 +192,9 @@ Set camera world cords.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/Camera world y cord. \\
+\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/ Camera world y cord. \\
 \hline
-\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/Camera world x cord. \\
+\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/ Camera world x cord. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_camera_ae778f6158cda64b31b692011cbcab325}\index{engine::Camera@{engine::Camera}!setCameraX@{setCameraX}}
@@ -209,7 +209,7 @@ Set camera x cord.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/Camera world x cord. \\
+\mbox{\texttt{ in}}  & {\em camera\+\_\+x} & -\/ Camera world x cord. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_camera_a8ae733d0e8ec45492c7b7e3b87b12bed}\index{engine::Camera@{engine::Camera}!setCameraY@{setCameraY}}
@@ -224,7 +224,7 @@ Set camera y cord.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/Camera world y cord. \\
+\mbox{\texttt{ in}}  & {\em camera\+\_\+y} & -\/ Camera world y cord. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_camera_af4abb113a17289366fe121e1c4e42bcd}\index{engine::Camera@{engine::Camera}!setFov@{setFov}}
@@ -239,7 +239,7 @@ Set camera field of view (radians).
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em fov} & -\/Camera field of view (radians). \\
+\mbox{\texttt{ in}}  & {\em fov} & -\/ Camera field of view (radians). \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_camera_aecb3d7f83d86a3c97bbc0b92899eb4eb}\index{engine::Camera@{engine::Camera}!setFovC@{setFovC}}
@@ -254,7 +254,7 @@ Set camera field of view (degrees).
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em fov\+\_\+c} & -\/Camera field of view (degrees). \\
+\mbox{\texttt{ in}}  & {\em fov\+\_\+c} & -\/ Camera field of view (degrees). \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_camera_ae846a9c25119fd0b4b44e157203a80be}\index{engine::Camera@{engine::Camera}!setRenderDistance@{setRenderDistance}}
@@ -269,7 +269,7 @@ Set camera render distance.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em render\+\_\+distance} & -\/Camera render distance. \\
+\mbox{\texttt{ in}}  & {\em render\+\_\+distance} & -\/ Camera render distance. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_camera_a1db3cbb1e40a11ac84f748ddcb6c21c6}\index{engine::Camera@{engine::Camera}!synchronizeWithPlayer@{synchronizeWithPlayer}}
@@ -323,7 +323,7 @@ double engine\+::\+Camera\+::m\+\_\+fov\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Camera field of view. 
+Camera field of view (radians). 
 
 \Hypertarget{classengine_1_1_camera_a852c6aebcf8fbde1428b7b40691be589}\index{engine::Camera@{engine::Camera}!m\_fov\_c@{m\_fov\_c}}
 \index{m\_fov\_c@{m\_fov\_c}!engine::Camera@{engine::Camera}}
@@ -333,7 +333,7 @@ double engine\+::\+Camera\+::m\+\_\+fov\+\_\+c\hspace{0.3cm}{\ttfamily [private]
 
 
 
-Camera world angle (degrees). 
+Camera field of view (degrees). 
 
 \Hypertarget{classengine_1_1_camera_af4e8d6cad9478678a62ab3438ae77324}\index{engine::Camera@{engine::Camera}!m\_render\_distance@{m\_render\_distance}}
 \index{m\_render\_distance@{m\_render\_distance}!engine::Camera@{engine::Camera}}

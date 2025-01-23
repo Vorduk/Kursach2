@@ -4,6 +4,10 @@
 #include <corecrt_math_defines.h>
 #include "Player.h"
 
+/**
+ * @namespace engine
+ * @brief This namespace contains classes for game engine.
+ */
 namespace engine
 {
     class Camera {
@@ -22,11 +26,11 @@ namespace engine
 
         /**
          * @brief Camera constructor.
-         * @param[in] camera_y -Camera world y cord.
-         * @param[in] camera_x -Camera world x cord.
-         * @param[in] camera_angle -Camera world angle (radians).
-         * @param[in] fov_c -Camera field of view (degrees).
-         * @param[in] render_distance -Camera render distance.
+         * @param[in] camera_y - Camera world y cord.
+         * @param[in] camera_x - Camera world x cord.
+         * @param[in] camera_angle - Camera world angle (radians).
+         * @param[in] fov_c - Camera field of view (degrees).
+         * @param[in] render_distance - Camera render distance.
          */
         Camera(double camera_y, double camera_x, double camera_angle, double fov_c, int render_distance);
         
@@ -37,49 +41,49 @@ namespace engine
 
         /**
          * @brief Set camera world cords.
-         * @param[in] camera_y -Camera world y cord.
-         * @param[in] camera_x -Camera world x cord.
+         * @param[in] camera_y - Camera world y cord.
+         * @param[in] camera_x - Camera world x cord.
          */
         void setCameraCoords(double camera_y, double camera_x);
 
         /**
          * @brief Set camera y cord.
-         * @param[in] camera_y -Camera world y cord.
+         * @param[in] camera_y - Camera world y cord.
          */
         void setCameraY(double camera_y);
         double getCameraY(); ///< Get camera y cord.
 
         /**
          * @brief Set camera x cord.
-         * @param[in] camera_x -Camera world x cord.
+         * @param[in] camera_x - Camera world x cord.
          */
         void setCameraX(double camera_x);
         double getCameraX(); ///< Get camera x cord.
 
         /**
          * @brief Set camera angle.
-         * @param[in] camera_angle -Camera angle.
+         * @param[in] camera_angle - Camera angle.
          */
         void setCameraAngle(double camera_angle);
         double getCameraAngle(); ///< Get camera angle (degrees).
 
         /**
          * @brief Set camera field of view (degrees).
-         * @param[in] fov_c -Camera field of view (degrees).
+         * @param[in] fov_c - Camera field of view (degrees).
          */
         void setFovC(double fov_c);
         double getFovC(); ///< Get camera field of view (degrees).
 
         /**
          * @brief Set camera field of view (radians).
-         * @param[in] fov -Camera field of view (radians).
+         * @param[in] fov - Camera field of view (radians).
          */
         void setFov(double fov);
         double getFov(); ///< Get camera field of view (radians).
 
         /**
          * @brief Set camera render distance.
-         * @param[in] render_distance -Camera render distance.
+         * @param[in] render_distance - Camera render distance.
          */
         void setRenderDistance(int render_distance);
         int getRenderDistance(); ///< Get camera render distance.

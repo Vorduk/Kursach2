@@ -8,10 +8,16 @@ This namespace contains classes for game engine.
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classengine_1_1_alien}{Alien}}
+\begin{DoxyCompactList}\small\item\em This class represents an alien enemy. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classengine_1_1_application}{Application}}
 \begin{DoxyCompactList}\small\item\em Application class (Main loop). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classengine_1_1_button}{Button}}
+\begin{DoxyCompactList}\small\item\em This class represents a clickable button in the UI. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classengine_1_1_camera}{Camera}}
 \item 
+class \mbox{\hyperlink{classengine_1_1_enemy}{Enemy}}
+\begin{DoxyCompactList}\small\item\em This class represents a generic enemy in the game. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classengine_1_1_engine_exception}{Engine\+Exception}}
 \begin{DoxyCompactList}\small\item\em Custom exception. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classengine_1_1_player}{Player}}
@@ -19,12 +25,151 @@ class \mbox{\hyperlink{classengine_1_1_player}{Player}}
 class \mbox{\hyperlink{classengine_1_1_renderer}{Renderer}}
 \begin{DoxyCompactList}\small\item\em Renderer class. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classengine_1_1_scene}{Scene}}
-\begin{DoxyCompactList}\small\item\em Scene class. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classengine_1_1_texture_manager}{Texture\+Manager}}
-\begin{DoxyCompactList}\small\item\em Texture\+Manager class. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Represents a scene in the game, containing players, cameras, obstacles, and decorations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classengine_1_1_text}{Text}}
+\begin{DoxyCompactList}\small\item\em Represents a text object that can be rendered on the screen. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classengine_1_1_u_i}{UI}}
+\begin{DoxyCompactList}\small\item\em Represents a user interface that manages buttons and text blocks. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classengine_1_1_window}{Window}}
-\begin{DoxyCompactList}\small\item\em Window class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Window class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classengine_1_1_zombie}{Zombie}}
+\begin{DoxyCompactList}\small\item\em This class represents a zombie enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \{ \newline
+\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838a7d8fdaf1f7e39a593bb545deee3bc38e}{MENU}}
+, \mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838aae3e91180a959e3d4c9b7c3417e26763}{LOAD\+\_\+\+NEW}}
+, \mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838abbb6d9cf4b09ed4c3f20cd62ffc41dc1}{LOAD\+\_\+\+SAVE}}
+, \mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838abe4877bb792fdc60368d231360730ba3}{SAVE}}
+, \newline
+\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838aaa02e01348ee0394e7e0dc242b17e5cd}{PLAY}}
+, \mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838ab03b49a1c5e45b6012e0bcfaab7aafff}{PAUSE}}
+, \mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838a0dae37120dd9712831c183649b2b5081}{EXIT}}
+ \}
+\begin{DoxyCompactList}\small\item\em This enum defines the different states of the application window. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceengine_abde969c32a6cefe6825454e7917f8b83}{Enemy\+Behavior}} \{ \mbox{\hyperlink{namespaceengine_abde969c32a6cefe6825454e7917f8b83a3c200d8b4cf30d71aa13d827ca060a73}{IDLE}}
+, \mbox{\hyperlink{namespaceengine_abde969c32a6cefe6825454e7917f8b83a1feef2c7c81b183c736ec73f2555e15c}{ACTIVE}}
+, \mbox{\hyperlink{namespaceengine_abde969c32a6cefe6825454e7917f8b83a4bc025971bef26d90da98ce20ad48dcf}{DEAD}}
+ \}
+\begin{DoxyCompactList}\small\item\em This enum defines the possible behaviors of an enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceengine_a3f2549f2e0efdf6751f660f07f757c1e}{button\+Play\+New}} (\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&m\+\_\+current\+\_\+window\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Button on\+Click() functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceengine_aa2b78ca38d9bc2af75598a7026eda6ca}{button\+Save}} (\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&m\+\_\+current\+\_\+window\+\_\+state)
+\item 
+void \mbox{\hyperlink{namespaceengine_aff4552431e8e03ff8f299ab6447894ca}{button\+Play\+Load}} (\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&m\+\_\+current\+\_\+window\+\_\+state)
+\item 
+void \mbox{\hyperlink{namespaceengine_af414af9e1a92bf7d674c81690d1efc0d}{button\+Exit}} (\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&m\+\_\+current\+\_\+window\+\_\+state)
+\item 
+void \mbox{\hyperlink{namespaceengine_a79615986eefb304d264efde3974353a6}{button\+Menu}} (\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&m\+\_\+current\+\_\+window\+\_\+state)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 This namespace contains classes for game engine. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespaceengine_abde969c32a6cefe6825454e7917f8b83}\index{engine@{engine}!EnemyBehavior@{EnemyBehavior}}
+\index{EnemyBehavior@{EnemyBehavior}!engine@{engine}}
+\doxysubsubsection{\texorpdfstring{EnemyBehavior}{EnemyBehavior}}
+{\footnotesize\ttfamily \label{namespaceengine_abde969c32a6cefe6825454e7917f8b83} 
+enum \mbox{\hyperlink{namespaceengine_abde969c32a6cefe6825454e7917f8b83}{engine\+::\+Enemy\+Behavior}}}
+
+
+
+This enum defines the possible behaviors of an enemy. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDLE@{IDLE}!engine@{engine}}\index{engine@{engine}!IDLE@{IDLE}}}\Hypertarget{namespaceengine_abde969c32a6cefe6825454e7917f8b83a3c200d8b4cf30d71aa13d827ca060a73}\label{namespaceengine_abde969c32a6cefe6825454e7917f8b83} 
+IDLE&The enemy is idle and not moving. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTIVE@{ACTIVE}!engine@{engine}}\index{engine@{engine}!ACTIVE@{ACTIVE}}}\Hypertarget{namespaceengine_abde969c32a6cefe6825454e7917f8b83a1feef2c7c81b183c736ec73f2555e15c}\label{namespaceengine_abde969c32a6cefe6825454e7917f8b83} 
+ACTIVE&The enemy is actively pursuing a target. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEAD@{DEAD}!engine@{engine}}\index{engine@{engine}!DEAD@{DEAD}}}\Hypertarget{namespaceengine_abde969c32a6cefe6825454e7917f8b83a4bc025971bef26d90da98ce20ad48dcf}\label{namespaceengine_abde969c32a6cefe6825454e7917f8b83} 
+DEAD&The enemy is dead and no longer active. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespaceengine_adaed727a1a80687252941158d5574838}\index{engine@{engine}!WindowState@{WindowState}}
+\index{WindowState@{WindowState}!engine@{engine}}
+\doxysubsubsection{\texorpdfstring{WindowState}{WindowState}}
+{\footnotesize\ttfamily \label{namespaceengine_adaed727a1a80687252941158d5574838} 
+enum \mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{engine\+::\+Window\+State}}}
+
+
+
+This enum defines the different states of the application window. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MENU@{MENU}!engine@{engine}}\index{engine@{engine}!MENU@{MENU}}}\Hypertarget{namespaceengine_adaed727a1a80687252941158d5574838a7d8fdaf1f7e39a593bb545deee3bc38e}\label{namespaceengine_adaed727a1a80687252941158d5574838} 
+MENU&The menu state of the application. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOAD\_NEW@{LOAD\_NEW}!engine@{engine}}\index{engine@{engine}!LOAD\_NEW@{LOAD\_NEW}}}\Hypertarget{namespaceengine_adaed727a1a80687252941158d5574838aae3e91180a959e3d4c9b7c3417e26763}\label{namespaceengine_adaed727a1a80687252941158d5574838} 
+LOAD\+\_\+\+NEW&The state for loading a new game. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOAD\_SAVE@{LOAD\_SAVE}!engine@{engine}}\index{engine@{engine}!LOAD\_SAVE@{LOAD\_SAVE}}}\Hypertarget{namespaceengine_adaed727a1a80687252941158d5574838abbb6d9cf4b09ed4c3f20cd62ffc41dc1}\label{namespaceengine_adaed727a1a80687252941158d5574838} 
+LOAD\+\_\+\+SAVE&The state for loading a saved game. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAVE@{SAVE}!engine@{engine}}\index{engine@{engine}!SAVE@{SAVE}}}\Hypertarget{namespaceengine_adaed727a1a80687252941158d5574838abe4877bb792fdc60368d231360730ba3}\label{namespaceengine_adaed727a1a80687252941158d5574838} 
+SAVE&The state for saving the current game. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAY@{PLAY}!engine@{engine}}\index{engine@{engine}!PLAY@{PLAY}}}\Hypertarget{namespaceengine_adaed727a1a80687252941158d5574838aaa02e01348ee0394e7e0dc242b17e5cd}\label{namespaceengine_adaed727a1a80687252941158d5574838} 
+PLAY&The state for playing the game. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSE@{PAUSE}!engine@{engine}}\index{engine@{engine}!PAUSE@{PAUSE}}}\Hypertarget{namespaceengine_adaed727a1a80687252941158d5574838ab03b49a1c5e45b6012e0bcfaab7aafff}\label{namespaceengine_adaed727a1a80687252941158d5574838} 
+PAUSE&The state for pausing the game. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXIT@{EXIT}!engine@{engine}}\index{engine@{engine}!EXIT@{EXIT}}}\Hypertarget{namespaceengine_adaed727a1a80687252941158d5574838a0dae37120dd9712831c183649b2b5081}\label{namespaceengine_adaed727a1a80687252941158d5574838} 
+EXIT&The state for exiting the application. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceengine_af414af9e1a92bf7d674c81690d1efc0d}\index{engine@{engine}!buttonExit@{buttonExit}}
+\index{buttonExit@{buttonExit}!engine@{engine}}
+\doxysubsubsection{\texorpdfstring{buttonExit()}{buttonExit()}}
+{\footnotesize\ttfamily \label{namespaceengine_af414af9e1a92bf7d674c81690d1efc0d} 
+void engine\+::button\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&}]{m\+\_\+current\+\_\+window\+\_\+state}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceengine_a79615986eefb304d264efde3974353a6}\index{engine@{engine}!buttonMenu@{buttonMenu}}
+\index{buttonMenu@{buttonMenu}!engine@{engine}}
+\doxysubsubsection{\texorpdfstring{buttonMenu()}{buttonMenu()}}
+{\footnotesize\ttfamily \label{namespaceengine_a79615986eefb304d264efde3974353a6} 
+void engine\+::button\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&}]{m\+\_\+current\+\_\+window\+\_\+state}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceengine_aff4552431e8e03ff8f299ab6447894ca}\index{engine@{engine}!buttonPlayLoad@{buttonPlayLoad}}
+\index{buttonPlayLoad@{buttonPlayLoad}!engine@{engine}}
+\doxysubsubsection{\texorpdfstring{buttonPlayLoad()}{buttonPlayLoad()}}
+{\footnotesize\ttfamily \label{namespaceengine_aff4552431e8e03ff8f299ab6447894ca} 
+void engine\+::button\+Play\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&}]{m\+\_\+current\+\_\+window\+\_\+state}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceengine_a3f2549f2e0efdf6751f660f07f757c1e}\index{engine@{engine}!buttonPlayNew@{buttonPlayNew}}
+\index{buttonPlayNew@{buttonPlayNew}!engine@{engine}}
+\doxysubsubsection{\texorpdfstring{buttonPlayNew()}{buttonPlayNew()}}
+{\footnotesize\ttfamily \label{namespaceengine_a3f2549f2e0efdf6751f660f07f757c1e} 
+void engine\+::button\+Play\+New (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&}]{m\+\_\+current\+\_\+window\+\_\+state}{}\end{DoxyParamCaption})}
+
+
+
+Button on\+Click() functions. 
+
+\Hypertarget{namespaceengine_aa2b78ca38d9bc2af75598a7026eda6ca}\index{engine@{engine}!buttonSave@{buttonSave}}
+\index{buttonSave@{buttonSave}!engine@{engine}}
+\doxysubsubsection{\texorpdfstring{buttonSave()}{buttonSave()}}
+{\footnotesize\ttfamily \label{namespaceengine_aa2b78ca38d9bc2af75598a7026eda6ca} 
+void engine\+::button\+Save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceengine_adaed727a1a80687252941158d5574838}{Window\+State}} \&}]{m\+\_\+current\+\_\+window\+\_\+state}{}\end{DoxyParamCaption})}
+

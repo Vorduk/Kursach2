@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['freetexture_0',['freeTexture',['../classengine_1_1_renderer.html#a01acdaa6bc3332fcbcbb63dbf6bdc9e2',1,'engine::Renderer::freeTexture()'],['../classengine_1_1_texture_manager.html#a20a66f946f2eae4685cb93f15b85c70f',1,'engine::TextureManager::freeTexture()']]]
+  ['enemy_0',['Enemy',['../classengine_1_1_enemy.html#a173e0d876709a4385926ed4891a7bb46',1,'engine::Enemy']]],
+  ['engineexception_1',['EngineException',['../classengine_1_1_engine_exception.html#abdb47d1cb1e95c76fd8693d898fce791',1,'engine::EngineException']]]
 ];

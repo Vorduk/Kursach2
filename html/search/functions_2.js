@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['decrementplayerangle_0',['decrementPlayerAngle',['../classengine_1_1_player.html#a0567b24bda699e0b7a168bf447498211',1,'engine::Player']]],
-  ['drawrectangle_1',['drawRectangle',['../classengine_1_1_renderer.html#a1074c742982582a18053902e8803d834',1,'engine::Renderer']]]
+  ['calculatedistancetoplayer_0',['calculateDistanceToPlayer',['../classengine_1_1_scene.html#af4d14b567b1238b78436ba02809ceebd',1,'engine::Scene']]],
+  ['calculatedistancetosprite_1',['calculateDistanceToSprite',['../classengine_1_1_scene.html#a2ff61a669cc8605b2494ea392c0eac26',1,'engine::Scene']]],
+  ['camera_2',['Camera',['../classengine_1_1_camera.html#a8274a1d661fa2c2cac9bbc1a0d40aece',1,'engine::Camera::Camera()'],['../classengine_1_1_camera.html#acb118e2687dade4f07b4fa20b2d210c2',1,'engine::Camera::Camera(double camera_y, double camera_x, double camera_angle, double fov_c, int render_distance)']]],
+  ['cleanup_3',['cleanUp',['../classengine_1_1_application.html#af288ba7afafb960a6718abd0d99344f7',1,'engine::Application']]],
+  ['clear_4',['clear',['../classengine_1_1_renderer.html#a855e0a39f7177eea8c1ad41296c36a91',1,'engine::Renderer']]],
+  ['clearfonts_5',['clearFonts',['../classengine_1_1_renderer.html#a5581726361d8e3359dd6c2c8813d12d7',1,'engine::Renderer']]],
+  ['cleartextures_6',['clearTextures',['../classengine_1_1_renderer.html#ad8c0299ee9834d42a9af89240c202651',1,'engine::Renderer']]]
 ];

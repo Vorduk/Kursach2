@@ -1,4 +1,32 @@
 var searchData=
 [
-  ['uint_0',['uint',['../_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14',1,'Application.h']]]
+  ['save_0',['SAVE',['../namespaceengine.html#adaed727a1a80687252941158d5574838abe4877bb792fdc60368d231360730ba3',1,'engine']]],
+  ['savemap_1',['saveMap',['../classengine_1_1_scene.html#a783f046e3b1a8a8d4868bc3b2b0456d2',1,'engine::Scene']]],
+  ['scene_2',['Scene',['../classengine_1_1_scene.html',1,'engine::Scene'],['../classengine_1_1_scene.html#af9a03c6a66bc5b1591519e42abd22269',1,'engine::Scene::Scene()']]],
+  ['scene_2ecpp_3',['Scene.cpp',['../_scene_8cpp.html',1,'']]],
+  ['scene_2eh_4',['Scene.h',['../_scene_8h.html',1,'']]],
+  ['setcameraangle_5',['setCameraAngle',['../classengine_1_1_camera.html#ab3d690c0b077ad075eb8285c75de3e78',1,'engine::Camera']]],
+  ['setcameracoords_6',['setCameraCoords',['../classengine_1_1_camera.html#ad8f2054acf47cac21de577c3a046631c',1,'engine::Camera']]],
+  ['setcamerax_7',['setCameraX',['../classengine_1_1_camera.html#ae778f6158cda64b31b692011cbcab325',1,'engine::Camera']]],
+  ['setcameray_8',['setCameraY',['../classengine_1_1_camera.html#a8ae733d0e8ec45492c7b7e3b87b12bed',1,'engine::Camera']]],
+  ['setdeadenemysprite_9',['SetDeadEnemySprite',['../classengine_1_1_enemy.html#a2d49d2fb81ad8ef49f974424aebbe581',1,'engine::Enemy']]],
+  ['setenemysprite_10',['SetEnemySprite',['../classengine_1_1_enemy.html#a002c672c4a38e56ace4fe60583c79f41',1,'engine::Enemy']]],
+  ['setfov_11',['setFov',['../classengine_1_1_camera.html#af4abb113a17289366fe121e1c4e42bcd',1,'engine::Camera']]],
+  ['setfovc_12',['setFovC',['../classengine_1_1_camera.html#aecb3d7f83d86a3c97bbc0b92899eb4eb',1,'engine::Camera']]],
+  ['setplayerangle_13',['setPlayerAngle',['../classengine_1_1_player.html#ac6e559d14fc8fe5c0d2fdafce7a17c2a',1,'engine::Player']]],
+  ['setplayercoords_14',['setPlayerCoords',['../classengine_1_1_player.html#ab3caa16303c43b4af4d59e54d27f0a64',1,'engine::Player']]],
+  ['setplayerhealth_15',['setPlayerHealth',['../classengine_1_1_player.html#a197a16027eaebf03ad709b51321cf647',1,'engine::Player']]],
+  ['setplayerprevx_16',['setPlayerPrevX',['../classengine_1_1_player.html#a83a9e91f49d78f03d99d2dbbeb87184b',1,'engine::Player']]],
+  ['setplayerprevy_17',['setPlayerPrevY',['../classengine_1_1_player.html#adffded59e8b7158fccb67b2025bd7c5c',1,'engine::Player']]],
+  ['setplayerx_18',['setPlayerX',['../classengine_1_1_player.html#af11c1e9664991df2db9f41b5f4825b1b',1,'engine::Player']]],
+  ['setplayery_19',['setPlayerY',['../classengine_1_1_player.html#acf7c31dde22043e5b6753ebbb0ef18c5',1,'engine::Player']]],
+  ['setposition_20',['setPosition',['../classengine_1_1_enemy.html#ae9858fba3424025fb9f2d8d69d1ca354',1,'engine::Enemy']]],
+  ['setrenderdistance_21',['setRenderDistance',['../classengine_1_1_camera.html#ae846a9c25119fd0b4b44e157203a80be',1,'engine::Camera']]],
+  ['setvelocity_22',['setVelocity',['../classengine_1_1_enemy.html#afc0a96d60eece68b97c535ecb1cf697a',1,'engine::Enemy']]],
+  ['setwalltexture_23',['setWallTexture',['../classengine_1_1_renderer.html#a833f5600f8e550795f0d6fd0e8497f42',1,'engine::Renderer']]],
+  ['setwindow_24',['setWindow',['../classengine_1_1_application.html#aa8931c9d97b2098898a87194169dbab0',1,'engine::Application']]],
+  ['sortenemiesbydistance_25',['sortEnemiesByDistance',['../classengine_1_1_scene.html#a2432db1e08e44d3a48977a9cdcb33d85',1,'engine::Scene']]],
+  ['sprite_26',['Sprite',['../struct_sprite.html',1,'Sprite'],['../struct_sprite.html#a12cba3ac1868418add3c4d95ce87e615',1,'Sprite::Sprite()'],['../struct_sprite.html#a8f8be06cf5e5b356bf330e3e73d8c56e',1,'Sprite::Sprite(double x, double y, int frames, int start_frame, std::string texture_id)']]],
+  ['sprite_2eh_27',['Sprite.h',['../_sprite_8h.html',1,'']]],
+  ['synchronizewithplayer_28',['synchronizeWithPlayer',['../classengine_1_1_camera.html#a1db3cbb1e40a11ac84f748ddcb6c21c6',1,'engine::Camera']]]
 ];

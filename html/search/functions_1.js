@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['camera_0',['Camera',['../classengine_1_1_camera.html#a8274a1d661fa2c2cac9bbc1a0d40aece',1,'engine::Camera::Camera()'],['../classengine_1_1_camera.html#acb118e2687dade4f07b4fa20b2d210c2',1,'engine::Camera::Camera(double camera_y, double camera_x, double camera_angle, double fov_c, int render_distance)']]],
-  ['cleanup_1',['cleanUp',['../classengine_1_1_application.html#af288ba7afafb960a6718abd0d99344f7',1,'engine::Application']]],
-  ['clear_2',['clear',['../classengine_1_1_renderer.html#a855e0a39f7177eea8c1ad41296c36a91',1,'engine::Renderer']]],
-  ['cleartextures_3',['clearTextures',['../classengine_1_1_texture_manager.html#a69f6dfb0e04547badd8f6d5ef0902936',1,'engine::TextureManager']]]
+  ['button_0',['Button',['../classengine_1_1_button.html#af12a4d98b2394f44e0b538dfdeebaffc',1,'engine::Button::Button()'],['../classengine_1_1_button.html#a8aaf6394a78c5d875deeb8314a0d4c1e',1,'engine::Button::Button(int x, int y, int width, int height, std::string text, std::function&lt; void(WindowState &amp;)&gt; click_handler)']]],
+  ['buttonexit_1',['buttonExit',['../namespaceengine.html#af414af9e1a92bf7d674c81690d1efc0d',1,'engine']]],
+  ['buttonmenu_2',['buttonMenu',['../namespaceengine.html#a79615986eefb304d264efde3974353a6',1,'engine']]],
+  ['buttonplayload_3',['buttonPlayLoad',['../namespaceengine.html#aff4552431e8e03ff8f299ab6447894ca',1,'engine']]],
+  ['buttonplaynew_4',['buttonPlayNew',['../namespaceengine.html#a3f2549f2e0efdf6751f660f07f757c1e',1,'engine']]],
+  ['buttonsave_5',['buttonSave',['../namespaceengine.html#aa2b78ca38d9bc2af75598a7026eda6ca',1,'engine']]]
 ];

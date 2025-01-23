@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['renderer_0',['Renderer',['../classengine_1_1_renderer.html',1,'engine']]]
+  ['pair_5fhash_0',['pair_hash',['../structpair__hash.html',1,'']]],
+  ['player_1',['Player',['../classengine_1_1_player.html',1,'engine']]]
 ];

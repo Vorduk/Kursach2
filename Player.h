@@ -121,6 +121,10 @@ namespace engine
          */
         void applyDamage(int damage);
 
+        /**
+         * @brief Method to get Player's health pointer.
+         * @return UINT Health pointer.
+         */
         uint* getHealthPointer();
     };
 

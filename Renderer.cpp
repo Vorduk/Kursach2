@@ -132,8 +132,8 @@ namespace engine
             SDL_Rect clip;
             clip.x = cut_x1;
             clip.y = cut_y1;
-            clip.w = cut_x2 - cut_x1; // Ensure the width is correct
-            clip.h = cut_y2 - cut_y1; // Ensure the height is correct
+            clip.w = cut_x2 - cut_x1;
+            clip.h = cut_y2 - cut_y1;
 
             // Determine flip flags
             SDL_RendererFlip flip = SDL_FLIP_NONE; // Initial value - no flip
@@ -483,17 +483,6 @@ namespace engine
                         }
                         break;
                     }
-                    //else if (check == 3) {  //lava
-                    //    int floor_size = 1; double n_c = cur_distance * cos(ray_angle - cam_angle);
-                    //    int ceiling = (double)(scr_h / 2) - (scr_h / n_c);
-                    //    int floorr = scr_h - ceiling;
-                    //    for (int i = floorr - floor_size; i <= floorr; i++) {
-                    //        for (int j = column - floor_size; j <= column + floor_size; j++) {
-                    //            SDL_SetRenderDrawColor(m_renderer, 255, 0, 0, 255);
-                    //            SDL_RenderDrawPoint(m_renderer, i, j); //lava
-                    //        }
-                    //    }
-                    //}
 
                 }
             }
@@ -550,7 +539,6 @@ namespace engine
 
         int fov_c = (cam_fov * 180) / M_PI;
         for (Enemy* enemy : scene->getEnemies()) {
-
             drawSprite(scene, enemy->getEnemySprite(), distances);
         }
 

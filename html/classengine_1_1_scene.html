@@ -90,13 +90,14 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classengine_1_1_scene-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">engine::Scene Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Scene class.  
+<p>Represents a scene in the game, containing players, cameras, obstacles, and decorations.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_scene_8h_source.html">Scene.h</a>&gt;</code></p>
@@ -104,31 +105,131 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af9a03c6a66bc5b1591519e42abd22269" id="r_af9a03c6a66bc5b1591519e42abd22269"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9a03c6a66bc5b1591519e42abd22269">Scene</a> ()</td></tr>
+<tr class="memdesc:af9a03c6a66bc5b1591519e42abd22269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the Scene class.  <br /></td></tr>
 <tr class="separator:af9a03c6a66bc5b1591519e42abd22269"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09443d03331e9a1275c0a695e3f5e7d5" id="r_a09443d03331e9a1275c0a695e3f5e7d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09443d03331e9a1275c0a695e3f5e7d5">~Scene</a> ()</td></tr>
+<tr class="memdesc:a09443d03331e9a1275c0a695e3f5e7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the Scene class.  <br /></td></tr>
 <tr class="separator:a09443d03331e9a1275c0a695e3f5e7d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad60b323887a10d0b76ba663bca3b3edb" id="r_ad60b323887a10d0b76ba663bca3b3edb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengine_1_1_player.html">Player</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad60b323887a10d0b76ba663bca3b3edb">getPlayer</a> ()</td></tr>
+<tr class="memdesc:ad60b323887a10d0b76ba663bca3b3edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to the player in the scene.  <br /></td></tr>
 <tr class="separator:ad60b323887a10d0b76ba663bca3b3edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30bc51066c735c257bea97f327090e39" id="r_a30bc51066c735c257bea97f327090e39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengine_1_1_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30bc51066c735c257bea97f327090e39">getPlayer</a> () const</td></tr>
+<tr class="memdesc:a30bc51066c735c257bea97f327090e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a copy of the player in the scene.  <br /></td></tr>
 <tr class="separator:a30bc51066c735c257bea97f327090e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada7564a446baf21fa2f0fbe95afe428f" id="r_ada7564a446baf21fa2f0fbe95afe428f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada7564a446baf21fa2f0fbe95afe428f">addPlayer</a> (<a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> y, <a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> x, int angle, <a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> health)</td></tr>
+<tr class="memdesc:ada7564a446baf21fa2f0fbe95afe428f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a player to the scene.  <br /></td></tr>
 <tr class="separator:ada7564a446baf21fa2f0fbe95afe428f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66f0d6b2df4796e865ce04019820e200" id="r_a66f0d6b2df4796e865ce04019820e200"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengine_1_1_camera.html">Camera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66f0d6b2df4796e865ce04019820e200">getCamera</a> ()</td></tr>
+<tr class="memdesc:a66f0d6b2df4796e865ce04019820e200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a reference to the camera in the scene.  <br /></td></tr>
 <tr class="separator:a66f0d6b2df4796e865ce04019820e200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a127a7c984508049a48ac503f08a54996" id="r_a127a7c984508049a48ac503f08a54996"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengine_1_1_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a127a7c984508049a48ac503f08a54996">getCamera</a> () const</td></tr>
+<tr class="memdesc:a127a7c984508049a48ac503f08a54996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a copy of the camera in the scene.  <br /></td></tr>
 <tr class="separator:a127a7c984508049a48ac503f08a54996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63397837eb4a10f703a41e8db7e5cb67" id="r_a63397837eb4a10f703a41e8db7e5cb67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63397837eb4a10f703a41e8db7e5cb67">addCamera</a> (int camera_y, int camera_x, double camera_angle, double fov_c, int render_distance)</td></tr>
+<tr class="memdesc:a63397837eb4a10f703a41e8db7e5cb67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a camera to the scene.  <br /></td></tr>
 <tr class="separator:a63397837eb4a10f703a41e8db7e5cb67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8c6cac62d00af55a5eed20a0412de4c" id="r_ae8c6cac62d00af55a5eed20a0412de4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8c6cac62d00af55a5eed20a0412de4c">addObstacle</a> (int x, int y)</td></tr>
+<tr class="memdesc:ae8c6cac62d00af55a5eed20a0412de4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an obstacle to the scene.  <br /></td></tr>
+<tr class="separator:ae8c6cac62d00af55a5eed20a0412de4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a124a66c158358b6b461d3145f9378cee" id="r_a124a66c158358b6b461d3145f9378cee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a124a66c158358b6b461d3145f9378cee">removeObstacle</a> (int index)</td></tr>
+<tr class="memdesc:a124a66c158358b6b461d3145f9378cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an obstacle from the scene.  <br /></td></tr>
+<tr class="separator:a124a66c158358b6b461d3145f9378cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1772aaf94b9f6c8c7c1ec1ee347b9a7" id="r_af1772aaf94b9f6c8c7c1ec1ee347b9a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1772aaf94b9f6c8c7c1ec1ee347b9a7">getObstacle</a> (int x, int y)</td></tr>
+<tr class="memdesc:af1772aaf94b9f6c8c7c1ec1ee347b9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the obstacle at the specified coordinates.  <br /></td></tr>
+<tr class="separator:af1772aaf94b9f6c8c7c1ec1ee347b9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a1451c63b00ef0a44085c12de7e7b4" id="r_a46a1451c63b00ef0a44085c12de7e7b4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46a1451c63b00ef0a44085c12de7e7b4">getObstacles</a> () const</td></tr>
+<tr class="memdesc:a46a1451c63b00ef0a44085c12de7e7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all obstacles in the scene.  <br /></td></tr>
+<tr class="separator:a46a1451c63b00ef0a44085c12de7e7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e3523cec1de712cfa59e435a801befa" id="r_a9e3523cec1de712cfa59e435a801befa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e3523cec1de712cfa59e435a801befa">getObstacleSizeY</a> ()</td></tr>
+<tr class="memdesc:a9e3523cec1de712cfa59e435a801befa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the obstacle grid.  <br /></td></tr>
+<tr class="separator:a9e3523cec1de712cfa59e435a801befa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae90d7f46882da90255cd38fc625f8fd7" id="r_ae90d7f46882da90255cd38fc625f8fd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae90d7f46882da90255cd38fc625f8fd7">getObstacleSizeX</a> ()</td></tr>
+<tr class="memdesc:ae90d7f46882da90255cd38fc625f8fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the obstacle grid.  <br /></td></tr>
+<tr class="separator:ae90d7f46882da90255cd38fc625f8fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4674c5462db85ae4ab6f955450e7937b" id="r_a4674c5462db85ae4ab6f955450e7937b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_sprite.html">Sprite</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4674c5462db85ae4ab6f955450e7937b">getDecorations</a> ()</td></tr>
+<tr class="memdesc:a4674c5462db85ae4ab6f955450e7937b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the decorative sprites in the scene.  <br /></td></tr>
+<tr class="separator:a4674c5462db85ae4ab6f955450e7937b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d7275e368c0c78f96d091c1cc75732" id="r_a27d7275e368c0c78f96d091c1cc75732"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27d7275e368c0c78f96d091c1cc75732">loadMap</a> (std::string path)</td></tr>
+<tr class="memdesc:a27d7275e368c0c78f96d091c1cc75732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a map from the specified file path.  <br /></td></tr>
+<tr class="separator:a27d7275e368c0c78f96d091c1cc75732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a783f046e3b1a8a8d4868bc3b2b0456d2" id="r_a783f046e3b1a8a8d4868bc3b2b0456d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a783f046e3b1a8a8d4868bc3b2b0456d2">saveMap</a> (std::string path)</td></tr>
+<tr class="memdesc:a783f046e3b1a8a8d4868bc3b2b0456d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the current map to the specified file path.  <br /></td></tr>
+<tr class="separator:a783f046e3b1a8a8d4868bc3b2b0456d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab263ad4d14160237a5393e2b0c3fed05" id="r_ab263ad4d14160237a5393e2b0c3fed05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab263ad4d14160237a5393e2b0c3fed05">processPlayerCollision</a> ()</td></tr>
+<tr class="memdesc:ab263ad4d14160237a5393e2b0c3fed05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes player collision with obstacles and enemies.  <br /></td></tr>
+<tr class="separator:ab263ad4d14160237a5393e2b0c3fed05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab18f4bf5109ef008d0b6fd8ef87dd1de" id="r_ab18f4bf5109ef008d0b6fd8ef87dd1de"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::pair&lt; int, std::string &gt;, std::string, <a class="el" href="structpair__hash.html">pair_hash</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab18f4bf5109ef008d0b6fd8ef87dd1de">getTexturesPredefine</a> () const</td></tr>
+<tr class="memdesc:ab18f4bf5109ef008d0b6fd8ef87dd1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets predefined textures.  <br /></td></tr>
+<tr class="separator:ab18f4bf5109ef008d0b6fd8ef87dd1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94e016ce11fdd22a32c0295ec0f04ba3" id="r_a94e016ce11fdd22a32c0295ec0f04ba3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94e016ce11fdd22a32c0295ec0f04ba3">addEnemy</a> (<a class="el" href="classengine_1_1_enemy.html">Enemy</a> *enemy)</td></tr>
+<tr class="memdesc:a94e016ce11fdd22a32c0295ec0f04ba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an enemy to the scene.  <br /></td></tr>
+<tr class="separator:a94e016ce11fdd22a32c0295ec0f04ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316f74dc91687a21e65bd82440976984" id="r_a316f74dc91687a21e65bd82440976984"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a316f74dc91687a21e65bd82440976984">updateEnemies</a> ()</td></tr>
+<tr class="memdesc:a316f74dc91687a21e65bd82440976984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of all enemies in the scene.  <br /></td></tr>
+<tr class="separator:a316f74dc91687a21e65bd82440976984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41090913a5a0a57e13bec7379cf69228" id="r_a41090913a5a0a57e13bec7379cf69228"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41090913a5a0a57e13bec7379cf69228">getEnemyCount</a> ()</td></tr>
+<tr class="memdesc:a41090913a5a0a57e13bec7379cf69228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the count of enemies in the scene.  <br /></td></tr>
+<tr class="separator:a41090913a5a0a57e13bec7379cf69228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4d14b567b1238b78436ba02809ceebd" id="r_af4d14b567b1238b78436ba02809ceebd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4d14b567b1238b78436ba02809ceebd">calculateDistanceToPlayer</a> (const <a class="el" href="classengine_1_1_enemy.html">Enemy</a> *enemy)</td></tr>
+<tr class="memdesc:af4d14b567b1238b78436ba02809ceebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the distance from the specified enemy to the player.  <br /></td></tr>
+<tr class="separator:af4d14b567b1238b78436ba02809ceebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff61a669cc8605b2494ea392c0eac26" id="r_a2ff61a669cc8605b2494ea392c0eac26"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ff61a669cc8605b2494ea392c0eac26">calculateDistanceToSprite</a> (const <a class="el" href="struct_sprite.html">Sprite</a> *sprite)</td></tr>
+<tr class="memdesc:a2ff61a669cc8605b2494ea392c0eac26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the distance from the specified sprite to the player.  <br /></td></tr>
+<tr class="separator:a2ff61a669cc8605b2494ea392c0eac26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2432db1e08e44d3a48977a9cdcb33d85" id="r_a2432db1e08e44d3a48977a9cdcb33d85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2432db1e08e44d3a48977a9cdcb33d85">sortEnemiesByDistance</a> ()</td></tr>
+<tr class="memdesc:a2432db1e08e44d3a48977a9cdcb33d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the enemies in the scene by their distance to the player.  <br /></td></tr>
+<tr class="separator:a2432db1e08e44d3a48977a9cdcb33d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b945bd59cb0ed9f81b04bff3377b419" id="r_a2b945bd59cb0ed9f81b04bff3377b419"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classengine_1_1_enemy.html">Enemy</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b945bd59cb0ed9f81b04bff3377b419">getEnemies</a> ()</td></tr>
+<tr class="memdesc:a2b945bd59cb0ed9f81b04bff3377b419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets all enemies in the scene.  <br /></td></tr>
+<tr class="separator:a2b945bd59cb0ed9f81b04bff3377b419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4451b54a317b14f33c7f608758cd1c39" id="r_a4451b54a317b14f33c7f608758cd1c39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4451b54a317b14f33c7f608758cd1c39">fire</a> ()</td></tr>
+<tr class="memdesc:a4451b54a317b14f33c7f608758cd1c39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fires a projectile or attack from the player.  <br /></td></tr>
+<tr class="separator:a4451b54a317b14f33c7f608758cd1c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ecef764b75c31ad338ecbe4ed532bd3" id="r_a4ecef764b75c31ad338ecbe4ed532bd3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ecef764b75c31ad338ecbe4ed532bd3">raycastObstacleFromPlayer</a> (int cast_distance)</td></tr>
+<tr class="memdesc:a4ecef764b75c31ad338ecbe4ed532bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a DDA raycast from the player to detect obstacles.  <br /></td></tr>
+<tr class="separator:a4ecef764b75c31ad338ecbe4ed532bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ceccf66327fc7b1af09ddb7a36232e" id="r_ab5ceccf66327fc7b1af09ddb7a36232e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5ceccf66327fc7b1af09ddb7a36232e">updateAnimations</a> ()</td></tr>
+<tr class="memdesc:ab5ceccf66327fc7b1af09ddb7a36232e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates animations for all entities in the scene.  <br /></td></tr>
+<tr class="separator:ab5ceccf66327fc7b1af09ddb7a36232e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a463ab6852443669df741e13e490ef5c6" id="r_a463ab6852443669df741e13e490ef5c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a463ab6852443669df741e13e490ef5c6">updateEnemiesAnimation</a> ()</td></tr>
+<tr class="memdesc:a463ab6852443669df741e13e490ef5c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates enemy animations.  <br /></td></tr>
+<tr class="separator:a463ab6852443669df741e13e490ef5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253576f06e1d15dd5b7e1c6614eff5e5" id="r_a253576f06e1d15dd5b7e1c6614eff5e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a253576f06e1d15dd5b7e1c6614eff5e5">updateDecorationsAnimations</a> ()</td></tr>
+<tr class="memdesc:a253576f06e1d15dd5b7e1c6614eff5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates decoration animations.  <br /></td></tr>
+<tr class="separator:a253576f06e1d15dd5b7e1c6614eff5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af65c35811ff9b93d672e74ddd7fbbcf8" id="r_af65c35811ff9b93d672e74ddd7fbbcf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengine_1_1_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af65c35811ff9b93d672e74ddd7fbbcf8">m_player</a></td></tr>
+<tr class="memdesc:af65c35811ff9b93d672e74ddd7fbbcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scene player.  <br /></td></tr>
 <tr class="separator:af65c35811ff9b93d672e74ddd7fbbcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4276918aeeb7c39e06e6236b7623524c" id="r_a4276918aeeb7c39e06e6236b7623524c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengine_1_1_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4276918aeeb7c39e06e6236b7623524c">m_camera</a></td></tr>
+<tr class="memdesc:a4276918aeeb7c39e06e6236b7623524c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scene camera.  <br /></td></tr>
 <tr class="separator:a4276918aeeb7c39e06e6236b7623524c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0a669da5ed209a601c0eef1042f7e7" id="r_a3e0a669da5ed209a601c0eef1042f7e7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e0a669da5ed209a601c0eef1042f7e7">m_obstacles</a></td></tr>
+<tr class="memdesc:a3e0a669da5ed209a601c0eef1042f7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D array of obstacles  <br /></td></tr>
+<tr class="separator:a3e0a669da5ed209a601c0eef1042f7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe92635e4fbc6f2f42265ce9007692e4" id="r_abe92635e4fbc6f2f42265ce9007692e4"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::pair&lt; int, std::string &gt;, std::string, <a class="el" href="structpair__hash.html">pair_hash</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe92635e4fbc6f2f42265ce9007692e4">textures_predefine</a></td></tr>
+<tr class="memdesc:abe92635e4fbc6f2f42265ce9007692e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predefined textures.  <br /></td></tr>
+<tr class="separator:abe92635e4fbc6f2f42265ce9007692e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4b82ee2e9c538b187594e32d4562729" id="r_ab4b82ee2e9c538b187594e32d4562729"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4b82ee2e9c538b187594e32d4562729">m_obstacle_size_x</a></td></tr>
+<tr class="memdesc:ab4b82ee2e9c538b187594e32d4562729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the obstacle grid.  <br /></td></tr>
+<tr class="separator:ab4b82ee2e9c538b187594e32d4562729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6b1647e8ca05b2358c8412f3f12f524" id="r_ad6b1647e8ca05b2358c8412f3f12f524"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6b1647e8ca05b2358c8412f3f12f524">m_obstacle_size_y</a></td></tr>
+<tr class="memdesc:ad6b1647e8ca05b2358c8412f3f12f524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the obstacle grid.  <br /></td></tr>
+<tr class="separator:ad6b1647e8ca05b2358c8412f3f12f524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad831d7768c18bae2bb88169e80b0d364" id="r_ad831d7768c18bae2bb88169e80b0d364"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classengine_1_1_enemy.html">Enemy</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad831d7768c18bae2bb88169e80b0d364">m_enemies</a></td></tr>
+<tr class="memdesc:ad831d7768c18bae2bb88169e80b0d364"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of enemies in the scene.  <br /></td></tr>
+<tr class="separator:ad831d7768c18bae2bb88169e80b0d364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4ce46b38d41e75860f6f533e95faf51" id="r_ac4ce46b38d41e75860f6f533e95faf51"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_sprite.html">Sprite</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4ce46b38d41e75860f6f533e95faf51">m_decorations</a></td></tr>
+<tr class="memdesc:ac4ce46b38d41e75860f6f533e95faf51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decorative sprites.  <br /></td></tr>
+<tr class="separator:ac4ce46b38d41e75860f6f533e95faf51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Scene class. </p>
+<div class="textblock"><p>Represents a scene in the game, containing players, cameras, obstacles, and decorations. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af9a03c6a66bc5b1591519e42abd22269" name="af9a03c6a66bc5b1591519e42abd22269"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9a03c6a66bc5b1591519e42abd22269">&#9670;&#160;</a></span>Scene()</h2>
@@ -144,6 +245,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor for the Scene class. </p>
 
 </div>
 </div>
@@ -161,6 +264,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destructor for the Scene class. </p>
 
 </div>
 </div>
@@ -199,6 +304,73 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds a camera to the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_y</td><td>- The y coordinate of the camera's position. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_x</td><td>- The x coordinate of the camera's position. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">camera_angle</td><td>- The angle of the camera in radians. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fov_c</td><td>- The field of view of the camera in degrees. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">render_distance</td><td>- The render distance of the camera. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a94e016ce11fdd22a32c0295ec0f04ba3" name="a94e016ce11fdd22a32c0295ec0f04ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94e016ce11fdd22a32c0295ec0f04ba3">&#9670;&#160;</a></span>addEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::addEnemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classengine_1_1_enemy.html">Enemy</a> *</td>          <td class="paramname"><span class="paramname"><em>enemy</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an enemy to the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">enemy</td><td>- Pointer to the Enemy object to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae8c6cac62d00af55a5eed20a0412de4c" name="ae8c6cac62d00af55a5eed20a0412de4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8c6cac62d00af55a5eed20a0412de4c">&#9670;&#160;</a></span>addObstacle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::addObstacle </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an obstacle to the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>- The x coordinate of the obstacle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>- The y coordinate of the obstacle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ada7564a446baf21fa2f0fbe95afe428f" name="ada7564a446baf21fa2f0fbe95afe428f"></a>
@@ -230,6 +402,88 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds a player to the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>- The y coordinate of the player's position. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>- The x coordinate of the player's position. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td>- The angle of the player. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">health</td><td>- The health of the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af4d14b567b1238b78436ba02809ceebd" name="af4d14b567b1238b78436ba02809ceebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d14b567b1238b78436ba02809ceebd">&#9670;&#160;</a></span>calculateDistanceToPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Scene::calculateDistanceToPlayer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classengine_1_1_enemy.html">Enemy</a> *</td>          <td class="paramname"><span class="paramname"><em>enemy</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the distance from the specified enemy to the player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">enemy</td><td>- Pointer to the Enemy object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The distance to the player. </dd></dl>
+
+</div>
+</div>
+<a id="a2ff61a669cc8605b2494ea392c0eac26" name="a2ff61a669cc8605b2494ea392c0eac26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff61a669cc8605b2494ea392c0eac26">&#9670;&#160;</a></span>calculateDistanceToSprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Scene::calculateDistanceToSprite </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_sprite.html">Sprite</a> *</td>          <td class="paramname"><span class="paramname"><em>sprite</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the distance from the specified sprite to the player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sprite</td><td>- Pointer to the Sprite object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The distance to the player. </dd></dl>
+
+</div>
+</div>
+<a id="a4451b54a317b14f33c7f608758cd1c39" name="a4451b54a317b14f33c7f608758cd1c39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4451b54a317b14f33c7f608758cd1c39">&#9670;&#160;</a></span>fire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::fire </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fires a projectile or attack from the player. </p>
+
 </div>
 </div>
 <a id="a66f0d6b2df4796e865ce04019820e200" name="a66f0d6b2df4796e865ce04019820e200"></a>
@@ -246,6 +500,9 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a reference to the camera in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the Camera object. </dd></dl>
 
 </div>
 </div>
@@ -264,6 +521,160 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets a copy of the camera in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the Camera object. </dd></dl>
+
+</div>
+</div>
+<a id="a4674c5462db85ae4ab6f955450e7937b" name="a4674c5462db85ae4ab6f955450e7937b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4674c5462db85ae4ab6f955450e7937b">&#9670;&#160;</a></span>getDecorations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="struct_sprite.html">Sprite</a> &gt; engine::Scene::getDecorations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the decorative sprites in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of decorative Sprite objects. </dd></dl>
+
+</div>
+</div>
+<a id="a2b945bd59cb0ed9f81b04bff3377b419" name="a2b945bd59cb0ed9f81b04bff3377b419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b945bd59cb0ed9f81b04bff3377b419">&#9670;&#160;</a></span>getEnemies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classengine_1_1_enemy.html">Enemy</a> * &gt; engine::Scene::getEnemies </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all enemies in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of pointers to Enemy objects. </dd></dl>
+
+</div>
+</div>
+<a id="a41090913a5a0a57e13bec7379cf69228" name="a41090913a5a0a57e13bec7379cf69228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41090913a5a0a57e13bec7379cf69228">&#9670;&#160;</a></span>getEnemyCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int engine::Scene::getEnemyCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the count of enemies in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of enemies. </dd></dl>
+
+</div>
+</div>
+<a id="af1772aaf94b9f6c8c7c1ec1ee347b9a7" name="af1772aaf94b9f6c8c7c1ec1ee347b9a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1772aaf94b9f6c8c7c1ec1ee347b9a7">&#9670;&#160;</a></span>getObstacle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int engine::Scene::getObstacle </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the obstacle at the specified coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>- The x coordinate of the obstacle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>- The y coordinate of the obstacle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The ID of the obstacle at the specified coordinates. </dd></dl>
+
+</div>
+</div>
+<a id="a46a1451c63b00ef0a44085c12de7e7b4" name="a46a1451c63b00ef0a44085c12de7e7b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a1451c63b00ef0a44085c12de7e7b4">&#9670;&#160;</a></span>getObstacles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; int &gt; &gt; engine::Scene::getObstacles </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets all obstacles in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>A 2D vector of obstacles. </dd></dl>
+
+</div>
+</div>
+<a id="ae90d7f46882da90255cd38fc625f8fd7" name="ae90d7f46882da90255cd38fc625f8fd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae90d7f46882da90255cd38fc625f8fd7">&#9670;&#160;</a></span>getObstacleSizeX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int engine::Scene::getObstacleSizeX </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the width of the obstacle grid. </p>
+<dl class="section return"><dt>Returns</dt><dd>The width of the obstacle grid. </dd></dl>
+
+</div>
+</div>
+<a id="a9e3523cec1de712cfa59e435a801befa" name="a9e3523cec1de712cfa59e435a801befa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e3523cec1de712cfa59e435a801befa">&#9670;&#160;</a></span>getObstacleSizeY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int engine::Scene::getObstacleSizeY </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the height of the obstacle grid. </p>
+<dl class="section return"><dt>Returns</dt><dd>The height of the obstacle grid. </dd></dl>
+
 </div>
 </div>
 <a id="ad60b323887a10d0b76ba663bca3b3edb" name="ad60b323887a10d0b76ba663bca3b3edb"></a>
@@ -281,6 +692,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets a reference to the player in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the Player object. </dd></dl>
+
 </div>
 </div>
 <a id="a30bc51066c735c257bea97f327090e39" name="a30bc51066c735c257bea97f327090e39"></a>
@@ -297,6 +711,286 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a copy of the player in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the Player object. </dd></dl>
+
+</div>
+</div>
+<a id="ab18f4bf5109ef008d0b6fd8ef87dd1de" name="ab18f4bf5109ef008d0b6fd8ef87dd1de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab18f4bf5109ef008d0b6fd8ef87dd1de">&#9670;&#160;</a></span>getTexturesPredefine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; std::pair&lt; int, std::string &gt;, std::string, <a class="el" href="structpair__hash.html">pair_hash</a> &gt; engine::Scene::getTexturesPredefine </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets predefined textures. </p>
+<dl class="section return"><dt>Returns</dt><dd>A map of predefined textures. </dd></dl>
+
+</div>
+</div>
+<a id="a27d7275e368c0c78f96d091c1cc75732" name="a27d7275e368c0c78f96d091c1cc75732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d7275e368c0c78f96d091c1cc75732">&#9670;&#160;</a></span>loadMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::loadMap </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads a map from the specified file path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>- The file path to load the map from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; // X</p>
+<p>&lt; // Y</p>
+<p>&lt; // Angle</p>
+<p>&lt; // Health</p>
+<p>&lt; // X</p>
+<p>&lt; // Y</p>
+<p>&lt; // Angle</p>
+<p>&lt; // Fov_c</p>
+<p>&lt; // Render distance</p>
+<p>&lt; // Type</p>
+<p>&lt; If line is empty</p>
+<p>&lt; // X</p>
+<p>&lt; // Y</p>
+<p>&lt; // Health</p>
+<p>&lt; // Textures id</p>
+<p>&lt; Texture set</p>
+<p>&lt; // Sprite</p>
+<p>&lt; // X</p>
+<p>&lt; // Y</p>
+<p>&lt; // Textures id</p>
+<p>&lt; // X</p>
+<p>&lt; // Y</p>
+<p>&lt; // Obstacle</p>
+<p>&lt; integer id</p>
+<p>&lt; string id</p>
+<p>&lt; image file name or path</p>
+
+</div>
+</div>
+<a id="ab263ad4d14160237a5393e2b0c3fed05" name="ab263ad4d14160237a5393e2b0c3fed05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab263ad4d14160237a5393e2b0c3fed05">&#9670;&#160;</a></span>processPlayerCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::processPlayerCollision </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processes player collision with obstacles and enemies. </p>
+
+</div>
+</div>
+<a id="a4ecef764b75c31ad338ecbe4ed532bd3" name="a4ecef764b75c31ad338ecbe4ed532bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ecef764b75c31ad338ecbe4ed532bd3">&#9670;&#160;</a></span>raycastObstacleFromPlayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double engine::Scene::raycastObstacleFromPlayer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cast_distance</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs a DDA raycast from the player to detect obstacles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cast_distance</td><td>- The distance to cast the ray. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The distance to the first obstacle encountered. </dd></dl>
+
+</div>
+</div>
+<a id="a124a66c158358b6b461d3145f9378cee" name="a124a66c158358b6b461d3145f9378cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a124a66c158358b6b461d3145f9378cee">&#9670;&#160;</a></span>removeObstacle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::removeObstacle </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes an obstacle from the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>- The index of the obstacle to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a783f046e3b1a8a8d4868bc3b2b0456d2" name="a783f046e3b1a8a8d4868bc3b2b0456d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a783f046e3b1a8a8d4868bc3b2b0456d2">&#9670;&#160;</a></span>saveMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::saveMap </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saves the current map to the specified file path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>- The file path to save the map to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2432db1e08e44d3a48977a9cdcb33d85" name="a2432db1e08e44d3a48977a9cdcb33d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2432db1e08e44d3a48977a9cdcb33d85">&#9670;&#160;</a></span>sortEnemiesByDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::sortEnemiesByDistance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sorts the enemies in the scene by their distance to the player. </p>
+
+</div>
+</div>
+<a id="ab5ceccf66327fc7b1af09ddb7a36232e" name="ab5ceccf66327fc7b1af09ddb7a36232e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5ceccf66327fc7b1af09ddb7a36232e">&#9670;&#160;</a></span>updateAnimations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::updateAnimations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates animations for all entities in the scene. </p>
+
+</div>
+</div>
+<a id="a253576f06e1d15dd5b7e1c6614eff5e5" name="a253576f06e1d15dd5b7e1c6614eff5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253576f06e1d15dd5b7e1c6614eff5e5">&#9670;&#160;</a></span>updateDecorationsAnimations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::updateDecorationsAnimations </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates decoration animations. </p>
+
+</div>
+</div>
+<a id="a316f74dc91687a21e65bd82440976984" name="a316f74dc91687a21e65bd82440976984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316f74dc91687a21e65bd82440976984">&#9670;&#160;</a></span>updateEnemies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::updateEnemies </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the state of all enemies in the scene. </p>
+
+</div>
+</div>
+<a id="a463ab6852443669df741e13e490ef5c6" name="a463ab6852443669df741e13e490ef5c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a463ab6852443669df741e13e490ef5c6">&#9670;&#160;</a></span>updateEnemiesAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Scene::updateEnemiesAnimation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates enemy animations. </p>
 
 </div>
 </div>
@@ -321,6 +1015,128 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Scene camera. </p>
+
+</div>
+</div>
+<a id="ac4ce46b38d41e75860f6f533e95faf51" name="ac4ce46b38d41e75860f6f533e95faf51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4ce46b38d41e75860f6f533e95faf51">&#9670;&#160;</a></span>m_decorations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="struct_sprite.html">Sprite</a>&gt; engine::Scene::m_decorations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decorative sprites. </p>
+
+</div>
+</div>
+<a id="ad831d7768c18bae2bb88169e80b0d364" name="ad831d7768c18bae2bb88169e80b0d364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad831d7768c18bae2bb88169e80b0d364">&#9670;&#160;</a></span>m_enemies</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classengine_1_1_enemy.html">Enemy</a>*&gt; engine::Scene::m_enemies</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>List of enemies in the scene. </p>
+
+</div>
+</div>
+<a id="ab4b82ee2e9c538b187594e32d4562729" name="ab4b82ee2e9c538b187594e32d4562729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b82ee2e9c538b187594e32d4562729">&#9670;&#160;</a></span>m_obstacle_size_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> engine::Scene::m_obstacle_size_x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Width of the obstacle grid. </p>
+
+</div>
+</div>
+<a id="ad6b1647e8ca05b2358c8412f3f12f524" name="ad6b1647e8ca05b2358c8412f3f12f524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6b1647e8ca05b2358c8412f3f12f524">&#9670;&#160;</a></span>m_obstacle_size_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> engine::Scene::m_obstacle_size_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Height of the obstacle grid. </p>
+
+</div>
+</div>
+<a id="a3e0a669da5ed209a601c0eef1042f7e7" name="a3e0a669da5ed209a601c0eef1042f7e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e0a669da5ed209a601c0eef1042f7e7">&#9670;&#160;</a></span>m_obstacles</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;int&gt; &gt; engine::Scene::m_obstacles</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>2D array of obstacles </p>
+
 </div>
 </div>
 <a id="af65c35811ff9b93d672e74ddd7fbbcf8" name="af65c35811ff9b93d672e74ddd7fbbcf8"></a>
@@ -342,6 +1158,32 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Scene player. </p>
+
+</div>
+</div>
+<a id="abe92635e4fbc6f2f42265ce9007692e4" name="abe92635e4fbc6f2f42265ce9007692e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe92635e4fbc6f2f42265ce9007692e4">&#9670;&#160;</a></span>textures_predefine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::pair&lt;int, std::string&gt;, std::string, <a class="el" href="structpair__hash.html">pair_hash</a>&gt; engine::Scene::textures_predefine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Predefined textures. </p>
 
 </div>
 </div>

@@ -13,34 +13,71 @@ Renderer class.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classengine_1_1_renderer_ac8aa6bb29daf410c34cec7d59386079d}{Renderer}} (\mbox{\hyperlink{classengine_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}window)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructor for the Renderer class. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classengine_1_1_renderer_a429d2acdd3f2e8f583df5298259d8089}{\texorpdfstring{$\sim$}{\string~}\+Renderer}} ()
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_renderer_a855e0a39f7177eea8c1ad41296c36a91}{clear}} ()
 \begin{DoxyCompactList}\small\item\em Fill black. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24}{present}} ()
 \begin{DoxyCompactList}\small\item\em Show changes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classengine_1_1_renderer_a1074c742982582a18053902e8803d834}{draw\+Rectangle}} (int x, int y, int width, int height, SDL\+\_\+\+Color color)
+void \mbox{\hyperlink{classengine_1_1_renderer_a6a83634517ac8d1ecd296ba0bc7d22bb}{draw\+Rectangle}} (int x, int y, int width, int height, SDL\+\_\+\+Color fill\+\_\+color, SDL\+\_\+\+Color border\+\_\+color, int border\+\_\+width)
 \begin{DoxyCompactList}\small\item\em Draws rectangle. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e}{render\+Scene\+DDA}} (\mbox{\hyperlink{classengine_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}camera)
+void \mbox{\hyperlink{classengine_1_1_renderer_aa0f818e6658642dc8d3b682fb0b78f42}{render\+Scene\+DDA}} (\mbox{\hyperlink{classengine_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}scene)
 \item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a833f5600f8e550795f0d6fd0e8497f42}{set\+Wall\+Texture}} (int wall\+\_\+id, const std\+::string \&texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Sets the mapping of wall IDs to texture IDs. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_renderer_a3b9cdfaf0bc4e63caa964cba959277e3}{load\+Texture}} (const std\+::string \&id, const std\+::string \&path)
 \begin{DoxyCompactList}\small\item\em Loads texture by path and assigns id. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classengine_1_1_renderer_a08de18193a31511c8de8169d54e7c3ce}{render\+Texture}} (const std\+::string \&texture\+\_\+id, int x, int y, int render\+\_\+width, int render\+\_\+height, int cut\+\_\+x1, int cut\+\_\+y1, int cut\+\_\+x2, int cut\+\_\+y2)
+void \mbox{\hyperlink{classengine_1_1_renderer_a1cf95ceee28d7f50658093720cd58bdb}{draw\+Texture}} (const std\+::string \&texture\+\_\+id, int x, int y, int render\+\_\+width, int render\+\_\+height, int cut\+\_\+x1, int cut\+\_\+y1, int cut\+\_\+x2, int cut\+\_\+y2, bool x\+\_\+flip, bool y\+\_\+flip, std\+::array$<$ float, 3 $>$ \&fog\+\_\+factors)
 \begin{DoxyCompactList}\small\item\em Draws texture. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classengine_1_1_renderer_a01acdaa6bc3332fcbcbb63dbf6bdc9e2}{free\+Texture}} (const std\+::string \&id)
-\begin{DoxyCompactList}\small\item\em Free one texture by id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Free one texture by id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_ad8c0299ee9834d42a9af89240c202651}{clear\+Textures}} ()
+\begin{DoxyCompactList}\small\item\em Clears all textures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_abeb239b936b0e06493d2da7510f92860}{load\+Font}} (const std\+::string \&id, const std\+::string \&path, int font\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Loads a font from a file and associates it with a given ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_aaa29abe92cbe998052d9746c005f4ebc}{draw\+Text}} (const std\+::string \&font\+\_\+id, const std\+::string \&text, int x, int y, SDL\+\_\+\+Color color)
+\begin{DoxyCompactList}\small\item\em Renders a text string at the specified coordinates using the specified font ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a5581726361d8e3359dd6c2c8813d12d7}{clear\+Fonts}} ()
+\begin{DoxyCompactList}\small\item\em Frees all loaded fonts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a9cfde60f02271d889c97438d31ef9c31}{load\+Textures\+From\+Scene}} (const \mbox{\hyperlink{classengine_1_1_scene}{Scene}} \&scene)
+\begin{DoxyCompactList}\small\item\em Loads textures from the provided scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a486078083ebf8e61b53621fb52671997}{draw\+Floor}} ()
+\begin{DoxyCompactList}\small\item\em Draws the floor in the scene. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classengine_1_1_renderer_aa2a7efcf25ee91fa83e96b584a409de9}{get\+Text\+Width}} (const std\+::string \&font\+\_\+id, const std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Gets the width of the text rendered with the specified font. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classengine_1_1_renderer_a59d3eff537c3303c612892e0ab66389c}{get\+Text\+Height}} (const std\+::string \&font\+\_\+id, const std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Gets the height of the text rendered with the specified font. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a46cbe9626a60e49ada0a5ec787fe0fdd}{draw\+Sprite}} (\mbox{\hyperlink{classengine_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}scene, \mbox{\hyperlink{struct_sprite}{Sprite}} sprite, std\+::vector$<$ double $>$ distances\+\_\+mask)
+\begin{DoxyCompactList}\small\item\em Draws a sprite on the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_ad6bfedca21ccd91ef1b5cdcc3d873dab}{draw\+UI}} (\mbox{\hyperlink{classengine_1_1_u_i}{UI}} ui)
+\begin{DoxyCompactList}\small\item\em Draws the user interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a6bedc815d3ed657a46b6c1c1477d347e}{draw\+Gun}} (bool is\+\_\+firing)
+\begin{DoxyCompactList}\small\item\em Draws the gun on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a7b278623e334538d0f8a193df6d5ad32}{draw\+Wall\+Textures}} (int wall\+\_\+id, int axis, int column, int ceiling, int height, int texture\+\_\+column, std\+::array$<$ float, 3 $>$ \&fog\+\_\+factors)
+\begin{DoxyCompactList}\small\item\em Draws wall textures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classengine_1_1_renderer_a8c9705f9c7bb1f3ba69285012d2a5c0b}{draw\+Sky\+Box}} (double ray\+\_\+angle, int column)
+\begin{DoxyCompactList}\small\item\em Draws the skybox column by column. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classengine_1_1_renderer_a0515dacd98807e7bc4ace77b015f2188}{m\+\_\+renderer}}
-\item 
+\begin{DoxyCompactList}\small\item\em SDL renderer. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{classengine_1_1_renderer_ab6dfffb000bffc269d75830db65150b9}{m\+\_\+width}}
 \begin{DoxyCompactList}\small\item\em Renderer width. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}} \mbox{\hyperlink{classengine_1_1_renderer_a95e9ac98e0b3b314b45a2baa3e662e37}{m\+\_\+height}}
 \begin{DoxyCompactList}\small\item\em Renderer height. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classengine_1_1_texture_manager}{Texture\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classengine_1_1_renderer_a3e9e0f4ac7e952d9a040f3d6eeb68d91}{m\+\_\+texture\+\_\+manager}}
-\end{DoxyCompactItemize}
+std\+::unordered\+\_\+map$<$ int, std\+::string $>$ \mbox{\hyperlink{classengine_1_1_renderer_a0f6bab59ed3b1817ea3f6f6bcd3fbaa3}{m\+\_\+column\+\_\+texture\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em Mapping of wall IDs to texture IDs. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classengine_1_1_renderer_ac60bcf8b0599bc174dc55e4f561cf943}{m\+\_\+textures}}
+\begin{DoxyCompactList}\small\item\em Map of loaded textures. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classengine_1_1_renderer_a90656d57758359ee15393af01361ec6b}{m\+\_\+texture\+\_\+sizes}}
+\begin{DoxyCompactList}\small\item\em Sizes of loaded textures. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classengine_1_1_renderer_ad6a20753bbd9eb8f01dbc1cc36ef6c9d}{m\+\_\+fonts}}
+\begin{DoxyCompactList}\small\item\em Map to store loaded fonts. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -55,8 +92,13 @@ engine\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperl
 
 
 
-Constructor. 
+Constructor for the Renderer class. 
 
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em window} & -\/ Pointer to the Window object. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{classengine_1_1_renderer_a429d2acdd3f2e8f583df5298259d8089}\index{engine::Renderer@{engine::Renderer}!````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}}
 \index{````~Renderer@{\texorpdfstring{$\sim$}{\string~}Renderer}!engine::Renderer@{engine::Renderer}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Renderer()}{\string~Renderer()}}
@@ -80,27 +122,218 @@ void engine\+::\+Renderer\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCa
 
 Fill black. 
 
-\Hypertarget{classengine_1_1_renderer_a1074c742982582a18053902e8803d834}\index{engine::Renderer@{engine::Renderer}!drawRectangle@{drawRectangle}}
+\Hypertarget{classengine_1_1_renderer_a5581726361d8e3359dd6c2c8813d12d7}\index{engine::Renderer@{engine::Renderer}!clearFonts@{clearFonts}}
+\index{clearFonts@{clearFonts}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{clearFonts()}{clearFonts()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a5581726361d8e3359dd6c2c8813d12d7} 
+void engine\+::\+Renderer\+::clear\+Fonts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Frees all loaded fonts. 
+
+\Hypertarget{classengine_1_1_renderer_ad8c0299ee9834d42a9af89240c202651}\index{engine::Renderer@{engine::Renderer}!clearTextures@{clearTextures}}
+\index{clearTextures@{clearTextures}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{clearTextures()}{clearTextures()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_ad8c0299ee9834d42a9af89240c202651} 
+void engine\+::\+Renderer\+::clear\+Textures (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all textures. 
+
+\Hypertarget{classengine_1_1_renderer_a486078083ebf8e61b53621fb52671997}\index{engine::Renderer@{engine::Renderer}!drawFloor@{drawFloor}}
+\index{drawFloor@{drawFloor}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawFloor()}{drawFloor()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a486078083ebf8e61b53621fb52671997} 
+void engine\+::\+Renderer\+::draw\+Floor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Draws the floor in the scene. 
+
+\Hypertarget{classengine_1_1_renderer_a6bedc815d3ed657a46b6c1c1477d347e}\index{engine::Renderer@{engine::Renderer}!drawGun@{drawGun}}
+\index{drawGun@{drawGun}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawGun()}{drawGun()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a6bedc815d3ed657a46b6c1c1477d347e} 
+void engine\+::\+Renderer\+::draw\+Gun (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+firing}{}\end{DoxyParamCaption})}
+
+
+
+Draws the gun on the screen. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em is\+\_\+firing} & -\/ Boolean indicating if the gun is firing. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a6a83634517ac8d1ecd296ba0bc7d22bb}\index{engine::Renderer@{engine::Renderer}!drawRectangle@{drawRectangle}}
 \index{drawRectangle@{drawRectangle}!engine::Renderer@{engine::Renderer}}
 \doxysubsubsection{\texorpdfstring{drawRectangle()}{drawRectangle()}}
-{\footnotesize\ttfamily \label{classengine_1_1_renderer_a1074c742982582a18053902e8803d834} 
-void engine\+::\+Renderer\+::draw\+Rectangle (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{SDL\+\_\+\+Color}]{color}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a6a83634517ac8d1ecd296ba0bc7d22bb} 
+void engine\+::\+Renderer\+::draw\+Rectangle (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{SDL\+\_\+\+Color}]{fill\+\_\+color}{, }\item[{SDL\+\_\+\+Color}]{border\+\_\+color}{, }\item[{int}]{border\+\_\+width}{}\end{DoxyParamCaption})}
 
 
 
 Draws rectangle. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em x} & x cord. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & -\/ x cord. \\
 \hline
-{\em y} & y cord. \\
+\mbox{\texttt{ in}}  & {\em y} & -\/ y cord. \\
 \hline
-{\em width} & rectangle width. \\
+\mbox{\texttt{ in}}  & {\em width} & -\/ rectangle width. \\
 \hline
-{\em height} & rectangle height. \\
+\mbox{\texttt{ in}}  & {\em height} & -\/ rectangle height. \\
 \hline
-{\em color} & fill color. \\
+\mbox{\texttt{ in}}  & {\em fill\+\_\+color} & -\/ fill color. \\
+\hline
+\mbox{\texttt{ in}}  & {\em border\+\_\+color} & -\/ border color. \\
+\hline
+\mbox{\texttt{ in}}  & {\em border\+\_\+width} & -\/ border width. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a8c9705f9c7bb1f3ba69285012d2a5c0b}\index{engine::Renderer@{engine::Renderer}!drawSkyBox@{drawSkyBox}}
+\index{drawSkyBox@{drawSkyBox}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawSkyBox()}{drawSkyBox()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a8c9705f9c7bb1f3ba69285012d2a5c0b} 
+void engine\+::\+Renderer\+::draw\+Sky\+Box (\begin{DoxyParamCaption}\item[{double}]{ray\+\_\+angle}{, }\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws the skybox column by column. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ray\+\_\+angle} & -\/ The angle of the ray for skybox rendering. \\
+\hline
+\mbox{\texttt{ in}}  & {\em column} & -\/ The column on the screen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a46cbe9626a60e49ada0a5ec787fe0fdd}\index{engine::Renderer@{engine::Renderer}!drawSprite@{drawSprite}}
+\index{drawSprite@{drawSprite}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawSprite()}{drawSprite()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a46cbe9626a60e49ada0a5ec787fe0fdd} 
+void engine\+::\+Renderer\+::draw\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{, }\item[{\mbox{\hyperlink{struct_sprite}{Sprite}}}]{sprite}{, }\item[{std\+::vector$<$ double $>$}]{distances\+\_\+mask}{}\end{DoxyParamCaption})}
+
+
+
+Draws a sprite on the scene. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scene} & -\/ Pointer to the Scene object. \\
+\hline
+\mbox{\texttt{ in}}  & {\em sprite} & -\/ The sprite to draw. \\
+\hline
+\mbox{\texttt{ in}}  & {\em distances\+\_\+mask} & -\/ A vector containing distances to obstacle of all screen columns. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_aaa29abe92cbe998052d9746c005f4ebc}\index{engine::Renderer@{engine::Renderer}!drawText@{drawText}}
+\index{drawText@{drawText}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawText()}{drawText()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_aaa29abe92cbe998052d9746c005f4ebc} 
+void engine\+::\+Renderer\+::draw\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font\+\_\+id}{, }\item[{const std\+::string \&}]{text}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{SDL\+\_\+\+Color}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Renders a text string at the specified coordinates using the specified font ID. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em font\+\_\+id} & -\/ The ID of the font to use. \\
+\hline
+\mbox{\texttt{ in}}  & {\em text} & -\/ The text string to render. \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & -\/ The x coordinate to render the text. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & -\/ The y coordinate to render the text. \\
+\hline
+\mbox{\texttt{ in}}  & {\em color} & -\/ The color of the text. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Engine\+Exception} & if the font ID is not found or rendering fails. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classengine_1_1_renderer_a1cf95ceee28d7f50658093720cd58bdb}\index{engine::Renderer@{engine::Renderer}!drawTexture@{drawTexture}}
+\index{drawTexture@{drawTexture}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawTexture()}{drawTexture()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a1cf95ceee28d7f50658093720cd58bdb} 
+void engine\+::\+Renderer\+::draw\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+\_\+id}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{render\+\_\+width}{, }\item[{int}]{render\+\_\+height}{, }\item[{int}]{cut\+\_\+x1}{, }\item[{int}]{cut\+\_\+y1}{, }\item[{int}]{cut\+\_\+x2}{, }\item[{int}]{cut\+\_\+y2}{, }\item[{bool}]{x\+\_\+flip}{, }\item[{bool}]{y\+\_\+flip}{, }\item[{std\+::array$<$ float, 3 $>$ \&}]{fog\+\_\+factors}{}\end{DoxyParamCaption})}
+
+
+
+Draws texture. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & -\/ x cord. of texture (left top angle). \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & -\/ y cord. of texture (left top angle). \\
+\hline
+\mbox{\texttt{ in}}  & {\em render\+\_\+width} & -\/ width of texture on the screen. \\
+\hline
+\mbox{\texttt{ in}}  & {\em render\+\_\+height} & -\/ height of texture on the screen. \\
+\hline
+\mbox{\texttt{ in}}  & {\em cut\+\_\+x1} & -\/ x coordinate of the upper left corner of the clipping area \\
+\hline
+\mbox{\texttt{ in}}  & {\em cut\+\_\+y1} & -\/ y coordinate of the upper left corner of the clipping area \\
+\hline
+\mbox{\texttt{ in}}  & {\em cut\+\_\+x2} & -\/ x coordinate of the lower right corner of the clipping area \\
+\hline
+\mbox{\texttt{ in}}  & {\em cut\+\_\+y2} & -\/ y coordinate of the lower right corner of the clipping area \\
+\hline
+ & {\em x\+\_\+flip} & -\/ Boolean indicating whether to flip the texture horizontally. \\
+\hline
+ & {\em y\+\_\+flip} & -\/ Boolean indicating whether to flip the texture vertically.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Engine\+Exception} & if the texture with the specified ID is not found. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classengine_1_1_renderer_ad6bfedca21ccd91ef1b5cdcc3d873dab}\index{engine::Renderer@{engine::Renderer}!drawUI@{drawUI}}
+\index{drawUI@{drawUI}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawUI()}{drawUI()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_ad6bfedca21ccd91ef1b5cdcc3d873dab} 
+void engine\+::\+Renderer\+::draw\+UI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_u_i}{UI}}}]{ui}{}\end{DoxyParamCaption})}
+
+
+
+Draws the user interface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ui} & -\/ The UI object to draw. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a7b278623e334538d0f8a193df6d5ad32}\index{engine::Renderer@{engine::Renderer}!drawWallTextures@{drawWallTextures}}
+\index{drawWallTextures@{drawWallTextures}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawWallTextures()}{drawWallTextures()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a7b278623e334538d0f8a193df6d5ad32} 
+void engine\+::\+Renderer\+::draw\+Wall\+Textures (\begin{DoxyParamCaption}\item[{int}]{wall\+\_\+id}{, }\item[{int}]{axis}{, }\item[{int}]{column}{, }\item[{int}]{ceiling}{, }\item[{int}]{height}{, }\item[{int}]{texture\+\_\+column}{, }\item[{std\+::array$<$ float, 3 $>$ \&}]{fog\+\_\+factors}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Draws wall textures. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em wall\+\_\+id} & -\/ Id of wall on map. \\
+\hline
+\mbox{\texttt{ in}}  & {\em axis} & -\/ Axis of wall. \\
+\hline
+\mbox{\texttt{ in}}  & {\em column} & -\/ Column on the screen. \\
+\hline
+\mbox{\texttt{ in}}  & {\em ceiling} & -\/ Ceiling height. \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & -\/ Height of wall. \\
+\hline
+\mbox{\texttt{ in}}  & {\em texture\+\_\+} & column -\/Column of pixels on texture to draw \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_renderer_a01acdaa6bc3332fcbcbb63dbf6bdc9e2}\index{engine::Renderer@{engine::Renderer}!freeTexture@{freeTexture}}
@@ -115,9 +348,73 @@ Free one texture by id.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em id} & id of texture. \\
+\mbox{\texttt{ in}}  & {\em id} & -\/ id of texture. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a59d3eff537c3303c612892e0ab66389c}\index{engine::Renderer@{engine::Renderer}!getTextHeight@{getTextHeight}}
+\index{getTextHeight@{getTextHeight}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{getTextHeight()}{getTextHeight()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a59d3eff537c3303c612892e0ab66389c} 
+int engine\+::\+Renderer\+::get\+Text\+Height (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font\+\_\+id}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Gets the height of the text rendered with the specified font. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em font\+\_\+id} & -\/ The ID of the font. \\
+\hline
+\mbox{\texttt{ in}}  & {\em text} & -\/ The text string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The height of the text. 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1_renderer_aa2a7efcf25ee91fa83e96b584a409de9}\index{engine::Renderer@{engine::Renderer}!getTextWidth@{getTextWidth}}
+\index{getTextWidth@{getTextWidth}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{getTextWidth()}{getTextWidth()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_aa2a7efcf25ee91fa83e96b584a409de9} 
+int engine\+::\+Renderer\+::get\+Text\+Width (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{font\+\_\+id}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})}
+
+
+
+Gets the width of the text rendered with the specified font. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em -\/} & font\+\_\+id The ID of the font. \\
+\hline
+\mbox{\texttt{ in}}  & {\em -\/} & text The text string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The width of the text. 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1_renderer_abeb239b936b0e06493d2da7510f92860}\index{engine::Renderer@{engine::Renderer}!loadFont@{loadFont}}
+\index{loadFont@{loadFont}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{loadFont()}{loadFont()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_abeb239b936b0e06493d2da7510f92860} 
+void engine\+::\+Renderer\+::load\+Font (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{id}{, }\item[{const std\+::string \&}]{path}{, }\item[{int}]{font\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Loads a font from a file and associates it with a given ID. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & -\/ The ID to associate with the font. \\
+\hline
+\mbox{\texttt{ in}}  & {\em path} & -\/ The file path of the font. \\
+\hline
+\mbox{\texttt{ in}}  & {\em font\+\_\+size} & -\/ The size of the font. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Engine\+Exception} & if the font cannot be loaded. \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{classengine_1_1_renderer_a3b9cdfaf0bc4e63caa964cba959277e3}\index{engine::Renderer@{engine::Renderer}!loadTexture@{loadTexture}}
 \index{loadTexture@{loadTexture}!engine::Renderer@{engine::Renderer}}
 \doxysubsubsection{\texorpdfstring{loadTexture()}{loadTexture()}}
@@ -130,9 +427,24 @@ Loads texture by path and assigns id.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em id} & id of texture. \\
+\mbox{\texttt{ in}}  & {\em id} & -\/ id of texture. \\
 \hline
-\mbox{\texttt{ in}}  & {\em path} & load path. \\
+\mbox{\texttt{ in}}  & {\em path} & -\/ load path. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1_renderer_a9cfde60f02271d889c97438d31ef9c31}\index{engine::Renderer@{engine::Renderer}!loadTexturesFromScene@{loadTexturesFromScene}}
+\index{loadTexturesFromScene@{loadTexturesFromScene}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{loadTexturesFromScene()}{loadTexturesFromScene()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a9cfde60f02271d889c97438d31ef9c31} 
+void engine\+::\+Renderer\+::load\+Textures\+From\+Scene (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classengine_1_1_scene}{Scene}} \&}]{scene}{}\end{DoxyParamCaption})}
+
+
+
+Loads textures from the provided scene. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scene} & -\/ The Scene object containing textures to load. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classengine_1_1_renderer_aeac54f13407f3f7134fc8f19f27fbb24}\index{engine::Renderer@{engine::Renderer}!present@{present}}
@@ -145,44 +457,54 @@ void engine\+::\+Renderer\+::present (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 Show changes. 
 
-\Hypertarget{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e}\index{engine::Renderer@{engine::Renderer}!renderSceneDDA@{renderSceneDDA}}
+\Hypertarget{classengine_1_1_renderer_aa0f818e6658642dc8d3b682fb0b78f42}\index{engine::Renderer@{engine::Renderer}!renderSceneDDA@{renderSceneDDA}}
 \index{renderSceneDDA@{renderSceneDDA}!engine::Renderer@{engine::Renderer}}
 \doxysubsubsection{\texorpdfstring{renderSceneDDA()}{renderSceneDDA()}}
-{\footnotesize\ttfamily \label{classengine_1_1_renderer_a0893253b8a2fd22e4c48eff04acf152e} 
-void engine\+::\+Renderer\+::render\+Scene\+DDA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_camera}{Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_aa0f818e6658642dc8d3b682fb0b78f42} 
+void engine\+::\+Renderer\+::render\+Scene\+DDA (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{}\end{DoxyParamCaption})}
 
-Scene rendering Obstacle rendering with DDA algorithm Enemy and Item rendering \Hypertarget{classengine_1_1_renderer_a08de18193a31511c8de8169d54e7c3ce}\index{engine::Renderer@{engine::Renderer}!renderTexture@{renderTexture}}
-\index{renderTexture@{renderTexture}!engine::Renderer@{engine::Renderer}}
-\doxysubsubsection{\texorpdfstring{renderTexture()}{renderTexture()}}
-{\footnotesize\ttfamily \label{classengine_1_1_renderer_a08de18193a31511c8de8169d54e7c3ce} 
-void engine\+::\+Renderer\+::render\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+\_\+id}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{render\+\_\+width}{, }\item[{int}]{render\+\_\+height}{, }\item[{int}]{cut\+\_\+x1}{, }\item[{int}]{cut\+\_\+y1}{, }\item[{int}]{cut\+\_\+x2}{, }\item[{int}]{cut\+\_\+y2}{}\end{DoxyParamCaption})}
+Scene rendering Obstacle rendering with DDA algorithm Enemy and Item rendering \texorpdfstring{$<$}{<} Distance with fish eye fix
+
+\texorpdfstring{$<$}{<} Ceiling height on the screen\Hypertarget{classengine_1_1_renderer_a833f5600f8e550795f0d6fd0e8497f42}\index{engine::Renderer@{engine::Renderer}!setWallTexture@{setWallTexture}}
+\index{setWallTexture@{setWallTexture}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{setWallTexture()}{setWallTexture()}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a833f5600f8e550795f0d6fd0e8497f42} 
+void engine\+::\+Renderer\+::set\+Wall\+Texture (\begin{DoxyParamCaption}\item[{int}]{wall\+\_\+id}{, }\item[{const std\+::string \&}]{texture\+\_\+id}{}\end{DoxyParamCaption})}
 
 
 
-Draws texture. 
+Sets the mapping of wall IDs to texture IDs. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em x} & x cord. of texture (left top angle). \\
+\mbox{\texttt{ in}}  & {\em wall\+\_\+id} & -\/ The numerical ID of the wall. \\
 \hline
-\mbox{\texttt{ in}}  & {\em y} & y cord. of texture (left top angle). \\
-\hline
-\mbox{\texttt{ in}}  & {\em render\+\_\+width} & width of texture on the screen. \\
-\hline
-\mbox{\texttt{ in}}  & {\em render\+\_\+height} & height of texture on the screen. \\
-\hline
-\mbox{\texttt{ in}}  & {\em cut\+\_\+x1} & x coordinate of the upper left corner of the clipping area \\
-\hline
-\mbox{\texttt{ in}}  & {\em cut\+\_\+y1} & y coordinate of the upper left corner of the clipping area \\
-\hline
-\mbox{\texttt{ in}}  & {\em cut\+\_\+x2} & x coordinate of the lower right corner of the clipping area \\
-\hline
-\mbox{\texttt{ in}}  & {\em cut\+\_\+y2} & y coordinate of the lower right corner of the clipping area \\
+\mbox{\texttt{ in}}  & {\em texture\+\_\+id} & -\/ The string ID of the texture. \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{classengine_1_1_renderer_a0f6bab59ed3b1817ea3f6f6bcd3fbaa3}\index{engine::Renderer@{engine::Renderer}!m\_column\_texture\_map@{m\_column\_texture\_map}}
+\index{m\_column\_texture\_map@{m\_column\_texture\_map}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{m\_column\_texture\_map}{m\_column\_texture\_map}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a0f6bab59ed3b1817ea3f6f6bcd3fbaa3} 
+std\+::unordered\+\_\+map$<$int, std\+::string$>$ engine\+::\+Renderer\+::m\+\_\+column\+\_\+texture\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapping of wall IDs to texture IDs. 
+
+\Hypertarget{classengine_1_1_renderer_ad6a20753bbd9eb8f01dbc1cc36ef6c9d}\index{engine::Renderer@{engine::Renderer}!m\_fonts@{m\_fonts}}
+\index{m\_fonts@{m\_fonts}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{m\_fonts}{m\_fonts}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_ad6a20753bbd9eb8f01dbc1cc36ef6c9d} 
+std\+::unordered\+\_\+map$<$std\+::string, TTF\+\_\+\+Font\texorpdfstring{$\ast$}{*}$>$ engine\+::\+Renderer\+::m\+\_\+fonts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map to store loaded fonts. 
+
 \Hypertarget{classengine_1_1_renderer_a95e9ac98e0b3b314b45a2baa3e662e37}\index{engine::Renderer@{engine::Renderer}!m\_height@{m\_height}}
 \index{m\_height@{m\_height}!engine::Renderer@{engine::Renderer}}
 \doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
@@ -199,11 +521,29 @@ Renderer height.
 {\footnotesize\ttfamily \label{classengine_1_1_renderer_a0515dacd98807e7bc4ace77b015f2188} 
 SDL\+\_\+\+Renderer\texorpdfstring{$\ast$}{*} engine\+::\+Renderer\+::m\+\_\+renderer\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classengine_1_1_renderer_a3e9e0f4ac7e952d9a040f3d6eeb68d91}\index{engine::Renderer@{engine::Renderer}!m\_texture\_manager@{m\_texture\_manager}}
-\index{m\_texture\_manager@{m\_texture\_manager}!engine::Renderer@{engine::Renderer}}
-\doxysubsubsection{\texorpdfstring{m\_texture\_manager}{m\_texture\_manager}}
-{\footnotesize\ttfamily \label{classengine_1_1_renderer_a3e9e0f4ac7e952d9a040f3d6eeb68d91} 
-\mbox{\hyperlink{classengine_1_1_texture_manager}{Texture\+Manager}}\texorpdfstring{$\ast$}{*} engine\+::\+Renderer\+::m\+\_\+texture\+\_\+manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+SDL renderer. 
+
+\Hypertarget{classengine_1_1_renderer_a90656d57758359ee15393af01361ec6b}\index{engine::Renderer@{engine::Renderer}!m\_texture\_sizes@{m\_texture\_sizes}}
+\index{m\_texture\_sizes@{m\_texture\_sizes}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{m\_texture\_sizes}{m\_texture\_sizes}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_a90656d57758359ee15393af01361ec6b} 
+std\+::unordered\+\_\+map$<$std\+::string, std\+::pair$<$int, int$>$ $>$ engine\+::\+Renderer\+::m\+\_\+texture\+\_\+sizes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sizes of loaded textures. 
+
+\Hypertarget{classengine_1_1_renderer_ac60bcf8b0599bc174dc55e4f561cf943}\index{engine::Renderer@{engine::Renderer}!m\_textures@{m\_textures}}
+\index{m\_textures@{m\_textures}!engine::Renderer@{engine::Renderer}}
+\doxysubsubsection{\texorpdfstring{m\_textures}{m\_textures}}
+{\footnotesize\ttfamily \label{classengine_1_1_renderer_ac60bcf8b0599bc174dc55e4f561cf943} 
+std\+::map$<$std\+::string, SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}$>$ engine\+::\+Renderer\+::m\+\_\+textures\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map of loaded textures. 
 
 \Hypertarget{classengine_1_1_renderer_ab6dfffb000bffc269d75830db65150b9}\index{engine::Renderer@{engine::Renderer}!m\_width@{m\_width}}
 \index{m\_width@{m\_width}!engine::Renderer@{engine::Renderer}}

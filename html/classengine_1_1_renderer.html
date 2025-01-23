@@ -90,6 +90,7 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classengine_1_1_renderer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">engine::Renderer Class Reference</div></div>
@@ -104,7 +105,7 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8aa6bb29daf410c34cec7d59386079d" id="r_ac8aa6bb29daf410c34cec7d59386079d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8aa6bb29daf410c34cec7d59386079d">Renderer</a> (<a class="el" href="classengine_1_1_window.html">Window</a> *window)</td></tr>
-<tr class="memdesc:ac8aa6bb29daf410c34cec7d59386079d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="memdesc:ac8aa6bb29daf410c34cec7d59386079d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Renderer class.  <br /></td></tr>
 <tr class="separator:ac8aa6bb29daf410c34cec7d59386079d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a429d2acdd3f2e8f583df5298259d8089" id="r_a429d2acdd3f2e8f583df5298259d8089"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a429d2acdd3f2e8f583df5298259d8089">~Renderer</a> ()</td></tr>
 <tr class="memdesc:a429d2acdd3f2e8f583df5298259d8089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
@@ -115,24 +116,70 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeac54f13407f3f7134fc8f19f27fbb24" id="r_aeac54f13407f3f7134fc8f19f27fbb24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeac54f13407f3f7134fc8f19f27fbb24">present</a> ()</td></tr>
 <tr class="memdesc:aeac54f13407f3f7134fc8f19f27fbb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show changes.  <br /></td></tr>
 <tr class="separator:aeac54f13407f3f7134fc8f19f27fbb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1074c742982582a18053902e8803d834" id="r_a1074c742982582a18053902e8803d834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1074c742982582a18053902e8803d834">drawRectangle</a> (int x, int y, int width, int height, SDL_Color color)</td></tr>
-<tr class="memdesc:a1074c742982582a18053902e8803d834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws rectangle.  <br /></td></tr>
-<tr class="separator:a1074c742982582a18053902e8803d834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0893253b8a2fd22e4c48eff04acf152e" id="r_a0893253b8a2fd22e4c48eff04acf152e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0893253b8a2fd22e4c48eff04acf152e">renderSceneDDA</a> (<a class="el" href="classengine_1_1_camera.html">Camera</a> *camera)</td></tr>
-<tr class="separator:a0893253b8a2fd22e4c48eff04acf152e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a83634517ac8d1ecd296ba0bc7d22bb" id="r_a6a83634517ac8d1ecd296ba0bc7d22bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a83634517ac8d1ecd296ba0bc7d22bb">drawRectangle</a> (int x, int y, int width, int height, SDL_Color fill_color, SDL_Color border_color, int border_width)</td></tr>
+<tr class="memdesc:a6a83634517ac8d1ecd296ba0bc7d22bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws rectangle.  <br /></td></tr>
+<tr class="separator:a6a83634517ac8d1ecd296ba0bc7d22bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f818e6658642dc8d3b682fb0b78f42" id="r_aa0f818e6658642dc8d3b682fb0b78f42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0f818e6658642dc8d3b682fb0b78f42">renderSceneDDA</a> (<a class="el" href="classengine_1_1_scene.html">Scene</a> *scene)</td></tr>
+<tr class="separator:aa0f818e6658642dc8d3b682fb0b78f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a833f5600f8e550795f0d6fd0e8497f42" id="r_a833f5600f8e550795f0d6fd0e8497f42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a833f5600f8e550795f0d6fd0e8497f42">setWallTexture</a> (int wall_id, const std::string &amp;texture_id)</td></tr>
+<tr class="memdesc:a833f5600f8e550795f0d6fd0e8497f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the mapping of wall IDs to texture IDs.  <br /></td></tr>
+<tr class="separator:a833f5600f8e550795f0d6fd0e8497f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b9cdfaf0bc4e63caa964cba959277e3" id="r_a3b9cdfaf0bc4e63caa964cba959277e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b9cdfaf0bc4e63caa964cba959277e3">loadTexture</a> (const std::string &amp;id, const std::string &amp;path)</td></tr>
 <tr class="memdesc:a3b9cdfaf0bc4e63caa964cba959277e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads texture by path and assigns id.  <br /></td></tr>
 <tr class="separator:a3b9cdfaf0bc4e63caa964cba959277e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08de18193a31511c8de8169d54e7c3ce" id="r_a08de18193a31511c8de8169d54e7c3ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08de18193a31511c8de8169d54e7c3ce">renderTexture</a> (const std::string &amp;texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2)</td></tr>
-<tr class="memdesc:a08de18193a31511c8de8169d54e7c3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws texture.  <br /></td></tr>
-<tr class="separator:a08de18193a31511c8de8169d54e7c3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cf95ceee28d7f50658093720cd58bdb" id="r_a1cf95ceee28d7f50658093720cd58bdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cf95ceee28d7f50658093720cd58bdb">drawTexture</a> (const std::string &amp;texture_id, int x, int y, int render_width, int render_height, int cut_x1, int cut_y1, int cut_x2, int cut_y2, bool x_flip, bool y_flip, std::array&lt; float, 3 &gt; &amp;fog_factors)</td></tr>
+<tr class="memdesc:a1cf95ceee28d7f50658093720cd58bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws texture.  <br /></td></tr>
+<tr class="separator:a1cf95ceee28d7f50658093720cd58bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01acdaa6bc3332fcbcbb63dbf6bdc9e2" id="r_a01acdaa6bc3332fcbcbb63dbf6bdc9e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01acdaa6bc3332fcbcbb63dbf6bdc9e2">freeTexture</a> (const std::string &amp;id)</td></tr>
 <tr class="memdesc:a01acdaa6bc3332fcbcbb63dbf6bdc9e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free one texture by id.  <br /></td></tr>
 <tr class="separator:a01acdaa6bc3332fcbcbb63dbf6bdc9e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c0299ee9834d42a9af89240c202651" id="r_ad8c0299ee9834d42a9af89240c202651"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8c0299ee9834d42a9af89240c202651">clearTextures</a> ()</td></tr>
+<tr class="memdesc:ad8c0299ee9834d42a9af89240c202651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all textures.  <br /></td></tr>
+<tr class="separator:ad8c0299ee9834d42a9af89240c202651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb239b936b0e06493d2da7510f92860" id="r_abeb239b936b0e06493d2da7510f92860"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeb239b936b0e06493d2da7510f92860">loadFont</a> (const std::string &amp;id, const std::string &amp;path, int font_size)</td></tr>
+<tr class="memdesc:abeb239b936b0e06493d2da7510f92860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a font from a file and associates it with a given ID.  <br /></td></tr>
+<tr class="separator:abeb239b936b0e06493d2da7510f92860"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa29abe92cbe998052d9746c005f4ebc" id="r_aaa29abe92cbe998052d9746c005f4ebc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa29abe92cbe998052d9746c005f4ebc">drawText</a> (const std::string &amp;font_id, const std::string &amp;text, int x, int y, SDL_Color color)</td></tr>
+<tr class="memdesc:aaa29abe92cbe998052d9746c005f4ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a text string at the specified coordinates using the specified font ID.  <br /></td></tr>
+<tr class="separator:aaa29abe92cbe998052d9746c005f4ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5581726361d8e3359dd6c2c8813d12d7" id="r_a5581726361d8e3359dd6c2c8813d12d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5581726361d8e3359dd6c2c8813d12d7">clearFonts</a> ()</td></tr>
+<tr class="memdesc:a5581726361d8e3359dd6c2c8813d12d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees all loaded fonts.  <br /></td></tr>
+<tr class="separator:a5581726361d8e3359dd6c2c8813d12d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfde60f02271d889c97438d31ef9c31" id="r_a9cfde60f02271d889c97438d31ef9c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cfde60f02271d889c97438d31ef9c31">loadTexturesFromScene</a> (const <a class="el" href="classengine_1_1_scene.html">Scene</a> &amp;scene)</td></tr>
+<tr class="memdesc:a9cfde60f02271d889c97438d31ef9c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads textures from the provided scene.  <br /></td></tr>
+<tr class="separator:a9cfde60f02271d889c97438d31ef9c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486078083ebf8e61b53621fb52671997" id="r_a486078083ebf8e61b53621fb52671997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a486078083ebf8e61b53621fb52671997">drawFloor</a> ()</td></tr>
+<tr class="memdesc:a486078083ebf8e61b53621fb52671997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the floor in the scene.  <br /></td></tr>
+<tr class="separator:a486078083ebf8e61b53621fb52671997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a7efcf25ee91fa83e96b584a409de9" id="r_aa2a7efcf25ee91fa83e96b584a409de9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2a7efcf25ee91fa83e96b584a409de9">getTextWidth</a> (const std::string &amp;font_id, const std::string &amp;text)</td></tr>
+<tr class="memdesc:aa2a7efcf25ee91fa83e96b584a409de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the text rendered with the specified font.  <br /></td></tr>
+<tr class="separator:aa2a7efcf25ee91fa83e96b584a409de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d3eff537c3303c612892e0ab66389c" id="r_a59d3eff537c3303c612892e0ab66389c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59d3eff537c3303c612892e0ab66389c">getTextHeight</a> (const std::string &amp;font_id, const std::string &amp;text)</td></tr>
+<tr class="memdesc:a59d3eff537c3303c612892e0ab66389c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the text rendered with the specified font.  <br /></td></tr>
+<tr class="separator:a59d3eff537c3303c612892e0ab66389c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46cbe9626a60e49ada0a5ec787fe0fdd" id="r_a46cbe9626a60e49ada0a5ec787fe0fdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46cbe9626a60e49ada0a5ec787fe0fdd">drawSprite</a> (<a class="el" href="classengine_1_1_scene.html">Scene</a> *scene, <a class="el" href="struct_sprite.html">Sprite</a> sprite, std::vector&lt; double &gt; distances_mask)</td></tr>
+<tr class="memdesc:a46cbe9626a60e49ada0a5ec787fe0fdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a sprite on the scene.  <br /></td></tr>
+<tr class="separator:a46cbe9626a60e49ada0a5ec787fe0fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6bfedca21ccd91ef1b5cdcc3d873dab" id="r_ad6bfedca21ccd91ef1b5cdcc3d873dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6bfedca21ccd91ef1b5cdcc3d873dab">drawUI</a> (<a class="el" href="classengine_1_1_u_i.html">UI</a> ui)</td></tr>
+<tr class="memdesc:ad6bfedca21ccd91ef1b5cdcc3d873dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the user interface.  <br /></td></tr>
+<tr class="separator:ad6bfedca21ccd91ef1b5cdcc3d873dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bedc815d3ed657a46b6c1c1477d347e" id="r_a6bedc815d3ed657a46b6c1c1477d347e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bedc815d3ed657a46b6c1c1477d347e">drawGun</a> (bool is_firing)</td></tr>
+<tr class="memdesc:a6bedc815d3ed657a46b6c1c1477d347e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the gun on the screen.  <br /></td></tr>
+<tr class="separator:a6bedc815d3ed657a46b6c1c1477d347e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a7b278623e334538d0f8a193df6d5ad32" id="r_a7b278623e334538d0f8a193df6d5ad32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b278623e334538d0f8a193df6d5ad32">drawWallTextures</a> (int wall_id, int axis, int column, int ceiling, int height, int texture_column, std::array&lt; float, 3 &gt; &amp;fog_factors)</td></tr>
+<tr class="memdesc:a7b278623e334538d0f8a193df6d5ad32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws wall textures.  <br /></td></tr>
+<tr class="separator:a7b278623e334538d0f8a193df6d5ad32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c9705f9c7bb1f3ba69285012d2a5c0b" id="r_a8c9705f9c7bb1f3ba69285012d2a5c0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c9705f9c7bb1f3ba69285012d2a5c0b">drawSkyBox</a> (double ray_angle, int column)</td></tr>
+<tr class="memdesc:a8c9705f9c7bb1f3ba69285012d2a5c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the skybox column by column.  <br /></td></tr>
+<tr class="separator:a8c9705f9c7bb1f3ba69285012d2a5c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a0515dacd98807e7bc4ace77b015f2188" id="r_a0515dacd98807e7bc4ace77b015f2188"><td class="memItemLeft" align="right" valign="top">SDL_Renderer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0515dacd98807e7bc4ace77b015f2188">m_renderer</a></td></tr>
+<tr class="memdesc:a0515dacd98807e7bc4ace77b015f2188"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDL renderer.  <br /></td></tr>
 <tr class="separator:a0515dacd98807e7bc4ace77b015f2188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6dfffb000bffc269d75830db65150b9" id="r_ab6dfffb000bffc269d75830db65150b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6dfffb000bffc269d75830db65150b9">m_width</a></td></tr>
 <tr class="memdesc:ab6dfffb000bffc269d75830db65150b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderer width.  <br /></td></tr>
@@ -140,8 +187,18 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a95e9ac98e0b3b314b45a2baa3e662e37" id="r_a95e9ac98e0b3b314b45a2baa3e662e37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95e9ac98e0b3b314b45a2baa3e662e37">m_height</a></td></tr>
 <tr class="memdesc:a95e9ac98e0b3b314b45a2baa3e662e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderer height.  <br /></td></tr>
 <tr class="separator:a95e9ac98e0b3b314b45a2baa3e662e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e9e0f4ac7e952d9a040f3d6eeb68d91" id="r_a3e9e0f4ac7e952d9a040f3d6eeb68d91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengine_1_1_texture_manager.html">TextureManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e9e0f4ac7e952d9a040f3d6eeb68d91">m_texture_manager</a></td></tr>
-<tr class="separator:a3e9e0f4ac7e952d9a040f3d6eeb68d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6bab59ed3b1817ea3f6f6bcd3fbaa3" id="r_a0f6bab59ed3b1817ea3f6f6bcd3fbaa3"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; int, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f6bab59ed3b1817ea3f6f6bcd3fbaa3">m_column_texture_map</a></td></tr>
+<tr class="memdesc:a0f6bab59ed3b1817ea3f6f6bcd3fbaa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping of wall IDs to texture IDs.  <br /></td></tr>
+<tr class="separator:a0f6bab59ed3b1817ea3f6f6bcd3fbaa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60bcf8b0599bc174dc55e4f561cf943" id="r_ac60bcf8b0599bc174dc55e4f561cf943"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, SDL_Texture * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac60bcf8b0599bc174dc55e4f561cf943">m_textures</a></td></tr>
+<tr class="memdesc:ac60bcf8b0599bc174dc55e4f561cf943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of loaded textures.  <br /></td></tr>
+<tr class="separator:ac60bcf8b0599bc174dc55e4f561cf943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90656d57758359ee15393af01361ec6b" id="r_a90656d57758359ee15393af01361ec6b"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90656d57758359ee15393af01361ec6b">m_texture_sizes</a></td></tr>
+<tr class="memdesc:a90656d57758359ee15393af01361ec6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sizes of loaded textures.  <br /></td></tr>
+<tr class="separator:a90656d57758359ee15393af01361ec6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a20753bbd9eb8f01dbc1cc36ef6c9d" id="r_ad6a20753bbd9eb8f01dbc1cc36ef6c9d"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, TTF_Font * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6a20753bbd9eb8f01dbc1cc36ef6c9d">m_fonts</a></td></tr>
+<tr class="memdesc:ad6a20753bbd9eb8f01dbc1cc36ef6c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map to store loaded fonts.  <br /></td></tr>
+<tr class="separator:ad6a20753bbd9eb8f01dbc1cc36ef6c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Renderer class. </p>
@@ -161,7 +218,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor. </p>
+<p>Constructor for the Renderer class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">window</td><td>- Pointer to the Window object. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -204,8 +267,90 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1074c742982582a18053902e8803d834" name="a1074c742982582a18053902e8803d834"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1074c742982582a18053902e8803d834">&#9670;&#160;</a></span>drawRectangle()</h2>
+<a id="a5581726361d8e3359dd6c2c8813d12d7" name="a5581726361d8e3359dd6c2c8813d12d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5581726361d8e3359dd6c2c8813d12d7">&#9670;&#160;</a></span>clearFonts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::clearFonts </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frees all loaded fonts. </p>
+
+</div>
+</div>
+<a id="ad8c0299ee9834d42a9af89240c202651" name="ad8c0299ee9834d42a9af89240c202651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c0299ee9834d42a9af89240c202651">&#9670;&#160;</a></span>clearTextures()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::clearTextures </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears all textures. </p>
+
+</div>
+</div>
+<a id="a486078083ebf8e61b53621fb52671997" name="a486078083ebf8e61b53621fb52671997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486078083ebf8e61b53621fb52671997">&#9670;&#160;</a></span>drawFloor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::drawFloor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the floor in the scene. </p>
+
+</div>
+</div>
+<a id="a6bedc815d3ed657a46b6c1c1477d347e" name="a6bedc815d3ed657a46b6c1c1477d347e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bedc815d3ed657a46b6c1c1477d347e">&#9670;&#160;</a></span>drawGun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::drawGun </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>is_firing</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the gun on the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_firing</td><td>- Boolean indicating if the gun is firing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6a83634517ac8d1ecd296ba0bc7d22bb" name="a6a83634517ac8d1ecd296ba0bc7d22bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a83634517ac8d1ecd296ba0bc7d22bb">&#9670;&#160;</a></span>drawRectangle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +378,17 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">SDL_Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
+          <td class="paramtype">SDL_Color</td>          <td class="paramname"><span class="paramname"><em>fill_color</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Color</td>          <td class="paramname"><span class="paramname"><em>border_color</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>border_width</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -241,117 +396,155 @@ Private Attributes</h2></td></tr>
 <p>Draws rectangle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>x cord. </td></tr>
-    <tr><td class="paramname">y</td><td>y cord. </td></tr>
-    <tr><td class="paramname">width</td><td>rectangle width. </td></tr>
-    <tr><td class="paramname">height</td><td>rectangle height. </td></tr>
-    <tr><td class="paramname">color</td><td>fill color. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>- x cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>- y cord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>- rectangle width. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>- rectangle height. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fill_color</td><td>- fill color. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">border_color</td><td>- border color. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">border_width</td><td>- border width. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a01acdaa6bc3332fcbcbb63dbf6bdc9e2" name="a01acdaa6bc3332fcbcbb63dbf6bdc9e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01acdaa6bc3332fcbcbb63dbf6bdc9e2">&#9670;&#160;</a></span>freeTexture()</h2>
+<a id="a8c9705f9c7bb1f3ba69285012d2a5c0b" name="a8c9705f9c7bb1f3ba69285012d2a5c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c9705f9c7bb1f3ba69285012d2a5c0b">&#9670;&#160;</a></span>drawSkyBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void engine::Renderer::freeTexture </td>
+          <td class="memname">void engine::Renderer::drawSkyBox </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Free one texture by id. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>id of texture. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3b9cdfaf0bc4e63caa964cba959277e3" name="a3b9cdfaf0bc4e63caa964cba959277e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b9cdfaf0bc4e63caa964cba959277e3">&#9670;&#160;</a></span>loadTexture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void engine::Renderer::loadTexture </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ray_angle</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>column</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Loads texture by path and assigns id. </p>
+<p>Draws the skybox column by column. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>id of texture. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>load path. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ray_angle</td><td>- The angle of the ray for skybox rendering. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">column</td><td>- The column on the screen. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aeac54f13407f3f7134fc8f19f27fbb24" name="aeac54f13407f3f7134fc8f19f27fbb24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeac54f13407f3f7134fc8f19f27fbb24">&#9670;&#160;</a></span>present()</h2>
+<a id="a46cbe9626a60e49ada0a5ec787fe0fdd" name="a46cbe9626a60e49ada0a5ec787fe0fdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46cbe9626a60e49ada0a5ec787fe0fdd">&#9670;&#160;</a></span>drawSprite()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void engine::Renderer::present </td>
+          <td class="memname">void engine::Renderer::drawSprite </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classengine_1_1_scene.html">Scene</a> *</td>          <td class="paramname"><span class="paramname"><em>scene</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="struct_sprite.html">Sprite</a></td>          <td class="paramname"><span class="paramname"><em>sprite</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt;</td>          <td class="paramname"><span class="paramname"><em>distances_mask</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Show changes. </p>
+<p>Draws a sprite on the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">scene</td><td>- Pointer to the Scene object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sprite</td><td>- The sprite to draw. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">distances_mask</td><td>- A vector containing distances to obstacle of all screen columns. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a0893253b8a2fd22e4c48eff04acf152e" name="a0893253b8a2fd22e4c48eff04acf152e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0893253b8a2fd22e4c48eff04acf152e">&#9670;&#160;</a></span>renderSceneDDA()</h2>
+<a id="aaa29abe92cbe998052d9746c005f4ebc" name="aaa29abe92cbe998052d9746c005f4ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa29abe92cbe998052d9746c005f4ebc">&#9670;&#160;</a></span>drawText()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void engine::Renderer::renderSceneDDA </td>
+          <td class="memname">void engine::Renderer::drawText </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classengine_1_1_camera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Color</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Scene rendering Obstacle rendering with DDA algorithm Enemy and Item rendering </p>
+
+<p>Renders a text string at the specified coordinates using the specified font ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">font_id</td><td>- The ID of the font to use. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>- The text string to render. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>- The x coordinate to render the text. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>- The y coordinate to render the text. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>- The color of the text. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">EngineException</td><td>if the font ID is not found or rendering fails. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a08de18193a31511c8de8169d54e7c3ce" name="a08de18193a31511c8de8169d54e7c3ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08de18193a31511c8de8169d54e7c3ce">&#9670;&#160;</a></span>renderTexture()</h2>
+<a id="a1cf95ceee28d7f50658093720cd58bdb" name="a1cf95ceee28d7f50658093720cd58bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cf95ceee28d7f50658093720cd58bdb">&#9670;&#160;</a></span>drawTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void engine::Renderer::renderTexture </td>
+          <td class="memname">void engine::Renderer::drawTexture </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>texture_id</em></span>, </td>
         </tr>
@@ -393,7 +586,22 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cut_y2</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cut_y2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>x_flip</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>y_flip</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; float, 3 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>fog_factors</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -401,14 +609,367 @@ Private Attributes</h2></td></tr>
 <p>Draws texture. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>x cord. of texture (left top angle). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y cord. of texture (left top angle). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">render_width</td><td>width of texture on the screen. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">render_height</td><td>height of texture on the screen. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cut_x1</td><td>x coordinate of the upper left corner of the clipping area </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cut_y1</td><td>y coordinate of the upper left corner of the clipping area </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cut_x2</td><td>x coordinate of the lower right corner of the clipping area </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cut_y2</td><td>y coordinate of the lower right corner of the clipping area </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>- x cord. of texture (left top angle). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>- y cord. of texture (left top angle). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">render_width</td><td>- width of texture on the screen. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">render_height</td><td>- height of texture on the screen. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cut_x1</td><td>- x coordinate of the upper left corner of the clipping area </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cut_y1</td><td>- y coordinate of the upper left corner of the clipping area </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cut_x2</td><td>- x coordinate of the lower right corner of the clipping area </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cut_y2</td><td>- y coordinate of the lower right corner of the clipping area </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">x_flip</td><td>- Boolean indicating whether to flip the texture horizontally. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">y_flip</td><td>- Boolean indicating whether to flip the texture vertically.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">EngineException</td><td>if the texture with the specified ID is not found. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad6bfedca21ccd91ef1b5cdcc3d873dab" name="ad6bfedca21ccd91ef1b5cdcc3d873dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6bfedca21ccd91ef1b5cdcc3d873dab">&#9670;&#160;</a></span>drawUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::drawUI </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classengine_1_1_u_i.html">UI</a></td>          <td class="paramname"><span class="paramname"><em>ui</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draws the user interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ui</td><td>- The UI object to draw. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7b278623e334538d0f8a193df6d5ad32" name="a7b278623e334538d0f8a193df6d5ad32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b278623e334538d0f8a193df6d5ad32">&#9670;&#160;</a></span>drawWallTextures()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::drawWallTextures </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>wall_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>axis</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>column</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ceiling</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>texture_column</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; float, 3 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>fog_factors</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws wall textures. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">wall_id</td><td>- Id of wall on map. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">axis</td><td>- Axis of wall. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">column</td><td>- Column on the screen. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ceiling</td><td>- Ceiling height. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">height</td><td>- Height of wall. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture_</td><td>column -Column of pixels on texture to draw </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a01acdaa6bc3332fcbcbb63dbf6bdc9e2" name="a01acdaa6bc3332fcbcbb63dbf6bdc9e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01acdaa6bc3332fcbcbb63dbf6bdc9e2">&#9670;&#160;</a></span>freeTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::freeTexture </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Free one texture by id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>- id of texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a59d3eff537c3303c612892e0ab66389c" name="a59d3eff537c3303c612892e0ab66389c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d3eff537c3303c612892e0ab66389c">&#9670;&#160;</a></span>getTextHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int engine::Renderer::getTextHeight </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the height of the text rendered with the specified font. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">font_id</td><td>- The ID of the font. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>- The text string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The height of the text. </dd></dl>
+
+</div>
+</div>
+<a id="aa2a7efcf25ee91fa83e96b584a409de9" name="aa2a7efcf25ee91fa83e96b584a409de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2a7efcf25ee91fa83e96b584a409de9">&#9670;&#160;</a></span>getTextWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int engine::Renderer::getTextWidth </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>font_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the width of the text rendered with the specified font. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">-</td><td>font_id The ID of the font. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">-</td><td>text The text string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The width of the text. </dd></dl>
+
+</div>
+</div>
+<a id="abeb239b936b0e06493d2da7510f92860" name="abeb239b936b0e06493d2da7510f92860"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb239b936b0e06493d2da7510f92860">&#9670;&#160;</a></span>loadFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::loadFont </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>font_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads a font from a file and associates it with a given ID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>- The ID to associate with the font. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>- The file path of the font. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">font_size</td><td>- The size of the font. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">EngineException</td><td>if the font cannot be loaded. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3b9cdfaf0bc4e63caa964cba959277e3" name="a3b9cdfaf0bc4e63caa964cba959277e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b9cdfaf0bc4e63caa964cba959277e3">&#9670;&#160;</a></span>loadTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::loadTexture </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads texture by path and assigns id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>- id of texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>- load path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9cfde60f02271d889c97438d31ef9c31" name="a9cfde60f02271d889c97438d31ef9c31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfde60f02271d889c97438d31ef9c31">&#9670;&#160;</a></span>loadTexturesFromScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::loadTexturesFromScene </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classengine_1_1_scene.html">Scene</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>scene</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads textures from the provided scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">scene</td><td>- The Scene object containing textures to load. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeac54f13407f3f7134fc8f19f27fbb24" name="aeac54f13407f3f7134fc8f19f27fbb24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac54f13407f3f7134fc8f19f27fbb24">&#9670;&#160;</a></span>present()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::present </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show changes. </p>
+
+</div>
+</div>
+<a id="aa0f818e6658642dc8d3b682fb0b78f42" name="aa0f818e6658642dc8d3b682fb0b78f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f818e6658642dc8d3b682fb0b78f42">&#9670;&#160;</a></span>renderSceneDDA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::renderSceneDDA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classengine_1_1_scene.html">Scene</a> *</td>          <td class="paramname"><span class="paramname"><em>scene</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Scene rendering Obstacle rendering with DDA algorithm Enemy and Item rendering </p>
+<p>&lt; Distance with fish eye fix</p>
+<p>&lt; Ceiling height on the screen</p>
+
+</div>
+</div>
+<a id="a833f5600f8e550795f0d6fd0e8497f42" name="a833f5600f8e550795f0d6fd0e8497f42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a833f5600f8e550795f0d6fd0e8497f42">&#9670;&#160;</a></span>setWallTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void engine::Renderer::setWallTexture </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>wall_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>texture_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the mapping of wall IDs to texture IDs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">wall_id</td><td>- The numerical ID of the wall. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture_id</td><td>- The string ID of the texture. </td></tr>
   </table>
   </dd>
 </dl>
@@ -416,6 +977,54 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0f6bab59ed3b1817ea3f6f6bcd3fbaa3" name="a0f6bab59ed3b1817ea3f6f6bcd3fbaa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f6bab59ed3b1817ea3f6f6bcd3fbaa3">&#9670;&#160;</a></span>m_column_texture_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;int, std::string&gt; engine::Renderer::m_column_texture_map</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mapping of wall IDs to texture IDs. </p>
+
+</div>
+</div>
+<a id="ad6a20753bbd9eb8f01dbc1cc36ef6c9d" name="ad6a20753bbd9eb8f01dbc1cc36ef6c9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a20753bbd9eb8f01dbc1cc36ef6c9d">&#9670;&#160;</a></span>m_fonts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, TTF_Font*&gt; engine::Renderer::m_fonts</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Map to store loaded fonts. </p>
+
+</div>
+</div>
 <a id="a95e9ac98e0b3b314b45a2baa3e662e37" name="a95e9ac98e0b3b314b45a2baa3e662e37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95e9ac98e0b3b314b45a2baa3e662e37">&#9670;&#160;</a></span>m_height</h2>
 
@@ -460,10 +1069,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>SDL renderer. </p>
+
 </div>
 </div>
-<a id="a3e9e0f4ac7e952d9a040f3d6eeb68d91" name="a3e9e0f4ac7e952d9a040f3d6eeb68d91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e9e0f4ac7e952d9a040f3d6eeb68d91">&#9670;&#160;</a></span>m_texture_manager</h2>
+<a id="a90656d57758359ee15393af01361ec6b" name="a90656d57758359ee15393af01361ec6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90656d57758359ee15393af01361ec6b">&#9670;&#160;</a></span>m_texture_sizes</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,7 +1083,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classengine_1_1_texture_manager.html">TextureManager</a>* engine::Renderer::m_texture_manager</td>
+          <td class="memname">std::unordered_map&lt;std::string, std::pair&lt;int, int&gt; &gt; engine::Renderer::m_texture_sizes</td>
         </tr>
       </table>
   </td>
@@ -481,6 +1092,32 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sizes of loaded textures. </p>
+
+</div>
+</div>
+<a id="ac60bcf8b0599bc174dc55e4f561cf943" name="ac60bcf8b0599bc174dc55e4f561cf943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac60bcf8b0599bc174dc55e4f561cf943">&#9670;&#160;</a></span>m_textures</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, SDL_Texture*&gt; engine::Renderer::m_textures</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Map of loaded textures. </p>
 
 </div>
 </div>

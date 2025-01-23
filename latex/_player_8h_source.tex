@@ -5,54 +5,62 @@
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PLAYER\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}};}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}\ }
-\DoxyCodeLine{00013\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_player}{Player}}}
-\DoxyCodeLine{00018\ \ \ \ \ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_player_aaf0eef3a5816067e1933ad4a36822163}{m\_player\_health}};\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_af804c9e7fd72c8cbe21dd7c729844e46}{m\_player\_prev\_y}};\ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a4d623cca0dde1b5bfd597ffb72eb1ef0}{m\_player\_prev\_x}};\ }
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a42e7f71f96f4541e08819c63a1be97c6}{m\_player\_y}};\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a0368c51f16a456944b244f9f5f629679}{m\_player\_x}};\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a8cacfc2d172b9e1b9cb00635e050ef45}{m\_player\_angle}};\ \textcolor{comment}{//<\ Player\ rotation\ angle}}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player_a8ed820cb98c40785975722e311c6e235}{Player}}();\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player_a8ed820cb98c40785975722e311c6e235}{Player}}(\textcolor{keywordtype}{double}\ player\_y,\ \textcolor{keywordtype}{double}\ player\_x,\ \textcolor{keywordtype}{double}\ player\_angle,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ player\_health);\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player_ada5976e4eb648c2622aeaf0be2881954}{\string~Player}}();\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_ab3caa16303c43b4af4d59e54d27f0a64}{setPlayerCoords}}(\textcolor{keywordtype}{double}\ player\_y,\ \textcolor{keywordtype}{double}\ player\_x);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_acf7c31dde22043e5b6753ebbb0ef18c5}{setPlayerY}}(\textcolor{keywordtype}{double}\ player\_y);}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_abe08a35b25094c0786077d8efcb43e6a}{getPlayerY}}();}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_af11c1e9664991df2db9f41b5f4825b1b}{setPlayerX}}(\textcolor{keywordtype}{double}\ player\_x);}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a285e9f07984906248176c638f9edb03e}{getPlayerX}}();}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_adffded59e8b7158fccb67b2025bd7c5c}{setPlayerPrevY}}();}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a83a9e91f49d78f03d99d2dbbeb87184b}{setPlayerPrevX}}();}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_ac6e559d14fc8fe5c0d2fdafce7a17c2a}{setPlayerAngle}}(\textcolor{keywordtype}{double}\ player\_angle);}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_aa8d7a84af9ca8b40dc6f4af63b726869}{getPlayerAngle}}();}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a197a16027eaebf03ad709b51321cf647}{setPlayerHealth}}(\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ player\_health);}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_player_a904bfa7dc9f5461c8f12fd3b2ddf098c}{getPlayerHealth}}();}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a25ff84f55b1b398a1fcd5f985e6a309c}{movePlayer}}(\textcolor{keywordtype}{double}\ step);}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a7961b8f8703bde8347b445d6e0193273}{movePlayerSide}}(\textcolor{keywordtype}{double}\ step);}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a8ff9c2ac1534e9ed49c0b5e0a005fed6}{movePlayerDiagonal}}(\textcolor{keywordtype}{double}\ step\_forward,\ \textcolor{keywordtype}{double}\ step\_side);}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a6892419fcaa2d49ce4deb73b07037ffb}{incrementPlayerAngle}}(\textcolor{keywordtype}{double}\ value);}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a0567b24bda699e0b7a168bf447498211}{decrementPlayerAngle}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <corecrt\_math\_defines.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}\ }
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_player}{Player}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_player_aaf0eef3a5816067e1933ad4a36822163}{m\_player\_health}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_af804c9e7fd72c8cbe21dd7c729844e46}{m\_player\_prev\_y}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a4d623cca0dde1b5bfd597ffb72eb1ef0}{m\_player\_prev\_x}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a42e7f71f96f4541e08819c63a1be97c6}{m\_player\_y}};\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a0368c51f16a456944b244f9f5f629679}{m\_player\_x}};\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a8cacfc2d172b9e1b9cb00635e050ef45}{m\_player\_angle}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player_a8ed820cb98c40785975722e311c6e235}{Player}}();\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player_a8ed820cb98c40785975722e311c6e235}{Player}}(\textcolor{keywordtype}{double}\ player\_y,\ \textcolor{keywordtype}{double}\ player\_x,\ \textcolor{keywordtype}{double}\ player\_angle,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ player\_health);\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player_ada5976e4eb648c2622aeaf0be2881954}{\string~Player}}();\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_ab3caa16303c43b4af4d59e54d27f0a64}{setPlayerCoords}}(\textcolor{keywordtype}{double}\ player\_y,\ \textcolor{keywordtype}{double}\ player\_x);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_acf7c31dde22043e5b6753ebbb0ef18c5}{setPlayerY}}(\textcolor{keywordtype}{double}\ player\_y);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_abe08a35b25094c0786077d8efcb43e6a}{getPlayerY}}();\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_af11c1e9664991df2db9f41b5f4825b1b}{setPlayerX}}(\textcolor{keywordtype}{double}\ player\_x);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_a285e9f07984906248176c638f9edb03e}{getPlayerX}}();\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_adffded59e8b7158fccb67b2025bd7c5c}{setPlayerPrevY}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a83a9e91f49d78f03d99d2dbbeb87184b}{setPlayerPrevX}}();\ }
 \DoxyCodeLine{00073\ }
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a92f54742bc577e433cf325dd7ff8dea3}{returnBack}}();}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a96a8302748ca32d91b615f893af990a1}{applyDamage}}(\textcolor{keywordtype}{int}\ damage);}
-\DoxyCodeLine{00084\ \ \ \ \ \};}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_ac6e559d14fc8fe5c0d2fdafce7a17c2a}{setPlayerAngle}}(\textcolor{keywordtype}{double}\ player\_angle);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_player_aa8d7a84af9ca8b40dc6f4af63b726869}{getPlayerAngle}}();\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a197a16027eaebf03ad709b51321cf647}{setPlayerHealth}}(\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ player\_health);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_player_a904bfa7dc9f5461c8f12fd3b2ddf098c}{getPlayerHealth}}();\ }
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_H}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a25ff84f55b1b398a1fcd5f985e6a309c}{movePlayer}}(\textcolor{keywordtype}{double}\ step);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a7961b8f8703bde8347b445d6e0193273}{movePlayerSide}}(\textcolor{keywordtype}{double}\ step);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a8ff9c2ac1534e9ed49c0b5e0a005fed6}{movePlayerDiagonal}}(\textcolor{keywordtype}{double}\ step\_forward,\ \textcolor{keywordtype}{double}\ step\_side);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a97692d15fd1d9d1e1e17d799bf01512f}{addPlayerAngle}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a92f54742bc577e433cf325dd7ff8dea3}{returnBack}}();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_player_a96a8302748ca32d91b615f893af990a1}{applyDamage}}(\textcolor{keywordtype}{int}\ damage);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}*\ \mbox{\hyperlink{classengine_1_1_player_a1efe96514e0866d535cb9dc556ebfdf5}{getHealthPointer}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_H}}
 
 \end{DoxyCode}

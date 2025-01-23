@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['_7eapplication_0',['~Application',['../classengine_1_1_application.html#af9a64dfb0f14ba69c711dd8448834d37',1,'engine::Application']]],
-  ['_7ecamera_1',['~Camera',['../classengine_1_1_camera.html#af52953a99bb1736898d407c414a9e502',1,'engine::Camera']]],
-  ['_7eplayer_2',['~Player',['../classengine_1_1_player.html#ada5976e4eb648c2622aeaf0be2881954',1,'engine::Player']]],
-  ['_7erenderer_3',['~Renderer',['../classengine_1_1_renderer.html#a429d2acdd3f2e8f583df5298259d8089',1,'engine::Renderer']]],
-  ['_7escene_4',['~Scene',['../classengine_1_1_scene.html#a09443d03331e9a1275c0a695e3f5e7d5',1,'engine::Scene']]],
-  ['_7etexturemanager_5',['~TextureManager',['../classengine_1_1_texture_manager.html#a33416dffab6c9f6c7db8d2f2ee7aaf13',1,'engine::TextureManager']]],
-  ['_7ewindow_6',['~Window',['../classengine_1_1_window.html#ae568b8a51d517d21c5fb74e5e67430aa',1,'engine::Window']]]
+  ['ui_0',['UI',['../classengine_1_1_u_i.html',1,'engine::UI'],['../classengine_1_1_u_i.html#adbfa6f0ec659022bca6c110b110a7b88',1,'engine::UI::UI()']]],
+  ['ui_2ecpp_1',['UI.cpp',['../_u_i_8cpp.html',1,'']]],
+  ['ui_2eh_2',['UI.h',['../_u_i_8h.html',1,'']]],
+  ['uint_3',['uint',['../_application_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14',1,'Application.h']]],
+  ['update_4',['update',['../classengine_1_1_enemy.html#ab035ebe404c5bba8317cd0a1fa66eb71',1,'engine::Enemy']]],
+  ['updateanimations_5',['updateAnimations',['../classengine_1_1_scene.html#ab5ceccf66327fc7b1af09ddb7a36232e',1,'engine::Scene']]],
+  ['updatedecorationsanimations_6',['updateDecorationsAnimations',['../classengine_1_1_scene.html#a253576f06e1d15dd5b7e1c6614eff5e5',1,'engine::Scene']]],
+  ['updateenemies_7',['updateEnemies',['../classengine_1_1_scene.html#a316f74dc91687a21e65bd82440976984',1,'engine::Scene']]],
+  ['updateenemiesanimation_8',['updateEnemiesAnimation',['../classengine_1_1_scene.html#a463ab6852443669df741e13e490ef5c6',1,'engine::Scene']]]
 ];

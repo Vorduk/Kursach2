@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['incrementplayerangle_0',['incrementPlayerAngle',['../classengine_1_1_player.html#a6892419fcaa2d49ce4deb73b07037ffb',1,'engine::Player']]],
-  ['init_1',['init',['../classengine_1_1_window.html#aef37acfc14fc3919d650b400798f7e45',1,'engine::Window']]]
+  ['handleclick_0',['handleClick',['../classengine_1_1_button.html#abf696b1e0f71ff160edaa8b0e233e81f',1,'engine::Button']]],
+  ['handleevents_1',['handleEvents',['../classengine_1_1_application.html#aaea61538eccd3626f6170b0a39ab3045',1,'engine::Application']]],
+  ['handleuievents_2',['handleUIEvents',['../classengine_1_1_application.html#a1168e70180a02e0c37f05e3e58423182',1,'engine::Application']]]
 ];

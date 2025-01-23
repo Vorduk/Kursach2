@@ -6,36 +6,114 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_player_8h}{Player.h}}"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}};}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}}
-\DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_scene}{Scene}}}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\ \mbox{\hyperlink{classengine_1_1_scene_af65c35811ff9b93d672e74ddd7fbbcf8}{m\_player}};}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\ \mbox{\hyperlink{classengine_1_1_scene_a4276918aeeb7c39e06e6236b7623524c}{m\_camera}};}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_scene_af9a03c6a66bc5b1591519e42abd22269}{Scene}}();}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_scene_a09443d03331e9a1275c0a695e3f5e7d5}{\string~Scene}}();}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\&\ \mbox{\hyperlink{classengine_1_1_scene_ad60b323887a10d0b76ba663bca3b3edb}{getPlayer}}();}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\ \mbox{\hyperlink{classengine_1_1_scene_ad60b323887a10d0b76ba663bca3b3edb}{getPlayer}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_ada7564a446baf21fa2f0fbe95afe428f}{addPlayer}}(\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ y,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ x,\ \textcolor{keywordtype}{int}\ angle,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ health);}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\&\ \mbox{\hyperlink{classengine_1_1_scene_a66f0d6b2df4796e865ce04019820e200}{getCamera}}();}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\ \mbox{\hyperlink{classengine_1_1_scene_a66f0d6b2df4796e865ce04019820e200}{getCamera}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a63397837eb4a10f703a41e8db7e5cb67}{addCamera}}(\textcolor{keywordtype}{int}\ camera\_y,\ \textcolor{keywordtype}{int}\ camera\_x,\ \textcolor{keywordtype}{double}\ camera\_angle,\ \textcolor{keywordtype}{double}\ fov\_c,\ \textcolor{keywordtype}{int}\ render\_distance);}
-\DoxyCodeLine{00034\ \ \ \ \ \};}
-\DoxyCodeLine{00035\ \}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !SCENE\_H}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_engine_exception_8h}{EngineException.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enemy_8h}{Enemy.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <cmath>}\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sprite_8h}{Sprite.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpair__hash}{pair\_hash}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T1,\ \textcolor{keyword}{class}\ T2>}
+\DoxyCodeLine{00026\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{structpair__hash_a4df9b576476c0882720e8e60712ee813}{operator\ ()\ }}(\textcolor{keyword}{const}\ std::pair<T1,\ T2>\&\ pair)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ hash1\ =\ std::hash<T1>\{\}(pair.first);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ hash2\ =\ std::hash<T2>\{\}(pair.second);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hash1\ \string^\ (hash2\ <<\ 1);}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceengine}{engine}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classengine_1_1_scene}{Scene}}}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\ \mbox{\hyperlink{classengine_1_1_scene_af65c35811ff9b93d672e74ddd7fbbcf8}{m\_player}};\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\ \mbox{\hyperlink{classengine_1_1_scene_a4276918aeeb7c39e06e6236b7623524c}{m\_camera}};\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>>\ \mbox{\hyperlink{classengine_1_1_scene_a3e0a669da5ed209a601c0eef1042f7e7}{m\_obstacles}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::unordered\_map<std::pair<int,\ std::string>,\ std::string,\ \mbox{\hyperlink{structpair__hash}{pair\_hash}}>\ \mbox{\hyperlink{classengine_1_1_scene_abe92635e4fbc6f2f42265ce9007692e4}{textures\_predefine}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_scene_ab4b82ee2e9c538b187594e32d4562729}{m\_obstacle\_size\_x}};\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ \mbox{\hyperlink{classengine_1_1_scene_ad6b1647e8ca05b2358c8412f3f12f524}{m\_obstacle\_size\_y}};\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::vector<Enemy*>\ \mbox{\hyperlink{classengine_1_1_scene_ad831d7768c18bae2bb88169e80b0d364}{m\_enemies}};\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::vector<Sprite>\ \mbox{\hyperlink{classengine_1_1_scene_ac4ce46b38d41e75860f6f533e95faf51}{m\_decorations}};\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a463ab6852443669df741e13e490ef5c6}{updateEnemiesAnimation}}();\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a253576f06e1d15dd5b7e1c6614eff5e5}{updateDecorationsAnimations}}();\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_scene_af9a03c6a66bc5b1591519e42abd22269}{Scene}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_scene_a09443d03331e9a1275c0a695e3f5e7d5}{\string~Scene}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\&\ \mbox{\hyperlink{classengine_1_1_scene_ad60b323887a10d0b76ba663bca3b3edb}{getPlayer}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_player}{Player}}\ \mbox{\hyperlink{classengine_1_1_scene_ad60b323887a10d0b76ba663bca3b3edb}{getPlayer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_ada7564a446baf21fa2f0fbe95afe428f}{addPlayer}}(\mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ y,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ x,\ \textcolor{keywordtype}{int}\ angle,\ \mbox{\hyperlink{_application_8h_a91ad9478d81a7aaf2593e8d9c3d06a14}{uint}}\ health);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\&\ \mbox{\hyperlink{classengine_1_1_scene_a66f0d6b2df4796e865ce04019820e200}{getCamera}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_camera}{Camera}}\ \mbox{\hyperlink{classengine_1_1_scene_a66f0d6b2df4796e865ce04019820e200}{getCamera}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a63397837eb4a10f703a41e8db7e5cb67}{addCamera}}(\textcolor{keywordtype}{int}\ camera\_y,\ \textcolor{keywordtype}{int}\ camera\_x,\ \textcolor{keywordtype}{double}\ camera\_angle,\ \textcolor{keywordtype}{double}\ fov\_c,\ \textcolor{keywordtype}{int}\ render\_distance);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_ae8c6cac62d00af55a5eed20a0412de4c}{addObstacle}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a124a66c158358b6b461d3145f9378cee}{removeObstacle}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classengine_1_1_scene_af1772aaf94b9f6c8c7c1ec1ee347b9a7}{getObstacle}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>>}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classengine_1_1_scene_a46a1451c63b00ef0a44085c12de7e7b4}{getObstacles}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classengine_1_1_scene_a9e3523cec1de712cfa59e435a801befa}{getObstacleSizeY}}();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classengine_1_1_scene_ae90d7f46882da90255cd38fc625f8fd7}{getObstacleSizeX}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ std::vector<Sprite>\ \mbox{\hyperlink{classengine_1_1_scene_a4674c5462db85ae4ab6f955450e7937b}{getDecorations}}();}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a27d7275e368c0c78f96d091c1cc75732}{loadMap}}(std::string\ path);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a783f046e3b1a8a8d4868bc3b2b0456d2}{saveMap}}(std::string\ path);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_ab263ad4d14160237a5393e2b0c3fed05}{processPlayerCollision}}();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ std::unordered\_map<std::pair<int,\ std::string>,\ std::string,\ \mbox{\hyperlink{structpair__hash}{pair\_hash}}>\ \mbox{\hyperlink{classengine_1_1_scene_ab18f4bf5109ef008d0b6fd8ef87dd1de}{getTexturesPredefine}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a94e016ce11fdd22a32c0295ec0f04ba3}{addEnemy}}(\mbox{\hyperlink{classengine_1_1_enemy}{Enemy}}*\ enemy);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a316f74dc91687a21e65bd82440976984}{updateEnemies}}();}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classengine_1_1_scene_a41090913a5a0a57e13bec7379cf69228}{getEnemyCount}}();}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_scene_af4d14b567b1238b78436ba02809ceebd}{calculateDistanceToPlayer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classengine_1_1_enemy}{Enemy}}*\ enemy);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_scene_a2ff61a669cc8605b2494ea392c0eac26}{calculateDistanceToSprite}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_sprite}{Sprite}}*\ sprite);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a2432db1e08e44d3a48977a9cdcb33d85}{sortEnemiesByDistance}}();}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ std::vector<Enemy*>\ \mbox{\hyperlink{classengine_1_1_scene_a2b945bd59cb0ed9f81b04bff3377b419}{getEnemies}}();}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_a4451b54a317b14f33c7f608758cd1c39}{fire}}();}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classengine_1_1_scene_a4ecef764b75c31ad338ecbe4ed532bd3}{raycastObstacleFromPlayer}}(\textcolor{keywordtype}{int}\ cast\_distance);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classengine_1_1_scene_ab5ceccf66327fc7b1af09ddb7a36232e}{updateAnimations}}();}
+\DoxyCodeLine{00240\ \ \ \ \ \};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \}\ \textcolor{comment}{//\ namespace\ engine}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCENE\_H}}
 
 \end{DoxyCode}

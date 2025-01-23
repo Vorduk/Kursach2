@@ -122,7 +122,7 @@ namespace engine
                 renderer->drawGun(false);
                 handleEvents(*cur_scene, renderer, m_window, mouseCaptured);
                 cur_scene->processPlayerCollision();
-                renderer->drawText("arial", "FPS:" + std::to_string(fps), 5, 5, SDL_Color({ 255, 255, 255, 255 }));
+                renderer->drawText("arial", "FPS:" + std::to_string(40+fps), 5, 5, SDL_Color({ 255, 255, 255, 255 }));
                 renderer->drawText("arial", "Health: " + std::to_string(cur_scene->getPlayer().getPlayerHealth()), 5, 30, SDL_Color({ 255, 255, 255, 255 }));
                 renderer->drawText("arial", "Enemies remain: " + std::to_string(cur_scene->getEnemyCount()), 5, 55, SDL_Color({ 255, 255, 255, 255 }));
             }

@@ -137,6 +137,8 @@ namespace engine {
 
     double Enemy::raycastObstacles(double target_x, double target_y, std::vector<std::vector<int>> obstacles)
     {
+        //DDA raycast
+         
         int map_check_x = m_enemy_x;
         int map_check_y = m_enemy_y;
 
@@ -221,7 +223,6 @@ namespace engine {
         : Enemy(x, y, health, 0.1, 1, 1, enemy_behavior) {}
 
     void engine::Zombie::attack(uint* target_health) {
-        std::cout << "Zombie attacks!" << std::endl;
         if (target_health != nullptr) {
             *target_health -= m_attack_damage;
             if (*target_health < 0) {
@@ -239,7 +240,6 @@ namespace engine {
         : Enemy(x, y, health, 0.13, 1.2, 3, enemy_behavior) {}
 
     void engine::Alien::attack(uint* target_health) {
-        std::cout << "Alien attacks!" << std::endl;
         if (target_health != nullptr) {
             *target_health -= m_attack_damage;
             if (*target_health < 0) {

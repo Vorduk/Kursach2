@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['texturemanager_0',['TextureManager',['../classengine_1_1_texture_manager.html',1,'engine::TextureManager'],['../classengine_1_1_texture_manager.html#a2c115e4a57c02e64cfc669e03cc212b9',1,'engine::TextureManager::TextureManager()']]],
-  ['texturemanager_2ecpp_1',['TextureManager.cpp',['../_texture_manager_8cpp.html',1,'']]],
-  ['texturemanager_2eh_2',['TextureManager.h',['../_texture_manager_8h.html',1,'']]],
-  ['throw_5fengine_5fexception_3',['THROW_ENGINE_EXCEPTION',['../_application_8cpp.html#ad4e2939541239633146fb13442ba68f7',1,'THROW_ENGINE_EXCEPTION:&#160;Application.cpp'],['../_texture_manager_8cpp.html#ad4e2939541239633146fb13442ba68f7',1,'THROW_ENGINE_EXCEPTION:&#160;TextureManager.cpp'],['../_window_8cpp.html#ad4e2939541239633146fb13442ba68f7',1,'THROW_ENGINE_EXCEPTION:&#160;Window.cpp']]],
-  ['toop_2ecpp_4',['TOOP.cpp',['../_t_o_o_p_8cpp.html',1,'']]]
+  ['raycastobstaclefromplayer_0',['raycastObstacleFromPlayer',['../classengine_1_1_scene.html#a4ecef764b75c31ad338ecbe4ed532bd3',1,'engine::Scene']]],
+  ['raycastobstacles_1',['raycastObstacles',['../classengine_1_1_enemy.html#a6efd5a7c6f2ce3942aa496c6f2ceade9',1,'engine::Enemy']]],
+  ['removeobstacle_2',['removeObstacle',['../classengine_1_1_scene.html#a124a66c158358b6b461d3145f9378cee',1,'engine::Scene']]],
+  ['renderer_3',['Renderer',['../classengine_1_1_renderer.html',1,'engine::Renderer'],['../classengine_1_1_renderer.html#ac8aa6bb29daf410c34cec7d59386079d',1,'engine::Renderer::Renderer()']]],
+  ['renderer_2ecpp_4',['Renderer.cpp',['../_renderer_8cpp.html',1,'']]],
+  ['renderer_2eh_5',['Renderer.h',['../_renderer_8h.html',1,'']]],
+  ['renderscenedda_6',['renderSceneDDA',['../classengine_1_1_renderer.html#aa0f818e6658642dc8d3b682fb0b78f42',1,'engine::Renderer']]],
+  ['returnback_7',['returnBack',['../classengine_1_1_player.html#a92f54742bc577e433cf325dd7ff8dea3',1,'engine::Player']]],
+  ['reviveui_8',['reviveUI',['../classengine_1_1_application.html#aa265fb9f62322754491d57169596eb78',1,'engine::Application']]],
+  ['run_9',['run',['../classengine_1_1_application.html#a6d9c94380f1451664ff6d09c314671c7',1,'engine::Application']]]
 ];

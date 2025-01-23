@@ -1,26 +1,39 @@
 /// Player
 // X
-11.0413
+11.2321
 // Y
-13.4293
+9.3883
 // Angle
-2.898
+6.1605
 // Health
-300
+268
 
 /// Camera
 // X
-11.0413
+11.2321
 // Y
-13.4293
+9.3883
 // Angle
-2.898
+6.1605
 // Fov_c
 40
 // Render distance
 100
 
 /// Enemies
+// Type
+Zombie
+// X
+2
+// Y
+29
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
 // Type
 Alien
 // X
@@ -37,61 +50,9 @@ alien_dead
 // Type
 Zombie
 // X
-2
-// Y
-29
-// Health
-200
-// Textures id
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-26
-// Y
-7
-// Health
-200
-// Textures id
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-26
-// Y
-17
-// Health
-200
-// Textures id
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
 15
 // Y
 27
-// Health
-200
-// Textures id
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
-23
-// Y
-6
 // Health
 200
 // Textures id
@@ -115,7 +76,20 @@ zombie_dead
 // Type
 Zombie
 // X
-23
+26
+// Y
+17
+// Health
+200
+// Textures id
+zombie
+4
+zombie_dead
+1
+// Type
+Zombie
+// X
+26
 // Y
 7
 // Health
@@ -141,22 +115,9 @@ zombie_dead
 // Type
 Zombie
 // X
-2
+23
 // Y
-14
-// Health
-200
-// Textures id
-zombie
-4
-zombie_dead
-1
-// Type
-Zombie
-// X
 6
-// Y
-20
 // Health
 200
 // Textures id
@@ -167,9 +128,9 @@ zombie_dead
 // Type
 Zombie
 // X
-7
+23
 // Y
-7.5
+7
 // Health
 200
 // Textures id
